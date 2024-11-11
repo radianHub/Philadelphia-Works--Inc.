@@ -1,0 +1,32 @@
+{
+  "arrowParens": "always",
+  "bracketSameLine": true,
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxSingleQuote": false,
+  "printWidth": 120,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "semi": true,
+  "singleAttributePerLine": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "plugins": [
+    "prettier-plugin-apex",
+    "@prettier/plugin-xml"
+  ],
+  "overrides": [
+    {
+      "files": "**/lwc/**/*.html",
+      "options": { "parser": "lwc" }
+    },
+    {
+      "files": "*.{cmp,page,component}",
+      "options": { "parser": "html" }
+    }
+  ]
+}
