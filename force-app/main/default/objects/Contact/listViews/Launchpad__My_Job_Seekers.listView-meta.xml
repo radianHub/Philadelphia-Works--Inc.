@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__My_Job_Seekers</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Launchpad__Stage__c</columns>
+    <columns>Launchpad__Owner_Full_Name__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Launchpad__Job_Seeker</value>
+    </filters>
+    <label>My Job Seekers</label>
+</ListView>
