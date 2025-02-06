@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__CIF_WIOA_Title1dw</fullName>
+    <description>Launchpad__CIF Title 1 Dislocated Worker fields</description>
+    <displayedFields>
+        <field>Launchpad__Job_Readiness__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>CIF_Title1dw</label>
+</FieldSet>

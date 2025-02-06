@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Youth_Need_Support_Assistance__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Does the youth need support or assistance?</inlineHelpText>
+    <label>\Youth Need Support/Assistance?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Medical assistance</fullName>
+                <default>false</default>
+                <label>Medical assistance</label>
+            </value>
+            <value>
+                <fullName>Medical or Dental Care</fullName>
+                <default>false</default>
+                <label>Medical or Dental Care</label>
+            </value>
+            <value>
+                <fullName>Access to Food</fullName>
+                <default>false</default>
+                <label>Access to Food</label>
+            </value>
+            <value>
+                <fullName>Housing</fullName>
+                <default>false</default>
+                <label>Housing</label>
+            </value>
+            <value>
+                <fullName>Mental health services</fullName>
+                <default>false</default>
+                <label>Mental health services</label>
+            </value>
+            <value>
+                <fullName>Substance use services</fullName>
+                <default>false</default>
+                <label>Substance use services</label>
+            </value>
+            <value>
+                <fullName>Service coordination or Support services</fullName>
+                <default>false</default>
+                <label>Service coordination or Support services</label>
+            </value>
+            <value>
+                <fullName>Legal services</fullName>
+                <default>false</default>
+                <label>Legal services</label>
+            </value>
+            <value>
+                <fullName>Employment or Job development services</fullName>
+                <default>false</default>
+                <label>Employment or Job development services</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Service coordination and Management</fullName>
+                <default>false</default>
+                <label>Service coordination and Management</label>
+            </value>
+            <value>
+                <fullName>Prefer not to say</fullName>
+                <default>false</default>
+                <label>Prefer not to say</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

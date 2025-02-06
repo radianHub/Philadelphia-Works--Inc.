@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Youth_Involved_in_Justice_System__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Does the youth have any current or former involvement with the justice system?</inlineHelpText>
+    <label>Youth Involved in Justice System?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Prefer not to say</fullName>
+                <default>false</default>
+                <label>Prefer not to say</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
