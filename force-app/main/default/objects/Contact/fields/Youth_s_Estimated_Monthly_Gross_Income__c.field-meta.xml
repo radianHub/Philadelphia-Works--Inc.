@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Youth_s_Estimated_Monthly_Gross_Income__c</fullName>
+    <externalId>false</externalId>
+    <label>Youth&apos;s Estimated Monthly Gross Income?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>No Income</fullName>
+                <default>false</default>
+                <label>No Income</label>
+            </value>
+            <value>
+                <fullName>Less than $100</fullName>
+                <default>false</default>
+                <label>Less than $100</label>
+            </value>
+            <value>
+                <fullName>$100 to $499</fullName>
+                <default>false</default>
+                <label>$100 to $499</label>
+            </value>
+            <value>
+                <fullName>$500 to $999</fullName>
+                <default>false</default>
+                <label>$500 to $999</label>
+            </value>
+            <value>
+                <fullName>$1,000 to $1,499</fullName>
+                <default>false</default>
+                <label>$1,000 to $1,499</label>
+            </value>
+            <value>
+                <fullName>$1,500 to $1,999</fullName>
+                <default>false</default>
+                <label>$1,500 to $1,999</label>
+            </value>
+            <value>
+                <fullName>$2,000 to $2,499</fullName>
+                <default>false</default>
+                <label>$2,000 to $2,499</label>
+            </value>
+            <value>
+                <fullName>$2,500 to $2,999</fullName>
+                <default>false</default>
+                <label>$2,500 to $2,999</label>
+            </value>
+            <value>
+                <fullName>$3,000 to $3,499</fullName>
+                <default>false</default>
+                <label>$3,000 to $3,499</label>
+            </value>
+            <value>
+                <fullName>$3,500 to $3,999</fullName>
+                <default>false</default>
+                <label>$3,500 to $3,999</label>
+            </value>
+            <value>
+                <fullName>$4,000 to $4,499</fullName>
+                <default>false</default>
+                <label>$4,000 to $4,499</label>
+            </value>
+            <value>
+                <fullName>$4,500 to $4,999</fullName>
+                <default>false</default>
+                <label>$4,500 to $4,999</label>
+            </value>
+            <value>
+                <fullName>$5,000 to $5,499</fullName>
+                <default>false</default>
+                <label>$5,000 to $5,499</label>
+            </value>
+            <value>
+                <fullName>More than $5,500</fullName>
+                <default>false</default>
+                <label>More than $5,500</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

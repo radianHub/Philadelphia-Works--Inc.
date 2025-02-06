@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Find_More_Job_Orders</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>[DEP] Find More Job Orders</masterLabel>
+    <openType>sidebar</openType>
+    <page>Launchpad__JobOrdersAdvanceSearch</page>
+    <protected>false</protected>
+</WebLink>
