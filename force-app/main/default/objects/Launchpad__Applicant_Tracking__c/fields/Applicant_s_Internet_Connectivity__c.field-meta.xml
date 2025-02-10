@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicant_s_Internet_Connectivity__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What best describes the applicant&apos;s internet connectivity</inlineHelpText>
+    <label>Applicant&apos;s Internet Connectivity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Has access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</fullName>
+                <default>false</default>
+                <label>Has access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</label>
+            </value>
+            <value>
+                <fullName>Has access to the internet primarily through a phone</fullName>
+                <default>false</default>
+                <label>Has access to the internet primarily through a phone</label>
+            </value>
+            <value>
+                <fullName>Has access to the internet in public spaces e.g., library, businesses, school.</fullName>
+                <default>false</default>
+                <label>Has access to the internet in public spaces e.g., library, businesses, school.</label>
+            </value>
+            <value>
+                <fullName>Does not have internet connectivity</fullName>
+                <default>false</default>
+                <label>Does not have internet connectivity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
