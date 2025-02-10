@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_Governmental_Benefits_Does__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please indicate what governmental benefits the applicant receives</inlineHelpText>
+    <label>Applicant&apos;s Governmental Benefits</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TANF</fullName>
+                <default>false</default>
+                <label>TANF</label>
+            </value>
+            <value>
+                <fullName>Food Stamps</fullName>
+                <default>false</default>
+                <label>Food Stamps</label>
+            </value>
+            <value>
+                <fullName>Medicaid</fullName>
+                <default>false</default>
+                <label>Medicaid</label>
+            </value>
+            <value>
+                <fullName>SSI or SSD</fullName>
+                <default>false</default>
+                <label>SSI or SSD</label>
+            </value>
+            <value>
+                <fullName>None of the above</fullName>
+                <default>false</default>
+                <label>None of the above</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
