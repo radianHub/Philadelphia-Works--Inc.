@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "150e3e4f-8c7d-4bb8-9787-90d25a5ca128",
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "configurationTags" : [ ],
+  "devName" : "Search_Candidates",
+  "id" : "d6b1da5d-f415-47e3-be6c-165868cd2078",
+  "label" : "Search Candidates",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-Search Candidates",
+  "type" : "route",
+  "urlPrefix" : "search-candidates"
+}

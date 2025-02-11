@@ -1,0 +1,66 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "add6ee22-f0d0-4b56-b274-7b38f68d7111",
+  "label" : "Matches to My Jobs",
+  "regions" : [ {
+    "id" : "6dcdea58-f2fe-4f26-bee6-954e3dc7f97d",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "alreadyContactedMatchButtonLabel" : "Already Contacted",
+        "contactCandidateCloseButtonLabel" : "Cancel",
+        "contactCandidateMessageLabel" : "Please enter a message below",
+        "contactCandidateModalHeader" : "Send Email",
+        "contactCandidateSendButtonLabel" : "Send",
+        "contactMatchButtonLabel" : "Contact Match",
+        "description" : "Review matches to my jobs to find viable applicants",
+        "header" : "Matches to My Jobs",
+        "headerColor" : "rgb(84, 105, 141)",
+        "jobFilterLabel" : "Filter by Position",
+        "jobFilterPlaceholder" : "Select a Job",
+        "matchTileFooterColor" : "rgb(88, 119, 169)",
+        "matchTileHeaderColor" : "rgb(235, 235, 235)",
+        "matchesHeader" : "Matches",
+        "matchesSubheader" : "View job matches",
+        "noContactErrorMessage" : "No user contact record found",
+        "noMatchesMessage" : "We are sorry but your job listing did not return any matches.",
+        "noUserErrorMessage" : "No user record found",
+        "showContactCandidateFooter" : true
+      },
+      "componentName" : "LaunchpadCo:lexMatchesToMyJobsAura",
+      "id" : "9de01f27-497f-44b6-8f3f-9e38731daa29",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0808730e-6b8a-4ce6-bba5-cf081a031be1",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "01dc00bd-e95a-47af-9998-dab064531357",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Matches to My Jobs"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "948523f1-b45f-4bef-97c9-adb503fe6c30",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "98eaa881-0ce9-4956-be73-b28b0288bec4",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-Matches to My Jobs"
+}
