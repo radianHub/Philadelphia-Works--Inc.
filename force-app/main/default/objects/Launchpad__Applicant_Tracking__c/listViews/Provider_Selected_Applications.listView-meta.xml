@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Selected_Applications</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Launchpad__Stage__c</field>
+        <operation>equals</operation>
+        <value>Provider Selected,Matched with Provider,Ready for JEVs Sign-Off</value>
+    </filters>
+    <filters>
+        <field>Provider_Rank__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Provider Selected Applications</label>
+</ListView>
