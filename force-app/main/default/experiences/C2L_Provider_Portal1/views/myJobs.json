@@ -1,0 +1,82 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "4d22f984-8840-422c-9b57-b800bb3c5ddc",
+  "label" : "My Jobs",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "archiveBtnLabel" : "Archive Job",
+        "backBtnLabel" : "Cancel",
+        "cancelBtnLabel" : "Cancel",
+        "clearFiltersBtnLabel" : "Clear Filters",
+        "createJobHeader" : "Create New Job Listing",
+        "createSaveMsg" : "Job successfully created!",
+        "description" : "Create new job listing, search for existing listings, view job details, and edit job statuses and information.",
+        "detailShowRecordButton" : false,
+        "detailsHeader" : "Job Details",
+        "editJobBtnLabel" : "Edit Job",
+        "editJobDetailBtnLabel" : "Edit",
+        "editJobHeader" : "Update Job Listing",
+        "editJobObjName" : "Launchpad__Job__c",
+        "editSaveMsg" : "Job successfully updated!",
+        "filterDescription" : "You can filter existing jobs by open/closed status or view all existing jobs. Also filter by job expiration, either expiring soon (within 7 days) or already expired. Use the keyword search to search by job name and details.",
+        "filterField" : "A_Filter_Field__c,Expiration_Date__c,Name,Launchpad__Stage__c",
+        "filterHeader" : "Search for jobs",
+        "filterInputLabel" : "Select a filter option",
+        "header" : "My Jobs",
+        "headerColor" : "rgb(84, 105, 141)",
+        "jobTileFooterColor" : "rgb(88, 119, 169)",
+        "jobTileHeaderColor" : "rgb(235, 235, 235)",
+        "jobsHeader" : "Jobs",
+        "jobsSubHeader" : "View job listings",
+        "newJobBtnLabel" : "Create new job listing",
+        "noResultMessage" : "We are sorry but your Search Filter(s) did not return any results.  Please click \"Clear Filters\" and try again.",
+        "saveBtnLabel" : "Save",
+        "searchBtnLabel" : "Search",
+        "searchInputLabel" : "Search job by keyword",
+        "showNewJobBtn" : true,
+        "showRecordButton" : false,
+        "skillPillColor" : "rgb(8, 92, 160)",
+        "skillPillFontColor" : "rgb(255, 255, 255)",
+        "viewDetailsBtnLabel" : "View Details",
+        "viewRecordPageBtnLabel" : "View Matches"
+      },
+      "componentName" : "LaunchpadCo:lexMyJobsAura",
+      "id" : "5cd1219f-3b7e-42c2-8f0e-59d5076f013a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2bc37a21-1a4d-4df2-859c-3a6c13333180",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "63248b24-5924-44fd-ba42-6ec032368029",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "9eb19c4a-527c-4987-b444-bad67f85fea9",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Jobs"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "88ac32fb-7ed1-45d8-ba5e-3108b6661f4d",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "48138160-9b9b-475e-83e6-a0b65f2eae2e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Jobs"
+}

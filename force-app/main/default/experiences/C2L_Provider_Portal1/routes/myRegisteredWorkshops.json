@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "691b709a-3e1d-48e9-aa11-cccb251f3d35",
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "configurationTags" : [ ],
+  "devName" : "my_registered_workshops",
+  "id" : "11796091-2fef-4baa-8b1f-bf4434e8e383",
+  "label" : "my-registered-workshops",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-my-registered-workshops",
+  "type" : "route",
+  "urlPrefix" : "my-registered-workshops"
+}
