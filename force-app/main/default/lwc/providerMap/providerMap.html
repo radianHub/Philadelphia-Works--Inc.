@@ -1,26 +1,13 @@
 <template>
-    <div class="slds-grid slds-wrap"> 
-        <div class="slds-col slds-size_1-of-1">
-            <lightning-map
-                markers-title="Programs"
-                map-markers={providers}
-                onmarkerselect={handleMarkerSelect}
-                selected-marker-value={selectedMarkerValue}
-                list-view="visible"
-                ></lightning-map>
-        </div>
-        <div class="slds-col slds-size_1-of-1">
-            <div class="markers-container slds-scrollable_y">
-                <template for:each={providers} for:item="marker">
-                    <div key={marker.id} class="slds-card slds-has-top-magnet">
-                        <div class="slds-var-p-around_medium">
-                            <h2 class="marker-title">{marker.title}</h2>
-
-                            <lightning-button variant="brand" label="View" onclick={handleView} value={marker.id}></lightning-button>
-                        </div>  
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
+	<div class="slds-grid slds-wrap">
+		<div class="slds-col slds-size_1-of-1">
+			<lightning-map
+                class="slds-border_top slds-border_right slds-border_bottom slds-border_left"
+				markers-title="Programs"
+				map-markers={providers}
+				onmarkerselect={handleMarkerSelect}
+				selected-marker-value={selectedMarkerValue}
+				list-view="visible"></lightning-map>
+		</div>
+	</div>
 </template>

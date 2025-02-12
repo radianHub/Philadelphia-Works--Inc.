@@ -84,7 +84,7 @@ export default class MultiSelectCombobox extends LightningElement {
   @api showPills = false;
 
   @track currentOptions = [];
-  selectedItems = [];
+  @api selectedItems = [];
   selectedOptions = [];
   isInitialized = false;
   isLoaded = false;

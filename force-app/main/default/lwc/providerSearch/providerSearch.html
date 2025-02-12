@@ -1,23 +1,53 @@
 <template>
     <h2 class="title" style={headerStyle}>{title}</h2>
     <p class="description slds-var-m-bottom_large">{description}</p>
-    <lightning-layout class="filter-container slds-var-p-around_medium slds-var-m-bottom_medium" multiple-rows="true">
+    <lightning-layout class="filter-container slds-var-p-around_medium slds-var-m-bottom_medium" multiple-rows="true" vertical-align="end">
         <lightning-layout-item padding="around-small" flexibility="auto">
-            <lightning-input name="zip" label="Zip" value={zipCode} type="search"></lightning-input>
+            <lightning-input name="zipcode" label="Zip" value={zipCode} type="search" onchange={handleChange}></lightning-input>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" flexibility="auto">
-            <c-multi-select-combobox label="Age" name="age" value={age} options={ageOptions} onchange={handleChange}></c-multi-select-combobox>
+            <c-multi-select-combobox label="Age" name="age" selected-items={age} options={ageOptions} onchange={handleMultiselectChange}></c-multi-select-combobox>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" flexibility="auto">
-            <c-multi-select-combobox label="Grade" name="grade" value={grade} options={gradeOptions} onchange={handleChange}></c-multi-select-combobox>
+            <c-multi-select-combobox label="Grade" name="grade" selected-items={grade} options={gradeOptions} onchange={handleMultiselectChange}></c-multi-select-combobox>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" flexibility="auto">
-            <c-multi-select-combobox label="Gender" name="gender" value={gender} options={genderOptions} onchange={handleChange}></c-multi-select-combobox>
+            <c-multi-select-combobox label="Gender" name="gender" selected-items={gender} options={genderOptions} onchange={handleMultiselectChange}></c-multi-select-combobox>
         </lightning-layout-item>
-        <lightning-layout-item padding="around-small" size="12" alignment-bump="left">
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <c-multi-select-combobox label="School" name="school" selected-items={school} options={schoolOptions} onchange={handleMultiselectChange}></c-multi-select-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" alignment-bump="left">
             <lightning-button label="Clear Filters" onclick={handleClear}></lightning-button>
         </lightning-layout-item>
     </lightning-layout>
 
     <c-provider-map providers={providers}></c-provider-map>
+
+    <lightning-layout class="slds-var-m-bottom_medium" multiple-rows="true">
+        <template for:each={providers} for:item="provider">
+            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4" padding="around-small" key={provider.id}>
+                <lightning-card style={cardHeaderStyle} heading-level="h3" variant="narrow">
+                    <div slot="title">
+                        <h3 class="card-title slds-text-heading_small">
+                            {provider.title}
+                        </h3>
+                    </div>
+                    <div class="slds-var-p-around_medium" style={cardBodyStyle}>
+                        <dl class="slds-dl_horizontal">
+                            <dt class="slds-dl_horizontal__label">Description</dt>
+                            <dd class="slds-dl_horizontal__detail"><lightning-formatted-rich-text class="slds-line-clamp_small" value={provider.richDescription}></lightning-formatted-rich-text></dd>
+                            <dt class="slds-dl_horizontal__label">Interest Areas</dt>
+                            <dd class="slds-dl_horizontal__detail">{provider.interestAreas}</dd>
+                            <dt class="slds-dl_horizontal__label">Program Type</dt>
+                            <dd class="slds-dl_horizontal__detail">{provider.programType}</dd>
+                            <dt class="slds-dl_horizontal__label">Ages Served</dt>
+                            <dd class="slds-dl_horizontal__detail">{provider.agesServed}</dd>
+                          </dl>
+                    </div>
+                    <div slot="footer"></div>
+                </lightning-card>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
 </template>

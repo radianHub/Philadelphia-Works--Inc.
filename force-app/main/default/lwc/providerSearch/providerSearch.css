@@ -14,3 +14,8 @@
 	opacity: 100;
 	font-weight: 100;
 }
+
+.card-title {
+	font-weight: 900;
+	white-space: normal;
+}
