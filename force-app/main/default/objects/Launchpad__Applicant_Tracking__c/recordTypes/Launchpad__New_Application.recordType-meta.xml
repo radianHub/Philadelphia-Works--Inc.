@@ -150,10 +150,6 @@
     <picklistValues>
         <picklist>Launchpad__Stage__c</picklist>
         <values>
-            <fullName>Declined</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Hired</fullName>
             <default>false</default>
         </values>
