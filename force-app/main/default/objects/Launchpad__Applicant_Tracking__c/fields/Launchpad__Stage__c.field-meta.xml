@@ -57,6 +57,11 @@
                 <default>false</default>
                 <label>Placed</label>
             </value>
+            <value>
+                <fullName>Hired</fullName>
+                <default>false</default>
+                <label>Hired</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
