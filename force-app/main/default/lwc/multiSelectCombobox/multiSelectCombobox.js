@@ -151,7 +151,13 @@ export default class MultiSelectCombobox extends LightningElement {
       .forEach((item) => (item.selected = event.detail.selected));
     this.setSelection();
     const selection = this.getSelectedItems();
-    this.dispatchEvent(new CustomEvent('change', { detail: this.singleSelect ? selection[0] : selection }));
+    this.dispatchEvent(new CustomEvent('change', { 
+        detail: {
+            value: this.singleSelect ? selection[0].value : selection.map((item) => item.value),
+            name: this.name, 
+        },
+    }
+));
 
     // for single select picklist close dropdown after selection is made
     if (this.singleSelect) {

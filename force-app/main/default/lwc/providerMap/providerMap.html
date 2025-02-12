@@ -3,7 +3,7 @@
         <div class="slds-col slds-size_1-of-1">
             <lightning-map
                 markers-title="Programs"
-                map-markers={markers}
+                map-markers={providers}
                 onmarkerselect={handleMarkerSelect}
                 selected-marker-value={selectedMarkerValue}
                 list-view="visible"
@@ -11,7 +11,7 @@
         </div>
         <div class="slds-col slds-size_1-of-1">
             <div class="markers-container slds-scrollable_y">
-                <template for:each={markers} for:item="marker">
+                <template for:each={providers} for:item="marker">
                     <div key={marker.id} class="slds-card slds-has-top-magnet">
                         <div class="slds-var-p-around_medium">
                             <h2 class="marker-title">{marker.title}</h2>

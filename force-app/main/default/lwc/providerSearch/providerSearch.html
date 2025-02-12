@@ -1,24 +1,23 @@
 <template>
-    <lightning-card>
-        <div slot="title">
-            <h2>{title}</h2>
-            <p>{description}</p>
-        </div>
-        <div class="slds-var-p-around_medium">
-            <lightning-layout horizontal-align="spread">
-                <lightning-layout-item padding="around-small">
-                    <lightning-input name="zip" label="Zip" type="search"></lightning-input>
-                </lightning-layout-item>
-                <lightning-layout-item padding="around-small">
-                    <c-multi-select-combobox label="Age" name="age" value={age} options={ageOptions} onchange={handleChange}></c-multi-select-combobox>
-                </lightning-layout-item>
-                <lightning-layout-item padding="around-small">
-                    <c-multi-select-combobox label="Grade" name="grade" value={grade} options={gradeOptions} onchange={handleChange}></c-multi-select-combobox>
-                </lightning-layout-item>
-                <lightning-layout-item padding="around-small">
-                    <c-multi-select-combobox label="Gender" name="gender" value={gender} options={genderOptions} onchange={handleChange}></c-multi-select-combobox>
-                </lightning-layout-item>
-            </lightning-layout>
-        </div>
-    </lightning-card>
+    <h2 class="title" style={headerStyle}>{title}</h2>
+    <p class="description slds-var-m-bottom_large">{description}</p>
+    <lightning-layout class="filter-container slds-var-p-around_medium slds-var-m-bottom_medium" multiple-rows="true">
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <lightning-input name="zip" label="Zip" value={zipCode} type="search"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <c-multi-select-combobox label="Age" name="age" value={age} options={ageOptions} onchange={handleChange}></c-multi-select-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <c-multi-select-combobox label="Grade" name="grade" value={grade} options={gradeOptions} onchange={handleChange}></c-multi-select-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <c-multi-select-combobox label="Gender" name="gender" value={gender} options={genderOptions} onchange={handleChange}></c-multi-select-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="12" alignment-bump="left">
+            <lightning-button label="Clear Filters" onclick={handleClear}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <c-provider-map providers={providers}></c-provider-map>
 </template>
