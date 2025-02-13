@@ -7,7 +7,7 @@ import { seed } from './seed.js';
  * Displays a map of providers
  * @param providers {[Object]} - List of providers to display on the map
  * @example <c-provider-map providers={providers}></c-provider-map>
- * [
+ * providers: [
  *     {
  * 			id: '1',
  *          title: 'Provider 1 Name',

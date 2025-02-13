@@ -1,0 +1,26 @@
+.card-body-container {
+	height: 320px;
+	background-color: #ebebeb;
+	overflow-y: scroll;
+}
+
+.card {
+	--slds-c-card-radius-border: 0;
+}
+
+.card-title-container {
+	white-space: normal;
+}
+
+.card-title {
+	font-weight: bold;
+}
+
+.card-subtitle {
+	font-weight: 100;
+	font-size: 14px;
+}
+
+.detail-label {
+	font-weight: bold;
+}

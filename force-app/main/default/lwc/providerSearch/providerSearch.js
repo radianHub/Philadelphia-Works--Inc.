@@ -9,7 +9,7 @@ export default class ProviderSearch extends LightningElement {
     @api description;
     @api headerColor;
     @api cardHeaderColor;
-    @api cardBodyColor;
+    @api cardBodyBgColor;
 
     providers = [];
     ageOptions = [];
@@ -26,14 +26,6 @@ export default class ProviderSearch extends LightningElement {
     get headerStyle() {
 		return this.headerColor ? 'color:' + this.headerColor : 'color:rgb(84, 105, 141)';
 	}
-
-    get cardHeaderStyle() {
-        return this.cardHeaderColor ? '--slds-c-card-color-background:' + this.cardHeaderColor : '--slds-c-card-color-background:rgb(180, 188, 201)';
-    }
-
-    get cardBodyStyle() {
-        return this.cardBodyColor ? 'background-color:' + this.cardBodyColor : 'background-color:rgb(235, 235, 235)';
-    }
 
     connectedCallback() {
         this.getPicklistValues();
@@ -126,40 +118,66 @@ export default class ProviderSearch extends LightningElement {
             let schoolsServed = '';
             let programType = '';
             let interestAreas = '';
+            let details = [];
 
             if (provider.Ages_Served__c) {
                 agesServed = this.formatMultiselectValue(provider.Ages_Served__c)
                 description += `\n<p><strong>Ages Served:</strong> ${agesServed}</p>`;
+                details.push({
+                    label: 'Ages Served',
+                    value: agesServed
+                })
             }
 
             if (provider.Grades_Served__c) {
                 gradesServed = this.formatMultiselectValue(provider.Grades_Served__c)
                 description += `\n<p><strong>Ages Served:</strong> ${gradesServed}</p>`;
+                details.push({
+                    label: 'Grades Served',
+                    value: gradesServed
+                })
             }
 
             if (provider.Schools_Served__c) {
                 schoolsServed = this.formatMultiselectValue(provider.Schools_Served__c)
                 description += `\n<p><strong>Ages Served:</strong> ${schoolsServed}</p>`;
+                details.push({
+                    label: 'Schools Served',
+                    value: schoolsServed
+                })
             }
 
             if (provider.Gender_Served__c) {
                 genderServed = this.formatMultiselectValue(provider.Gender_Served__c);
                 description += `\n<p><strong>Genders Served:</strong> ${genderServed}</p>`;
+                details.push({
+                    label: 'Genders Served',
+                    value: genderServed
+                })
             }
 
             if (provider.Program_Type__c) {
                 programType = this.formatMultiselectValue(provider.Program_Type__c)
                 description += `\n<p><strong>Program Type:</strong> ${programType}</p>`;
+                details.push({
+                    label: 'Program Type',
+                    value: programType
+                })
             }
 
             if (provider.Interest_Areas__c) {
                 interestAreas = this.formatMultiselectValue(provider.Interest_Areas__c);
                 description += `\n<p><strong>Interest Areas:</strong> ${interestAreas}</p>`;
+                details.push({
+                    label: 'Interest Areas',
+                    value: interestAreas
+                })
             }
             
             return {
                 id: provider.Id,
                 title: provider.Name,
+                subtitle: provider.Launchpad__Account__r.Name,
                 agesServed,
                 genderServed,
                 gradesServed,
@@ -174,7 +192,8 @@ export default class ProviderSearch extends LightningElement {
                     PostalCode: provider[locationSource].BillingPostalCode,
                     Country: 'USA',
                 },
-                description
+                description,
+                details
             }
         });
     }

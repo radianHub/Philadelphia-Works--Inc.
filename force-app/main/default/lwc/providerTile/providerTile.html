@@ -1,0 +1,82 @@
+<template>
+    <lightning-card class="card" style={cardStyle}>
+        <div slot="title" class="card-title-container">
+            <h3 style={cardHeaderStyle} class="card-title">{title}</h3>
+            <p class="card-subtitle">{subtitle}</p>
+        </div>
+        <div class="slds-var-p-around_medium card-body-container slds-border_top">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="12">
+                    <lightning-layout>
+                        <lightning-layout-item size="4">
+                            <span class="detail-label">Description</span>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                            <div class={descriptionClass}>
+                                <lightning-formatted-rich-text value={description}></lightning-formatted-rich-text>
+                            </div>
+                            <lightning-button variant="base" label={descriptionLabel} onclick={toggleDescription}>View All</lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <template for:each={details} for:item="item">
+                    <lightning-layout-item key={item.label} size="12">
+                        <lightning-layout>
+                            <lightning-layout-item size="4">
+                                <span class="detail-label">{item.label}</span>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="8">
+                                <span>{item.value}</span>
+                            </lightning-layout-item>        
+                        </lightning-layout>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+    <!-- <div class="job-container">
+		<div
+			class="desc-container slds-var-p-vertical_large slds-var-p-horizontal_large"
+			style={cardHeaderStyle}>
+			<p class="slds-text-heading_medium text-bold slds-var-p-horizontal_medium">{title}</p>
+			<p class="slds-text-heading_small slds-var-m-top_xx-small slds-p-horizontal_medium">{subtitle}</p>
+			<hr />
+			<lightning-layout
+				class="slds-p-horizontal_medium slds-text-align_left"
+				vertical-align="center"
+				multiple-rows="true">
+				<template
+					if:true={details}
+					for:each={details}
+					for:item="item">
+					<lightning-layout-item
+						if:true={item.value}
+						size="12"
+						key={item.label}
+						class="">
+						<div class="slds-grid">
+							<span
+								class=""
+								>{item.label}:&nbsp;</span
+							>
+							<span
+								class="">
+								{item.value}
+							</span>
+						</div>
+					</lightning-layout-item>
+				</template>
+			</lightning-layout>
+		</div>
+		<div
+			class=""
+			style={cardBodyStyle}>
+            <lightning-layout class="slds-var-p-around_medium" vertical-align="center" multiple-rows="true">
+                <lightning-layout-item padding="around-medium" size="12" large-device-size="6">
+                    <lightning-button variant="brand" label="View Description" onclick={handleViewDescription}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+		</div>
+	</div> -->
+</template>

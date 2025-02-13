@@ -27,6 +27,18 @@
 				default="rgb(84, 105, 141)"
 				label="Header Color"
 			/>
+			<property
+				name="cardHeaderColor"
+				type="Color"
+				default="rgb(84, 105, 141)"
+				label="Card Header Color"
+			/>
+			<property
+				name="cardBodyBgColor"
+				type="Color"
+				default="rgb(235, 235, 235)"
+				label="Card Body Background Color"
+			/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

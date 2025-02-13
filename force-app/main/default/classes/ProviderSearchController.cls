@@ -26,7 +26,7 @@ public with sharing class ProviderSearchController {
 
         System.debug('QUERIED!!!' + searchQuery);
         
-        String query = 'SELECT Id, Name, Launchpad__Job_Description__c, Ages_Served__c, Grades_Served__c, Gender_Served__c, Interest_Areas__c, Program_Type__c, Launchpad__Account__r.BillingStreet, Launchpad__Account__r.BillingCity, Launchpad__Account__r.BillingState, Launchpad__Account__r.BillingPostalCode, Job_Site__r.BillingStreet, Job_Site__r.BillingCity, Job_Site__r.BillingState, Job_Site__r.BillingPostalCode FROM Launchpad__Job__c WHERE Program__r.Launchpad__Active__c = \'Yes\'' + searchQuery;
+        String query = 'SELECT Id, Name, Launchpad__Job_Description__c, Ages_Served__c, Grades_Served__c, Gender_Served__c, Interest_Areas__c, Program_Type__c, Launchpad__Account__r.Name, Launchpad__Account__r.BillingStreet, Launchpad__Account__r.BillingCity, Launchpad__Account__r.BillingState, Launchpad__Account__r.BillingPostalCode, Job_Site__r.BillingStreet, Job_Site__r.BillingCity, Job_Site__r.BillingState, Job_Site__r.BillingPostalCode FROM Launchpad__Job__c WHERE Program__r.Launchpad__Active__c = \'Yes\'' + searchQuery;
         System.debug('final query: ' + query);
         return Database.query(query, AccessLevel.USER_MODE);
     }
