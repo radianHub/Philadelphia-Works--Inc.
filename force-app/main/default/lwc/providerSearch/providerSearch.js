@@ -1,5 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import searchJobs from '@salesforce/apex/ProviderSearchController.searchJobs';
+import getFilterOptions from '@salesforce/apex/ProviderSearchController.getFilterOptions';
 
 // TODO: Make map modal configurable field set
 // TODO: Make card fields configurable via field set
@@ -28,7 +29,22 @@ export default class ProviderSearch extends LightningElement {
 	}
 
     connectedCallback() {
-        this.getPicklistValues();
+        // this.getPicklistValues();
+    }
+
+    @wire(getFilterOptions)
+    wiredOptions({ error, data }) {
+        if (data) {
+            console.log('fitlerOptions data', data);
+            this.ageOptions = data.ages;
+            this.genderOptions = data.genders;
+            this.gradeOptions = data.grades;
+            this.schoolOptions = data.schools;
+        } else if (error) {
+            console.error('getFilterOptions error', error);
+        } else {
+            console.log('NO DATA!');
+        }
     }
 
     @wire(searchJobs, { zipCode: '$zipCode', age: '$age', grade: '$grade', gender: '$gender', school: '$school' })
@@ -76,12 +92,15 @@ export default class ProviderSearch extends LightningElement {
     }
 
     handleClear(evt) {
-        console.log('handleClear', evt);
         this.zipCode = null;
         this.age = [];
         this.grade = [];
         this.gender = [];
         this.school = [];
+
+        this.template.querySelectorAll('c-multi-select-combobox').forEach(combobox => {
+            combobox.clear();
+        })
     }
 
     getPicklistValues() {

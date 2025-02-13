@@ -15,7 +15,6 @@
 			<lightning-input
 				name="zipcode"
 				label="Zip"
-				value={zipCode}
 				type="search"
 				onchange={handleChange}></lightning-input>
 		</lightning-layout-item>
@@ -25,7 +24,6 @@
 			<c-multi-select-combobox
 				label="Age"
 				name="age"
-				selected-items={age}
 				options={ageOptions}
 				onchange={handleMultiselectChange}></c-multi-select-combobox>
 		</lightning-layout-item>
@@ -35,7 +33,6 @@
 			<c-multi-select-combobox
 				label="Grade"
 				name="grade"
-				selected-items={grade}
 				options={gradeOptions}
 				onchange={handleMultiselectChange}></c-multi-select-combobox>
 		</lightning-layout-item>
@@ -45,7 +42,6 @@
 			<c-multi-select-combobox
 				label="Gender"
 				name="gender"
-				selected-items={gender}
 				options={genderOptions}
 				onchange={handleMultiselectChange}></c-multi-select-combobox>
 		</lightning-layout-item>
@@ -55,7 +51,6 @@
 			<c-multi-select-combobox
 				label="School"
 				name="school"
-				selected-items={school}
 				options={schoolOptions}
 				onchange={handleMultiselectChange}></c-multi-select-combobox>
 		</lightning-layout-item>

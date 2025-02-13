@@ -84,8 +84,8 @@ export default class MultiSelectCombobox extends LightningElement {
   @api showPills = false;
 
   @track currentOptions = [];
-  @api selectedItems = [];
   selectedOptions = [];
+  selectedItems = [];
   isInitialized = false;
   isLoaded = false;
   isVisible = false;
@@ -192,5 +192,11 @@ export default class MultiSelectCombobox extends LightningElement {
 
   getSelectedItems() {
     return this.currentOptions.filter((item) => item.selected);
+  }
+
+  @api 
+  clear() {
+    this.currentOptions.forEach((item) => (item.selected = false));
+    this.setSelection();
   }
 }
