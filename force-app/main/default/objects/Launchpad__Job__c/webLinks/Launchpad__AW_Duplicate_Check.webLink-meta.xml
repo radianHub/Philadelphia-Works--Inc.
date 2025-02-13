@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__AW_Duplicate_Check</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>[DEP] AW Duplicate Check</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR(&apos;/apex/awduplicate2__AWDuplicateCheck?ObjectName=Job__c&amp;Id=&apos;+Launchpad__Job__c.Id)}</url>
+</WebLink>
