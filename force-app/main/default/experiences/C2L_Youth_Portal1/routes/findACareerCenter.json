@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "5c3bf1c5-fb51-4dec-b7f7-62dcd84ba2d4",
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "configurationTags" : [ ],
+  "devName" : "Find_a_Career_Center",
+  "id" : "857bf37e-635a-4e7f-a806-04a6bbd3239f",
+  "label" : "Find a Career Center",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-Find a Career Center",
+  "type" : "route",
+  "urlPrefix" : "find-a-career-center"
+}

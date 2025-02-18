@@ -1,0 +1,28 @@
+.provider-tile-body-container {
+	height: 320px;
+	background-color: #ebebeb;
+	overflow-y: scroll;
+}
+
+.provider-tile {
+	--slds-c-card-radius-border: 0;
+	--slds-c-card-sizing-border: 0;
+	--slds-c-card-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.provider-tile-title-container {
+	white-space: normal;
+}
+
+.provider-tile-title {
+	font-weight: bold;
+}
+
+.provider-tile-subtitle {
+	font-weight: 100;
+	font-size: 14px;
+}
+
+.detail-label {
+	font-weight: bold;
+}
