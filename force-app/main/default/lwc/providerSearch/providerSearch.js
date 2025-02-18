@@ -4,7 +4,6 @@ import getFilterOptions from '@salesforce/apex/ProviderSearchController.getFilte
 
 // TODO: Make map modal configurable field set
 // TODO: Make card fields configurable via field set
-// TODO: Handle zero results found
 export default class ProviderSearch extends LightningElement {
     @api title;
     @api description;
@@ -29,13 +28,11 @@ export default class ProviderSearch extends LightningElement {
 	}
 
     connectedCallback() {
-        // this.getPicklistValues();
     }
 
     @wire(getFilterOptions)
     wiredOptions({ error, data }) {
         if (data) {
-            console.log('fitlerOptions data', data);
             this.ageOptions = data.ages;
             this.genderOptions = data.genders;
             this.gradeOptions = data.grades;
@@ -50,9 +47,7 @@ export default class ProviderSearch extends LightningElement {
     @wire(searchJobs, { zipCode: '$zipCode', age: '$age', grade: '$grade', gender: '$gender', school: '$school' })
     wiredJobs({ error, data }) {
         if (data) {
-            console.log('searchJobs data', data);
             this.providers = this.formatProviders(data);
-            console.log('providers', this.providers);
         } else if (error) {
             console.error('searchJobs error', error);
         } else {
@@ -61,7 +56,6 @@ export default class ProviderSearch extends LightningElement {
     }
 
     handleChange(evt) {
-        console.log('handleChange', evt);
         switch (evt.target.name) {
             case 'zipcode':
                 this.zipCode = evt.detail.value;
@@ -72,7 +66,6 @@ export default class ProviderSearch extends LightningElement {
     }
 
     handleMultiselectChange(evt) {
-        console.log('handleMultiselectChange', evt);
         switch (evt.detail.name) {
             case 'age':
                 this.age = evt.detail.value;
@@ -91,7 +84,7 @@ export default class ProviderSearch extends LightningElement {
         }
     }
 
-    handleClear(evt) {
+    handleClear() {
         this.zipCode = null;
         this.age = [];
         this.grade = [];
@@ -101,30 +94,6 @@ export default class ProviderSearch extends LightningElement {
         this.template.querySelectorAll('c-multi-select-combobox').forEach(combobox => {
             combobox.clear();
         })
-    }
-
-    getPicklistValues() {
-        // TODO: Get options from Job picklists
-        for (let i = 12; i < 24; i++) {
-            this.ageOptions.push({ label: `${i}`, value: `${i}` });
-        }
-
-        for (let i = 6; i < 12; i++) {
-            this.gradeOptions.push({ label: `${i}`, value: `${i}` });
-        }
-
-        this.genderOptions.push({
-            label: 'Male',
-            value: 'Male'
-        }, {
-            label: 'Female',
-            value: 'Female'
-        });
-
-        this.schoolOptions.push({
-            label: 'Test School',
-            value: 'Test School'
-        });
     }
 
     formatProviders(data) {
@@ -166,8 +135,8 @@ export default class ProviderSearch extends LightningElement {
                 })
             }
 
-            if (provider.Gender_Served__c) {
-                genderServed = this.formatMultiselectValue(provider.Gender_Served__c);
+            if (provider.Genders_Served__c) {
+                genderServed = this.formatMultiselectValue(provider.Genders_Served__c);
                 description += `\n<p><strong>Genders Served:</strong> ${genderServed}</p>`;
                 details.push({
                     label: 'Genders Served',

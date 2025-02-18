@@ -26,7 +26,8 @@ public with sharing class ProviderSearchController {
 
         System.debug('QUERIED!!!' + searchQuery);
         
-        String query = 'SELECT Id, Name, Launchpad__Job_Description__c, Ages_Served__c, Grades_Served__c, Gender_Served__c, Schools_Served__c, Interest_Areas__c, Program_Type__c, Launchpad__Account__r.Name, Launchpad__Account__r.BillingStreet, Launchpad__Account__r.BillingCity, Launchpad__Account__r.BillingState, Launchpad__Account__r.BillingPostalCode, Job_Site__r.BillingStreet, Job_Site__r.BillingCity, Job_Site__r.BillingState, Job_Site__r.BillingPostalCode FROM Launchpad__Job__c WHERE Program__r.Launchpad__Active__c = \'Yes\'' + searchQuery;
+        // TODO: Order by Name, sort job site last
+        String query = 'SELECT Id, Name, Launchpad__Job_Description__c, Ages_Served__c, Grades_Served__c, Genders_Served__c, Schools_Served__c, Interest_Areas__c, Program_Type__c, Launchpad__Account__r.Name, Launchpad__Account__r.BillingStreet, Launchpad__Account__r.BillingCity, Launchpad__Account__r.BillingState, Launchpad__Account__r.BillingPostalCode, Placement_Site__r.BillingStreet, Placement_Site__r.BillingCity, Placement_Site__r.BillingState, Placement_Site__r.BillingPostalCode FROM Launchpad__Job__c WHERE Program__r.Launchpad__Active__c = \'Yes\' AND Launchpad__Available_in_Community__c = TRUE' + searchQuery;
         System.debug('final query: ' + query);
         return Database.query(query, AccessLevel.USER_MODE);
     }
@@ -36,7 +37,7 @@ public with sharing class ProviderSearchController {
         Map<String, Object>  picklistValues = new Map<String, Object>();
         picklistValues.put('ages', getPicklistValues('Launchpad__Job__c', 'Ages_Served__c'));
         picklistValues.put('grades', getPicklistValues('Launchpad__Job__c', 'Grades_Served__c'));
-        picklistValues.put('genders', getPicklistValues('Launchpad__Job__c', 'Gender_Served__c'));
+        picklistValues.put('genders', getPicklistValues('Launchpad__Job__c', 'Genders_Served__c'));
         picklistValues.put('schools', getPicklistValues('Launchpad__Job__c', 'Schools_Served__c'));
         return picklistValues;
     }

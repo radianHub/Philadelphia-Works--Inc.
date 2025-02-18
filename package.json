@@ -13,7 +13,10 @@
     "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "postinstall": "husky install",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+		"data:seed:plan": "sf texei:data:plan:generate --objects Account,Launchpad__Program__c,Launchpad__Job__c --outputdir ./data/seed",
+		"data:seed:export": "sf texei data export --dataplan ./data/seed/data-plan.json --outputdir ./data/seed",
+		"data:seed:import": "sf texei data import --dataplan ./data/seed/data-plan.json --inputdir ./data/seed -a -i"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.1.2",

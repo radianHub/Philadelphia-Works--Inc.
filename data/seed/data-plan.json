@@ -1,0 +1,30 @@
+{
+  "excludedFields": [],
+  "lookupOverride": {},
+  "sObjects": [
+    {
+      "name": "Account",
+      "label": "",
+      "filters": "",
+      "orderBy": "",
+      "externalId": "",
+      "excludedFields": []
+    },
+    {
+      "name": "Launchpad__Program__c",
+      "label": "",
+      "filters": "",
+      "orderBy": "",
+      "externalId": "",
+      "excludedFields": []
+    },
+    {
+      "name": "Launchpad__Job__c",
+      "label": "",
+      "filters": "",
+      "orderBy": "",
+      "externalId": "",
+      "excludedFields": []
+    }
+  ]
+}

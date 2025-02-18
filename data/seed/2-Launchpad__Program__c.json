@@ -1,0 +1,30 @@
+{
+  "attributes": {
+    "type": "Launchpad__Program__c"
+  },
+  "records": [
+    {
+      "attributes": {
+        "type": "Launchpad__Program__c",
+        "referenceId": "ProgramRef1"
+      },
+      "Name": "C2L Summer 2025",
+      "Launchpad__Active__c": "Yes",
+      "Launchpad__Program_Family__c": null,
+      "Launchpad__Calculate_Funding__c": true,
+      "Launchpad__Description__c": null,
+      "Launchpad__Fieldset__c": null,
+      "Launchpad__Funds_Allowed__c": 0,
+      "Launchpad__Program_Year_End__c": "2025-09-01",
+      "Launchpad__Program_Year_Start__c": "2025-06-01",
+      "Launchpad__Services_Budget__c": 0,
+      "Launchpad__Services_Funds_Encumbered__c": 0,
+      "Launchpad__Services_Funds_Expended__c": 0,
+      "Launchpad__Total_Funds_Encumbered__c": 0,
+      "Launchpad__Total_Funds_Expended__c": 0,
+      "Launchpad__Training_Budget__c": 0,
+      "Launchpad__Training_Funds_Encumbered__c": 0,
+      "Launchpad__Training_Funds_Expended__c": 0
+    }
+  ]
+}
