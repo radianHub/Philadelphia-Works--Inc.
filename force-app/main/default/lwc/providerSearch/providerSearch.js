@@ -98,7 +98,7 @@ export default class ProviderSearch extends LightningElement {
 
     formatProviders(data) {
         return data.map(provider => {
-            const locationSource = provider.Job_Site__r ? 'Job_Site__r' : 'Launchpad__Account__r';
+            const locationSource = provider.Placement_Site__r ? 'Placement_Site__r' : 'Launchpad__Account__r';
             let description = `<p><strong>Description:</strong> ${provider.Launchpad__Job_Description__c}</p>`
             let agesServed = '';
             let genderServed = '';
@@ -107,6 +107,11 @@ export default class ProviderSearch extends LightningElement {
             let programType = '';
             let interestAreas = '';
             let details = [];
+
+            details.push({
+                label: 'Address',
+                value: `${provider[locationSource].BillingStreet}, ${provider[locationSource].BillingCity}, ${provider[locationSource].BillingState} ${provider[locationSource].BillingPostalCode}`
+            })
 
             if (provider.Ages_Served__c) {
                 agesServed = this.formatMultiselectValue(provider.Ages_Served__c)
