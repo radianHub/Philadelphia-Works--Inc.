@@ -299,6 +299,10 @@
                 <behavior>Edit</behavior>
                 <field>Clearance_Run_on_Justifacts__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Applicant_s_Age_at_Start_of_Program__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
