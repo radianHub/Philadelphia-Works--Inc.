@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Abraham Lincoln High School</fullName>
+        <default>false</default>
+        <label>Abraham Lincoln High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Academy at Palumbo</fullName>
+        <default>false</default>
+        <label>Academy at Palumbo</label>
+    </customValue>
+    <customValue>
+        <fullName>AMY at James Martin</fullName>
+        <default>false</default>
+        <label>AMY at James Martin</label>
+    </customValue>
+    <customValue>
+        <fullName>AMY Northwest</fullName>
+        <default>false</default>
+        <label>AMY Northwest</label>
+    </customValue>
+    <customValue>
+        <fullName>Austin Meehan Middle School</fullName>
+        <default>false</default>
+        <label>Austin Meehan Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Baldi Middle School</fullName>
+        <default>false</default>
+        <label>Baldi Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Benjamin Franklin High School</fullName>
+        <default>false</default>
+        <label>Benjamin Franklin High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Bodine High School for International Affairs</fullName>
+        <default>false</default>
+        <label>Bodine High School for International Affairs</label>
+    </customValue>
+    <customValue>
+        <fullName>Carver High School for Engineering and Science</fullName>
+        <default>false</default>
+        <label>Carver High School for Engineering and Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Castor Gardens Middle School</fullName>
+        <default>false</default>
+        <label>Castor Gardens Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Central High School</fullName>
+        <default>false</default>
+        <label>Central High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Crossroads Accelerated Academy</fullName>
+        <default>false</default>
+        <label>Crossroads Accelerated Academy</label>
+    </customValue>
+    <customValue>
+        <fullName>Feltonville Arts &amp; Sciences School</fullName>
+        <default>false</default>
+        <label>Feltonville Arts &amp; Sciences School</label>
+    </customValue>
+    <customValue>
+        <fullName>Frankford High School</fullName>
+        <default>false</default>
+        <label>Frankford High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Franklin Learning Center</fullName>
+        <default>false</default>
+        <label>Franklin Learning Center</label>
+    </customValue>
+    <customValue>
+        <fullName>General Louis Wagner Middle School</fullName>
+        <default>false</default>
+        <label>General Louis Wagner Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>George Washington High School</fullName>
+        <default>false</default>
+        <label>George Washington High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Girard Academic Music Program (GAMP)</fullName>
+        <default>false</default>
+        <label>Girard Academic Music Program (GAMP)</label>
+    </customValue>
+    <customValue>
+        <fullName>Grover Jr. Washington Middle School</fullName>
+        <default>false</default>
+        <label>Grover Jr. Washington Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Hill-Freedman World Academy</fullName>
+        <default>false</default>
+        <label>Hill-Freedman World Academy</label>
+    </customValue>
+    <customValue>
+        <fullName>Hill-Freedman World Academy High School</fullName>
+        <default>false</default>
+        <label>Hill-Freedman World Academy High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Horace Furness High School</fullName>
+        <default>false</default>
+        <label>Horace Furness High School</label>
+    </customValue>
+    <customValue>
+        <fullName>John Bartram High School</fullName>
+        <default>false</default>
+        <label>John Bartram High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Julia R. Masterman School</fullName>
+        <default>false</default>
+        <label>Julia R. Masterman School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kensington Creative &amp; Performing Arts High School</fullName>
+        <default>false</default>
+        <label>Kensington Creative &amp; Performing Arts High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kensington Health Sciences Academy High School</fullName>
+        <default>false</default>
+        <label>Kensington Health Sciences Academy High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kensington High School</fullName>
+        <default>false</default>
+        <label>Kensington High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Martin Luther King High School</fullName>
+        <default>false</default>
+        <label>Martin Luther King High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle Years Alternative (MYA)</fullName>
+        <default>false</default>
+        <label>Middle Years Alternative (MYA)</label>
+    </customValue>
+    <customValue>
+        <fullName>Northeast High School</fullName>
+        <default>false</default>
+        <label>Northeast High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Overbrook High School</fullName>
+        <default>false</default>
+        <label>Overbrook High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Penn Treaty School</fullName>
+        <default>false</default>
+        <label>Penn Treaty School</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia High School for Creative and Performing Arts (CAPA)</fullName>
+        <default>false</default>
+        <label>Philadelphia High School for Creative and Performing Arts (CAPA)</label>
+    </customValue>
+    <customValue>
+        <fullName>Roberto Clemente Middle School</fullName>
+        <default>false</default>
+        <label>Roberto Clemente Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Roxborough High School</fullName>
+        <default>false</default>
+        <label>Roxborough High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Russell Conwell Magnet Middle School</fullName>
+        <default>false</default>
+        <label>Russell Conwell Magnet Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Samuel Fels High School</fullName>
+        <default>false</default>
+        <label>Samuel Fels High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Science Leadership Academy Middle School (SLA-MS)</fullName>
+        <default>false</default>
+        <label>Science Leadership Academy Middle School (SLA-MS)</label>
+    </customValue>
+    <customValue>
+        <fullName>South Philadelphia High School</fullName>
+        <default>false</default>
+        <label>South Philadelphia High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Strawberry Mansion High School</fullName>
+        <default>false</default>
+        <label>Strawberry Mansion High School</label>
+    </customValue>
+    <customValue>
+        <fullName>The Arts Academy at Benjamin Rush</fullName>
+        <default>false</default>
+        <label>The Arts Academy at Benjamin Rush</label>
+    </customValue>
+    <customValue>
+        <fullName>Thomas A. Edison High School</fullName>
+        <default>false</default>
+        <label>Thomas A. Edison High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Warren G. Harding Middle School</fullName>
+        <default>false</default>
+        <label>Warren G. Harding Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>West Philadelphia High School</fullName>
+        <default>false</default>
+        <label>West Philadelphia High School</label>
+    </customValue>
+    <customValue>
+        <fullName>William L. Sayre High School</fullName>
+        <default>false</default>
+        <label>William L. Sayre High School</label>
+    </customValue>
+    <customValue>
+        <fullName>William T. Tilden Middle School</fullName>
+        <default>false</default>
+        <label>William T. Tilden Middle School</label>
+    </customValue>
+    <masterLabel>Schools</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
