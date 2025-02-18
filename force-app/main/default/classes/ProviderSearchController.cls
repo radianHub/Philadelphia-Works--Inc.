@@ -5,30 +5,26 @@ public with sharing class ProviderSearchController {
 
         if (zipCode != null) {
             zipCode = '%' + zipCode + '%';
-            searchQuery = ' AND Job_Site_Address__c LIKE :zipCode';
+            searchQuery += ' AND (Job_Site_Address__c LIKE :zipCode OR (Job_Site_Address__c = NULL AND Launchpad__Account_Address__c LIKE :zipCode))';
         }
 
         if (age != null && !age.isEmpty()) {
-            searchQuery = ' AND Ages_Served__c INCLUDES (' + getMultiselectString(age) + ')';
+            searchQuery += ' AND (Ages_Served__c INCLUDES (' + getMultiselectString(age) + ') OR Ages_Served__c = NULL)';
         }
 
         if (grade != null && !grade.isEmpty()) {
-            searchQuery = ' AND Grades_Served__c INCLUDES (' + getMultiselectString(grade) + ')';
-        }
-
-        if (school != null && !school.isEmpty()) {
-            searchQuery = ' AND Schools_Served__c INCLUDES (' + getMultiselectString(school) + ')';
+            searchQuery += ' AND (Grades_Served__c INCLUDES (' + getMultiselectString(grade) + ') OR Grades_Served__c = NULL)';
         }
 
         if (gender != null && !gender.isEmpty()) {
-            searchQuery = ' AND Genders_Served__c INCLUDES (' + getMultiselectString(gender) + ')';
+            searchQuery += ' AND (Genders_Served__c INCLUDES (' + getMultiselectString(gender) + ') OR Genders_Served__c = NULL)';
         }
 
-        System.debug('QUERIED!!!' + searchQuery);
+        if (school != null && !school.isEmpty()) {
+            searchQuery += ' AND (Schools_Served__c INCLUDES (' + getMultiselectString(school) + ') OR Schools_Served__c = NULL)';
+        }
         
-        // TODO: Order by Name, sort job site last
-        String query = 'SELECT Id, Name, Launchpad__Job_Description__c, Ages_Served__c, Grades_Served__c, Genders_Served__c, Schools_Served__c, Interest_Areas__c, Program_Type__c, Launchpad__Account__r.Name, Launchpad__Account__r.BillingStreet, Launchpad__Account__r.BillingCity, Launchpad__Account__r.BillingState, Launchpad__Account__r.BillingPostalCode, Placement_Site__r.BillingStreet, Placement_Site__r.BillingCity, Placement_Site__r.BillingState, Placement_Site__r.BillingPostalCode FROM Launchpad__Job__c WHERE Program__r.Launchpad__Active__c = \'Yes\' AND Launchpad__Available_in_Community__c = TRUE' + searchQuery;
-        System.debug('final query: ' + query);
+        String query = 'SELECT Id, Name, Launchpad__Job_Description__c, Ages_Served__c, Grades_Served__c, Genders_Served__c, Schools_Served__c, Interest_Areas__c, Program_Type__c, Launchpad__Account__r.Name, Launchpad__Account__r.BillingStreet, Launchpad__Account__r.BillingCity, Launchpad__Account__r.BillingState, Launchpad__Account__r.BillingPostalCode, Placement_Site__r.BillingStreet, Placement_Site__r.BillingCity, Placement_Site__r.BillingState, Placement_Site__r.BillingPostalCode FROM Launchpad__Job__c WHERE Program__r.Launchpad__Active__c = \'Yes\' AND Launchpad__Available_in_Community__c = TRUE' + searchQuery + ' ORDER BY Name ASC, Job_Site_Address__c ASC NULLS LAST';
         return Database.query(query, AccessLevel.USER_MODE);
     }
 
