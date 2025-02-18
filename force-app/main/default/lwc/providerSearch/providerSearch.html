@@ -1,0 +1,93 @@
+<template>
+	<h2
+		class="title"
+		style={headerStyle}>
+		{title}
+	</h2>
+	<p class="description slds-var-m-bottom_large">{description}</p>
+	<lightning-layout
+		class="filter-container slds-var-p-around_medium slds-var-m-bottom_medium"
+		multiple-rows="true"
+		vertical-align="end">
+		<lightning-layout-item
+			padding="around-small"
+			flexibility="auto">
+			<lightning-input
+				name="zipcode"
+				label="Zip"
+				type="search"
+				onchange={handleChange}></lightning-input>
+		</lightning-layout-item>
+		<lightning-layout-item
+			padding="around-small"
+			flexibility="auto">
+			<c-multi-select-combobox
+				label="Age"
+				name="age"
+				options={ageOptions}
+				onchange={handleMultiselectChange}></c-multi-select-combobox>
+		</lightning-layout-item>
+		<lightning-layout-item
+			padding="around-small"
+			flexibility="auto">
+			<c-multi-select-combobox
+				label="Grade"
+				name="grade"
+				options={gradeOptions}
+				onchange={handleMultiselectChange}></c-multi-select-combobox>
+		</lightning-layout-item>
+		<lightning-layout-item
+			padding="around-small"
+			flexibility="auto">
+			<c-multi-select-combobox
+				label="Gender"
+				name="gender"
+				options={genderOptions}
+				onchange={handleMultiselectChange}></c-multi-select-combobox>
+		</lightning-layout-item>
+		<lightning-layout-item
+			padding="around-small"
+			flexibility="auto">
+			<c-multi-select-combobox
+				label="School"
+				name="school"
+				options={schoolOptions}
+				onchange={handleMultiselectChange}></c-multi-select-combobox>
+		</lightning-layout-item>
+		<lightning-layout-item
+			padding="around-small"
+			alignment-bump="left">
+			<lightning-button
+				label="Clear Filters"
+				onclick={handleClear}></lightning-button>
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<c-provider-map providers={providers}></c-provider-map>
+
+	<lightning-layout
+		class="slds-var-m-bottom_medium"
+        horizontal-align="spread"
+        pull-to-boundary="small"
+		multiple-rows="true">
+		<template
+			for:each={providers}
+			for:item="provider">
+			<lightning-layout-item
+				size="12"
+                padding="around-small"
+				small-device-size="12"
+				medium-device-size="6"
+				large-device-size="4"
+				key={provider.id}>
+				<c-provider-tile
+					title={provider.title}
+					subtitle={provider.subtitle}
+					description={provider.richDescription}
+					details={provider.details}
+					card-header-color={cardHeaderColor}
+					card-body-bg-color={cardBodyBgColor}></c-provider-tile>
+			</lightning-layout-item>
+		</template>
+	</lightning-layout>
+</template>
