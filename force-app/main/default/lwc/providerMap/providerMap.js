@@ -16,12 +16,28 @@ import { LightningElement, api } from 'lwc';
  *              Street: '2910 South Street',
  *              PostalCode: '19146',
  *          },
- *          description: '<p><strong>Description:</strong> Provider 1 Description</p>',
+ *          details: [{
+ * 				label: 'Ages Served',
+ * 				value: '14, 15, 16'
+ * 		    }]
  *      }
  * ]
  */
 export default class ProviderMap extends LightningElement {
-	@api providers;
+	_providers;
+	@api get providers() {
+		return this._providers;
+	}
+	set providers(value) {
+		this._providers = JSON.parse(JSON.stringify(value)).map((provider) => {
+			provider.description = provider.details
+				.map((detail) => {
+					return `<p><strong>${detail.label}</strong>: ${detail.value}</p>`;
+				})
+				.join('\n');
+			return provider;
+		});
+	}
 	selectedMarkerValue;
 
 	connectedCallback() {

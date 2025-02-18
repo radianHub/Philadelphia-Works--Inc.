@@ -4,6 +4,7 @@ import getFilterOptions from '@salesforce/apex/ProviderSearchController.getFilte
 
 // TODO: Make map modal configurable field set
 // TODO: Make card fields configurable via field set
+// TODO: Make Schools accounts instead of picklist
 export default class ProviderSearch extends LightningElement {
     @api title;
     @api description;
@@ -99,7 +100,6 @@ export default class ProviderSearch extends LightningElement {
     formatProviders(data) {
         return data.map(provider => {
             const locationSource = provider.Placement_Site__r ? 'Placement_Site__r' : 'Launchpad__Account__r';
-            let description = `<p><strong>Description:</strong> ${provider.Launchpad__Job_Description__c}</p>`
             let agesServed = '';
             let genderServed = '';
             let gradesServed = '';
@@ -115,7 +115,6 @@ export default class ProviderSearch extends LightningElement {
 
             if (provider.Ages_Served__c) {
                 agesServed = this.formatMultiselectValue(provider.Ages_Served__c)
-                description += `\n<p><strong>Ages Served:</strong> ${agesServed}</p>`;
                 details.push({
                     label: 'Ages Served',
                     value: agesServed
@@ -124,7 +123,6 @@ export default class ProviderSearch extends LightningElement {
 
             if (provider.Grades_Served__c) {
                 gradesServed = this.formatMultiselectValue(provider.Grades_Served__c)
-                description += `\n<p><strong>Ages Served:</strong> ${gradesServed}</p>`;
                 details.push({
                     label: 'Grades Served',
                     value: gradesServed
@@ -133,7 +131,6 @@ export default class ProviderSearch extends LightningElement {
 
             if (provider.Schools_Served__c) {
                 schoolsServed = this.formatMultiselectValue(provider.Schools_Served__c)
-                description += `\n<p><strong>Ages Served:</strong> ${schoolsServed}</p>`;
                 details.push({
                     label: 'Schools Served',
                     value: schoolsServed
@@ -142,7 +139,6 @@ export default class ProviderSearch extends LightningElement {
 
             if (provider.Genders_Served__c) {
                 genderServed = this.formatMultiselectValue(provider.Genders_Served__c);
-                description += `\n<p><strong>Genders Served:</strong> ${genderServed}</p>`;
                 details.push({
                     label: 'Genders Served',
                     value: genderServed
@@ -151,7 +147,6 @@ export default class ProviderSearch extends LightningElement {
 
             if (provider.Program_Type__c) {
                 programType = this.formatMultiselectValue(provider.Program_Type__c)
-                description += `\n<p><strong>Program Type:</strong> ${programType}</p>`;
                 details.push({
                     label: 'Program Type',
                     value: programType
@@ -160,7 +155,6 @@ export default class ProviderSearch extends LightningElement {
 
             if (provider.Interest_Areas__c) {
                 interestAreas = this.formatMultiselectValue(provider.Interest_Areas__c);
-                description += `\n<p><strong>Interest Areas:</strong> ${interestAreas}</p>`;
                 details.push({
                     label: 'Interest Areas',
                     value: interestAreas
@@ -185,7 +179,6 @@ export default class ProviderSearch extends LightningElement {
                     PostalCode: provider[locationSource].BillingPostalCode,
                     Country: 'USA',
                 },
-                description,
                 details
             }
         });
