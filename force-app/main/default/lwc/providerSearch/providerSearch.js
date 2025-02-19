@@ -11,6 +11,7 @@ export default class ProviderSearch extends LightningElement {
     @api headerColor;
     @api cardHeaderColor;
     @api cardBodyBgColor;
+    hasLoaded;
 
     providers = [];
     ageOptions = [];
@@ -28,7 +29,8 @@ export default class ProviderSearch extends LightningElement {
 		return this.headerColor ? 'color:' + this.headerColor : 'color:rgb(84, 105, 141)';
 	}
 
-    connectedCallback() {
+    get hasProviders() {
+        return this.providers.length > 0;
     }
 
     @wire(getFilterOptions)
@@ -40,19 +42,17 @@ export default class ProviderSearch extends LightningElement {
             this.schoolOptions = data.schools;
         } else if (error) {
             console.error('getFilterOptions error', error);
-        } else {
-            console.log('NO DATA!');
         }
     }
 
     @wire(searchJobs, { zipCode: '$zipCode', age: '$age', grade: '$grade', gender: '$gender', school: '$school' })
     wiredJobs({ error, data }) {
         if (data) {
+            this.hasLoaded = true;
             this.providers = this.formatProviders(data);
         } else if (error) {
+            this.hasLoaded = true;
             console.error('searchJobs error', error);
-        } else {
-            console.log('NO DATA!');
         }
     }
 
