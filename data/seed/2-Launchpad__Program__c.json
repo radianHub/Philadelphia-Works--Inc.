@@ -9,6 +9,7 @@
         "referenceId": "ProgramRef1"
       },
       "Name": "C2L Summer 2025",
+      "RecordTypeId": null,
       "Launchpad__Active__c": "Yes",
       "Launchpad__Program_Family__c": null,
       "Launchpad__Calculate_Funding__c": true,
