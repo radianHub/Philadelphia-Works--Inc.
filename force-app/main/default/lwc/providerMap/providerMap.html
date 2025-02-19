@@ -1,0 +1,13 @@
+<template>
+	<div class="slds-grid slds-wrap">
+		<div class="slds-col slds-size_1-of-1">
+			<lightning-map
+                class="slds-border_top slds-border_right slds-border_bottom slds-border_left"
+				markers-title="Programs"
+				map-markers={providers}
+				onmarkerselect={handleMarkerSelect}
+				selected-marker-value={selectedMarkerValue}
+				list-view="visible"></lightning-map>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,73 @@
+{
+  "appPageId" : "5a625d2e-ed26-4456-93df-02a84c199279",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "545e423c-7acb-40dc-b6af-69d3086616eb",
+  "label" : "Login",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.LaunchpadLogo.1}\"></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "bb1f64e8-c0f1-4a54-a4ed-9b92a48beda0",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "defaultTilebackgroundColor" : "rgb(8, 92, 160)",
+        "description" : "Please select one of the options below",
+        "footer" : "If you are having trouble logging in or need help, call us at (888)888-8888",
+        "forgotpasswordlabel" : "Please click here if you forgot your password",
+        "header" : "Account Log In",
+        "headerColor" : "rgb(84, 105, 141)",
+        "invalidInputErrorMessage" : "The email or password you entered does not match our records. Please try again.",
+        "loginButtonLabel" : "Log In",
+        "passwordLoginLabel" : "Please enter your Password",
+        "redirectURLForgotPassword" : "/Employer/s/login/ForgotPassword",
+        "redirectURLtile1" : "",
+        "redirectURLtile2" : "/Employer/s/login/SelfRegister",
+        "redirectURLtile3" : "/Employer/s/login/SelfRegister",
+        "selectedtileColor" : "rgb(134, 136, 141)",
+        "showTile1" : true,
+        "showTile1Login" : true,
+        "showTile2" : true,
+        "showTile2Login" : false,
+        "showTile3" : true,
+        "showTile3Login" : false,
+        "tileColor" : "rgb(255, 255, 255)",
+        "tiletitle1" : "Login to my Account",
+        "tiletitle2" : "Create a new Account",
+        "tiletitle3" : "I don't know if I have an Account",
+        "usernameLoginLabel" : "Please enter your Email Address"
+      },
+      "componentName" : "LaunchpadCo:lexLoginComponent",
+      "id" : "f454d86e-fbb3-40de-b425-5a0c934d7049",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e0a8998f-3cbb-43df-8215-3dced49c1319",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Login"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "a65fb351-e0bd-4728-85aa-fc434863c0e7",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "63f0d614-11e6-448d-b3d1-40d89891ee21",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Login",
+  "type" : "view",
+  "viewType" : "login-home"
+}

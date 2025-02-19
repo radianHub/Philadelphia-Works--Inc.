@@ -1,0 +1,87 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "3915eb5f-d60b-4091-ba4e-c94a26623c4a",
+  "label" : "My Registered Events",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "6db6e8e1-adcd-4c76-99b6-591be5690794",
+          "columns" : [ {
+            "UUID" : "d2aef155-5031-4e32-b8e5-9c38b6e3d897",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "6db6e8e1-adcd-4c76-99b6-591be5690794",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "availableinCommunityEventPage" : "Launchpad__Enrolled_via_Community__c",
+            "cancelRegistrationButtonLabel" : "Cancel",
+            "cancelRegistrationRedirectUrl" : "/Employer/s/my-registered-events",
+            "cancellationMessage" : "Your Registration has been Cancelled",
+            "closeButtonLabel" : "Close",
+            "communityPriorityEvent" : "Launchpad__Community_Priority_Event__c",
+            "description" : "The Events below are ones you have Registered for. Any On Demand Video you have watched will also be stored here.",
+            "downloadDocuments" : "Download Documents",
+            "eventTileFooterColor" : "rgb(180, 188, 201)",
+            "eventTileHeaderColor" : "rgb(235, 235, 235)",
+            "header" : "Your Registered Events",
+            "headerColor" : "rgb(84, 105, 141)",
+            "noeventsmessage" : "You have not Registered for any Events. Please click the 'Search for Events' Button.",
+            "redirectEventButtonLabel" : "Search Events",
+            "redirectEventButtonRedirectUrl" : "/Employer/s/events",
+            "showRedirectEventButton" : true,
+            "viewDetailEventButtonLabel" : "View Details",
+            "watchVideoEventButtonLabel" : "Watch Video"
+          },
+          "componentName" : "LaunchpadCo:lexMyRegisteredEvents",
+          "id" : "c8a919bf-3a66-4351-8841-32f6097860aa",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "d2aef155-5031-4e32-b8e5-9c38b6e3d897",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cc0b4a58-4034-478c-8e3a-337af467ab06",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Registered Events"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "2c3419f9-d6ef-4be7-ae3d-03a3a72e34bb",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "5d4d4cfc-5bc8-4898-8768-0d9d7dfa1f0f",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Registered Events"
+}

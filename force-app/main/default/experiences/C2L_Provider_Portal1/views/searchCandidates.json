@@ -1,0 +1,81 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "150e3e4f-8c7d-4bb8-9787-90d25a5ca128",
+  "label" : "Search Candidates",
+  "regions" : [ {
+    "id" : "db09ed4d-2973-47cb-bfec-887fbda894ce",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "appliedCandidateButtonLabel" : "Already Contacted",
+        "applyCandidateButtonLabel" : "Contact Job Seeker",
+        "candidateMatchesHeader" : "These are Candidates that match your jobs!",
+        "candidateMatchesSubHeader" : "Candidates match based on the Job Skills selected. Not finding the right match? Go to “My Jobs” to update Skills.",
+        "candidateTileFooterColor" : "rgb(180, 188, 201)",
+        "candidateTileHeaderColor" : "rgb(235, 235, 235)",
+        "candidatesHeader" : "Candidates",
+        "candidatesSubHeader" : "Check out the Candidates and contact them now!",
+        "clearFilterLabel" : "Reset Search",
+        "contactCandidateHeader" : "Want to Contact the Job Seeker?",
+        "contactCandidatePlaceholderText" : "Type here...",
+        "contactCandidateSubtext" : "You can send an email to the job seeker from here.",
+        "description" : "Find Candidates who are ready to work!",
+        "enableSearch" : true,
+        "filterHeader" : "Search for Candidates",
+        "header" : "Candidate Search",
+        "headerColor" : "rgb(84, 105, 141)",
+        "minimumSearchCharacters" : 2,
+        "minimumSearchCharactersErrorHeader" : "Search Term Error",
+        "minimumSearchCharactersErrorMessage" : "The search term entered is too short. Please use more characters in the search bar.",
+        "myCandidatesMatchScoreLabel" : "Candidate Match Score",
+        "noResultsMessage" : "We are sorry but your Search did not return any results.  Please click “Clear Filters” and try again.",
+        "onetCodeBtnLabel" : "ONET Code",
+        "otherCandidatesHeader" : "Other Candidates",
+        "otherCandidatesSubHeader" : "Find a Candidate who is ready to work!",
+        "redirectCandidateButtonLabel" : "View My Candidates",
+        "searchBtnLabel" : "Search Candidates",
+        "searchFilterFields" : "Title,Name,Launchpad__Certifications__c,Launchpad__Industries__c,Launchpad__Desired_Position__c,Email,Launchpad__CIF_Cultural_Barriers__c,Launchpad__Wage_Desired__c,Launchpad__Industries__c",
+        "searchInputLabel" : "Search by Titles, Skills or Keyword",
+        "showApplyCandidateButton" : true,
+        "showRedirectCandidateButton" : true,
+        "skillPillColor" : "rgb(255, 255, 255)",
+        "skillPillFontColor" : "rgb(255, 255, 255)",
+        "viewDetailsButtonLabel" : "View Details"
+      },
+      "componentName" : "LaunchpadCo:lexCandidateSearchAura",
+      "id" : "2279a243-c7ca-4b94-935a-5b821ae55343",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c2b954ec-40da-4197-9490-a3c9838771cf",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "5ba7b454-d5a3-42ea-b632-24a0e13262c3",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Search Candidates"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "951a50b6-a595-41ce-a5f7-67ef198bf240",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4438dafd-f607-48a9-82f9-acdbdb39d234",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-Search Candidates"
+}

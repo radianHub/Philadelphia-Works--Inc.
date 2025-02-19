@@ -3,7 +3,7 @@
     <fullName>Youth_Need_Support_Assistance__c</fullName>
     <externalId>false</externalId>
     <inlineHelpText>Does the youth need support or assistance?</inlineHelpText>
-    <label>\Youth Need Support/Assistance?</label>
+    <label>Youth Need Support/Assistance?</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
