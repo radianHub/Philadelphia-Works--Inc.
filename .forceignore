@@ -4,6 +4,16 @@
 
 package.xml
 
+# These metadata files are ignored when promoting (deploying)
+**/layouts/**
+**/profiles/**
+**/permissionsets/**
+
+# These metadata files are ignored when pulling (retrieving)
+*.layout
+*.profile
+*.permissionset
+
 # LWC configuration files
 **/jsconfig.json
 **/.eslintrc.json
