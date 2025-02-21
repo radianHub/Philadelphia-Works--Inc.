@@ -1,0 +1,166 @@
+{
+  "activeBrandingSetId" : "60aaa59a-27c1-4d66-8254-986322efdcd2",
+  "customCSS" : "",
+  "developerName" : "Employer",
+  "id" : "a47b1b86-eae5-4b3d-98c3-0ac6c39fc8d4",
+  "label" : "Employer",
+  "layouts" : {
+    "Inner" : "ad20776e-bc2e-476d-b621-2c297eb50f09",
+    "Login" : "6a4941a2-a2c9-4753-939b-2afcac90e9a8",
+    "ServiceNotAvailable" : "0ba67c79-fac4-4443-9f93-3ebdecfe2c78"
+  },
+  "type" : "theme",
+  "views" : [ {
+    "componentAttributes" : { },
+    "componentName" : "salesforceIdentity:loginBody2",
+    "id" : "6a4941a2-a2c9-4753-939b-2afcac90e9a8",
+    "label" : "LaunchpadCo__Employer_themeLayout_Login",
+    "regions" : [ {
+      "id" : "a70e49e5-15c6-44dd-93a2-a67b8d77060b",
+      "regionName" : "header",
+      "type" : "region"
+    }, {
+      "id" : "07126e46-0286-4289-84ae-e15b950a95a3",
+      "regionName" : "content",
+      "type" : "region"
+    }, {
+      "id" : "dd7f9df3-de84-4868-8aac-8d5e6df31366",
+      "regionName" : "footer",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  }, {
+    "componentAttributes" : {
+      "fixedPageWidth" : 1440,
+      "headerBgColor" : "rgba(0, 0, 0, 0)",
+      "isHeaderPinned" : false,
+      "isHeroUnderHeader" : false,
+      "isPageWidthFixed" : true,
+      "showHeader" : true,
+      "showHero" : true
+    },
+    "componentName" : "siteforce:themeLayoutStarter",
+    "id" : "0ba67c79-fac4-4443-9f93-3ebdecfe2c78",
+    "label" : "LaunchpadCo__Employer_themeLayout_ServiceNotAvailable",
+    "regions" : [ {
+      "id" : "7f2e5301-584b-4d6f-bb1e-0a334d808d43",
+      "regionName" : "themeHeader",
+      "type" : "region"
+    }, {
+      "id" : "a8706e82-2362-49cf-a051-bdff96261646",
+      "regionName" : "themeFooter",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  }, {
+    "componentAttributes" : {
+      "fixedPageWidth" : 1440,
+      "headerBgColor" : "rgba(255, 255, 255, 0.8)",
+      "isHeaderPinned" : false,
+      "isHeroUnderHeader" : false,
+      "isPageWidthFixed" : true,
+      "showHeader" : true,
+      "showHero" : false
+    },
+    "componentName" : "siteforce:themeLayoutStarter",
+    "id" : "ad20776e-bc2e-476d-b621-2c297eb50f09",
+    "label" : "LaunchpadCo__Employer_themeLayout_Default",
+    "regions" : [ {
+      "components" : [ {
+        "componentAttributes" : {
+          "background" : "background: rgb(255,255,255)",
+          "backgroundOverlayColor" : "rgba(0, 0, 0, 0.3)",
+          "borderBottomColor" : "rgba(0, 15, 89, 0.8)",
+          "borderTopColor" : "rgba(0, 15, 89, 0.8)",
+          "bottomRowHeight" : 5,
+          "bottomRowOverlayColor" : "rgb(84, 105, 141)",
+          "containHeader" : true,
+          "containHeaderWidth" : 1440,
+          "dropdownBackgroundColor" : "rgb(255, 255, 255)",
+          "dropdownBackgroundHoverColor" : "",
+          "dropdownBorderColor" : "rgb(240, 240, 240)",
+          "dropdownTextColor" : "",
+          "dropdownTextHoverColor" : "",
+          "iconLinkColor" : "rgb(255, 255, 255)",
+          "iconLinkHoverColor" : "rgba(255, 255, 255, 0.9)",
+          "iconLinkTextShadowColor" : "rgba(0, 0, 0, 0.5)",
+          "linkActiveBorderColor" : "",
+          "linkColor" : "rgb(255, 255, 255)",
+          "linkHoverColor" : "rgba(255, 255, 255, 0.9)",
+          "linkTextShadowColor" : "rgba(0, 0, 0, 0.5)",
+          "logoWidth" : 100,
+          "searchPosition" : "right",
+          "searchStyle" : "expanded",
+          "showAppLauncher" : false,
+          "showNotifications" : false,
+          "showProfileMenu" : true,
+          "showSearch" : false,
+          "topRowHeight" : 20
+        },
+        "componentName" : "forceCommunity:themeHeaderStacked",
+        "id" : "bc609f0b-7f12-46dc-b912-d4655c423795",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "98b86b5d-265d-4869-b421-b18c10e972b2",
+      "regionName" : "themeHeader",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "bgImage" : "background: rgb(241,241,241)",
+          "bgOverlayColor" : "rgba(0, 0, 0, 0.2)",
+          "captionText" : "Caption Content",
+          "captionTextColor" : "rgba(0, 0, 0, 0.8)",
+          "captionTextShadowColor" : "rgba(0, 0, 0, 0)",
+          "contentAlignment" : "center",
+          "contentWidth" : 45,
+          "ctaBtnOneBgColor" : "",
+          "ctaBtnOneBgHoverColor" : "",
+          "ctaBtnOneBorderColor" : "rgba(0, 0, 0, 0)",
+          "ctaBtnOneOpenNewTab" : false,
+          "ctaBtnOneText" : "Primary",
+          "ctaBtnOneTextColor" : "",
+          "ctaBtnOneTextHoverColor" : "",
+          "ctaBtnOneUrl" : "",
+          "ctaBtnRadius" : 4,
+          "ctaBtnTwoBgColor" : "rgba(255, 255, 255, 0)",
+          "ctaBtnTwoBgHoverColor" : "rgba(255, 255, 255, 0.9)",
+          "ctaBtnTwoBorderColor" : "rgba(0, 0, 0, 0.8)",
+          "ctaBtnTwoOpenNewTab" : false,
+          "ctaBtnTwoText" : "Secondary",
+          "ctaBtnTwoTextColor" : "rgba(0, 0, 0, 0.8)",
+          "ctaBtnTwoTextHoverColor" : "rgba(0, 0, 0, 0.8)",
+          "ctaBtnTwoUrl" : "",
+          "ctaShowBtnOne" : true,
+          "ctaShowBtnTwo" : true,
+          "fixedHeroWidth" : true,
+          "heroHeight" : 80,
+          "heroWidth" : 1440,
+          "showCaption" : true,
+          "showSubtitle" : true,
+          "showTitle" : true,
+          "subtitleText" : "Subtitle Content",
+          "subtitleTextColor" : "rgba(0, 0, 0, 0.8)",
+          "subtitleTextShadowColor" : "rgba(0, 0, 0, 0)",
+          "titleText" : "Title Content",
+          "titleTextColor" : "rgba(0, 0, 0, 0.8)",
+          "titleTextShadowColor" : "rgba(0, 0, 0, 0)",
+          "type" : "callToAction"
+        },
+        "componentName" : "forceCommunity:themeHeroStarter",
+        "id" : "3855f7c7-a02d-4809-a0dd-c6294cc2ce00",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "675d5445-b345-4926-b29e-5145fe44c804",
+      "regionName" : "themeHero",
+      "type" : "region"
+    }, {
+      "id" : "f3709fe2-cb49-406b-b65d-2167ac64f405",
+      "regionName" : "themeFooter",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  } ]
+}

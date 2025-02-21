@@ -1,0 +1,102 @@
+{
+  "appPageId" : "5a625d2e-ed26-4456-93df-02a84c199279",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "21311868-7715-4489-a747-99fc19e12c12",
+  "label" : "Register",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "Descriptioncolor" : "rgba(0, 0, 0, 0.8)",
+        "Headercolor" : "rgb(84, 105, 141)",
+        "Page1Description" : "Please provide your Contact information so we can check and see if you already have an Account",
+        "Page1Header" : "Let's Get Started",
+        "Page2Description" : "Let’s get you signed up!  It will only take you a few minutes to finish the form.  Hover over the \"i\" icon for more information about each question.",
+        "Page2Header" : "Account Sign Up",
+        "accountrecordtypeassignment" : "Employer",
+        "attestationheader" : "AUTHORIZATION, WAIVER AND RELEASE FOR USE OF PERSONAL INFORMATION",
+        "authorizationChbkLabel" : "Please click here to accept the Authorization & Waiver",
+        "authorizationChbkLabelshow" : true,
+        "authorizationcheckboxlabel" : "I have read and voluntarily sign this Authorization, Waiver, and Release.",
+        "authorizationiagreebuttonlabel" : "I Agree",
+        "confirmPasswordLabel" : "Please Confirm Your Password",
+        "contactrecordtypeassignment" : "Employer",
+        "existingAccountMessage" : "It looks like your account is already in our system, please click \"Login to my Account\" and then click \"Forgot Your Password\" to reset your password. If that doesn't work, call us at (888)888-8888 M-F between 8AM and 5PM.",
+        "existingActiveUserMessage" : "It looks like your email is already in our system, please click \"Login to my Account\" and then click \"Forgot Your Password\" to reset your password. If that doesn't work, call us at (888)888-8888 M-F between 8AM and 5PM.",
+        "existingContactMessage" : "It looks like your email is already in our system, please click \"Login to my Account\" and then click \"Forgot Your Password\" to reset your password. If that doesn't work, call us at (888)888-8888 M-F between 8AM and 5PM.",
+        "footer" : "If you are having trouble logging in or need help, call us at (888)888-8888.",
+        "minimumMaximumAgeerrorMessage" : "Birthdate must be between {0} and  {1}.",
+        "nextStepBtn" : "Click to Continue",
+        "passwordLabel" : "Please Set Your Password",
+        "passwordMismatchError" : "Password and Confirm Password do not match.  Please re-enter.",
+        "passwordSectionTitle" : "Set Up Your Password",
+        "pattern" : ".{9,}",
+        "patternMessage" : "Your Password must be  at least 9 characters",
+        "redirectURlLogin" : "/Employer/s/login",
+        "registerBtn" : "Register",
+        "requiredFieldMessage" : "Please fill out all required fields",
+        "requiredFieldMsg" : "Please update this Field",
+        "step1of2" : "Step 1 of 2",
+        "step2of2" : "Step 2 of 2"
+      },
+      "componentName" : "LaunchpadCo:lexSelfRegistrationBodyAura",
+      "id" : "f985d6b9-48f3-416b-a5af-f99b467b79a9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "55eef287-5d73-4d86-86e0-5c5cc8b42b0a",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Register"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "9ef669e3-d506-4256-8d53-44c7133f0239",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7c16663e-ed09-4c21-8786-3c9f49a81b57",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "loginButtonLabel" : "Login to my Account",
+        "loginUrl" : "/LaborExchange/s/login",
+        "staticResource" : "LECommunityLogo"
+      },
+      "componentName" : "LaunchpadCo:lexSelfRegistrationHeader",
+      "id" : "ddcdbdf1-2984-42db-846c-47ed8f9c4021",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c9e4eb4b-5a58-4b79-afbd-ca298b8051db",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "fd130bec-d682-49a4-9929-83799c306258",
+    "regionName" : "featured",
+    "type" : "region"
+  }, {
+    "id" : "10b9df76-2330-4ede-a9ac-3f0df6134cb0",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "6be0df46-2848-4ee8-9b18-88967d00d1e0",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "id" : "9d382dcf-6f42-457c-bb55-d58c93c56939",
+    "regionName" : "sidebarAlt",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Login",
+  "type" : "view",
+  "viewType" : "self-register"
+}
