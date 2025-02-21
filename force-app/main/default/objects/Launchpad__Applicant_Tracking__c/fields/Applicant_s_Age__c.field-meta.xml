@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicant_s_Age__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT( ISBLANK( Applicant_s_Date_of_Birth_MM_DD_YYYY__c) ) ,
+  IF( DATE( 2000 , MONTH( Applicant_s_Date_of_Birth_MM_DD_YYYY__c) , DAY( Applicant_s_Date_of_Birth_MM_DD_YYYY__c ) ) &lt;= DATE( 2000 , MONTH( TODAY() ) , DAY( TODAY() ) ),
+     YEAR (Today()) - YEAR ( Applicant_s_Date_of_Birth_MM_DD_YYYY__c ),
+     YEAR (Today()) - YEAR ( Applicant_s_Date_of_Birth_MM_DD_YYYY__c ) -1 ),
+  null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Applicant&apos;s Age</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
