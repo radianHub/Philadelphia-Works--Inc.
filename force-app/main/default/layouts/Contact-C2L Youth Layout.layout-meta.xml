@@ -201,6 +201,10 @@
                 <behavior>Edit</behavior>
                 <field>Youth_Involved_With_CPS_DHS__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Priority_Population__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
