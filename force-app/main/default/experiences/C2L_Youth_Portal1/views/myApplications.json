@@ -1,0 +1,139 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ab52801a-1e97-4d9c-b607-6813db0ad9e9",
+  "label" : "My Applications",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "contactUsButtonLabel" : "Contact Career Coach",
+        "contactUsCancelButtonLabel" : "Cancel",
+        "contactUsDescription" : "A Career Coach will contact you within 2 business days",
+        "contactUsHeader" : "What message would you like to send to your Career Coach?",
+        "contactUsPlaceholderText" : "Please type your message here......",
+        "contactUsSubmitButtonLabel" : "Send Message",
+        "contactUsSuccessMessage" : "Request Sent to Career Coach",
+        "description" : "View the current status for all the Jobs you have expressed interest in",
+        "header" : "My Submitted Job Applications",
+        "headerColor" : "rgb(84, 105, 141)",
+        "noJobApplicationMessage" : "You have not submitted any Job Applications",
+        "redirectButtonLabel" : "Click here to Search for Jobs",
+        "redirectButtonRedirectUrl" : "/Participants/s/job-search",
+        "showContactUsButton" : true,
+        "showRedirectButton" : true
+      },
+      "componentName" : "Launchpad:pcMyApplicationsAura",
+      "id" : "ebe33704-3ab0-48a0-a48f-f6ba09a2caca",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "7b59e062-b43d-4658-aad5-c65248304e79",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "b2cac63d-2602-4921-a4e4-3e9dfcd6db6e",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Rank 1"
+          }, {
+            "UUID" : "364d8d4b-31d6-415e-8865-368e9e5db544",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "2",
+            "tabName" : "Tab 2"
+          }, {
+            "UUID" : "8d94e6a7-1dfe-42b0-aa78-7f4fcbe56620",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "3",
+            "tabName" : "Tab 3"
+          } ],
+          "useOverflowMenu" : true
+        }
+      },
+      "componentName" : "forceCommunity:tabLayout",
+      "id" : "7b59e062-b43d-4658-aad5-c65248304e79",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "enableInlineEdit" : true,
+            "filterName" : "Employer_Accounts",
+            "layout" : "FULL",
+            "pageSize" : 25,
+            "scope" : "Account",
+            "showActionBar" : true,
+            "showChartsPanel" : true,
+            "showDisplay" : "showall",
+            "showFilterPanel" : true,
+            "showImageIcon" : true,
+            "showManualRefreshButton" : true,
+            "showObjectName" : true,
+            "showPinnedList" : true,
+            "showSearchBar" : true
+          },
+          "componentName" : "forceCommunity:objectHome",
+          "id" : "a927adf1-c862-4a13-9039-b1d6fc1056a4",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "b2cac63d-2602-4921-a4e4-3e9dfcd6db6e",
+        "regionLabel" : "Rank 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "364d8d4b-31d6-415e-8865-368e9e5db544",
+        "regionLabel" : "Tab 2",
+        "regionName" : "2",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "8d94e6a7-1dfe-42b0-aa78-7f4fcbe56620",
+        "regionLabel" : "Tab 3",
+        "regionName" : "3",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "04bfa665-0764-470d-8f5b-b1629df0f04c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "34a0cd8a-a5a0-4a53-984f-a36754e3c2a3",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "1bc07280-ca14-41f8-b0b9-ff8ed980c3dc",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Applications"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "e6a0062d-b604-4e44-b159-7a0d6c722271",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0c0f5407-bc6b-4ac7-8ec5-a7b724a348d7",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Applications"
+}

@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "8f9c4252-39c2-416f-8626-c370135b8a59",
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "configurationTags" : [ ],
+  "devName" : "Job_Search",
+  "id" : "29e5f8c5-6ec2-4767-8b36-fd06ab0eceb6",
+  "label" : "Job Search",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-Job Search",
+  "type" : "route",
+  "urlPrefix" : "job-search"
+}
