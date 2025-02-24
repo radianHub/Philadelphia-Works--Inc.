@@ -9,6 +9,16 @@
                 <lightning-layout-item size="12">
                     <lightning-layout>
                         <lightning-layout-item size="4">
+                            <span class="detail-label">Address</span>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                            <span>{address}</span>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <lightning-layout>
+                        <lightning-layout-item size="4">
                             <span class="detail-label">Description</span>
                         </lightning-layout-item>
                         <lightning-layout-item size="8">
@@ -27,7 +37,7 @@
                             </lightning-layout-item>
                             <lightning-layout-item size="8">
                                 <span>{item.value}</span>
-                            </lightning-layout-item>        
+                            </lightning-layout-item>
                         </lightning-layout>
                     </lightning-layout-item>
                 </template>
