@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "0c725c98-250b-41a6-9b03-90041c209701",
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "configurationTags" : [ ],
+  "devName" : "My_Hires",
+  "id" : "c939d2cd-9e13-4241-b130-c11f902a6716",
+  "label" : "My Hires",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-My Hires",
+  "type" : "route",
+  "urlPrefix" : "my-hires"
+}

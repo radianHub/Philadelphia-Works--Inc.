@@ -1,0 +1,76 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ff544f52-822f-4ad9-b375-59aa406c8964",
+  "label" : "Events",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "alreadyRegisteredEventButtonLabel" : "Already Registered!",
+        "applyFilter" : "Apply Filter",
+        "availableinCommunityEventPage" : "Launchpad__Available_in_Community_Events_Page__c",
+        "clearFilterLabel" : "Clear Filters",
+        "communityPriorityEvent" : "Launchpad__Community_Priority_Event__c",
+        "description" : "Build your Job Search skills with our on demand workshops (recorded workshop videos you can watch any time) and                  schedule workshops (live, scheduled webinars where you can questions and discuss ideas).                  Please select the workshops you would like to attend below.",
+        "downloadDocuments" : "Download Documents",
+        "eventTileFooterColor" : "rgb(88, 119, 169)",
+        "eventTileHeaderColor" : "rgb(235, 235, 235)",
+        "filterApplied" : "Filter Applied",
+        "filterHeader" : "Search for Events using filters",
+        "filterHelp" : "Use filter options to narrow your results.  Once selected, Click \"Submit Search\".  Click \"Clear Filters\" to remove all added filters.",
+        "header" : "Events, Workshops & On Demand Videos",
+        "headerColor" : "rgb(84, 105, 141)",
+        "noResultMessage" : "We are sorry but your Search Filter(s) did not return any results.  Please click \"Clear Filters\" and try again.",
+        "redirectEventButtonDescription" : "View or change your registrations by clicking \"My Registered Workshops\".",
+        "redirectEventButtonLabel" : "View My Registered Workshops",
+        "redirectEventButtonRedirectUrl" : "/Participants/s/my-registered-workshops",
+        "registerEventButtonLabel" : "Register",
+        "registerEventRedirectUrl" : "/Participants/s/my-registered-workshops",
+        "registerEventSuccessMessage" : "You have been Successfully Registered for the Event!",
+        "searchBtnLabel" : "Submit Search",
+        "searchFilterFields" : "Launchpad__Event_Type__c, Launchpad__Type__c, Launchpad__Workshop_Topics__c, Name, Launchpad__Long_Description_for_Community__c, Launchpad__Short_Description_for_Community__c, Launchpad__Venue__c, Launchpad__Location_Street__c, Launchpad__Location_City__c, Launchpad__Location_Zip_Code__c",
+        "searchInputLabel" : "Search By Title, Description or Location",
+        "showRadiusSearch" : true,
+        "showRedirectEventButton" : true,
+        "startDateInputLabel" : "Start Date",
+        "viewDetailsEventButtonLabel" : "",
+        "watchVideoEventButtonLabel" : "Watch Video"
+      },
+      "componentName" : "Launchpad:pcEventsAura",
+      "id" : "9802e08e-f69c-4a00-8b23-fe32cfcb1449",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cb6bb5e6-4e6e-48fa-9255-a8a624bd0cd2",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "91dc5f34-8b75-4c2a-837f-1b5fcf809636",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "065a431e-6a1b-49b5-8e7d-a250b07093e5",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Events"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "e978d945-37fa-48e0-a8ff-de257956d570",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a8e2d987-ab19-47cd-a567-f6b43f99d4ee",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-Events"
+}

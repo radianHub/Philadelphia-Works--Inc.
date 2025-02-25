@@ -1,0 +1,79 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "7e7c9e64-5a19-4458-b8d1-c76f494736b3",
+  "label" : "My Saved Jobs",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "appliedJobButtonLabel" : "Already Applied",
+        "applyJobButtonLabel" : "Submit Application",
+        "availableinCommunityJobSearchPage" : "Launchpad__Available_in_Community_Saved_Jobs_Page__c",
+        "backToJobSearchButtonLabel" : "Go to My Applications",
+        "communityPriorityJob" : "Launchpad__Community_Priority_Job__c",
+        "description" : "Check out the Jobs that you have Saved.  Click \"Submit Application\" to move forward!",
+        "doNotAttachResumeLabel" : "I do not have a Resume",
+        "fileNameLabel" : "File",
+        "header" : "My Saved Jobs",
+        "headerColor" : "rgb(84, 105, 141)",
+        "jobTileFooterColor" : "rgb(88, 119, 169)",
+        "jobTileHeaderColor" : "rgb(235, 235, 235)",
+        "myJobsMatchScoreLabel" : "Your Match Score",
+        "nosavedJobsMessage" : "You currently do not have any Saved Jobs.  Please Click the \"Click here to Search for Jobs\" to check out open Positions.",
+        "redirectJobButtonLabel" : "Click here to Search for Jobs",
+        "redirectJobButtonRedirectUrl" : "/Participants/s/job-search",
+        "removeJobButtonLabel" : "Remove Job",
+        "removeJobReturnUrl" : "/Participants/s/my-saved-jobs",
+        "selectFromComputerLabel" : "Select a File From Your Computer",
+        "selectFromResumeList" : "Select a File From Your Resume List",
+        "selectResumeErrorMessage" : "In order to submit your Application, you must make a selection for the Resume.",
+        "selectResumeLabel" : "Select Resume",
+        "showRedirectJobButton" : true,
+        "skillPillColor" : "rgb(8, 92, 160)",
+        "submitJobAppReturnUrl" : "/Participants/s/my-applications",
+        "submitJobButtonLabel" : "Submit Application",
+        "successMessage" : "We will call you within next 2 business days",
+        "successMessageHeader" : "Thank You For Your Interest in This Job!",
+        "uploadResumeDescription" : "Please attach your Resume here.  Cover Letter is optional. If you wish to attach both, please attach Resume and Cover Letter as one file.",
+        "uploadResumeFieldLabel" : "Upload Resume",
+        "uploadResumeTitle" : "Please upload Your Resume",
+        "viewDetailsButtonLabel" : "View Details"
+      },
+      "componentName" : "Launchpad:pcMySavedJobsAura",
+      "id" : "e74a8e7d-21b4-4c47-b0c8-c5f6427bb4ce",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "97e16127-7221-494b-a7b5-933362bc95cd",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "77429397-8e58-4196-991d-8409c217182b",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "4be4a30a-f515-41da-807e-98cfaeddf30b",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Saved Jobs"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "95c79daa-e0ca-46c7-b26e-307174d2a231",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "38c8b7e3-bd72-4cbb-90eb-de168423c55e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Saved Jobs"
+}

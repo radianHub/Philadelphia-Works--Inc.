@@ -653,6 +653,18 @@
                 <identifier>RecordYouth_Need_Support_Assistance__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Priority_Population__c</fieldItem>
+                <identifier>RecordPriority_Population__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Enrollment__c</fieldItem>
+                <identifier>RecordEnrollment__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-47396b09-68af-4166-943f-4fca64ddb4d8</name>
         <type>Facet</type>
     </flexiPageRegions>
