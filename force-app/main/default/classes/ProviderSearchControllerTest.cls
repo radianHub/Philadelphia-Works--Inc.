@@ -81,11 +81,11 @@ private class ProviderSearchControllerTest {
 		);
         jobs.add(
 			new Launchpad__Job__c(
-				Name = 'Test Job Grade 9',
+				Name = 'Test Job Name Search',
 				Launchpad__Account__c = accounts[0].Id,
 				Launchpad__Available_in_Community__c = true,
 				Program__c = program.Id,
-				Launchpad__Job_Description__c = 'Test Description 1',
+				Launchpad__Job_Description__c = 'Test Description 4',
 				Ages_Served__c = '13;14',
 				Grades_Served__c = '9;10',
                 Schools_Served__c = 'AMY Northwest',
@@ -95,90 +95,60 @@ private class ProviderSearchControllerTest {
 		insert jobs;
 	}
 
-	@isTest
-	static void testSearchByAge() {
-		List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobs(
-			null,
-			new List<String>{ '12' },
-			null,
-			null,
-			null
-		);
-		Assert.areEqual(1, jobs.size());
-		Assert.areEqual('Test Job 1', jobs[0].Name);
-	}
-
-    @isTest
-	static void testSearchByGrade() {
-		List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobs(
-			null,
-			null,
-			new List<String>{ '9' },
-			null,
-			null
-		);
-		Assert.areEqual(1, jobs.size());
-		Assert.areEqual('Test Job Grade 9', jobs[0].Name);
-	}
-
-    @isTest
-	static void testSearchBySchool() {
-		List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobs(
-			null,
-			null,
-			null,
-			null,
-			new List<String>{ 'AMY at James Martin' }
-		);
-		Assert.areEqual(1, jobs.size());
-		Assert.areEqual('Test Job AMY at James Martin', jobs[0].Name);
-	}
-
-    @isTest
-	static void testSearchByGender() {
-		List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobs(
-			null,
-			null,
-			null,
-			new List<String>{ 'Female' },
-			null
-		);
-		Assert.areEqual(1, jobs.size());
-		Assert.areEqual('Test Job Females', jobs[0].Name);
-	}
-
-    @isTest
+    @IsTest
     static void testSearchByZipCode() {
-        List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobs(
+		Test.startTest();
+        List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobsDynamic(
             '19104',
             null,
             null,
-            null,
-            null
+			null
         );
+		Test.stopTest();
         Assert.areEqual(1, jobs.size());
         Assert.areEqual('Test Job Zip 19104', jobs[0].Name);
     }
 
-    @isTest
-    static void testSearchByGradeAndAge() {
-        List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobs(
-            null,
-            new List<String>{ '13' },
-            new List<String>{ '6' },
-            null,
-            null
-        );
-        Assert.areEqual(1, jobs.size());
-        Assert.areEqual('Test Job 3', jobs[0].Name);
-    }
-
-	@isTest
-	static void testGetFilterOptions() {
-		Map<String, Object> filterOptions = ProviderSearchController.getFilterOptions();
-		Assert.isTrue(filterOptions.containsKey('ages'));
-		Assert.isTrue(filterOptions.containsKey('grades'));
-		Assert.isTrue(filterOptions.containsKey('genders'));
-		Assert.isTrue(filterOptions.containsKey('schools'));
+	@IsTest
+	static void testSearchByJobSiteAddress() {
+		Test.startTest();
+		List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobsDynamic(
+				null,
+				null,
+				new Map<String, String>{
+						'Name' => 'Test Job Name'
+				},
+				null
+		);
+		Test.stopTest();
+		Assert.areEqual(1, jobs.size());
+		Assert.areEqual('Test Job Name Search', jobs[0].Name);
 	}
+
+	@IsTest
+	static void testSearchByGradeAndAge() {
+		Test.startTest();
+		List<Launchpad__Job__c> jobs = ProviderSearchController.searchJobsDynamic(
+				null,
+				new List<String>{ 'Ages_Served__c', 'Grades_Served__c' },
+				null,
+				new Map<String, String[]>{
+						'Ages_Served__c' => new String[]{ '12' },
+						'Grades_Served__c' => new String[]{ '7', '8' }
+				}
+		);
+		Test.stopTest();
+		Assert.areEqual(1, jobs.size());
+		Assert.areEqual('Test Job 1', jobs[0].Name);
+	}
+
+	@IsTest
+	static void testGettingFieldSetMembers() {
+		Test.startTest();
+		ProviderSearchController.FieldData[] fieldData =
+				ProviderSearchController.getJobFieldSetMembers('Launchpad__Advanced_Job_Search_Filters');
+		Test.stopTest();
+		Assert.isTrue(!fieldData.isEmpty());
+	}
+
 }

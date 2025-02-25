@@ -23,6 +23,7 @@ export default class ProviderTile extends LightningElement {
 	@api title;
     @api subtitle;
 	@api description;
+	@api address
 	@api details;
 	@api cardHeaderColor;
 	@api cardBodyBgColor;

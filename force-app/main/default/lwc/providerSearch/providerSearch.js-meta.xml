@@ -21,6 +21,20 @@
 				label="Description"
 				default="Find a program that fits your needs."
 			/>
+			<property
+				name="searchFiltersFieldSetApiName"
+				type="String"
+				label="Search Filters Field Set API Name"
+				placeholder="Search_Filters_Field_Set"
+				description="Field Set API Name of search filter fields from Launchpad__Job__c object"
+			/>
+			<property
+				name="detailsFieldSetApiName"
+				type="String"
+				label="Details Field Set API Name"
+				placeholder="Details_Field_Set"
+				description="Field Set API Name of detail fields from Launchpad__Job__c object"
+			/>
             <property
 				name="headerColor"
 				type="Color"
