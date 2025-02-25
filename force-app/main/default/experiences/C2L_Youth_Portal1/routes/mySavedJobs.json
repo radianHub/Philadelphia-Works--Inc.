@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "7e7c9e64-5a19-4458-b8d1-c76f494736b3",
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "configurationTags" : [ ],
+  "devName" : "My_Saved_Jobs",
+  "id" : "1c29adcf-1de1-41f0-9c44-35751edf4c3d",
+  "label" : "My Saved Jobs",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-My Saved Jobs",
+  "type" : "route",
+  "urlPrefix" : "my-saved-jobs"
+}

@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Hire</fullName>
+    <active>false</active>
+    <description>For recording hire and placement information</description>
+    <label>Hire</label>
+    <picklistValues>
+        <picklist>Applicant_Blind_Difficulty_Seeing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_CPS_DHS__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Deaf_Difficulty_Hearing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Foster_Care__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not under 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Involved_in_Justice_System__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Medical_Conditions__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Mental_Disability_Diagnosis__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Mental_Health_Diagnosis__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Need_Support_Assistance__c</picklist>
+        <values>
+            <fullName>Access to Food</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employment or Job development services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical or Dental Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mental health services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service coordination and Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service coordination or Support services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Substance use services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Country_of_Nationality__c</picklist>
+        <values>
+            <fullName>Canda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United States</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Current_Employment_Status__c</picklist>
+        <values>
+            <fullName>Employed Full-Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employed Part-Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full-Time Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of the work force</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unemployed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unpaid volunteer or peer work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Current_Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Binary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Internet_Connectivity__c</picklist>
+        <values>
+            <fullName>Does not have internet connectivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Has access to the internet at home through a fixed connection e%2Eg%2E%2C DSL%2C fiber%2C cable%2C etc%2E%2C satellite%2C fixed wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Has access to the internet in public spaces e%2Eg%2E%2C library%2C businesses%2C school%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Has access to the internet primarily through a phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Last_Completed_Grade__c</picklist>
+        <values>
+            <fullName>10th</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11th</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12th or High School Diploma obtained</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6th</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7th</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8th</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9th</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Associate Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bachelor%E2%80%99s Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GED %28or other HS equivalent%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master%E2%80%99s Degree and above</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Some college or technical school</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Monthly_Gross_Income__c</picklist>
+        <values>
+            <fullName>%241%2C000 to %241%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241%2C500 to %241%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100 to %24499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C000 to %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500 to %242%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%243%2C000 to %243%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%243%2C500 to %243%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%244%2C000 to %244%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%244%2C500 to %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000 to %245%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500 to %24999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Less than %24100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More than %245%2C500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Income</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Preferred_Pronoun__c</picklist>
+        <values>
+            <fullName>He%2FHim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>She%2FHer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>They%2FThem</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Primary_Language__c</picklist>
+        <values>
+            <fullName>Albanian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Sign Language %28ASL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amharic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arabic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bengali</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burmese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cambodian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chinese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Croatian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dari</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farsi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hebrew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hindi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Italian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Karen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kinyarwanda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korean</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lao</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malayalam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malayan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nepali</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pashtu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portuguese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swahili</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tagalog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tigrinya</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ukrainian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urdu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vietnamese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yiddish</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Sex_Assigned_at_Birth__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearance_Requested_Through_Justifacts__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearance_Result__c</picklist>
+        <values>
+            <fullName>Cleared</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Not Cleared</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearance_Run_on_Justifacts__c</picklist>
+        <values>
+            <fullName>No%2C upload on the Placement Site Information Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Consent_to_Request_Clearance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Living_Situation__c</picklist>
+        <values>
+            <fullName>Apartment or house that you own</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency shelter%2C not a hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foster care home or foster care group home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Homeless%2FPlace not meant for human habitation%2C such as a vehicle%2C abandoned building%2C or outside</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital%2C institution%2C long-term care facility%2C or substance abuse treatment%2Fdetox center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jail%2C prison%2C or juvenile detention facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None %28Default%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other hotel or motel - paid for without emergency shelter voucher or rental subsidy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permanent Supportive Housing Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room%2C apartment%2C or house that you rent%3B not affiliated with a supportive housing program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Room Occupancy in hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staying or living in someone else%E2%80%99s room%2C apartment%2C or house</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transitional Supportive Housing Program</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_Applicant_Need_Clearances__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_the_Youth_s_Partner_Live_With_Them__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_this_Youth_TANF_Eligible__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Benefits_Effective__c</picklist>
+        <values>
+            <fullName>After 30 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 90 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immediately</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Employment_Type__c</picklist>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Time Permanent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Time Temporary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Part Time Permanent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Part Time Temporary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seasonal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temp to Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youth Employment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Pay_Period__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biweekly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hourly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Reason_Given__c</picklist>
+        <values>
+            <fullName>Late to interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mistakes during interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No-show to interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Org culture mismatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overqualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skills mismatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Underqualified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Result__c</picklist>
+        <values>
+            <fullName>Hired</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Stage__c</picklist>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Parent_Primary_Caregiver_of_Child_ren__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Parent_s_Consent__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Provider_Rank__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Race_and_or_Ethnicity__c</picklist>
+        <values>
+            <fullName>American Indian or Alaska Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hispanic or LatinX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern or North African</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiracial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native Hawaiian or Pacific Islander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stipend_Type__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_Governmental_Benefits_Does__c</picklist>
+        <values>
+            <fullName>Food Stamps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicaid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None of the above</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSI or SSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TANF</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_is_the_Applicant_s_Current_Relation__c</picklist>
+        <values>
+            <fullName>Divorced or Separated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Married or Domestic partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Widowed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

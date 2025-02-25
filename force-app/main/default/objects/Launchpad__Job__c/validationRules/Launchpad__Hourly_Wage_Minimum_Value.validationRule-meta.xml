@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Hourly_Wage_Minimum_Value</fullName>
+    <active>true</active>
+    <description>Hourly Wage Minimum should be less than Hourly Wage Maximum.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Launchpad__Hourly_Wage_Minimum__c)),
+    Launchpad__Hourly_Wage_Minimum__c &gt;  Launchpad__Hourly_Wage_Maximum__c)</errorConditionFormula>
+    <errorMessage>Hourly Wage Minimum should be less than Hourly Wage Maximum.</errorMessage>
+</ValidationRule>

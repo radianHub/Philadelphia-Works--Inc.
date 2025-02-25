@@ -1,0 +1,11 @@
+{
+  "cmsSettings" : { },
+  "currentThemeId" : "26148d90-e01e-4aaa-89cd-4f5f83f772f0",
+  "headMarkup" : "<script>\n    document.addEventListener(\"DOMContentLoaded\", function(event) { \n        const logoDiv = document.getElementsByClassName(\"forceCommunityThemeLogo\");\n        const infoTextElement = document.getElementById(\"infoText\");\n        if(logoDiv !== undefined && logoDiv.length > 0 && infoTextElement === null) {\n            logoDiv[0].parentElement.insertAdjacentHTML(\"afterend\", '<div class=\"themeLogo\" id=\"infoText\">Need Help? Call&nbsp; <b>(888)888-8888</b></div>');\n        }\n        });\n</script>",
+  "id" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "isLockerServiceEnabled" : true,
+  "isRelaxedCSPLevel" : true,
+  "label" : "main",
+  "templateName" : "Employer",
+  "type" : "appPage"
+}

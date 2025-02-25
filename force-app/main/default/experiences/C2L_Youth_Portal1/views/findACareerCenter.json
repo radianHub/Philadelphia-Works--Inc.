@@ -1,0 +1,64 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "5c3bf1c5-fb51-4dec-b7f7-62dcd84ba2d4",
+  "label" : "Find a Career Center",
+  "regions" : [ {
+    "id" : "ec59f5db-c5b5-44a6-adaf-eedcbcc4a34d",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "eca6f2db-fb50-484c-9a24-16cf199b7e02",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "accAddress" : "ShippingAddress",
+        "careercenterlocationsheader" : "Select 1 of our Career Center Locations",
+        "conAddress" : "MailingAddress",
+        "confirmationPopupCancelButton" : "Change Selection",
+        "confirmationPopupHeader" : "Confirm Career Center Selection",
+        "confirmationPopupSelectButton" : "Select Career Center",
+        "confirmationPopupdescription" : "Are you sure you want to select the Career Center below?",
+        "description" : "Please select a Career Center most convenient for you. Career Centers are listed in order from closest to your address to furthest away. After you make a selection, a Career Center staff member will reach out to you within two business days to discuss services.",
+        "header" : "Please Select Your Local Career Center",
+        "headerColor" : "rgb(84, 105, 141)",
+        "participantRestrictionErrorMessage" : "You have either already selected your Career Center or you need to update your Address in the \"My Profile\" Tab.",
+        "participantRestrictionErrorMessageAddress" : "In order to select a Career Center, please update your Address by clicking on the \"My Profile\" Tab.",
+        "selectbuttonlabel" : "Select Career Center",
+        "successPopupDescription" : "A Career Center staff member will reach out to you within 2 business days.",
+        "successPopupHeader" : "You have selected a Career Center!",
+        "successPopupRedirectButton" : "Back To Home",
+        "successPopupRedirectURLSuccess" : "/Participants/s/home"
+      },
+      "componentName" : "Launchpad:pcFindCareerCenter",
+      "id" : "f5a1f2e7-00d3-43bf-a3ae-fa2f57a14a11",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f6d51efd-d1b6-4b18-a63a-57ffb8051a3c",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Find a Career Center"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "1965d1f2-2fef-498e-aab8-bd2777b38598",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "16c7dc16-f2b3-4d32-ba08-8a74dc4bcd9f",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-Find a Career Center"
+}

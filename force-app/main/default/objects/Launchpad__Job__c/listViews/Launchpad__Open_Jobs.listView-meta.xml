@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Open_Jobs</fullName>
+    <columns>NAME</columns>
+    <columns>Launchpad__Account__c</columns>
+    <columns>Launchpad__Employment_Type__c</columns>
+    <columns>Launchpad__Closing_Date__c</columns>
+    <columns>Launchpad__Stage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Launchpad__Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Placement,Closed/Lost</value>
+    </filters>
+    <label>Open Jobs</label>
+</ListView>
