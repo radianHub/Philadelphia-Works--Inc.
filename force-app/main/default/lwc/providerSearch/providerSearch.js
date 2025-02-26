@@ -1,30 +1,27 @@
 import { LightningElement, api, wire } from 'lwc';
-import searchJobs from '@salesforce/apex/ProviderSearchController.searchJobs';
-import getFilterOptions from '@salesforce/apex/ProviderSearchController.getFilterOptions';
+import searchJobsDynamic from '@salesforce/apex/ProviderSearchController.searchJobsDynamic';
+import getJobFieldSetData from '@salesforce/apex/ProviderSearchController.getJobFieldSetMembers';
 
-// TODO: Make map modal configurable field set
-// TODO: Make card fields configurable via field set
-// TODO: Make Schools accounts instead of picklist
 export default class ProviderSearch extends LightningElement {
 	@api title;
 	@api description;
+	@api searchFiltersFieldSetApiName;
+	@api detailsFieldSetApiName;
 	@api headerColor;
 	@api cardHeaderColor;
 	@api cardBodyBgColor;
 	hasLoaded;
-    timeout;
+	timeout;
+	isLoading = true;
 
 	providers = [];
-	ageOptions = [];
-	gradeOptions = [];
-	genderOptions = [];
-	schoolOptions = [];
-
+	mapProviders = [];
 	zipCode = null;
-	age = [];
-	grade = [];
-	school = [];
-	gender = [];
+	searchFiltersFieldData = [];
+	detailsFieldData = [];
+	detailsFieldApiNames = [];
+	textFiltersSelected = {};
+	picklistFiltersSelected = {};
 
 	get headerStyle() {
 		return this.headerColor ? 'color:' + this.headerColor : 'color:rgb(84, 105, 141)';
@@ -34,178 +31,147 @@ export default class ProviderSearch extends LightningElement {
 		return this.providers.length > 0;
 	}
 
-	@wire(getFilterOptions)
-	wiredOptions({ error, data }) {
-		if (data) {
-			this.ageOptions = data.ages;
-			this.genderOptions = data.genders;
-			this.gradeOptions = data.grades;
-			this.schoolOptions = data.schools;
-		} else if (error) {
-			console.error('getFilterOptions error', error);
+	connectedCallback() {
+		if (this.searchFiltersFieldSetApiName) {
+			this.getSearchFiltersFieldData();
+		}
+		if (this.detailsFieldSetApiName) {
+			this.getDetailsFieldData();
 		}
 	}
 
-	@wire(searchJobs, { zipCode: '$zipCode', age: '$age', grade: '$grade', gender: '$gender', school: '$school' })
+	async getSearchFiltersFieldData() {
+		try {
+			const fieldData = await getJobFieldSetData({ fieldSetName: this.searchFiltersFieldSetApiName });
+			this.searchFiltersFieldData = fieldData.filter((data) => data.apiName !== 'Launchpad__Zip__c');
+		} catch (e) {
+			console.error('GET_SEARCH_FILTERS_ERROR: ', e);
+		}
+	}
+
+	async getDetailsFieldData() {
+		try {
+			const fieldData = await getJobFieldSetData({ fieldSetName: this.detailsFieldSetApiName });
+			const alwaysQueriedFields = [
+				'Name',
+				'Launchpad__Job_Description__c',
+				'Launchpad__Account_Address__c',
+				'Job_Site_Address__c',
+			];
+			this.detailsFieldData = fieldData.filter((data) => !alwaysQueriedFields.includes(data.apiName));
+			this.detailsFieldApiNames = this.detailsFieldData.map((data) => data.apiName);
+		} catch (e) {
+			console.error('GET_JOB_DETAILS_ERROR: ', e);
+		}
+	}
+
+	@wire(searchJobsDynamic, {
+		zipCode: '$zipCode',
+		fieldsToQuery: '$detailsFieldApiNames',
+		textFilters: '$textFiltersSelected',
+		picklistFilters: '$picklistFiltersSelected',
+	})
 	wiredJobs({ error, data }) {
-		if (data) {
-			this.hasLoaded = true;
+		if (error) {
+			console.error('SEARCH_JOBS_WIRE_ERROR: ', error);
+		} else if (data) {
 			this.providers = this.formatProviders(data);
-		} else if (error) {
-			this.hasLoaded = true;
-			console.error('searchJobs error', error);
+			this.mapProviders = this.formatProviders(data, true);
+			this.isLoading = false;
 		}
+
+		this.hasLoaded = true;
 	}
 
-	handleChange(evt) {
-        if (this.timeout) {
-            clearTimeout(this.timeout);
-        }
+	handleInputChange(e) {
+		if (this.timeout) {
+			clearTimeout(this.timeout);
+		}
 
-        const name = evt.target.name;
-        const value = evt.target.value;
+		const name = e.target.name;
+		const value = e.target.value;
+		const textFiltersSelected = { ...this.textFiltersSelected };
 
-        // eslint-disable-next-line @lwc/lwc/no-async-operation
+		// eslint-disable-next-line @lwc/lwc/no-async-operation
         this.timeout = setTimeout(() => {
             switch (name) {
                 case 'zipcode':
                     this.zipCode = value;
                     break;
                 default:
+					textFiltersSelected[name] = value;
+					this.textFiltersSelected = textFiltersSelected;
                     break;
             }
         }, 300);
 	}
 
-	handleMultiselectChange(evt) {
-		switch (evt.detail.name) {
-			case 'age':
-				this.age = evt.detail.value;
-				break;
-			case 'grade':
-				this.grade = evt.detail.value;
-				break;
-			case 'gender':
-				this.gender = evt.detail.value;
-				break;
-			case 'school':
-				this.school = evt.detail.value;
-				break;
-			default:
-				break;
-		}
+	handleMultiselectChange(e) {
+		const picklistFiltersSelected = { ...this.picklistFiltersSelected };
+		picklistFiltersSelected[e.target.name] = e.detail.value;
+		this.picklistFiltersSelected = picklistFiltersSelected;
 	}
 
 	handleClear() {
 		this.zipCode = null;
-		this.age = [];
-		this.grade = [];
-		this.gender = [];
-		this.school = [];
+		this.textFiltersSelected = {};
+		this.picklistFiltersSelected = {};
 
+		this.template.querySelectorAll('lightning-input').forEach((input) => {
+			input.value = '';
+		});
 		this.template.querySelectorAll('c-multi-select-combobox').forEach((combobox) => {
 			combobox.clear();
 		});
 	}
 
-	formatProviders(data) {
+	formatProviders(data, isMapFormat) {
 		return data.map((provider) => {
 			const locationSource = provider.Placement_Site__r ? 'Placement_Site__r' : 'Launchpad__Account__r';
-			let agesServed = '';
-			let genderServed = '';
-			let gradesServed = '';
-			let schoolsServed = '';
-			let programType = '';
-			let interestAreas = '';
 			let details = [];
 
-			details.push({
-				label: 'Address',
-				value: `${provider[locationSource].BillingStreet}, ${provider[locationSource].BillingCity}, ${provider[locationSource].BillingState} ${provider[locationSource].BillingPostalCode}`,
-			});
+			const address = `${provider[locationSource].BillingStreet}, ${provider[locationSource].BillingCity}, ${provider[locationSource].BillingState} ${provider[locationSource].BillingPostalCode}`;
 
-			if (provider.Ages_Served__c) {
-				agesServed = this.formatMultiselectValue(provider.Ages_Served__c);
-				details.push({
-					label: 'Ages Served',
-					value: agesServed,
-				});
+			if (isMapFormat) {
+				if (provider.Launchpad__Account__r.Name) {
+					details.push({ label: 'Provider Name', value: provider.Launchpad__Account__r.Name });
+				}
+
+				details.push({ label: 'Address', value: address });
+
+				if (provider.Launchpad__Job_Description__c) {
+					details.push({ label: 'Description', value: provider.Launchpad__Job_Description__c });
+				}
 			}
 
-			if (provider.Grades_Served__c) {
-				gradesServed = this.formatMultiselectValue(provider.Grades_Served__c);
-				details.push({
-					label: 'Grades Served',
-					value: gradesServed,
-				});
-			}
-
-			if (provider.Schools_Served__c) {
-				schoolsServed = this.formatMultiselectValue(provider.Schools_Served__c);
-				details.push({
-					label: 'Schools Served',
-					value: schoolsServed,
-				});
-			}
-
-			if (provider.Genders_Served__c) {
-				genderServed = this.formatMultiselectValue(provider.Genders_Served__c);
-				details.push({
-					label: 'Genders Served',
-					value: genderServed,
-				});
-			}
-
-			if (provider.Program_Type__c) {
-				programType = this.formatMultiselectValue(provider.Program_Type__c);
-				details.push({
-					label: 'Program Type',
-					value: programType,
-				});
-			}
-
-			if (provider.Interest_Areas__c) {
-				interestAreas = this.formatMultiselectValue(provider.Interest_Areas__c);
-				details.push({
-					label: 'Interest Areas',
-					value: interestAreas,
-				});
+			for (const fieldData of this.detailsFieldData) {
+				if (provider[fieldData.apiName]) {
+					details.push({
+						label: fieldData.label,
+						value: this.formatMultiselectValue(provider[fieldData.apiName]),
+					});
+				}
 			}
 
 			return {
 				id: provider.Id,
 				title: provider.Name,
 				subtitle: provider.Launchpad__Account__r.Name,
-				agesServed,
-				genderServed,
-				gradesServed,
-				schoolsServed,
-				programType,
-				interestAreas,
 				richDescription: provider.Launchpad__Job_Description__c,
+				address,
+				details,
 				location: {
+					Street: provider[locationSource].BillingStreet,
 					City: provider[locationSource].BillingCity,
 					State: provider[locationSource].BillingState,
-					Street: provider[locationSource].BillingStreet,
 					PostalCode: provider[locationSource].BillingPostalCode,
 					Country: 'USA',
 				},
-				details,
 			};
 		});
 	}
 
 	formatMultiselectValue(value) {
 		return value.replaceAll(';', ', ');
-	}
-
-	debounce(func, timeout = 300) {
-		let timer;
-		return (...args) => {
-			clearTimeout(timer);
-			timer = setTimeout(() => {
-				func.apply(this, args);
-			}, timeout);
-		};
 	}
 }
