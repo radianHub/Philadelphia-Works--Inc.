@@ -156,8 +156,7 @@ export default class MultiSelectCombobox extends LightningElement {
             value: this.singleSelect ? selection[0].value : selection.map((item) => item.value),
             name: this.name, 
         },
-    }
-));
+    }));
 
     // for single select picklist close dropdown after selection is made
     if (this.singleSelect) {
@@ -196,7 +195,11 @@ export default class MultiSelectCombobox extends LightningElement {
 
   @api 
   clear() {
-    this.currentOptions.forEach((item) => (item.selected = false));
+    const foundIndex = this.currentOptions.findIndex((item) => item.selected === true );
+    if (foundIndex >= 0) {
+      this.currentOptions.forEach((item) => item.selected = false);
+    }
     this.setSelection();
   }
+
 }
