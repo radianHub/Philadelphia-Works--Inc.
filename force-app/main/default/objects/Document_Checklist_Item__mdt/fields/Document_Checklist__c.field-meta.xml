@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Document_Checklist__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Document Checklist this item relates to</inlineHelpText>
+    <label>Document Checklist</label>
+    <referenceTo>Document_Checklist__mdt</referenceTo>
+    <relationshipLabel>Document Checklist Items</relationshipLabel>
+    <relationshipName>Document_Checklist_Items</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>
