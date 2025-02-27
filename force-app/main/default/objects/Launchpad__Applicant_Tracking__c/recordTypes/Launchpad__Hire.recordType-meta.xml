@@ -891,6 +891,49 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Previous_Stage__c</picklist>
+        <values>
+            <fullName>Hired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matched with Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Placed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider Selected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for JEVs Sign-Off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shortlisted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unavailable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Provider_Rank__c</picklist>
         <values>
             <fullName>1</fullName>
@@ -1026,6 +1069,17 @@
         </values>
         <values>
             <fullName>Widowed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Willing_to_accept_an_unselected_program__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>

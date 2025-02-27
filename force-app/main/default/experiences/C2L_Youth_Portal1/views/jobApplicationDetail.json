@@ -1,0 +1,48 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "b97a19d6-e110-4a76-90dc-6742f00c1eba",
+  "label" : "Job Application Detail",
+  "regions" : [ {
+    "id" : "40e96b5d-7f22-482b-8c31-b5da2e48deeb",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "appDevName" : "C2L_Program_Application"
+      },
+      "componentName" : "c:univApp",
+      "id" : "58ae2ebe-50d2-4aab-8920-69f3564fae53",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "776432ff-a130-406b-99f7-c75ec7013088",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "fa8e6d78-82b0-4bd7-9487-4bbb2389c63e",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "dba830d5-a0b7-4732-a93e-00b7035770d5",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "799a0d66-acca-44c3-8a6d-cc65746c2184",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-a02"
+}
