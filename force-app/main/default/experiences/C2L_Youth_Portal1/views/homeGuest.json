@@ -13,12 +13,14 @@
       "componentAttributes" : {
         "cardBodyBgColor" : "rgb(235, 235, 235)",
         "cardHeaderColor" : "rgb(84, 105, 141)",
-        "description" : "Find a program that fits your needs. Sign up or log in to apply today!",
+        "description" : "Find a program that fits your needs.",
+        "detailsFieldSetApiName" : "Default_Provider_Search_Field_Set",
         "headerColor" : "rgb(84, 105, 141)",
-        "title" : "C2L-PHL Youth Programs"
+        "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",
+        "title" : "Browse Programs"
       },
       "componentName" : "c:providerSearch",
-      "id" : "83c843e7-fee5-42a2-8fc2-56d5d2012b28",
+      "id" : "e329df16-e02c-4f36-a22a-c8b40f025583",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"

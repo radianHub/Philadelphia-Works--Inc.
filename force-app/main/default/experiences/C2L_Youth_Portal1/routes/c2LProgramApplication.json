@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "4efaee6a-9e43-40ec-a1a7-09349760a516",
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "configurationTags" : [ ],
+  "devName" : "C2L_Program_Application__c",
+  "id" : "d353f942-ca65-4e4a-ae7e-40871dcd3ca3",
+  "label" : "C2L Program Application",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-c2l-program-application",
+  "type" : "route",
+  "urlPrefix" : "c2l-program-application"
+}

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Is_this_Youth_TANF_Eligible__c</fullName>
+    <fullName>Willing_to_accept_an_unselected_program__c</fullName>
     <externalId>false</externalId>
-    <label>Is this Applicant TANF Eligible?</label>
+    <inlineHelpText>Is the participant willing to be placed in other programs outside of their preferred selected programs if none of their preferred selected programs are available?</inlineHelpText>
+    <label>Willing to accept an unselected program?</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

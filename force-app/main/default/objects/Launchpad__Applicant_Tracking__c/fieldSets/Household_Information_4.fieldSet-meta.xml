@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Household_Information_4</fullName>
+    <description>C2L Section 5 (non-conditional)</description>
+    <displayedFields>
+        <field>Current_Living_Situation__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Applicant_s_Internet_Connectivity__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Household Information 4</label>
+</FieldSet>

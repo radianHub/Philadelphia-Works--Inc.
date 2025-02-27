@@ -1,0 +1,39 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "90c2b618-6a09-4818-9470-270af41ae8a4",
+  "label" : "Job Application Related List",
+  "regions" : [ {
+    "id" : "18288a40-820e-45f6-9852-c4c1d0664f3c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customTitle" : "",
+        "parentRecordId" : "{!recordId}",
+        "relatedListName" : "{!relationshipApiName}",
+        "showBreadCrumbs" : true,
+        "showCustomTitle" : false,
+        "showManualRefreshButton" : true,
+        "showRowNumbers" : true
+      },
+      "componentName" : "forceCommunity:relatedList",
+      "id" : "f44e5e5f-29d1-4190-8526-9197feba80ad",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cc16520e-02c2-4904-b84e-56bff297475d",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "9884a613-7920-4ecb-ac88-f9d02f3bfc87",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "relatedlist-a02"
+}
