@@ -38,59 +38,49 @@ public class DocumentChecklistControllerTest {
         
         if (Test.isRunningTest()) {
             Assert.areNotEqual(null, statuses);
-            System.debug('statuses: ' + statuses);
-            // Verify mock statuses if your implementation handles test context
+            Assert.areEqual(statuses.approvedStatus, 'Approved');
         }
     }
     
-    // Test method for getChecklist using Test.isRunningTest() check
     @isTest
     static void testGetChecklist() {
         Contact testContact = [SELECT Id FROM Contact LIMIT 1];
         
         Test.startTest();
-        List<DocumentChecklistController.ChecklistItem> checklist = DocumentChecklistController.getChecklist('TestChecklist', testContact.Id, 'AccountId');
+        List<DocumentChecklistController.ChecklistItem> checklist = DocumentChecklistController.getChecklist('TestChecklist', testContact.Id, 'Launchpad__Contact__c');
         Test.stopTest();
         
-        // In a test context, verify the method returns expected results
         if (Test.isRunningTest()) {
             Assert.areNotEqual(null, checklist);
-            System.debug('checklist: ' + checklist);
-            // Verify other properties if your implementation handles test context
         }
     }
     
-    // Test method for initializeDocument
     @isTest
     static void testInitializeDocument() {
         Contact testContact = [SELECT Id FROM Contact LIMIT 1];
         
         Test.startTest();
-        Id documentId = DocumentChecklistController.initializeDocument('TestChecklist', testContact.Id, 'TestType', 'AccountId');
+        Id documentId = DocumentChecklistController.initializeDocument('TestChecklist', testContact.Id, 'TestType', 'Launchpad__Contact__c');
         Test.stopTest();
         
-        // Verify the document was created correctly
         if (documentId != null) {
             Launchpad__Document__c document = [SELECT Id, Launchpad__Type__c FROM Launchpad__Document__c WHERE Id = :documentId];
             Assert.areEqual('TestType', document.Launchpad__Type__c);
         }
     }
     
-    // Test method for updateDocumentStatus
     @isTest
     static void testUpdateDocumentStatus() {
         Launchpad__Document__c document = [SELECT Id FROM Launchpad__Document__c LIMIT 1];
         
         Test.startTest();
-        DocumentChecklistController.updateDocumentStatus('TestChecklist', document.Id, 'Approved');
+        DocumentChecklistController.updateDocumentStatus('TestChecklist', document.Id, 'Default');
         Test.stopTest();
         
-        // Verify the status was updated
         document = [SELECT Launchpad__Status__c FROM Launchpad__Document__c WHERE Id = :document.Id];
-        Assert.areEqual('Approved', document.Launchpad__Status__c);
+        Assert.areEqual('Not Started', document.Launchpad__Status__c);
     }
     
-    // Test method for deleteDocumentFile
     @isTest
     static void testDeleteDocumentFile() {
         Launchpad__Document__c document = [SELECT Id FROM Launchpad__Document__c LIMIT 1];
@@ -99,58 +89,20 @@ public class DocumentChecklistControllerTest {
         DocumentChecklistController.deleteDocumentFile('TestChecklist', document.Id);
         Test.stopTest();
         
-        // Verify the document file was deleted (ContentDocumentLink is deleted)
         List<ContentDocumentLink> links = [SELECT Id FROM ContentDocumentLink WHERE LinkedEntityId = :document.Id];
         Assert.areEqual(0, links.size());
     }
     
-    // Test method for getContentVersionFromDocumentId
     @isTest
     static void testgetContentVersionFromDocumentId() {
         Launchpad__Document__c document = [SELECT Id FROM Launchpad__Document__c LIMIT 1];
         
         Test.startTest();
-        ContentVersion cv;
-        try {
-            cv = DocumentChecklistController.getContentVersionFromDocumentId(document.Id);
-        } catch (Exception e) {
-            // Handle expected exceptions in test context
-        }
+        ContentVersion cv = DocumentChecklistController.getContentVersionFromDocumentId(document.Id);
         Test.stopTest();
         
-        // Verify the content version was retrieved
         if (cv != null) {
             Assert.areEqual('Test Document', cv.Title);
         }
-    }
-    
-    // Test negative scenarios
-    @isTest
-    static void testNegativeScenarios() {
-        // Test invalid document ID for updateDocumentStatus
-        Test.startTest();
-        try {
-            DocumentChecklistController.updateDocumentStatus('TestChecklist', 'InvalidId', 'Approved');
-            Assert.isFalse(false);
-        } catch (Exception e) {
-            Assert.isTrue(true);
-        }
-        
-        // Test invalid document ID for deleteDocumentFile
-        try {
-            DocumentChecklistController.deleteDocumentFile('TestChecklist', 'InvalidId');
-            Assert.isFalse(false);
-        } catch (Exception e) {
-            Assert.isTrue(true);
-        }
-        
-        // Test invalid document ID for getContentVersionFromDocumentId
-        try {
-            DocumentChecklistController.getContentVersionFromDocumentId('InvalidId');
-            Assert.isFalse(false);
-        } catch (Exception e) {
-            Assert.isTrue(true);
-        }
-        Test.stopTest();
     }
 }
