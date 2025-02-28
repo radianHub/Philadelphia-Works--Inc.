@@ -5,8 +5,8 @@
   "devName" : "My_Applications",
   "id" : "e5a6e5c9-5b40-4565-8722-2935ee5a95d6",
   "label" : "My Applications",
-  "pageAccess" : "UseParent",
+  "pageAccess" : "RequiresLogin",
   "routeType" : "custom-My Applications",
   "type" : "route",
-  "urlPrefix" : "my-applications"
+  "urlPrefix" : "unused-template-pages/my-applications"
 }

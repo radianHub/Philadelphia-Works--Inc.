@@ -8,5 +8,5 @@
   "pageAccess" : "UseParent",
   "routeType" : "custom-My Saved Jobs",
   "type" : "route",
-  "urlPrefix" : "my-saved-jobs"
+  "urlPrefix" : "unused-template-pages/my-saved-jobs"
 }

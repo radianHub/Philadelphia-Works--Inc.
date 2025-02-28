@@ -5,8 +5,8 @@
   "devName" : "Job_Search",
   "id" : "29e5f8c5-6ec2-4767-8b36-fd06ab0eceb6",
   "label" : "Job Search",
-  "pageAccess" : "UseParent",
+  "pageAccess" : "RequiresLogin",
   "routeType" : "custom-Job Search",
   "type" : "route",
-  "urlPrefix" : "job-search"
+  "urlPrefix" : "unused-template-pages/job-search"
 }

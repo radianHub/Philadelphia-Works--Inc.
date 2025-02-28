@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "f29f711a-5f9e-4058-8dea-0d8a450f0f23",
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "configurationTags" : [ ],
+  "devName" : "Unused_Template_Pages__c",
+  "id" : "97df2fe9-9ef4-4092-85a6-b5dde898e69d",
+  "label" : "Unused Template Pages",
+  "pageAccess" : "RequiresLogin",
+  "routeType" : "custom-unused-template-pages",
+  "type" : "route",
+  "urlPrefix" : "unused-template-pages"
+}

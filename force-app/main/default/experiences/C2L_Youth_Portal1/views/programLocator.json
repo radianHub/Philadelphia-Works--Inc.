@@ -1,0 +1,77 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "8528e33e-3c99-4049-a259-5dedd2967b96",
+  "label" : "Program Locator",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "61380b14-79cf-483e-a8b9-da38d44cae77",
+          "columns" : [ {
+            "UUID" : "971803a1-18c9-47d2-85f8-e7e087589f26",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "61380b14-79cf-483e-a8b9-da38d44cae77",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "cardBodyBgColor" : "rgb(235, 235, 235)",
+            "cardHeaderColor" : "rgb(38, 105, 168)",
+            "description" : "Find a program that fits your needs.",
+            "detailsFieldSetApiName" : "Default_Provider_Search_Field_Set",
+            "headerColor" : "rgb(38, 105, 168)",
+            "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",
+            "showApply" : true,
+            "title" : "Program Locator"
+          },
+          "componentName" : "c:providerSearch",
+          "id" : "8139459e-1944-4c6f-99a1-1d51f0cb99cf",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "971803a1-18c9-47d2-85f8-e7e087589f26",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2fa80086-415f-4caf-861a-3b36923de42e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Program Locator"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "578a8666-bbab-4366-8b3e-2ed96179a5e4",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b8f5e38d-169c-4545-9081-a8aad9354471",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-program-locator"
+}

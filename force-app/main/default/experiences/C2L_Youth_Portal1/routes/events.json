@@ -5,8 +5,8 @@
   "devName" : "Events",
   "id" : "5627e56b-d6d2-42ac-9e9a-71ab57672823",
   "label" : "Events",
-  "pageAccess" : "UseParent",
+  "pageAccess" : "RequiresLogin",
   "routeType" : "custom-Events",
   "type" : "route",
-  "urlPrefix" : "events"
+  "urlPrefix" : "unused-template-pages/events"
 }

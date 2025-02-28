@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Logged In Users</audienceName>
+    <container>C2L Youth Portal</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <profile>customer community login user</profile>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Profile</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>2</criteriaNumber>
+            <criterionValue>
+                <profile>admin</profile>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Profile</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AnyCriterionMatches</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+    <targets>
+        <target>
+            <groupName>ec6133bb-2ae3-42c4-8faa-ce9a9543c2b0$#$cc83d454-64a2-4af3-a7f8-e4c453700c8c</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_pcHome_Component</targetValue>
+        </target>
+        <target>
+            <groupName>800a040d-f8c7-4797-80c1-f65bbb408e54$#$327ab8f5-a3fb-4745-9fb4-56c2072873de</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_Theme_Navigation_Menu_Component_Properties</targetValue>
+        </target>
+    </targets>
+</Audience>

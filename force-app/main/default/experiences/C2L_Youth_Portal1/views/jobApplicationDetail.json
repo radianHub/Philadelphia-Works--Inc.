@@ -11,10 +11,11 @@
   }, {
     "components" : [ {
       "componentAttributes" : {
-        "appDevName" : "C2L_Program_Application"
+        "appDevName" : "C2L_Program_Application",
+        "recordId" : "{!recordId}"
       },
       "componentName" : "c:univApp",
-      "id" : "58ae2ebe-50d2-4aab-8920-69f3564fae53",
+      "id" : "65dab52e-759d-4d90-b954-0fc7807de9ed",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"

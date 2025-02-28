@@ -5,8 +5,8 @@
   "devName" : "My_Registered_Workshops",
   "id" : "9f3e3f6f-3183-4844-b3a8-a6fae8ba559c",
   "label" : "My Registered Workshops",
-  "pageAccess" : "UseParent",
+  "pageAccess" : "RequiresLogin",
   "routeType" : "custom-My Registered Workshops",
   "type" : "route",
-  "urlPrefix" : "my-registered-workshops"
+  "urlPrefix" : "unused-template-pages/my-registered-workshops"
 }

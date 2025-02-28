@@ -37,6 +37,13 @@
 				default="Default_Provider_Search_Field_Set"
 				description="Field Set API Name of detail fields from Launchpad__Job__c object"
 			/>
+			<property
+				name="showApply"
+				type="Boolean"
+				label="Show Apply Button"
+				default="false"
+				description="Only enable this on pages displayed to authenticated users"
+			/>
             <property
 				name="headerColor"
 				type="Color"
