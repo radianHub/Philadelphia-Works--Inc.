@@ -88,13 +88,15 @@
 					large-device-size="4"
 					key={provider.id}>
 					<c-provider-tile
+						job-id={provider.id}
 						title={provider.title}
 						subtitle={provider.subtitle}
 						description={provider.richDescription}
 						address={provider.address}
 						details={provider.details}
 						card-header-color={cardHeaderColor}
-						card-body-bg-color={cardBodyBgColor}></c-provider-tile>
+						card-body-bg-color={cardBodyBgColor}
+						show-apply={showApply}></c-provider-tile>
 				</lightning-layout-item>
 			</template>
 		</lightning-layout>

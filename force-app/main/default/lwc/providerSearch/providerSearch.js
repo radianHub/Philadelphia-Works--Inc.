@@ -10,6 +10,7 @@ export default class ProviderSearch extends LightningElement {
 	@api headerColor;
 	@api cardHeaderColor;
 	@api cardBodyBgColor;
+	@api showApply;
 	hasLoaded;
 	timeout;
 	isLoading = true;
