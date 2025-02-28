@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>C2L Youth Portal</container>
+    <containerType>Network</containerType>
+    <label>Default Navigation</label>
+    <navigationMenuItem>
+        <label>My Profile</label>
+        <position>1</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/my-profile</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Event</label>
+        <position>2</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/events</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>My Registered Workshops</label>
+        <position>3</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/my-registered-workshops</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Job Search</label>
+        <position>4</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/job-search</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>My Applications</label>
+        <position>5</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>Launchpad__Applicant_Tracking__c</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>My Saved Jobs</label>
+        <position>6</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/my-saved-jobs</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Find Career Center</label>
+        <position>7</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/find-a-career-center</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+</NavigationMenu>
