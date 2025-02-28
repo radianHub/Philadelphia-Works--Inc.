@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Release_of_Information__c</fullName>
+    <fullName>Wages_from_Employment__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>I give my permission for C2L-PHL and its contracted agencies, partners and funders to release information concerning my participation in the program. I understand that all information will be kept respectfully confidential but the sharing of this information within and among these agencies may be necessary.</inlineHelpText>
-    <label>Release of Information</label>
-    <required>true</required>
+    <inlineHelpText>(including commissions, tips, bonuses, fees, etc.)</inlineHelpText>
+    <label>Wages from Employment</label>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
