@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Release_of_Information__c</fullName>
+    <fullName>Income_Attestation__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>I give my permission for C2L-PHL and its contracted agencies, partners and funders to release information concerning my participation in the program. I understand that all information will be kept respectfully confidential but the sharing of this information within and among these agencies may be necessary.</inlineHelpText>
-    <label>Release of Information</label>
+    <label>Does the applicant receive any income?</label>
     <required>true</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
@@ -13,14 +12,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Yes</fullName>
+                <fullName>Yes, the applicant receives income</fullName>
                 <default>false</default>
-                <label>Yes</label>
+                <label>Yes, the applicant receives income</label>
             </value>
             <value>
-                <fullName>No</fullName>
+                <fullName>No, the applicant receives zero income</fullName>
                 <default>false</default>
-                <label>No</label>
+                <label>No, the applicant receives zero income</label>
             </value>
         </valueSetDefinition>
     </valueSet>
