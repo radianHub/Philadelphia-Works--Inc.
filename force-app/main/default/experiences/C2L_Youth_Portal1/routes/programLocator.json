@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "f1744b91-7353-4c34-ba1f-7915e48b2c01",
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "configurationTags" : [ ],
+  "devName" : "Program_Locator__c",
+  "id" : "8b1ac362-115e-4c0d-aa44-1fd31621f339",
+  "label" : "Program Locator",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-program-locator",
+  "type" : "route",
+  "urlPrefix" : "program-locator"
+}
