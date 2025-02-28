@@ -12,10 +12,10 @@
     "components" : [ {
       "componentAttributes" : {
         "cardBodyBgColor" : "rgb(235, 235, 235)",
-        "cardHeaderColor" : "rgb(84, 105, 141)",
+        "cardHeaderColor" : "rgb(38, 105, 168)",
         "description" : "Find a program that fits your needs.",
         "detailsFieldSetApiName" : "Default_Provider_Search_Field_Set",
-        "headerColor" : "rgb(84, 105, 141)",
+        "headerColor" : "rgb(38, 105, 168)",
         "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",
         "title" : "Browse Programs"
       },
@@ -48,7 +48,7 @@
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],
-  "themeLayoutType" : "Inner",
+  "themeLayoutType" : "Home",
   "type" : "view",
   "viewType" : "home"
 }
