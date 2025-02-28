@@ -47,6 +47,9 @@ public with sharing class DocumentChecklistController {
     @AuraEnabled
     public static Id initializeDocument(String checklistName, String recordId, String documentType, String lookupField) {
         Document_Checklist__mdt checklistSettings = getChecklistSettings(checklistName);
+
+        System.debug('test settings for initializeDocument: ' + checklistSettings);
+
         String documentObject = checklistSettings.Document_Object__c;
         String documentTypeField = checklistSettings.Document_Type_Field__c;
         String documentStatusField = checklistSettings.Document_Status_Field__c;
@@ -57,6 +60,8 @@ public with sharing class DocumentChecklistController {
             doc.put(documentTypeField, documentType);
             doc.put(documentStatusField, defaultStatus);
             doc.put(lookupField, recordId);
+
+            System.debug('about to create doc: ' + doc);
 
             insert doc;
             return doc.Id;
@@ -69,11 +74,15 @@ public with sharing class DocumentChecklistController {
     @AuraEnabled
     public static void updateDocumentStatus(String checklistName, String documentId, String status) {
         Document_Checklist__mdt checklistSettings = getChecklistSettings(checklistName);
+
+        System.debug('test settings: ' + checklistSettings);
+
         String documentObject = checklistSettings.Document_Object__c;
         String documentStatusField = checklistSettings.Document_Status_Field__c;
         String documentDateField = checklistSettings.Document_Date_Field__c;
         String defaultStatus = checklistSettings.Default_Document_Status__c;
         String submittedStatus = checklistSettings.Submitted_Document_Status__c;
+        String rejectionReasonField = checklistSettings.Rejection_Reason_Field__c;
         String statusValue;
         Date dateValue;
 
@@ -93,6 +102,10 @@ public with sharing class DocumentChecklistController {
 
             if (dateValue != null && documentDateField != null) {
                 doc.put(documentDateField, dateValue);
+            }
+
+            if (rejectionReasonField != null) {
+                doc.put(rejectionReasonField, null);
             }
 
             update doc;
@@ -202,10 +215,11 @@ public with sharing class DocumentChecklistController {
 	}
 
     private static Document_Checklist__mdt getChecklistSettings(String checklistName) {
-        if (Test.isRunningTest()) {
+        if (!Test.isRunningTest()) {
             return Document_Checklist__mdt.getInstance(checklistName);
         } else {
             Document_Checklist__mdt settings = new Document_Checklist__mdt();
+            settings.DeveloperName = 'TestChecklist';
             settings.Default_Document_Status__c = 'Not Started';
             settings.Approved_Document_Status__c = 'Approved';
             settings.Rejected_Document_Status__c = 'Rejected';
