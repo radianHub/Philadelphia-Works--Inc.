@@ -4,13 +4,17 @@ import getJobFieldSetData from '@salesforce/apex/ProviderSearchController.getJob
 
 // TODO: Make Schools accounts instead of picklist
 export default class ProviderSearch extends LightningElement {
-    @api title;
-    @api description;
-    @api searchFiltersFieldSetApiName;
-    @api detailsFieldSetApiName;
-    @api headerColor;
-    @api cardHeaderColor;
-    @api cardBodyBgColor;
+	@api title;
+	@api description;
+	@api searchFiltersFieldSetApiName;
+	@api detailsFieldSetApiName;
+	@api headerColor;
+	@api cardHeaderColor;
+	@api cardBodyBgColor;
+	@api showApply;
+	hasLoaded;
+	timeout;
+	isLoading = true;
 
     isLoading = true;
     providers = [];
