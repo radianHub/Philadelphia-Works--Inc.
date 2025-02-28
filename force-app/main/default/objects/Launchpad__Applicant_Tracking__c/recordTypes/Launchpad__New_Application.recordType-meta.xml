@@ -5,6 +5,17 @@
     <description>For Resume Presentations and Interviews</description>
     <label>New Application</label>
     <picklistValues>
+        <picklist>Any_other_source_not_named_above__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Applicant_Blind_Difficulty_Seeing__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -747,6 +758,39 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Income_Attestation__c</picklist>
+        <values>
+            <fullName>No%2C the applicant receives zero income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C the applicant receives income</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Income_from_operation_of_a_business__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interest_in_dividends_from_assets__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Is_this_Youth_TANF_Eligible__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -944,6 +988,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Media_Picture_Release__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Parent_Primary_Caregiver_of_Child_ren__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -1044,6 +1099,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Public_assistance_payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Race_and_or_Ethnicity__c</picklist>
         <values>
             <fullName>American Indian or Alaska Native</fullName>
@@ -1091,6 +1157,28 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Release_of_Information__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Social_Security_or_Other_Payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Stipend_Type__c</picklist>
         <values>
             <fullName>None</fullName>
@@ -1106,6 +1194,28 @@
         </values>
         <values>
             <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unemployment_or_disability_payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wages_from_Employment__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>
