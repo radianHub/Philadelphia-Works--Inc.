@@ -11,7 +11,7 @@
         <type>InternalLink</type>
     </navigationMenuItem>
     <navigationMenuItem>
-        <defaultListViewId>All</defaultListViewId>
+        <defaultListViewId>Rank_1_Apps</defaultListViewId>
         <label>My Applications</label>
         <position>2</position>
         <publiclyAvailable>false</publiclyAvailable>
