@@ -42,6 +42,10 @@
                     </lightning-layout-item>
                 </template>
             </lightning-layout>
+
+        </div>
+        <div lwc:if={showApply} class="provider-tile-footer slds-var-p-around_small slds-border_top">
+            <c-create-application job-id={jobId}></c-create-application>
         </div>
     </lightning-card>
 </template>

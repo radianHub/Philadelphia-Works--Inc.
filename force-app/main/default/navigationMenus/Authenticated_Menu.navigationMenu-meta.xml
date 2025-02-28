@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>C2L Youth Portal</container>
+    <containerType>Network</containerType>
+    <label>Authenticated Menu</label>
+    <navigationMenuItem>
+        <label>Program Locator</label>
+        <position>1</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/program-locator</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <defaultListViewId>All</defaultListViewId>
+        <label>My Applications</label>
+        <position>2</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>Launchpad__Applicant_Tracking__c</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>My Profile</label>
+        <position>3</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/my-profile</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+</NavigationMenu>
