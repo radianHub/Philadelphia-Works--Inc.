@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Is_this_Youth_TANF_Eligible__c</fullName>
     <externalId>false</externalId>
-    <label>Is this Youth TANF Eligible?</label>
+    <label>Is this Applicant TANF Eligible?</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

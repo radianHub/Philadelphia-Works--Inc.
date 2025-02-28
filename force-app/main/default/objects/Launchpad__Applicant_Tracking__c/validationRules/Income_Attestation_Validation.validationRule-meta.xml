@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Income_Attestation_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Income_Attestation__c, &quot;Yes, the applicant receives income&quot;),
+    OR(
+        ISPICKVAL(Wages_from_Employment__c, &quot;&quot;),
+        ISPICKVAL(Income_from_operation_of_a_business__c, &quot;&quot;),
+        ISPICKVAL(Interest_in_dividends_from_assets__c, &quot;&quot;),
+        ISPICKVAL(Social_Security_or_Other_Payments__c, &quot;&quot;),
+        ISPICKVAL(Unemployment_or_disability_payments__c, &quot;&quot;),
+        ISPICKVAL(Public_assistance_payments__c, &quot;&quot;),
+        ISPICKVAL(Any_other_source_not_named_above__c, &quot;&quot;), ISBLANK(Explanation_of_Attestations__c) 
+
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Income_Attestation__c</errorDisplayField>
+    <errorMessage>All income questions must be answered if the applicant receives income</errorMessage>
+</ValidationRule>

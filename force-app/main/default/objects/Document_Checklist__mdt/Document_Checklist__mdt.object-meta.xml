@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used by the documentChecklist LWC</description>
+    <label>Document Checklist</label>
+    <pluralLabel>Document Checklists</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

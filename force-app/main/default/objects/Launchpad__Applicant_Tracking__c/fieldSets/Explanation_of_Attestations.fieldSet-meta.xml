@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Explanation_of_Attestations</fullName>
+    <description>C2L Application Explanation of Attestations section</description>
+    <displayedFields>
+        <field>Explanation_of_Attestations__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Explanation of Attestations</label>
+</FieldSet>

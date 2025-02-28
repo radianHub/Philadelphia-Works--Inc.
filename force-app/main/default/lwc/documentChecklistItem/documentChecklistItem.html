@@ -1,0 +1,68 @@
+<template>
+	<lightning-card
+		label={document.name}
+		hide-header>
+		<div class="slds-var-p-horizontal_x-small">
+			<div class="slds-grid slds-grid_align-spread">
+				<div class="slds-col">
+					<div class="slds-grid slds-grid_vertical-align-start slds-var-m-bottom_x-small">
+						<div class="slds-col slds-grow-none">
+							<lightning-icon
+								class="slds-var-m-right_x-small"
+								icon-name={statusIconName}
+								alternative-text={statusIconText}
+								title={statusIconText}
+								size="x-small"
+								variant={statusIconVariant}></lightning-icon>
+						</div>
+						<div class="slds-col">
+							<p class="slds-text-heading_small">{document.name}</p>
+						</div>
+						<div class="slds-col">
+							<span
+								class="slds-badge slds-theme_error slds-var-m-left_x-small"
+								lwc:if={document.required}
+								>Required</span
+							>
+						</div>
+					</div>
+					<lightning-badge
+						class={statusBadgeClass}
+						label={document.status}></lightning-badge>
+				</div>
+				<div class="slds-col">
+					<div class="slds-grid slds-wrap slds-var-m-left_x-small">
+						<template lwc:if={document.submitted}>
+							<lightning-button
+								variant="destructive"
+								class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+								title="Delete"
+								label="Delete"
+								alternative-text="Delete"
+								onclick={handleDelete}></lightning-button>
+							<lightning-button
+								class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+								title="View"
+								label="View"
+								alternative-text="View"
+								onclick={handlePreview}></lightning-button>
+						</template>
+						<template lwc:else>
+							<lightning-button
+								class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+								title="Upload"
+								label="Upload"
+								alternative-text="Upload"
+								onclick={handleUpload}></lightning-button>
+						</template>
+					</div>
+				</div>
+			</div>
+			<div
+				lwc:if={document.rejectionReason}
+				class="slds-box slds-theme_error slds-var-m-vertical_small">
+				<p class="slds-text-body_small document-description">{document.rejectionReason}</p>
+			</div>
+		</div>
+	</lightning-card>
+</template>

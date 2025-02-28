@@ -1,0 +1,31 @@
+.altLabel {
+    padding-right: .5rem;
+    padding-top: .25rem;
+    margin-bottom: .125rem;
+    display: flex;
+    width: 33%;
+}
+
+.altLabelContainer {
+    margin-bottom: .5rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    display: flex;
+}
+
+.req {
+    color: #ba0517;
+    margin-left: .125rem;
+    margin-right: .125rem;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnSubContainer {
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+}

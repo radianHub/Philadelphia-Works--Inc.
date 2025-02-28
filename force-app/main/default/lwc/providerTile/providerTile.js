@@ -20,6 +20,7 @@ import { LightningElement, api } from 'lwc';
  * ]
  */
 export default class ProviderTile extends LightningElement {
+	@api jobId;
 	@api title;
     @api subtitle;
 	@api description;
@@ -27,6 +28,7 @@ export default class ProviderTile extends LightningElement {
 	@api details;
 	@api cardHeaderColor;
 	@api cardBodyBgColor;
+	@api showApply;
     showFullDescription = false;
 
 	get cardStyle() {

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Proof of Social Security Number</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">Acceptable Documents:
+- Social Security Card
+- Social Security Benefit Documents
+- Pay Stub/W2
+- Social Security Number Notification Letter/Payout
+- Employment Records</value>
+    </values>
+    <values>
+        <field>Document_Checklist__c</field>
+        <value xsi:type="xsd:string">C2L_PHL_Youth_Document_Checklist</value>
+    </values>
+    <values>
+        <field>Document_Type__c</field>
+        <value xsi:type="xsd:string">Proof of Social Security Number</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>Required__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>
