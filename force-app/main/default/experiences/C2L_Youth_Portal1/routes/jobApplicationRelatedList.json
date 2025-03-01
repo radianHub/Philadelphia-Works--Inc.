@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "90c2b618-6a09-4818-9470-270af41ae8a4",
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "configurationTags" : [ ],
+  "devName" : "Job_Application_Related_List__c",
+  "id" : "01ef7b63-133b-4801-9874-b60d6c5f5a51",
+  "label" : "Job Application Related List",
+  "objectApiName" : "Launchpad__Applicant_Tracking__c",
+  "routeType" : "relatedlist-a02",
+  "type" : "route",
+  "urlPrefix" : "applicant-tracking"
+}

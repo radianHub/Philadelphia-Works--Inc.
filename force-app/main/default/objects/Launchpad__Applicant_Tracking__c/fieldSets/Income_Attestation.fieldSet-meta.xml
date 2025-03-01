@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Income_Attestation</fullName>
+    <description>C2L Application Income Attestation section</description>
+    <displayedFields>
+        <field>Income_Attestation__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Income Attestation</label>
+</FieldSet>

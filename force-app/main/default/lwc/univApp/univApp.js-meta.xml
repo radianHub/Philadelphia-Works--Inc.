@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <description>Custom metadata and object fieldset driven record edit / create form.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Universal App</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__UtilityBar</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__AppPage,lightning__FlowScreen,lightning__HomePage,lightning__RecordPage,lightning__UtilityBar">
+            <property name="recordId" type="String"></property>
+            <property name="appDevName" type="String"></property>
+            <property name="canShowRestart" type="Boolean"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

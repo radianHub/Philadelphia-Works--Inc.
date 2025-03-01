@@ -1,0 +1,72 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "4efaee6a-9e43-40ec-a1a7-09349760a516",
+  "label" : "C2L Program Application",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "b74b1899-a042-47e7-bf4e-b0e64a061cdc",
+          "columns" : [ {
+            "UUID" : "736d3fd7-9e94-47db-97d0-2df70b3d6267",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "b74b1899-a042-47e7-bf4e-b0e64a061cdc",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "appDevName" : "C2L_Program_Application",
+            "canShowRestart" : false,
+            "recordId" : ""
+          },
+          "componentName" : "c:univApp",
+          "id" : "f0b5be3a-c0dc-4c4b-af11-019f4f0b4857",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "736d3fd7-9e94-47db-97d0-2df70b3d6267",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "72797ce8-63b6-49fa-87a7-85256e0b0bbc",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "C2L Program Application"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "8b420e55-6743-406d-9f75-fa569e0e1401",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7f8eb09e-d6f6-49bf-b23e-8d1340693c86",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-c2l-program-application"
+}
