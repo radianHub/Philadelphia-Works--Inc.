@@ -507,6 +507,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>HomePhone</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__Homeless__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -693,6 +698,11 @@
     </availableFields>
     <availableFields>
         <field>Launchpad__Mental_Health_Status__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>MobilePhone</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -1008,16 +1018,6 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>MobilePhone</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>HomePhone</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>MailingStreet</field>
         <isFieldManaged>true</isFieldManaged>
         <isRequired>true</isRequired>
@@ -1030,7 +1030,7 @@
     <displayedFields>
         <field>MailingState</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>MailingPostalCode</field>
