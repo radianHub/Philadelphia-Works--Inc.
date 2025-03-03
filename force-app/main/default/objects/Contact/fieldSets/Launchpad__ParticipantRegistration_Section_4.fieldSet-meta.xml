@@ -892,6 +892,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__Referral_Source__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__Referred_By__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -1022,10 +1027,5 @@
         <isRequired>false</isRequired>
     </availableFields>
     <description>Used in Participant Self Registration and controls the 4th Section</description>
-    <displayedFields>
-        <field>Launchpad__Referral_Source__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
     <label>ParticipantRegistration_Section_4</label>
 </FieldSet>
