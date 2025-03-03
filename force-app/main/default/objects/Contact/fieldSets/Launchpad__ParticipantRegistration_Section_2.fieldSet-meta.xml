@@ -87,6 +87,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__CIF_Authorized_to_Work__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__CIF_Basic_Skills_Deficient__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -307,6 +312,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__Citizen__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__Company_Website__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -432,6 +442,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__Ethnicity__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__FEIN__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -468,6 +483,11 @@
     </availableFields>
     <availableFields>
         <field>Launchpad__GPA__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>Launchpad__Gender_Pronoun__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -827,6 +847,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__Primary_Language_Spoken_at_Home__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__Provider_Address__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -853,6 +878,11 @@
     </availableFields>
     <availableFields>
         <field>Launchpad__Race_Ethnicity__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>Launchpad__Race__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -888,6 +918,11 @@
     </availableFields>
     <availableFields>
         <field>Salutation</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>Launchpad__Selective_Service_Registration__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -933,6 +968,11 @@
     </availableFields>
     <availableFields>
         <field>Launchpad__Veteran_Spouse__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>Launchpad__Veteran__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -993,47 +1033,7 @@
     </availableFields>
     <description>Used in Participant Self Registration and controls the 2nd Section</description>
     <displayedFields>
-        <field>Launchpad__Primary_Language_Spoken_at_Home__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Citizen__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__CIF_Authorized_to_Work__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>Launchpad__Gender__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Gender_Pronoun__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Race__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Ethnicity__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Veteran__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Selective_Service_Registration__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
