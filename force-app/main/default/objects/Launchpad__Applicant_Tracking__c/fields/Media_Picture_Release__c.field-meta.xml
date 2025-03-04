@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <inlineHelpText>I give permission to C2L-PHL and its contracted agencies, funders, and partners to use photographs and/or video of me taken during my participation in the program in publications, news releases, online, and in other communications related to the mission of program.</inlineHelpText>
     <label>Media &amp; Picture Release</label>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
