@@ -1,14 +1,13 @@
 import { LightningElement, api } from 'lwc';
 
+// TODO: move subtitle to body of card
 /**
  * Provider Tile
- * @param title {String} - Title of the provider
- * @param subtitle {String} - Subtitle of the provider
- * @param description {String} - Description of the provider
- * @param details {[String]} - Details of the provider
+ * @param provider {Object} - Provider
  * @param cardHeaderColor {String} - Color of the card header
  * @param cardBodyColor {String} - Color of the card body
- * @example <c-provider-tile title={title} subtitle={subtitle} description={description} details={details} card-header-color={cardHeaderColor} card-body-color={cardBodyColor}></c-provider-tile>
+ * @param showApply {Boolean} - Show apply button
+ * @example <c-provider-tile provider={provider} card-header-color={cardHeaderColor} card-body-color={cardBodyColor} showApply={showApply}></c-provider-tile>
  * details: [
  *      {
  *          label: 'Ages Served',
@@ -20,12 +19,7 @@ import { LightningElement, api } from 'lwc';
  * ]
  */
 export default class ProviderTile extends LightningElement {
-	@api jobId;
-	@api title;
-    @api subtitle;
-	@api description;
-	@api address
-	@api details;
+	@api provider;
 	@api cardHeaderColor;
 	@api cardBodyBgColor;
 	@api showApply;
@@ -52,4 +46,18 @@ export default class ProviderTile extends LightningElement {
     toggleDescription() {
         this.showFullDescription = !this.showFullDescription;
     }
+
+	handleAdd() {
+		const event = new CustomEvent('selectprovider', {
+			detail: { providerId: this.provider.id }
+		});
+		this.dispatchEvent(event);
+	}
+
+	handleRemove() {
+		const event = new CustomEvent('removeprovider', {
+			detail: { providerId: this.provider.id }
+		});
+		this.dispatchEvent(event);
+	}
 }
