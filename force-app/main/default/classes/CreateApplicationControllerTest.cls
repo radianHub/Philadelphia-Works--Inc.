@@ -14,12 +14,36 @@ public class CreateApplicationControllerTest {
             Email = 'test@example.com'
         );
         insert testContact;
-        
-        Launchpad__Job__c testJob = new Launchpad__Job__c(
-            Name = 'Test Job',
-            Launchpad__Account__c = testAccount.Id
+
+        RecordType sessionRecordType = [SELECT Id FROM RecordType WHERE SObjectType = 'Launchpad__Program__c' AND Name = 'Session' LIMIT 1];
+
+        Launchpad__Program__c program = new Launchpad__Program__c(
+            Name = 'Test Program',
+            Launchpad__Active__c = 'Yes',
+            RecordTypeId = sessionRecordType.Id
         );
-        insert testJob;
+        insert program;
+        
+        List<Launchpad__Job__c> testJobs = new List<Launchpad__Job__c>();
+        Launchpad__Job__c testJob1 = new Launchpad__Job__c(
+            Name = 'Test Job 1',
+            Launchpad__Account__c = testAccount.Id,
+            Program__c = program.Id
+        );
+        testJobs.add(testJob1);
+        Launchpad__Job__c testJob2 = new Launchpad__Job__c(
+            Name = 'Test Job 2',
+            Launchpad__Account__c = testAccount.Id,
+            Program__c = program.Id
+        );
+        testJobs.add(testJob2);
+        Launchpad__Job__c testJob3 = new Launchpad__Job__c(
+            Name = 'Test Job 3',
+            Launchpad__Account__c = testAccount.Id,
+            Program__c = program.Id
+        );
+        testJobs.add(testJob3);
+        insert testJobs;
     }
     
     @isTest
@@ -50,39 +74,6 @@ public class CreateApplicationControllerTest {
     }
     
     @isTest
-    static void testExistingApplication() {
-        Contact testContact = [SELECT Id, Email FROM Contact LIMIT 1];
-        Launchpad__Job__c testJob = [SELECT Id FROM Launchpad__Job__c LIMIT 1];
-        
-        Launchpad__Applicant_Tracking__c existingApp = new Launchpad__Applicant_Tracking__c(
-            Launchpad__Participant__c = testContact.Id,
-            Launchpad__Job_Order__c = testJob.Id,
-            Provider_Rank__c = '2',  
-            Applicant_s_Email_Address__c = 'old@example.com' 
-        );
-        insert existingApp;
-        
-        Test.startTest();
-        Id applicationId = CreateApplicationController.createApplication(
-            testContact.Id, 
-            testJob.Id, 
-            testContact.Email
-        );
-        Test.stopTest();
-        
-        System.assertEquals(existingApp.Id, applicationId, 'Should return the existing application ID');
-        
-        Launchpad__Applicant_Tracking__c retrievedApp = [
-            SELECT Id, Provider_Rank__c, Applicant_s_Email_Address__c
-            FROM Launchpad__Applicant_Tracking__c
-            WHERE Id = :applicationId
-        ];
-        
-        System.assertEquals('2', retrievedApp.Provider_Rank__c, 'Provider Rank should not be changed');
-        System.assertEquals('old@example.com', retrievedApp.Applicant_s_Email_Address__c, 'Email should not be changed');
-    }
-    
-    @isTest
     static void testInvalidContactId() {
         Launchpad__Job__c testJob = [SELECT Id FROM Launchpad__Job__c LIMIT 1];
         
@@ -100,5 +91,48 @@ public class CreateApplicationControllerTest {
                          'Expected exception for invalid contact ID');
         }
         Test.stopTest();
+    }
+
+    @isTest
+    static void testCreateBulkApplications() {
+        Contact testContact = [SELECT Id, Email FROM Contact LIMIT 1];
+        List<Launchpad__Job__c> testJobs = [SELECT Id FROM Launchpad__Job__c ORDER BY Name];
+        
+        List<Map<String, Object>> applicationsList = new List<Map<String, Object>>();
+        for(Integer i = 0; i < testJobs.size(); i++) {
+            Map<String, Object> appData = new Map<String, Object>{
+                'id' => testJobs[i].Id,
+                'order' => String.valueOf(i + 1)
+            };
+            applicationsList.add(appData);
+        }
+        
+        Test.startTest();
+        Id resultId = CreateApplicationController.createBulkApplications(
+            testContact.Id,
+            testContact.Email,
+            applicationsList
+        );
+        Test.stopTest();
+        
+        System.assertNotEquals(null, resultId, 'Result ID should not be null');
+        
+        List<Launchpad__Applicant_Tracking__c> createdApps = [
+            SELECT Id, Launchpad__Participant__c, Launchpad__Job_Order__c, Provider_Rank__c, Applicant_s_Email_Address__c
+            FROM Launchpad__Applicant_Tracking__c
+            WHERE Launchpad__Participant__c = :testContact.Id
+            ORDER BY Provider_Rank__c
+        ];
+        
+        System.assertEquals(testJobs.size(), createdApps.size(), 'All applications should be created');
+        
+        for(Integer i = 0; i < createdApps.size(); i++) {
+            Launchpad__Applicant_Tracking__c app = createdApps[i];
+            System.assertEquals(testContact.Id, app.Launchpad__Participant__c, 'Contact ID should match');
+            System.assertEquals(String.valueOf(i + 1), app.Provider_Rank__c, 'Provider Rank should match');
+            System.assertEquals(testContact.Email, app.Applicant_s_Email_Address__c, 'Email should match');
+        }
+        
+        System.assertEquals(createdApps[0].Id, resultId, 'First application ID should be returned');
     }
 }

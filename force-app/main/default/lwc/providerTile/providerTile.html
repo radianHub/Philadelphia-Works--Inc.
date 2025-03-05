@@ -1,8 +1,8 @@
 <template>
     <lightning-card class="provider-tile" style={cardStyle}>
         <div slot="title" class="provider-tile-title-container">
-            <h3 style={cardHeaderStyle} class="provider-tile-title">{title}</h3>
-            <p class="provider-tile-subtitle">{subtitle}</p>
+            <h3 style={cardHeaderStyle} class="provider-tile-title">{provider.title}</h3>
+            <p class="provider-tile-subtitle">{provider.subtitle}</p>
         </div>
         <div class="slds-var-p-around_medium provider-tile-body-container slds-border_top">
             <lightning-layout multiple-rows="true">
@@ -12,7 +12,7 @@
                             <span class="detail-label">Address</span>
                         </lightning-layout-item>
                         <lightning-layout-item size="8">
-                            <span>{address}</span>
+                            <span>{provider.address}</span>
                         </lightning-layout-item>
                     </lightning-layout>
                 </lightning-layout-item>
@@ -23,13 +23,13 @@
                         </lightning-layout-item>
                         <lightning-layout-item size="8">
                             <div class={descriptionClass}>
-                                <lightning-formatted-rich-text value={description}></lightning-formatted-rich-text>
+                                <lightning-formatted-rich-text value={provider.richDescription}></lightning-formatted-rich-text>
                             </div>
                             <lightning-button variant="base" label={descriptionLabel} onclick={toggleDescription}>View All</lightning-button>
                         </lightning-layout-item>
                     </lightning-layout>
                 </lightning-layout-item>
-                <template for:each={details} for:item="item">
+                <template for:each={provider.details} for:item="item">
                     <lightning-layout-item key={item.label} size="12">
                         <lightning-layout>
                             <lightning-layout-item size="4">
@@ -45,7 +45,9 @@
 
         </div>
         <div lwc:if={showApply} class="provider-tile-footer slds-var-p-around_small slds-border_top">
-            <c-create-application job-id={jobId}></c-create-application>
+            <!-- <c-create-application job-id={jobId}></c-create-application> -->
+            <lightning-button lwc:if={provider.isSelected} variant="destructive" label="Remove from Selection" onclick={handleRemove}></lightning-button>
+            <lightning-button lwc:else variant="brand" label="Add to Selection" onclick={handleAdd}></lightning-button>
         </div>
     </lightning-card>
 </template>

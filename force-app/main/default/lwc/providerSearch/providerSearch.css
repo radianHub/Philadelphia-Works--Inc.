@@ -18,3 +18,11 @@
 	font-weight: 900;
 	white-space: normal;
 }
+
+.provider-mobile-cart {
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	right: 10px;
+	z-index: 99;
+}
