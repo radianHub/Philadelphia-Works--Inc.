@@ -1,0 +1,68 @@
+<template>
+	<lightning-card class="provider-selection-cart" label="Your Selection" >
+		<div
+			lwc:if={standalone}
+			slot="title"
+			class="provider-cart-title-container">
+			<h2
+				style={headerStyle}
+				class="provider-cart-title">
+				Your Selection
+			</h2>
+		</div>
+		<div class="slds-var-m-around_medium">
+			<p class="slds-var-m-bottom_x-small">Select and rank 3-5 programs in order of preference</p>
+			<div>
+				<template iterator:provider={selectedProviders}>
+					<lightning-layout
+						key={provider.value.id}
+						data-id={provider.value.id}
+						class="slds-box slds-var-m-bottom_small"
+						horizontal-align="spread"
+						vertical-align="center">
+						<lightning-layout-item size="1"> {provider.value.order} </lightning-layout-item>
+						<lightning-layout-item flexibility="auto, shrink">
+							<p>{provider.value.title}</p>
+						</lightning-layout-item>
+						<lightning-layout-item flexibility="no-flex">
+							<lightning-button-group>
+								<lightning-button-icon
+									data-id={provider.value.id}
+									icon-name="utility:chevronup"
+									alternative-text="Move Up"
+									title="Move Up"
+									onclick={handleMoveUp}
+									disabled={provider.first}></lightning-button-icon>
+								<lightning-button-icon
+									data-id={provider.value.id}
+									icon-name="utility:chevrondown"
+									alternative-text="Move Down"
+									title="Move Down"
+									onclick={handleMoveDown}
+									disabled={provider.last}></lightning-button-icon>
+								<lightning-button-icon
+									data-id={provider.value.id}
+									variant="destructive"
+									icon-name="utility:delete"
+									alternative-text="Remove"
+									title="Remove"
+									onclick={handleRemove}></lightning-button-icon>
+							</lightning-button-group>
+						</lightning-layout-item>
+					</lightning-layout>
+				</template>
+			</div>
+
+			<div lwc:if={standalone}>
+				<p class="slds-var-m-bottom_x-small"><strong>{selectedProvidersCount}</strong> of 3-5 programs selected</p>
+				<p lwc:if={canProceed} class="slds-var-m-bottom_x-small slds-text-color_success">
+					<lightning-icon class="slds-var-m-right_x-small" icon-name="utility:success" variant="success" alternative-text="Ready" title="Ready" size="small"></lightning-icon>
+					Ready to proceed
+				</p>
+				<c-create-application
+					selected-providers={selectedProviders}
+					disabled={isDisabled}></c-create-application>
+			</div>
+		</div>
+	</lightning-card>
+</template>
