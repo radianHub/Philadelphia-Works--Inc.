@@ -20,13 +20,16 @@ public with sharing class CreateApplicationController {
             if (!existingApplications.isEmpty()) {
                 return existingApplications[0].Id;
             }
+
+            Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobId];
     
             Launchpad__Applicant_Tracking__c application = new Launchpad__Applicant_Tracking__c(
                 Launchpad__Participant__c = contactId,
                 Launchpad__Job_Order__c = jobId,
                 Provider_Rank__c = '1',
                 Applicant_s_Email_Address__c = contactEmail,
-                Launchpad__Stage__c = 'In Progress'
+                Launchpad__Stage__c = 'In Progress',
+                Program__c = job.Program__c
             );
             insert application;
             return application.Id;
@@ -58,6 +61,8 @@ public with sharing class CreateApplicationController {
                 return existingApplications[0].Id;
             }
 
+            Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
+
             List<Launchpad__Applicant_Tracking__c> newApplications = new List<Launchpad__Applicant_Tracking__c>();
             for (Map<String, Object> app : applications) {
     
@@ -66,7 +71,8 @@ public with sharing class CreateApplicationController {
                 Launchpad__Job_Order__c = (String) app.get('id'),
                 Provider_Rank__c = (String) app.get('order'),
                 Applicant_s_Email_Address__c = contactEmail,
-                Launchpad__Stage__c = 'In Progress'
+                Launchpad__Stage__c = 'In Progress',
+                Program__c = job.Program__c
             );
                 newApplications.add(application);
             }
