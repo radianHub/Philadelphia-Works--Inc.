@@ -1,6 +1,6 @@
 import { LightningElement, api } from 'lwc';
 
-// TODO: Make modal fields configurable based on field set
+// TODO: Make it possible to navigate to job tile from map details
 /**
  * Displays a map of providers
  * @param providers {[Object]} - List of providers to display on the map

@@ -1,4 +1,5 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api, wire, track } from 'lwc';
+
 import searchJobsDynamic from '@salesforce/apex/ProviderSearchController.searchJobsDynamic';
 import getJobFieldSetData from '@salesforce/apex/ProviderSearchController.getJobFieldSetMembers';
 
@@ -11,6 +12,7 @@ export default class ProviderSearch extends LightningElement {
 	@api cardHeaderColor;
 	@api cardBodyBgColor;
 	@api showApply;
+
 	hasLoaded;
 	timeout;
 	isLoading = true;
@@ -23,6 +25,25 @@ export default class ProviderSearch extends LightningElement {
 	detailsFieldApiNames = [];
 	textFiltersSelected = {};
 	picklistFiltersSelected = {};
+	activeSectionName;
+
+	// Used by cart
+	@track _selectedProviders = [];
+	get selectedProviders() {
+		return this._selectedProviders;
+	}
+	set selectedProviders(value) {
+		// Reorder selections whenever selectedProviders is set
+		this._selectedProviders = value
+			.map((val, idx) => {
+				val.order = idx + 1;
+				return val;
+			})
+	}
+
+	get selectedProvidersCount() {
+		return this.selectedProviders?.length;
+	}
 
 	get headerStyle() {
 		return this.headerColor ? 'color:' + this.headerColor : 'color:rgb(84, 105, 141)';
@@ -30,6 +51,10 @@ export default class ProviderSearch extends LightningElement {
 
 	get hasProviders() {
 		return this.providers.length > 0;
+	}
+
+	get isDisabled() {
+		return this.selectedProvidersCount < 3 || this.selectedProvidersCount > 5;
 	}
 
 	connectedCallback() {
@@ -84,13 +109,13 @@ export default class ProviderSearch extends LightningElement {
 		this.hasLoaded = true;
 	}
 
-	handleInputChange(e) {
+	handleInputChange(evt) {
 		if (this.timeout) {
 			clearTimeout(this.timeout);
 		}
 
-		const name = e.target.name;
-		const value = e.target.value;
+		const name = evt.target.name;
+		const value = evt.target.value;
 		const textFiltersSelected = { ...this.textFiltersSelected };
 
 		// eslint-disable-next-line @lwc/lwc/no-async-operation
@@ -168,11 +193,79 @@ export default class ProviderSearch extends LightningElement {
 					PostalCode: provider[locationSource].BillingPostalCode,
 					Country: 'USA',
 				},
+				isSelected: false
 			};
 		});
 	}
 
 	formatMultiselectValue(value) {
 		return value.replaceAll(';', ', ');
+	}
+
+	handleSelectProvider(evt) {
+		const providerId = evt.detail.providerId;
+		const selectedProviderIdx = this.providers.findIndex((provider) => provider.id === providerId);
+
+		this.selectedProviders = [
+			...this.selectedProviders, {
+				...this.providers[selectedProviderIdx],
+				isSelected: true
+			}
+		];
+
+		this.providers = [
+			...this.providers.slice(0, selectedProviderIdx),
+			{
+				...this.providers[selectedProviderIdx],
+				isSelected: true
+			},
+			...this.providers.slice(selectedProviderIdx + 1)
+		];
+	}
+
+	handleRemoveProvider(evt) {
+		const providerId = evt.detail.providerId;
+		const selectedProviderIdx = this.providers.findIndex((provider) => provider.id === providerId);
+
+		this.selectedProviders = this.selectedProviders.filter((provider) => provider.id !== providerId);
+
+		this.providers = [
+			...this.providers.slice(0, selectedProviderIdx),
+			{
+				...this.providers[selectedProviderIdx],
+				isSelected: false
+			},
+			...this.providers.slice(selectedProviderIdx + 1)
+		];
+	}
+
+	handleMoveUp(evt) {
+		const providerId = evt.detail.providerId;
+		const selectedProviderIdx = this.selectedProviders.findIndex((provider) => provider.id === providerId);
+
+		// Use splice or slice or move element up one index 
+		this.selectedProviders = [
+			...this.selectedProviders.slice(0, selectedProviderIdx - 1),
+			this.selectedProviders[selectedProviderIdx],
+			this.selectedProviders[selectedProviderIdx - 1],
+			...this.selectedProviders.slice(selectedProviderIdx + 1)
+		];
+	}
+
+	handleMoveDown(evt) {
+		const providerId = evt.detail.providerId;
+		const selectedProviderIdx = this.selectedProviders.findIndex((provider) => provider.id === providerId);
+
+		// Use slice to move element down one index
+		this.selectedProviders = [
+			...this.selectedProviders.slice(0, selectedProviderIdx),
+			this.selectedProviders[selectedProviderIdx + 1],
+			this.selectedProviders[selectedProviderIdx],
+			...this.selectedProviders.slice(selectedProviderIdx + 2)
+		];
+	}
+
+	handleSectionToggle() {
+		this.activeSectionName = this.activeSectionName ? null : 'selections';
 	}
 }
