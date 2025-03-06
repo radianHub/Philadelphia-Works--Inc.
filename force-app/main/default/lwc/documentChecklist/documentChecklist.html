@@ -1,0 +1,20 @@
+<template>
+	<h2
+		class="title"
+		style={headerStyle}>
+		{title}
+	</h2>
+	<p class="description slds-var-m-bottom_small">{description}</p>
+    <template for:each={documents} for:item="document">
+        <div key={document.developerName} class="slds-var-m-bottom_x-small">
+            <c-document-checklist-item
+                document={document}
+                record-id={recordId}
+                checklist-name={checklistName}
+                lookup-field={lookupField}
+                onupload={handleUpload}
+                ondelete={handleDelete}
+            ></c-document-checklist-item>
+        </div>
+    </template>
+</template>
