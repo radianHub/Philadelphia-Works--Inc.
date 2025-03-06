@@ -5,12 +5,12 @@
     <displayedFields>
         <field>Current_Living_Situation__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_s_Internet_Connectivity__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <label>Household Information 4</label>
 </FieldSet>
