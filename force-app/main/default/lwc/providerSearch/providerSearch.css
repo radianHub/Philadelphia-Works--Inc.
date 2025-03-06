@@ -9,7 +9,6 @@
 
 .description {
 	font-size: 16px;
-	font-family: 'Open Sans';
 	line-height: 30px;
 	opacity: 100;
 	font-weight: 100;
@@ -18,4 +17,12 @@
 .card-title {
 	font-weight: 900;
 	white-space: normal;
+}
+
+.provider-mobile-cart {
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	right: 10px;
+	z-index: 99;
 }

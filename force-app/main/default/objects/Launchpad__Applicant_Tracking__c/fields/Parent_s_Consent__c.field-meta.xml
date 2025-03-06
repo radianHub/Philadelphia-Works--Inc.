@@ -3,7 +3,7 @@
     <fullName>Parent_s_Consent__c</fullName>
     <externalId>false</externalId>
     <label>Parent&apos;s Consent</label>
-    <required>false</required>
+    <required>true</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

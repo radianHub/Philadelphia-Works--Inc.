@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Income_Attestation__c</fullName>
+    <externalId>false</externalId>
+    <label>Does the applicant receive any income?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, the applicant receives income</fullName>
+                <default>false</default>
+                <label>Yes, the applicant receives income</label>
+            </value>
+            <value>
+                <fullName>No, the applicant receives zero income</fullName>
+                <default>false</default>
+                <label>No, the applicant receives zero income</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
