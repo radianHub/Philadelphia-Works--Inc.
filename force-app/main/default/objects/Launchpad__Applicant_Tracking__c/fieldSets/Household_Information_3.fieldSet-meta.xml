@@ -5,7 +5,7 @@
     <displayedFields>
         <field>How_Many_Children_in_Youth_s_Household__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <label>Household Information 3</label>
 </FieldSet>

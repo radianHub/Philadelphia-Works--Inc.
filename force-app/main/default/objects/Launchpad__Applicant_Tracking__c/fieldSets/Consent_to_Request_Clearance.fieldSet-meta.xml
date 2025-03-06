@@ -5,7 +5,7 @@
     <displayedFields>
         <field>Consent_to_Request_Clearance__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <label>Consent to Request Clearance</label>
 </FieldSet>

@@ -5,7 +5,7 @@
     <displayedFields>
         <field>Explanation_of_Attestations__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <label>Explanation of Attestations</label>
 </FieldSet>
