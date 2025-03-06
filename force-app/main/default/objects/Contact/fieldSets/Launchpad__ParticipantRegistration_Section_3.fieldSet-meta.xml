@@ -147,6 +147,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__CIF_Employment_Status_at_Program_Entry__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__CIF_English_Language_Learner__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -222,6 +227,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__CIF_Long_Term_Unemployed__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__CIF_Low_Income__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -243,6 +253,11 @@
     </availableFields>
     <availableFields>
         <field>Launchpad__CIF_Received_Training__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>Launchpad__CIF_School_Status_at_Participation__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -393,6 +408,11 @@
     </availableFields>
     <availableFields>
         <field>Launchpad__Education_Level__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
+        <field>Launchpad__Education__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </availableFields>
@@ -962,6 +982,11 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
+        <field>Launchpad__Wage_Desired__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </availableFields>
+    <availableFields>
         <field>Launchpad__Weekly_Availability__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -1013,27 +1038,12 @@
     </availableFields>
     <description>Used in Participant Self Registration and controls the 3rd Section</description>
     <displayedFields>
-        <field>Launchpad__CIF_Employment_Status_at_Program_Entry__c</field>
+        <field>School__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Launchpad__CIF_Long_Term_Unemployed__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Wage_Desired__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__CIF_School_Status_at_Participation__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Education__c</field>
+        <field>Grade__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
