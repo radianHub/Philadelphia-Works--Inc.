@@ -336,9 +336,9 @@ public with sharing class UniversalApp {
                                                               Applicant_s_Last_Completed_Grade__c, Applicant_s_Current_Most_Recent_School__c, Applicant_s_Current_Employment_Status__c, Is_this_Youth_TANF_Eligible__c, 
                                                               Current_Living_Situation__c, Applicant_s_Internet_Connectivity__c, Applicant_Medical_Conditions__c, Applicant_Mental_Health_Diagnosis__c,Applicant_Mental_Disability_Diagnosis__c,
                                                               Applicant_Deaf_Difficulty_Hearing__c, Applicant_Blind_Difficulty_Seeing__c, Applicant_Involved_in_Justice_System__c, Applicant_Need_Support_Assistance__c, Income_Attestation__c, Wages_from_Employment__c,
-                                                              
                                                               Income_from_operation_of_a_business__c, Interest_in_dividends_from_assets__c, Social_Security_or_Other_Payments__c, Unemployment_or_disability_payments__c, Public_assistance_payments__c,
-                                                              Any_other_source_not_named_above__c, Explanation_of_Attestations__c, Willing_to_accept_an_unselected_program__c, Media_Picture_Release__c, Parent_s_Consent__c, Release_of_Information__c,
+                                                              Any_other_source_not_named_above__c, Explanation_of_Attestations__c, 
+                                                              Willing_to_accept_an_unselected_program__c, Media_Picture_Release__c, Parent_s_Consent__c, Release_of_Information__c,
                                                               Consent_to_Request_Clearance__c
                                                               FROM Launchpad__Applicant_Tracking__c 
                                                               WHERE Program__c = :currentApp.Program__c AND Launchpad__Participant__c = :currentApp.Launchpad__Participant__c];
@@ -393,6 +393,13 @@ public with sharing class UniversalApp {
             app.Income_Attestation__c = currentApp.Income_Attestation__c ?? app.Applicant_s_Email_Address__c;
             app.Wages_from_Employment__c = currentApp.Wages_from_Employment__c ?? app.Wages_from_Employment__c;
             app.Income_from_operation_of_a_business__c = currentApp.Income_from_operation_of_a_business__c ?? app.Income_from_operation_of_a_business__c;
+            app.Willing_to_accept_an_unselected_program__c = currentApp.Willing_to_accept_an_unselected_program__c ?? app.Willing_to_accept_an_unselected_program__c;
+            app.Media_Picture_Release__c = currentApp.Media_Picture_Release__c ?? app.Media_Picture_Release__c;
+            app.Parent_s_Consent__c = currentApp.Parent_s_Consent__c ?? app.Parent_s_Consent__c;
+            app.Release_of_Information__c = currentApp.Release_of_Information__c ?? app.Release_of_Information__c;
+            
+            
+            app.Launchpad__Stage__c = 'Submitted';
             
             appsToUpdate.add(app);
             
