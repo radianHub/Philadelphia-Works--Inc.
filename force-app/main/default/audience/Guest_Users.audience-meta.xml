@@ -35,5 +35,11 @@
             <targetType>ExperienceVariation</targetType>
             <targetValue>Default_Theme_Navigation_Menu_Component_Properties</targetValue>
         </target>
+        <target>
+            <groupName>ec6133bb-2ae3-42c4-8faa-ce9a9543c2b0$#$e329df16-e02c-4f36-a22a-c8b40f025583</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_Guest_Provider_Search_Component</targetValue>
+        </target>
     </targets>
 </Audience>

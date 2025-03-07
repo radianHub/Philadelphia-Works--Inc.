@@ -65,8 +65,9 @@ export default class CreateApplication extends NavigationMixin(LightningElement)
             })
 
             createBulkApplications({ contactId: this.contactId, contactEmail: this.contactEmail, applications })
-                .then((response) => {
-                    this.navigateToUniversalApp(response);
+                .then(async () => {
+                    await Promise.resolve();
+                    this.navigateToUniversalApp();
                 })
                 .catch(error => {
                     const event = new ShowToastEvent({
@@ -81,13 +82,11 @@ export default class CreateApplication extends NavigationMixin(LightningElement)
 
     }
 
-    navigateToUniversalApp(jobId) {
+    navigateToUniversalApp() {
         this[NavigationMixin.Navigate]({
-            type: 'standard__recordPage',
+            type: 'comm__namedPage',
             attributes: {
-                recordId: jobId,
-                objectApiName: 'Launchpad__Applicant_Tracking__c',
-                actionName: 'view'
+                name: 'My_Applications'
             }
         });
     }

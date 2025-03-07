@@ -18,7 +18,17 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
+        <field>Applicant_s_Preferred_Name__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
         <field>Applicant_s_Email_Address__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Applicant_s_Phone_Number__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
@@ -43,22 +53,12 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Phone_Number__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>Applicant_s_Date_of_Birth_MM_DD_YYYY__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Age_at_Start_of_Program__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Applicant_s_Social_Security_Number__c</field>
+        <field>Applicants_Tax_Id__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
@@ -69,11 +69,6 @@
     </displayedFields>
     <displayedFields>
         <field>Applicant_s_Primary_Language__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Applicant_s_Preferred_Name__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>

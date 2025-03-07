@@ -1,0 +1,13 @@
+{
+  "componentVariants" : [ {
+    "id" : "6ca3e048-4ef2-4ed7-be4d-e0ba559ac4dd",
+    "propertyOverrides" : {
+      "isVisible" : true
+    },
+    "targetId" : "e329df16-e02c-4f36-a22a-c8b40f025583",
+    "type" : "componentVariant"
+  } ],
+  "developerName" : "Home_Guest_Provider_Search_Component",
+  "id" : "c0c26935-d6ff-4c2d-a295-c3e189b48dc4",
+  "type" : "experienceVariation"
+}
