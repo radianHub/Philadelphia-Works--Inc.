@@ -23,12 +23,12 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Last_Completed_Grade__c</field>
+        <field>Applicants_Last_Completed_Grade__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Current_Most_Recent_School__c</field>
+        <field>Applicants_Current_Most_Recent_School__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>

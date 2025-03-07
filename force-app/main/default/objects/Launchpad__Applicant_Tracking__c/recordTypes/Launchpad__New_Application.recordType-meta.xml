@@ -613,6 +613,224 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Applicants_Current_Most_Recent_School__c</picklist>
+        <values>
+            <fullName>AMY Northwest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMY at James Martin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Abraham Lincoln High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Academy at Palumbo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austin Meehan Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baldi Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benjamin Franklin High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bodine High School for International Affairs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carver High School for Engineering and Science</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castor Gardens Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossroads Accelerated Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feltonville Arts %26 Sciences School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankford High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin Learning Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Louis Wagner Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>George Washington High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Girard Academic Music Program %28GAMP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grover Jr%2E Washington Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hill-Freedman World Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hill-Freedman World Academy High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horace Furness High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Bartram High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Julia R%2E Masterman School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington Creative %26 Performing Arts High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington Health Sciences Academy High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Martin Luther King High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Years Alternative %28MYA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overbrook High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penn Treaty School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia High School for Creative and Performing Arts %28CAPA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roberto Clemente Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roxborough High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russell Conwell Magnet Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samuel Fels High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Leadership Academy Middle School %28SLA-MS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Philadelphia High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strawberry Mansion High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Arts Academy at Benjamin Rush</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thomas A%2E Edison High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warren G%2E Harding Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Philadelphia High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>William L%2E Sayre High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>William T%2E Tilden Middle School</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicants_Last_Completed_Grade__c</picklist>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Clearance_Requested_Through_Justifacts__c</picklist>
         <values>
             <fullName>No</fullName>

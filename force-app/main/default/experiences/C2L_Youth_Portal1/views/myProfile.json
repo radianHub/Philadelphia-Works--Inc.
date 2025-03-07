@@ -16,7 +16,7 @@
         "documentTypesLabel" : "Please select the Document Type",
         "editButtonLabel" : "Edit Profile",
         "header" : "My Profile",
-        "headerColor" : "rgb(84, 105, 141)",
+        "headerColor" : "rgb(38, 105, 168)",
         "launchCommonIntakeButtonLabel" : "Launch Common Intake",
         "minimumMaximumAgeerrorMessage" : "Value must be between {0} and  {1}.",
         "myDocumentsHeader" : "My Documents",
@@ -28,10 +28,10 @@
         "requiredSkillsMessage" : "Please select at least {0} Skills",
         "saveButtonLabel" : "Save Changes",
         "selectedSkillsLabel" : "My Skills",
-        "showBuildResumeButton" : true,
-        "showLaunchCommonIntakeButton" : true,
-        "showSkill" : true,
-        "showdoc" : true,
+        "showBuildResumeButton" : false,
+        "showLaunchCommonIntakeButton" : false,
+        "showSkill" : false,
+        "showdoc" : false,
         "skillPillColor" : "rgb(8, 92, 160)",
         "skillPopupDescription" : "Please review all Categories to add your Skills",
         "skillPopupHeader" : "Update Your Profile",
@@ -39,7 +39,7 @@
         "skillPopupSubHeader" : "Please Add Your Skills",
         "skillavailableTitle" : "Please select all that apply",
         "skillsSuccessMessage" : "Skills have been saved",
-        "subheaderColor" : "rgb(84, 105, 141)",
+        "subheaderColor" : "rgb(38, 105, 168)",
         "successMessage" : "Your Profile has been updated successfully"
       },
       "componentName" : "Launchpad:pcMyProfileAura",
@@ -64,7 +64,7 @@
       "componentAttributes" : {
         "customHeadTags" : "",
         "description" : "",
-        "title" : "My Profile"
+        "title" : "C2L-PHL Youth - My Profile"
       },
       "componentName" : "forceCommunity:seoAssistant",
       "id" : "3bc7d34c-1de6-4797-b72e-8bfa54121bb3",

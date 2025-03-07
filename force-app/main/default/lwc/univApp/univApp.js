@@ -58,6 +58,7 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	REQUIRED_FIELDS = 'Required fields are missing.';
 	POST_FIELDS_JSON_PARSE = 'Please contact your Salesforce Administrator. The JSON ';
 	FLOW_SUCCESS = 'Successfully completed the flow.';
+	FLOW_SAVED = 'Your progress has been saved.';
 
 	loadingData = true;
 	savingData = false;
@@ -82,18 +83,18 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	// # APEX
 
 	// * GET RECORD ID IF PASSED IN A PARAMETER
-	@wire(CurrentPageReference)
-	getStateParameters(currentPageReference) {
-		const urlValue = currentPageReference.state.c__recordId;
-		if (urlValue) {
-			this.recordId = urlValue;
-		}
+	// @wire(CurrentPageReference)
+	// getStateParameters(currentPageReference) {
+	// 	const urlValue = currentPageReference.state.c__recordId;
+	// 	if (urlValue) {
+	// 		this.recordId = urlValue;
+	// 	}
 
-		console.log('recordId', this.recordId);
-		//  else {
-		// 	this.recordId = null;
-		// }
-	}
+	// 	console.log('recordId', this.recordId);
+	// 	//  else {
+	// 	// 	this.recordId = null;
+	// 	// }
+	// }
 
 	getApp() {
 		getApp({ appDevName: this.appDevName, recordId: this.recordId })
@@ -136,11 +137,14 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	}
 
 	// * SUBMITS THE RECORD AND CALLS A PAGE REDIRECT BASED ON A RETURNED BOOLEAN VALUE
-	submitSObj() {
+	submitSObj(isSaveForLater) {
 		this.savingData = true;
 
 		let urlRecordId;
-		this.finished = true;
+
+		if (!isSaveForLater) {
+			this.finished = true;
+		}
 
 		let filesToInsert = [];
 
@@ -153,10 +157,15 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 			sObj: this.sObj,
 			application: this.appDevName,
 			filesString: JSON.stringify(filesToInsert),
+			isSaveForLater: isSaveForLater
 		})
 			.then((result) => {
 				if (result.data) {
-					this.alert = this.FLOW_SUCCESS;
+					if (isSaveForLater) {
+						this.alert = this.FLOW_SAVED;
+					} else {
+						this.alert = this.FLOW_SUCCESS;
+					}
 					this.alertType = 'success';
 					urlRecordId = result.data;
 					if (this.sigCaptured) {
@@ -210,6 +219,11 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 							: this.lwcCommPageRedirect(this.appData.Page_Redirect__c);
 					}
 					this.savingData = false;
+
+					if (!isSaveForLater) {
+						window.location.reload();
+					}
+
 				} else if (result.error) {
 					this.finished = false;
 					this.alert = result.error;
@@ -532,8 +546,16 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 		}
 	}
 
+	saveForLater() {
+		this.finish(true);
+	}
+
+	submit() {
+		this.finish(false);
+	}
+
 	// * SETS THE RECORD ID IF AVAILABLE AND HANDLES THE SUBMISSION OF THE RECORD
-	finish() {
+	finish(isSaveForLater) {
 		this.alert = '';
 		this.setObjectFields();
 		if (this.validateFields(this.REQUIRED_FIELDS, 'error')) {
@@ -553,7 +575,8 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 				if (this.recordId) {
 					this.sObj['Id'] = this.recordId;
 				}
-				this.submitSObj();
+
+				this.submitSObj(isSaveForLater);
 			}
 		}
 	}
