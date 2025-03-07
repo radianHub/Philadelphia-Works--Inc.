@@ -60,7 +60,7 @@
     </values>
     <values>
         <field>Section_Header__c</field>
-        <value xsi:type="xsd:string">Applicant&apos;s Guardian Information</value>
+        <value xsi:type="xsd:string">Applicant&apos;s Parent or Guardian Information</value>
     </values>
     <values>
         <field>Universal_App__c</field>
@@ -72,7 +72,25 @@
     </values>
     <values>
         <field>conditionalRequire__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">{
+&quot;Fields&quot;: [
+{
+&quot;api&quot;: &quot;Guardian_Name__c&quot;,
+&quot;controllingField&quot;: &quot;Applicant_s_Age_at_Start_of_Program__c&quot;,
+&quot;controllingValues&quot;: [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;, &quot;13&quot;, &quot;14&quot;, &quot;15&quot;, &quot;16&quot;, &quot;17&quot;]
+},
+{
+&quot;api&quot;: &quot;Guardian_Email__c&quot;,
+&quot;controllingField&quot;: &quot;Applicant_s_Age_at_Start_of_Program__c&quot;,
+&quot;controllingValues&quot;: [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;, &quot;13&quot;, &quot;14&quot;, &quot;15&quot;, &quot;16&quot;, &quot;17&quot;]
+},
+{
+&quot;api&quot;: &quot;Guardian_Phone_Number__c&quot;,
+&quot;controllingField&quot;: &quot;Applicant_s_Age_at_Start_of_Program__c&quot;,
+&quot;controllingValues&quot;: [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;, &quot;13&quot;, &quot;14&quot;, &quot;15&quot;, &quot;16&quot;, &quot;17&quot;]
+}
+]
+}</value>
     </values>
     <values>
         <field>isEnableChildRecords__c</field>

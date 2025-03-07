@@ -41,30 +41,30 @@ public with sharing class UniversalApp {
 	// Input    - Id of 'Universal App'
 	private static void querySections(String appId) {
 		// sections = [
-		// 	SELECT
-		// 		Id,
-		// 		DeveloperName,
-		// 		MasterLabel,
-		// 		Order__c,
-		// 		Page__c,
-		// 		Section_Body__c,
-		// 		Section_Field_Set__c,
-		// 		Section_Field_Columns__c,
-		// 		Section_Field_Flow__c,
-		// 		Section_Header__c,
-		// 		conditionalRequire__c,
-		// 		conditionalRender__c,
-		// 		DisplayByDefault__c,
-		// 		AddChildButtonLabel__c,
-		// 		ChildFieldSet__c,
-		// 		ChildObject__c,
-		// 		ChildObjectRecordLimit__c,
-		// 		ChildTableTitle__c,
-		// 		ParentField__c,
-		// 		isEnableChildRecords__c,
-		// 		Include_Signature__c
-		// 	FROM Universal_App_Section__mdt
-		// 	WHERE Universal_App__c = :appId
+		//  SELECT
+		//      Id,
+		//      DeveloperName,
+		//      MasterLabel,
+		//      Order__c,
+		//      Page__c,
+		//      Section_Body__c,
+		//      Section_Field_Set__c,
+		//      Section_Field_Columns__c,
+		//      Section_Field_Flow__c,
+		//      Section_Header__c,
+		//      conditionalRequire__c,
+		//      conditionalRender__c,
+		//      DisplayByDefault__c,
+		//      AddChildButtonLabel__c,
+		//      ChildFieldSet__c,
+		//      ChildObject__c,
+		//      ChildObjectRecordLimit__c,
+		//      ChildTableTitle__c,
+		//      ParentField__c,
+		//      isEnableChildRecords__c,
+		//      Include_Signature__c
+		//  FROM Universal_App_Section__mdt
+		//  WHERE Universal_App__c = :appId
 		// ];
 
 		sections = Universal_App_Section__mdt.getAll().values();
@@ -147,8 +147,6 @@ public with sharing class UniversalApp {
 	// Output   - Map<String, Object> {'data' -> [{api -> fieldAPI__c, options...}, ...], 'error' -> 'String'}
 	@AuraEnabled(cacheable=true)
 	public static Map<String, Object> retrieveApp(String appDevName, Id recordId) {
-		System.debug('appDevName: ' + appDevName);
-		System.debug('recordId: ' + recordId);
 		Map<String, Object> ret = new Map<String, Object>();
 
 		try {
@@ -313,114 +311,242 @@ public with sharing class UniversalApp {
 		return ret;
 	}
 
-    public static void updateOtherAppsInSameSession(Id appId){
-        Launchpad__Applicant_Tracking__c currentApp = [SELECT Id, Program__c, Launchpad__Participant__c, Applicant_s_Street_Address__c, Applicant_s_Email_Address__c, Applicant_City__c,
-                                                              Applicant_s_State__c, Applicant_s_Zip_Code__c, Applicant_s_Phone_Number__c, Applicant_s_Date_of_Birth_MM_DD_YYYY__c, Applicant_s_Social_Security_Number__c, 
-                                                              Applicant_s_Country_of_Nationality__c, Applicant_s_Primary_Language__c, Applicant_s_Preferred_Name__c, Guardian_Name__c, Relationship_to_this_Young_Person__c,
-                                                              Guardian_Phone_Number__c, Guardian_Email__c, Emergency_Contact_First_Name__c, Emergency_Contact_Last_Name__c, Emergency_Contact_Email__c, Emergency_Contact_Phone__c,
-                                                              Emergency_Contact_Relationship__c, Applicant_s_Sex_Assigned_at_Birth__c, Applicant_s_Current_Gender__c, Applicant_s_Preferred_Pronoun__c, Race_and_or_Ethnicity__c,
-                                                              Applicant_s_Last_Completed_Grade__c, Applicant_s_Current_Most_Recent_School__c, Applicant_s_Current_Employment_Status__c, Is_this_Youth_TANF_Eligible__c, 
-                                                              Current_Living_Situation__c, Applicant_s_Internet_Connectivity__c, Applicant_Medical_Conditions__c, Applicant_Mental_Health_Diagnosis__c,Applicant_Mental_Disability_Diagnosis__c,
-                                                              Applicant_Deaf_Difficulty_Hearing__c, Applicant_Blind_Difficulty_Seeing__c, Applicant_Involved_in_Justice_System__c, Applicant_Need_Support_Assistance__c, Income_Attestation__c, Wages_from_Employment__c,
-                                                              Income_from_operation_of_a_business__c, Interest_in_dividends_from_assets__c, Social_Security_or_Other_Payments__c, Unemployment_or_disability_payments__c, Public_assistance_payments__c,
-                                                              Any_other_source_not_named_above__c, Explanation_of_Attestations__c, Willing_to_accept_an_unselected_program__c, Media_Picture_Release__c, Parent_s_Consent__c, Release_of_Information__c,
-                                                              Consent_to_Request_Clearance__c 
-                                                       FROM Launchpad__Applicant_Tracking__c 
-                                                       WHERE Id = :appId LIMIT 1];
-         
-        List<Launchpad__Applicant_Tracking__c> relatedApps = [SELECT Id, Program__c, Launchpad__Participant__c, Applicant_s_Street_Address__c, Applicant_s_Email_Address__c, Applicant_City__c,
-                                                              Applicant_s_State__c, Applicant_s_Zip_Code__c, Applicant_s_Phone_Number__c, Applicant_s_Date_of_Birth_MM_DD_YYYY__c, Applicant_s_Social_Security_Number__c, 
-                                                              Applicant_s_Country_of_Nationality__c, Applicant_s_Primary_Language__c, Applicant_s_Preferred_Name__c, Guardian_Name__c, Relationship_to_this_Young_Person__c,
-                                                              Guardian_Phone_Number__c, Guardian_Email__c, Emergency_Contact_First_Name__c, Emergency_Contact_Last_Name__c, Emergency_Contact_Email__c, Emergency_Contact_Phone__c,
-                                                              Emergency_Contact_Relationship__c, Applicant_s_Sex_Assigned_at_Birth__c, Applicant_s_Current_Gender__c, Applicant_s_Preferred_Pronoun__c, Race_and_or_Ethnicity__c,
-                                                              Applicant_s_Last_Completed_Grade__c, Applicant_s_Current_Most_Recent_School__c, Applicant_s_Current_Employment_Status__c, Is_this_Youth_TANF_Eligible__c, 
-                                                              Current_Living_Situation__c, Applicant_s_Internet_Connectivity__c, Applicant_Medical_Conditions__c, Applicant_Mental_Health_Diagnosis__c,Applicant_Mental_Disability_Diagnosis__c,
-                                                              Applicant_Deaf_Difficulty_Hearing__c, Applicant_Blind_Difficulty_Seeing__c, Applicant_Involved_in_Justice_System__c, Applicant_Need_Support_Assistance__c, Income_Attestation__c, Wages_from_Employment__c,
-                                                              Income_from_operation_of_a_business__c, Interest_in_dividends_from_assets__c, Social_Security_or_Other_Payments__c, Unemployment_or_disability_payments__c, Public_assistance_payments__c,
-                                                              Any_other_source_not_named_above__c, Explanation_of_Attestations__c, 
-                                                              Willing_to_accept_an_unselected_program__c, Media_Picture_Release__c, Parent_s_Consent__c, Release_of_Information__c,
-                                                              Consent_to_Request_Clearance__c
-                                                              FROM Launchpad__Applicant_Tracking__c 
-                                                              WHERE Program__c = :currentApp.Program__c AND Launchpad__Participant__c = :currentApp.Launchpad__Participant__c];
-        
-        List<Launchpad__Applicant_Tracking__c> appsToUpdate = new List<Launchpad__Applicant_Tracking__c>();
-        
-        for(Launchpad__Applicant_Tracking__c app : relatedApps){
-            app.Applicant_s_Street_Address__c = currentApp.Applicant_s_Street_Address__c ?? app.Applicant_s_Street_Address__c;
-            app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ?? app.Applicant_s_Email_Address__c;
-            app.Applicant_City__c = currentApp.Applicant_City__c ?? app.Applicant_City__c;
-            app.Applicant_s_State__c = currentApp.Applicant_s_State__c ?? app.Applicant_s_State__c;
-            app.Applicant_s_Zip_Code__c = currentApp.Applicant_s_Zip_Code__c ?? app.Applicant_s_Zip_Code__c;
-            app.Applicant_s_Phone_Number__c = currentApp.Applicant_s_Phone_Number__c ?? app.Applicant_s_Phone_Number__c;
-            app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c = currentApp.Applicant_s_Date_of_Birth_MM_DD_YYYY__c ?? app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c;
-            app.Applicant_s_Social_Security_Number__c = currentApp.Applicant_s_Social_Security_Number__c ?? app.Applicant_s_Social_Security_Number__c;
-            app.Applicant_s_Country_of_Nationality__c = currentApp.Applicant_s_Country_of_Nationality__c ?? app.Applicant_s_Country_of_Nationality__c;
-            app.Applicant_s_Primary_Language__c = currentApp.Applicant_s_Primary_Language__c ?? app.Applicant_s_Primary_Language__c;
-            app.Applicant_s_Preferred_Name__c = currentApp.Applicant_s_Preferred_Name__c ?? app.Applicant_s_Preferred_Name__c;
-            app.Guardian_Name__c = currentApp.Guardian_Name__c ?? app.Guardian_Name__c;
-            app.Relationship_to_this_Young_Person__c = currentApp.Relationship_to_this_Young_Person__c ?? app.Relationship_to_this_Young_Person__c;
-            app.Guardian_Phone_Number__c = currentApp.Guardian_Phone_Number__c ?? app.Guardian_Phone_Number__c;
-            app.Guardian_Email__c = currentApp.Guardian_Email__c ?? app.Guardian_Email__c;
-            app.Emergency_Contact_First_Name__c = currentApp.Emergency_Contact_First_Name__c ?? app.Emergency_Contact_First_Name__c;
-            app.Emergency_Contact_Last_Name__c = currentApp.Emergency_Contact_Last_Name__c ?? app.Emergency_Contact_Last_Name__c;
-            app.Emergency_Contact_Email__c = currentApp.Emergency_Contact_Email__c ?? app.Emergency_Contact_Email__c;
-            app.Emergency_Contact_Phone__c = currentApp.Emergency_Contact_Phone__c ?? app.Emergency_Contact_Phone__c;
-            app.Emergency_Contact_Relationship__c = currentApp.Emergency_Contact_Relationship__c ?? app.Emergency_Contact_Relationship__c;
-            app.Applicant_s_Sex_Assigned_at_Birth__c = currentApp.Applicant_s_Sex_Assigned_at_Birth__c ?? app.Applicant_s_Sex_Assigned_at_Birth__c;
-            app.Social_Security_or_Other_Payments__c = currentApp.Social_Security_or_Other_Payments__c ?? app.Social_Security_or_Other_Payments__c;
-            app.Unemployment_or_disability_payments__c = currentApp.Unemployment_or_disability_payments__c ?? app.Unemployment_or_disability_payments__c;
-            app.Public_assistance_payments__c = currentApp.Public_assistance_payments__c ?? app.Public_assistance_payments__c;
-            app.Any_other_source_not_named_above__c = currentApp.Any_other_source_not_named_above__c ?? app.Any_other_source_not_named_above__c;
-            app.Explanation_of_Attestations__c = currentApp.Explanation_of_Attestations__c ?? app.Explanation_of_Attestations__c;
-            app.Consent_to_Request_Clearance__c = currentApp.Consent_to_Request_Clearance__c ?? app.Consent_to_Request_Clearance__c;
-            app.Interest_in_dividends_from_assets__c = currentApp.Interest_in_dividends_from_assets__c ?? app.Interest_in_dividends_from_assets__c;
-            app.Applicant_s_Current_Gender__c = currentApp.Applicant_s_Current_Gender__c ?? app.Applicant_s_Current_Gender__c;
-            app.Applicant_s_Preferred_Pronoun__c = currentApp.Applicant_s_Preferred_Pronoun__c ?? app.Applicant_s_Preferred_Pronoun__c;
-            app.Race_and_or_Ethnicity__c = currentApp.Race_and_or_Ethnicity__c ?? app.Race_and_or_Ethnicity__c;
-            app.Applicant_s_Last_Completed_Grade__c = currentApp.Applicant_s_Last_Completed_Grade__c ?? app.Applicant_s_Last_Completed_Grade__c;
-            app.Applicant_s_Current_Most_Recent_School__c = currentApp.Applicant_s_Current_Most_Recent_School__c ?? app.Applicant_s_Current_Most_Recent_School__c;
-            app.Applicant_s_Current_Employment_Status__c = currentApp.Applicant_s_Current_Employment_Status__c ?? app.Applicant_s_Current_Employment_Status__c;
-            app.Is_this_Youth_TANF_Eligible__c = currentApp.Is_this_Youth_TANF_Eligible__c ?? app.Is_this_Youth_TANF_Eligible__c;
-            app.Current_Living_Situation__c = currentApp.Current_Living_Situation__c ?? app.Current_Living_Situation__c;
-            app.Applicant_s_Internet_Connectivity__c = currentApp.Applicant_s_Internet_Connectivity__c ?? app.Applicant_s_Internet_Connectivity__c;
-            app.Applicant_Medical_Conditions__c = currentApp.Applicant_Medical_Conditions__c ?? app.Applicant_Medical_Conditions__c;
-            app.Applicant_Mental_Health_Diagnosis__c = currentApp.Applicant_Mental_Health_Diagnosis__c ?? app.Applicant_Mental_Health_Diagnosis__c;
-            app.Applicant_Mental_Disability_Diagnosis__c = currentApp.Applicant_Mental_Disability_Diagnosis__c ?? app.Applicant_Mental_Disability_Diagnosis__c;
-            app.Applicant_Deaf_Difficulty_Hearing__c = currentApp.Applicant_Deaf_Difficulty_Hearing__c ?? app.Applicant_Deaf_Difficulty_Hearing__c;
-            app.Applicant_Blind_Difficulty_Seeing__c = currentApp.Applicant_Blind_Difficulty_Seeing__c ?? app.Applicant_Blind_Difficulty_Seeing__c;
-            app.Applicant_Involved_in_Justice_System__c = currentApp.Applicant_Involved_in_Justice_System__c ?? app.Applicant_Involved_in_Justice_System__c;
-            app.Applicant_Need_Support_Assistance__c = currentApp.Applicant_Need_Support_Assistance__c ?? app.Applicant_Need_Support_Assistance__c;
-            app.Income_Attestation__c = currentApp.Income_Attestation__c ?? app.Applicant_s_Email_Address__c;
-            app.Wages_from_Employment__c = currentApp.Wages_from_Employment__c ?? app.Wages_from_Employment__c;
-            app.Income_from_operation_of_a_business__c = currentApp.Income_from_operation_of_a_business__c ?? app.Income_from_operation_of_a_business__c;
-            app.Willing_to_accept_an_unselected_program__c = currentApp.Willing_to_accept_an_unselected_program__c ?? app.Willing_to_accept_an_unselected_program__c;
-            app.Media_Picture_Release__c = currentApp.Media_Picture_Release__c ?? app.Media_Picture_Release__c;
-            app.Parent_s_Consent__c = currentApp.Parent_s_Consent__c ?? app.Parent_s_Consent__c;
-            app.Release_of_Information__c = currentApp.Release_of_Information__c ?? app.Release_of_Information__c;
-            
-            
-            app.Launchpad__Stage__c = 'Submitted';
-            
-            appsToUpdate.add(app);
-            
-            
-  
-        }
-        
-        update appsToUpdate;
-    }
+	public static void updateOtherAppsInSameSession(Id appId) {
+		Launchpad__Applicant_Tracking__c currentApp = [
+			SELECT
+				Id,
+				Program__c,
+				Launchpad__Participant__c,
+				Applicant_s_Street_Address__c,
+				Applicant_s_Email_Address__c,
+				Applicant_City__c,
+				Applicant_s_State__c,
+				Applicant_s_Zip_Code__c,
+				Applicant_s_Phone_Number__c,
+				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
+				Applicants_Tax_Id__c,
+				Applicant_s_Country_of_Nationality__c,
+				Applicant_s_Primary_Language__c,
+				Applicant_s_Preferred_Name__c,
+				Guardian_Name__c,
+				Relationship_to_this_Young_Person__c,
+				Guardian_Phone_Number__c,
+				Guardian_Email__c,
+				Emergency_Contact_First_Name__c,
+				Emergency_Contact_Last_Name__c,
+				Emergency_Contact_Email__c,
+				Emergency_Contact_Phone__c,
+				Emergency_Contact_Relationship__c,
+				Applicant_s_Sex_Assigned_at_Birth__c,
+				Applicant_s_Current_Gender__c,
+				Applicant_s_Preferred_Pronoun__c,
+				Race_and_or_Ethnicity__c,
+				Applicant_s_Last_Completed_Grade__c,
+				Applicant_s_Current_Most_Recent_School__c,
+				Applicant_s_Current_Employment_Status__c,
+				Is_this_Youth_TANF_Eligible__c,
+				Current_Living_Situation__c,
+				Applicant_s_Internet_Connectivity__c,
+				Applicant_Medical_Conditions__c,
+				Applicant_Mental_Health_Diagnosis__c,
+				Applicant_Mental_Disability_Diagnosis__c,
+				Applicant_Deaf_Difficulty_Hearing__c,
+				Applicant_Blind_Difficulty_Seeing__c,
+				Applicant_Involved_in_Justice_System__c,
+				Applicant_Need_Support_Assistance__c,
+				Income_Attestation__c,
+				Wages_from_Employment__c,
+				Income_from_operation_of_a_business__c,
+				Interest_in_dividends_from_assets__c,
+				Social_Security_or_Other_Payments__c,
+				Unemployment_or_disability_payments__c,
+				Public_assistance_payments__c,
+				Any_other_source_not_named_above__c,
+				Explanation_of_Attestations__c,
+				Willing_to_accept_an_unselected_program__c,
+				Media_Picture_Release__c,
+				Parent_s_Consent__c,
+				Release_of_Information__c,
+				Consent_to_Request_Clearance__c
+			FROM Launchpad__Applicant_Tracking__c
+			WHERE Id = :appId
+			LIMIT 1
+		];
+
+		List<Launchpad__Applicant_Tracking__c> relatedApps = [
+			SELECT
+				Id,
+				Program__c,
+				Launchpad__Participant__c,
+				Applicant_s_Street_Address__c,
+				Applicant_s_Email_Address__c,
+				Applicant_City__c,
+				Applicant_s_State__c,
+				Applicant_s_Zip_Code__c,
+				Applicant_s_Phone_Number__c,
+				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
+				Applicants_Tax_Id__c,
+				Applicant_s_Country_of_Nationality__c,
+				Applicant_s_Primary_Language__c,
+				Applicant_s_Preferred_Name__c,
+				Guardian_Name__c,
+				Relationship_to_this_Young_Person__c,
+				Guardian_Phone_Number__c,
+				Guardian_Email__c,
+				Emergency_Contact_First_Name__c,
+				Emergency_Contact_Last_Name__c,
+				Emergency_Contact_Email__c,
+				Emergency_Contact_Phone__c,
+				Emergency_Contact_Relationship__c,
+				Applicant_s_Sex_Assigned_at_Birth__c,
+				Applicant_s_Current_Gender__c,
+				Applicant_s_Preferred_Pronoun__c,
+				Race_and_or_Ethnicity__c,
+				Applicant_s_Last_Completed_Grade__c,
+				Applicant_s_Current_Most_Recent_School__c,
+				Applicant_s_Current_Employment_Status__c,
+				Is_this_Youth_TANF_Eligible__c,
+				Current_Living_Situation__c,
+				Applicant_s_Internet_Connectivity__c,
+				Applicant_Medical_Conditions__c,
+				Applicant_Mental_Health_Diagnosis__c,
+				Applicant_Mental_Disability_Diagnosis__c,
+				Applicant_Deaf_Difficulty_Hearing__c,
+				Applicant_Blind_Difficulty_Seeing__c,
+				Applicant_Involved_in_Justice_System__c,
+				Applicant_Need_Support_Assistance__c,
+				Income_Attestation__c,
+				Wages_from_Employment__c,
+				Income_from_operation_of_a_business__c,
+				Interest_in_dividends_from_assets__c,
+				Social_Security_or_Other_Payments__c,
+				Unemployment_or_disability_payments__c,
+				Public_assistance_payments__c,
+				Any_other_source_not_named_above__c,
+				Explanation_of_Attestations__c,
+				Willing_to_accept_an_unselected_program__c,
+				Media_Picture_Release__c,
+				Parent_s_Consent__c,
+				Release_of_Information__c,
+				Consent_to_Request_Clearance__c
+			FROM Launchpad__Applicant_Tracking__c
+			WHERE
+				Program__c = :currentApp.Program__c
+				AND Launchpad__Participant__c = :currentApp.Launchpad__Participant__c
+		];
+
+		List<Launchpad__Applicant_Tracking__c> appsToUpdate = new List<Launchpad__Applicant_Tracking__c>();
+
+		for (Launchpad__Applicant_Tracking__c app : relatedApps) {
+			app.Applicant_s_Street_Address__c = currentApp.Applicant_s_Street_Address__c ??
+				app.Applicant_s_Street_Address__c;
+			app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ??
+				app.Applicant_s_Email_Address__c;
+			app.Applicant_City__c = currentApp.Applicant_City__c ?? app.Applicant_City__c;
+			app.Applicant_s_State__c = currentApp.Applicant_s_State__c ?? app.Applicant_s_State__c;
+			app.Applicant_s_Zip_Code__c = currentApp.Applicant_s_Zip_Code__c ?? app.Applicant_s_Zip_Code__c;
+			app.Applicant_s_Phone_Number__c = currentApp.Applicant_s_Phone_Number__c ?? app.Applicant_s_Phone_Number__c;
+			app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c = currentApp.Applicant_s_Date_of_Birth_MM_DD_YYYY__c ??
+				app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c;
+			app.Applicants_Tax_Id__c = currentApp.Applicants_Tax_Id__c ?? app.Applicants_Tax_Id__c;
+			app.Applicant_s_Country_of_Nationality__c = currentApp.Applicant_s_Country_of_Nationality__c ??
+				app.Applicant_s_Country_of_Nationality__c;
+			app.Applicant_s_Primary_Language__c = currentApp.Applicant_s_Primary_Language__c ??
+				app.Applicant_s_Primary_Language__c;
+			app.Applicant_s_Preferred_Name__c = currentApp.Applicant_s_Preferred_Name__c ??
+				app.Applicant_s_Preferred_Name__c;
+			app.Guardian_Name__c = currentApp.Guardian_Name__c ?? app.Guardian_Name__c;
+			app.Relationship_to_this_Young_Person__c = currentApp.Relationship_to_this_Young_Person__c ??
+				app.Relationship_to_this_Young_Person__c;
+			app.Guardian_Phone_Number__c = currentApp.Guardian_Phone_Number__c ?? app.Guardian_Phone_Number__c;
+			app.Guardian_Email__c = currentApp.Guardian_Email__c ?? app.Guardian_Email__c;
+			app.Emergency_Contact_First_Name__c = currentApp.Emergency_Contact_First_Name__c ??
+				app.Emergency_Contact_First_Name__c;
+			app.Emergency_Contact_Last_Name__c = currentApp.Emergency_Contact_Last_Name__c ??
+				app.Emergency_Contact_Last_Name__c;
+			app.Emergency_Contact_Email__c = currentApp.Emergency_Contact_Email__c ?? app.Emergency_Contact_Email__c;
+			app.Emergency_Contact_Phone__c = currentApp.Emergency_Contact_Phone__c ?? app.Emergency_Contact_Phone__c;
+			app.Emergency_Contact_Relationship__c = currentApp.Emergency_Contact_Relationship__c ??
+				app.Emergency_Contact_Relationship__c;
+			app.Applicant_s_Sex_Assigned_at_Birth__c = currentApp.Applicant_s_Sex_Assigned_at_Birth__c ??
+				app.Applicant_s_Sex_Assigned_at_Birth__c;
+			app.Social_Security_or_Other_Payments__c = currentApp.Social_Security_or_Other_Payments__c ??
+				app.Social_Security_or_Other_Payments__c;
+			app.Unemployment_or_disability_payments__c = currentApp.Unemployment_or_disability_payments__c ??
+				app.Unemployment_or_disability_payments__c;
+			app.Public_assistance_payments__c = currentApp.Public_assistance_payments__c ??
+				app.Public_assistance_payments__c;
+			app.Any_other_source_not_named_above__c = currentApp.Any_other_source_not_named_above__c ??
+				app.Any_other_source_not_named_above__c;
+			app.Explanation_of_Attestations__c = currentApp.Explanation_of_Attestations__c ??
+				app.Explanation_of_Attestations__c;
+			app.Consent_to_Request_Clearance__c = currentApp.Consent_to_Request_Clearance__c ??
+				app.Consent_to_Request_Clearance__c;
+			app.Interest_in_dividends_from_assets__c = currentApp.Interest_in_dividends_from_assets__c ??
+				app.Interest_in_dividends_from_assets__c;
+			app.Applicant_s_Current_Gender__c = currentApp.Applicant_s_Current_Gender__c ??
+				app.Applicant_s_Current_Gender__c;
+			app.Applicant_s_Preferred_Pronoun__c = currentApp.Applicant_s_Preferred_Pronoun__c ??
+				app.Applicant_s_Preferred_Pronoun__c;
+			app.Race_and_or_Ethnicity__c = currentApp.Race_and_or_Ethnicity__c ?? app.Race_and_or_Ethnicity__c;
+			app.Applicant_s_Last_Completed_Grade__c = currentApp.Applicant_s_Last_Completed_Grade__c ??
+				app.Applicant_s_Last_Completed_Grade__c;
+			app.Applicant_s_Current_Most_Recent_School__c = currentApp.Applicant_s_Current_Most_Recent_School__c ??
+				app.Applicant_s_Current_Most_Recent_School__c;
+			app.Applicant_s_Current_Employment_Status__c = currentApp.Applicant_s_Current_Employment_Status__c ??
+				app.Applicant_s_Current_Employment_Status__c;
+			app.Is_this_Youth_TANF_Eligible__c = currentApp.Is_this_Youth_TANF_Eligible__c ??
+				app.Is_this_Youth_TANF_Eligible__c;
+			app.Current_Living_Situation__c = currentApp.Current_Living_Situation__c ?? app.Current_Living_Situation__c;
+			app.Applicant_s_Internet_Connectivity__c = currentApp.Applicant_s_Internet_Connectivity__c ??
+				app.Applicant_s_Internet_Connectivity__c;
+			app.Applicant_Medical_Conditions__c = currentApp.Applicant_Medical_Conditions__c ??
+				app.Applicant_Medical_Conditions__c;
+			app.Applicant_Mental_Health_Diagnosis__c = currentApp.Applicant_Mental_Health_Diagnosis__c ??
+				app.Applicant_Mental_Health_Diagnosis__c;
+			app.Applicant_Mental_Disability_Diagnosis__c = currentApp.Applicant_Mental_Disability_Diagnosis__c ??
+				app.Applicant_Mental_Disability_Diagnosis__c;
+			app.Applicant_Deaf_Difficulty_Hearing__c = currentApp.Applicant_Deaf_Difficulty_Hearing__c ??
+				app.Applicant_Deaf_Difficulty_Hearing__c;
+			app.Applicant_Blind_Difficulty_Seeing__c = currentApp.Applicant_Blind_Difficulty_Seeing__c ??
+				app.Applicant_Blind_Difficulty_Seeing__c;
+			app.Applicant_Involved_in_Justice_System__c = currentApp.Applicant_Involved_in_Justice_System__c ??
+				app.Applicant_Involved_in_Justice_System__c;
+			app.Applicant_Need_Support_Assistance__c = currentApp.Applicant_Need_Support_Assistance__c ??
+				app.Applicant_Need_Support_Assistance__c;
+			app.Income_Attestation__c = currentApp.Income_Attestation__c ?? app.Income_Attestation__c;
+			app.Wages_from_Employment__c = currentApp.Wages_from_Employment__c ?? app.Wages_from_Employment__c;
+			app.Income_from_operation_of_a_business__c = currentApp.Income_from_operation_of_a_business__c ??
+				app.Income_from_operation_of_a_business__c;
+			app.Willing_to_accept_an_unselected_program__c = currentApp.Willing_to_accept_an_unselected_program__c ??
+				app.Willing_to_accept_an_unselected_program__c;
+			app.Media_Picture_Release__c = currentApp.Media_Picture_Release__c ?? app.Media_Picture_Release__c;
+			app.Parent_s_Consent__c = currentApp.Parent_s_Consent__c ?? app.Parent_s_Consent__c;
+			app.Release_of_Information__c = currentApp.Release_of_Information__c ?? app.Release_of_Information__c;
+
+			app.Launchpad__Stage__c = 'Submitted';
+
+			appsToUpdate.add(app);
+		}
+
+		update appsToUpdate;
+	}
 	@AuraEnabled
-	public static Map<String, Object> submitApp(SObject sObj, String application, String filesString) {
+	public static Map<String, Object> submitApp(
+		SObject sObj,
+		String application,
+		String filesString,
+		Boolean isSaveForLater
+	) {
 		Map<String, Object> ret = new Map<String, Object>();
 		Id sObjectId;
 
 		try {
-			// ! IF ADJUSMENTS ARE NEEDED TO SPECIFIC APPLICATIONS, USE A SWITCH STATEMENT AND UNCOMMENT THE CODE CODE BELOW
-			// switch on application {
-			// 	when 'REPLACE WITH APPLICATION NAME' {
-			// 	} when else {
-			// 	}
-			// }
+			// ! IF ADJUSTMENTS ARE NEEDED TO SPECIFIC APPLICATIONS, USE A SWITCH STATEMENT AND UNCOMMENT THE CODE CODE BELOW
+            // Pre upsert logic
+            if (application == 'C2L_Program_Application' && isSaveForLater != true) {
+                sObj.put('Launchpad__Stage__c', 'Submitted');
+            }
 
 			Database.UpsertResult result = Database.upsert(sObj, false);
 			if (!result.isSuccess()) {
@@ -430,11 +556,11 @@ public with sharing class UniversalApp {
 			ret.put('data', result.Id);
 			sObjectId = result.Id;
 
-            if(sObjectId.getSObjectType().getDescribe().getName() == 'Launchpad__Applicant_Tracking__c'){
+            // Post upsert logic
+            if (application == 'C2L_Program_Application' && isSaveForLater != true) {
                 updateOtherAppsInSameSession(sObjectId);
             }
-            
-            
+
 			if (filesString != null) {
 				List<File> filesList = (List<File>) JSON.deserialize(filesString, List<File>.class);
 

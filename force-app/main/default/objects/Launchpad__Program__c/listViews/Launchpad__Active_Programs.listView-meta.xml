@@ -6,7 +6,7 @@
     <columns>Launchpad__Active__c</columns>
     <columns>Launchpad__Program_Year_Start__c</columns>
     <columns>Launchpad__Program_Year_End__c</columns>
-    <columns>Launchpad__Grant__c</columns>
+    <columns>RECORDTYPE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Launchpad__Active__c</field>
