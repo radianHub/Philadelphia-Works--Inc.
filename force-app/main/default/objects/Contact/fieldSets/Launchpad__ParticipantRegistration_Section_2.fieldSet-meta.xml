@@ -1035,7 +1035,7 @@
     <displayedFields>
         <field>Launchpad__Gender__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <label>ParticipantRegistration_Section_2</label>
 </FieldSet>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Tile 5</label>
+    <protected>false</protected>
+    <values>
+        <field>Launchpad__Active__c</field>
+        <value xsi:type="xsd:string">No</value>
+    </values>
+    <values>
+        <field>Launchpad__Details__c</field>
+        <value xsi:type="xsd:string">{Agency Name} may be able to connect you to child care, transportation, housing, food, professional clothing and other resources to help you be successful in a job.  (You will be taken to an external Site)</value>
+    </values>
+    <values>
+        <field>Launchpad__Header__c</field>
+        <value xsi:type="xsd:string">Additional Resources</value>
+    </values>
+    <values>
+        <field>Launchpad__Image_URL__c</field>
+        <value xsi:type="xsd:string">https://launchpad-managedpackage-dev-ed.file.force.com/servlet/servlet.FileDownload?file=0154w0000248BTt</value>
+    </values>
+    <values>
+        <field>Launchpad__Language__c</field>
+        <value xsi:type="xsd:string">en_US</value>
+    </values>
+    <values>
+        <field>Launchpad__Open_in_New_Tab__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Launchpad__Order__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+    <values>
+        <field>Launchpad__Redirect_URL__c</field>
+        <value xsi:type="xsd:string">https://launchpadco.com</value>
+    </values>
+    <values>
+        <field>Launchpad__Row__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+</CustomMetadata>

@@ -29,12 +29,12 @@
           "componentAttributes" : {
             "cardBodyBgColor" : "rgb(235, 235, 235)",
             "cardHeaderColor" : "rgb(38, 105, 168)",
-            "description" : "Find a program that fits your needs.",
+            "description" : "Select and apply to 3-5 programs that interest you.",
             "detailsFieldSetApiName" : "Job_Details_Fields",
             "headerColor" : "rgb(38, 105, 168)",
             "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",
             "showApply" : true,
-            "title" : "Browse Programs"
+            "title" : "C2L-PHL Program Locator"
           },
           "componentName" : "c:providerSearch",
           "id" : "f475c8c0-a5c5-4d7e-bbb6-4433322e9071",
@@ -60,7 +60,7 @@
       "componentAttributes" : {
         "customHeadTags" : "",
         "description" : "",
-        "title" : "Program Locator"
+        "title" : "C2L-PHL Youth - Program Locator"
       },
       "componentName" : "forceCommunity:seoAssistant",
       "id" : "602e343c-e710-479a-9e55-33e8468bcff1",
