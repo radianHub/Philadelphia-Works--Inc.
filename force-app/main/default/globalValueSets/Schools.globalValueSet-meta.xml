@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
-        <fullName>Academy at Palumbo</fullName>
+        <fullName>Other</fullName>
         <default>true</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Academy at Palumbo</fullName>
+        <default>false</default>
         <label>Academy at Palumbo</label>
     </customValue>
     <customValue>
