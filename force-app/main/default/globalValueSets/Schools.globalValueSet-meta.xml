@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
-        <fullName>Abraham Lincoln High School</fullName>
-        <default>false</default>
-        <label>Abraham Lincoln High School</label>
+        <fullName>Other</fullName>
+        <default>true</default>
+        <label>Other</label>
     </customValue>
     <customValue>
         <fullName>Academy at Palumbo</fullName>
@@ -11,19 +11,74 @@
         <label>Academy at Palumbo</label>
     </customValue>
     <customValue>
-        <fullName>AMY at James Martin</fullName>
+        <fullName>Academy for the Middle Years (AMY) at Northwest</fullName>
         <default>false</default>
-        <label>AMY at James Martin</label>
+        <label>Academy for the Middle Years (AMY) at Northwest</label>
     </customValue>
     <customValue>
-        <fullName>AMY Northwest</fullName>
+        <fullName>Achieve Academy</fullName>
         <default>false</default>
-        <label>AMY Northwest</label>
+        <label>Achieve Academy</label>
     </customValue>
     <customValue>
-        <fullName>Austin Meehan Middle School</fullName>
+        <fullName>Achieve Academy East</fullName>
         <default>false</default>
-        <label>Austin Meehan Middle School</label>
+        <label>Achieve Academy East</label>
+    </customValue>
+    <customValue>
+        <fullName>Ad Prima Charter School</fullName>
+        <default>false</default>
+        <label>Ad Prima Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Adaire, Alexander School</fullName>
+        <default>false</default>
+        <label>Adaire, Alexander School</label>
+    </customValue>
+    <customValue>
+        <fullName>Allen, Dr. Ethel School</fullName>
+        <default>false</default>
+        <label>Allen, Dr. Ethel School</label>
+    </customValue>
+    <customValue>
+        <fullName>Allen, Ethan School</fullName>
+        <default>false</default>
+        <label>Allen, Ethan School</label>
+    </customValue>
+    <customValue>
+        <fullName>Allen, Richard Preparatory Charter School</fullName>
+        <default>false</default>
+        <label>Allen, Richard Preparatory Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Alliance For Progress Charter School</fullName>
+        <default>false</default>
+        <label>Alliance For Progress Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Alternative Middle Years (AMY) at James Martin</fullName>
+        <default>false</default>
+        <label>Alternative Middle Years (AMY) at James Martin</label>
+    </customValue>
+    <customValue>
+        <fullName>Anderson, Add B. School</fullName>
+        <default>false</default>
+        <label>Anderson, Add B. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Anderson, Marian Neighborhood Academy</fullName>
+        <default>false</default>
+        <label>Anderson, Marian Neighborhood Academy</label>
+    </customValue>
+    <customValue>
+        <fullName>Arts Academy at Benjamin Rush</fullName>
+        <default>false</default>
+        <label>Arts Academy at Benjamin Rush</label>
+    </customValue>
+    <customValue>
+        <fullName>Bache-Martin School</fullName>
+        <default>false</default>
+        <label>Bache-Martin School</label>
     </customValue>
     <customValue>
         <fullName>Baldi Middle School</fullName>
@@ -31,19 +86,99 @@
         <label>Baldi Middle School</label>
     </customValue>
     <customValue>
-        <fullName>Benjamin Franklin High School</fullName>
+        <fullName>Barry, John Elementary School</fullName>
         <default>false</default>
-        <label>Benjamin Franklin High School</label>
+        <label>Barry, John Elementary School</label>
     </customValue>
     <customValue>
-        <fullName>Bodine High School for International Affairs</fullName>
+        <fullName>Barton, Clara School</fullName>
         <default>false</default>
-        <label>Bodine High School for International Affairs</label>
+        <label>Barton, Clara School</label>
     </customValue>
     <customValue>
-        <fullName>Carver High School for Engineering and Science</fullName>
+        <fullName>Bartram, John High School</fullName>
         <default>false</default>
-        <label>Carver High School for Engineering and Science</label>
+        <label>Bartram, John High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Belmont Charter School</fullName>
+        <default>false</default>
+        <label>Belmont Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Bethune, Mary M. School</fullName>
+        <default>false</default>
+        <label>Bethune, Mary M. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Blaine, James G. School</fullName>
+        <default>false</default>
+        <label>Blaine, James G. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Blankenburg, Rudolph School</fullName>
+        <default>false</default>
+        <label>Blankenburg, Rudolph School</label>
+    </customValue>
+    <customValue>
+        <fullName>Bodine, William W. High School</fullName>
+        <default>false</default>
+        <label>Bodine, William W. High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Boys Latin of Philadelphia Charter School</fullName>
+        <default>false</default>
+        <label>Boys Latin of Philadelphia Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Bracetti, Mariana Academy Charter School</fullName>
+        <default>false</default>
+        <label>Bracetti, Mariana Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Bregy, F. Amedee School</fullName>
+        <default>false</default>
+        <label>Bregy, F. Amedee School</label>
+    </customValue>
+    <customValue>
+        <fullName>Bridesburg School</fullName>
+        <default>false</default>
+        <label>Bridesburg School</label>
+    </customValue>
+    <customValue>
+        <fullName>Brown, Henry A. School</fullName>
+        <default>false</default>
+        <label>Brown, Henry A. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Brown, Joseph H. School</fullName>
+        <default>false</default>
+        <label>Brown, Joseph H. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Bryant, William C. School</fullName>
+        <default>false</default>
+        <label>Bryant, William C. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Building 21</fullName>
+        <default>false</default>
+        <label>Building 21</label>
+    </customValue>
+    <customValue>
+        <fullName>Byers, Russell Charter School</fullName>
+        <default>false</default>
+        <label>Byers, Russell Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Carnell, Laura H. School</fullName>
+        <default>false</default>
+        <label>Carnell, Laura H. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Cassidy, Lewis C. Academics Plus School</fullName>
+        <default>false</default>
+        <label>Cassidy, Lewis C. Academics Plus School</label>
     </customValue>
     <customValue>
         <fullName>Castor Gardens Middle School</fullName>
@@ -51,9 +186,89 @@
         <label>Castor Gardens Middle School</label>
     </customValue>
     <customValue>
+        <fullName>Catharine, Joseph W. School</fullName>
+        <default>false</default>
+        <label>Catharine, Joseph W. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Cayuga School</fullName>
+        <default>false</default>
+        <label>Cayuga School</label>
+    </customValue>
+    <customValue>
         <fullName>Central High School</fullName>
         <default>false</default>
         <label>Central High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Childs, George W. School</fullName>
+        <default>false</default>
+        <label>Childs, George W. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Clemente, Roberto Middle School</fullName>
+        <default>false</default>
+        <label>Clemente, Roberto Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Columbus, Christopher Charter School</fullName>
+        <default>false</default>
+        <label>Columbus, Christopher Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Comegys, Benjamin B. School</fullName>
+        <default>false</default>
+        <label>Comegys, Benjamin B. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Comly, Watson School</fullName>
+        <default>false</default>
+        <label>Comly, Watson School</label>
+    </customValue>
+    <customValue>
+        <fullName>Community Academy of Philadelphia Charter School</fullName>
+        <default>false</default>
+        <label>Community Academy of Philadelphia Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Constitution High School</fullName>
+        <default>false</default>
+        <label>Constitution High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Conwell, Russell H. School</fullName>
+        <default>false</default>
+        <label>Conwell, Russell H. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Cook-Wissahickon School</fullName>
+        <default>false</default>
+        <label>Cook-Wissahickon School</label>
+    </customValue>
+    <customValue>
+        <fullName>Cooke, Jay School</fullName>
+        <default>false</default>
+        <label>Cooke, Jay School</label>
+    </customValue>
+    <customValue>
+        <fullName>Coppin, Fanny Jackson School</fullName>
+        <default>false</default>
+        <label>Coppin, Fanny Jackson School</label>
+    </customValue>
+    <customValue>
+        <fullName>Cramp, William School</fullName>
+        <default>false</default>
+        <label>Cramp, William School</label>
+    </customValue>
+    <customValue>
+        <fullName>Creative and Performing Arts (CAPA) High School</fullName>
+        <default>false</default>
+        <label>Creative and Performing Arts (CAPA) High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Crossan, Kennedy C. School</fullName>
+        <default>false</default>
+        <label>Crossan, Kennedy C. School</label>
     </customValue>
     <customValue>
         <fullName>Crossroads Accelerated Academy</fullName>
@@ -61,9 +276,189 @@
         <label>Crossroads Accelerated Academy</label>
     </customValue>
     <customValue>
-        <fullName>Feltonville Arts &amp; Sciences School</fullName>
+        <fullName>Crossroads at Hunting Park</fullName>
         <default>false</default>
-        <label>Feltonville Arts &amp; Sciences School</label>
+        <label>Crossroads at Hunting Park</label>
+    </customValue>
+    <customValue>
+        <fullName>Day, Anna B. School</fullName>
+        <default>false</default>
+        <label>Day, Anna B. School</label>
+    </customValue>
+    <customValue>
+        <fullName>De Burgos, Julia School</fullName>
+        <default>false</default>
+        <label>De Burgos, Julia School</label>
+    </customValue>
+    <customValue>
+        <fullName>De Hostos, Eugenio Maria Charter School</fullName>
+        <default>false</default>
+        <label>De Hostos, Eugenio Maria Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Decatur, Stephen School</fullName>
+        <default>false</default>
+        <label>Decatur, Stephen School</label>
+    </customValue>
+    <customValue>
+        <fullName>Deep Roots Charter School</fullName>
+        <default>false</default>
+        <label>Deep Roots Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Dick, William School</fullName>
+        <default>false</default>
+        <label>Dick, William School</label>
+    </customValue>
+    <customValue>
+        <fullName>Discovery Charter School</fullName>
+        <default>false</default>
+        <label>Discovery Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Disston, Hamilton School</fullName>
+        <default>false</default>
+        <label>Disston, Hamilton School</label>
+    </customValue>
+    <customValue>
+        <fullName>Dobbins, Murrell Career and Technical Education High School</fullName>
+        <default>false</default>
+        <label>Dobbins, Murrell Career and Technical Education High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Dobson, James School</fullName>
+        <default>false</default>
+        <label>Dobson, James School</label>
+    </customValue>
+    <customValue>
+        <fullName>Duckrey, Tanner G. School</fullName>
+        <default>false</default>
+        <label>Duckrey, Tanner G. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Dunbar, Paul L. School</fullName>
+        <default>false</default>
+        <label>Dunbar, Paul L. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Edison, Thomas A. High School</fullName>
+        <default>false</default>
+        <label>Edison, Thomas A. High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Edmonds, Franklin S. School</fullName>
+        <default>false</default>
+        <label>Edmonds, Franklin S. School</label>
+    </customValue>
+    <customValue>
+        <fullName>El Centro de Estudiantes - Big Picture</fullName>
+        <default>false</default>
+        <label>El Centro de Estudiantes - Big Picture</label>
+    </customValue>
+    <customValue>
+        <fullName>Elkin, Lewis School</fullName>
+        <default>false</default>
+        <label>Elkin, Lewis School</label>
+    </customValue>
+    <customValue>
+        <fullName>Ellwood School</fullName>
+        <default>false</default>
+        <label>Ellwood School</label>
+    </customValue>
+    <customValue>
+        <fullName>Emlen, Eleanor C. School</fullName>
+        <default>false</default>
+        <label>Emlen, Eleanor C. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Esperanza Academy Charter School</fullName>
+        <default>false</default>
+        <label>Esperanza Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Excel Academy Central</fullName>
+        <default>false</default>
+        <label>Excel Academy Central</label>
+    </customValue>
+    <customValue>
+        <fullName>Excel Academy North</fullName>
+        <default>false</default>
+        <label>Excel Academy North</label>
+    </customValue>
+    <customValue>
+        <fullName>Excel Academy South</fullName>
+        <default>false</default>
+        <label>Excel Academy South</label>
+    </customValue>
+    <customValue>
+        <fullName>Excel Middle Years Academy</fullName>
+        <default>false</default>
+        <label>Excel Middle Years Academy</label>
+    </customValue>
+    <customValue>
+        <fullName>Farrell, Louis H. School</fullName>
+        <default>false</default>
+        <label>Farrell, Louis H. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Fell, D. Newlin School</fullName>
+        <default>false</default>
+        <label>Fell, D. Newlin School</label>
+    </customValue>
+    <customValue>
+        <fullName>Fels, Samuel High School</fullName>
+        <default>false</default>
+        <label>Fels, Samuel High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Feltonville Intermediate School</fullName>
+        <default>false</default>
+        <label>Feltonville Intermediate School</label>
+    </customValue>
+    <customValue>
+        <fullName>Feltonville School of Arts and Sciences</fullName>
+        <default>false</default>
+        <label>Feltonville School of Arts and Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Finletter, Thomas K. School</fullName>
+        <default>false</default>
+        <label>Finletter, Thomas K. School</label>
+    </customValue>
+    <customValue>
+        <fullName>First Philadelphia Preparatory Charter School</fullName>
+        <default>false</default>
+        <label>First Philadelphia Preparatory Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Fitler Academics Plus School</fullName>
+        <default>false</default>
+        <label>Fitler Academics Plus School</label>
+    </customValue>
+    <customValue>
+        <fullName>Fitzpatrick, A. L. School</fullName>
+        <default>false</default>
+        <label>Fitzpatrick, A. L. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Folk Arts-Cultural Treasures Charter School (FACTS)</fullName>
+        <default>false</default>
+        <label>Folk Arts-Cultural Treasures Charter School (FACTS)</label>
+    </customValue>
+    <customValue>
+        <fullName>Forrest, Edwin School</fullName>
+        <default>false</default>
+        <label>Forrest, Edwin School</label>
+    </customValue>
+    <customValue>
+        <fullName>Fox Chase School</fullName>
+        <default>false</default>
+        <label>Fox Chase School</label>
+    </customValue>
+    <customValue>
+        <fullName>Frank, Anne School</fullName>
+        <default>false</default>
+        <label>Frank, Anne School</label>
     </customValue>
     <customValue>
         <fullName>Frankford High School</fullName>
@@ -71,19 +466,54 @@
         <label>Frankford High School</label>
     </customValue>
     <customValue>
-        <fullName>Franklin Learning Center</fullName>
+        <fullName>Franklin Learning Center (FLC)</fullName>
         <default>false</default>
-        <label>Franklin Learning Center</label>
+        <label>Franklin Learning Center (FLC)</label>
     </customValue>
     <customValue>
-        <fullName>General Louis Wagner Middle School</fullName>
+        <fullName>Franklin Towne Charter Elementary School</fullName>
         <default>false</default>
-        <label>General Louis Wagner Middle School</label>
+        <label>Franklin Towne Charter Elementary School</label>
     </customValue>
     <customValue>
-        <fullName>George Washington High School</fullName>
+        <fullName>Franklin Towne Charter High School</fullName>
         <default>false</default>
-        <label>George Washington High School</label>
+        <label>Franklin Towne Charter High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Franklin, Benjamin High School</fullName>
+        <default>false</default>
+        <label>Franklin, Benjamin High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Franklin, Benjamin High School - EOP</fullName>
+        <default>false</default>
+        <label>Franklin, Benjamin High School - EOP</label>
+    </customValue>
+    <customValue>
+        <fullName>Franklin, Benjamin K8 School</fullName>
+        <default>false</default>
+        <label>Franklin, Benjamin K8 School</label>
+    </customValue>
+    <customValue>
+        <fullName>Freire Charter School</fullName>
+        <default>false</default>
+        <label>Freire Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Furness, Horace High School</fullName>
+        <default>false</default>
+        <label>Furness, Horace High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Gateway to College - Community College of Philadelphia</fullName>
+        <default>false</default>
+        <label>Gateway to College - Community College of Philadelphia</label>
+    </customValue>
+    <customValue>
+        <fullName>Gideon, Edward School</fullName>
+        <default>false</default>
+        <label>Gideon, Edward School</label>
     </customValue>
     <customValue>
         <fullName>Girard Academic Music Program (GAMP)</fullName>
@@ -91,9 +521,99 @@
         <label>Girard Academic Music Program (GAMP)</label>
     </customValue>
     <customValue>
-        <fullName>Grover Jr. Washington Middle School</fullName>
+        <fullName>Girard, Stephen School</fullName>
         <default>false</default>
-        <label>Grover Jr. Washington Middle School</label>
+        <label>Girard, Stephen School</label>
+    </customValue>
+    <customValue>
+        <fullName>Global Leadership Academy at Huey</fullName>
+        <default>false</default>
+        <label>Global Leadership Academy at Huey</label>
+    </customValue>
+    <customValue>
+        <fullName>Global Leadership Academy Charter School</fullName>
+        <default>false</default>
+        <label>Global Leadership Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Gloria Casarez Elementary School</fullName>
+        <default>false</default>
+        <label>Gloria Casarez Elementary School</label>
+    </customValue>
+    <customValue>
+        <fullName>Gompers, Samuel School</fullName>
+        <default>false</default>
+        <label>Gompers, Samuel School</label>
+    </customValue>
+    <customValue>
+        <fullName>Green Woods Charter School</fullName>
+        <default>false</default>
+        <label>Green Woods Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Greenberg, Joseph School</fullName>
+        <default>false</default>
+        <label>Greenberg, Joseph School</label>
+    </customValue>
+    <customValue>
+        <fullName>Greenfield, Albert M. School</fullName>
+        <default>false</default>
+        <label>Greenfield, Albert M. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Guion S. Bluford Elementary School</fullName>
+        <default>false</default>
+        <label>Guion S. Bluford Elementary School</label>
+    </customValue>
+    <customValue>
+        <fullName>Hackett, Horatio B. School</fullName>
+        <default>false</default>
+        <label>Hackett, Horatio B. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Hamilton, Andrew School</fullName>
+        <default>false</default>
+        <label>Hamilton, Andrew School</label>
+    </customValue>
+    <customValue>
+        <fullName>Harambee Institute of Science and Technology Charter School</fullName>
+        <default>false</default>
+        <label>Harambee Institute of Science and Technology Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Harding, Warren G. Middle School</fullName>
+        <default>false</default>
+        <label>Harding, Warren G. Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Harrington, Avery D. School</fullName>
+        <default>false</default>
+        <label>Harrington, Avery D. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Hartranft, John F. School</fullName>
+        <default>false</default>
+        <label>Hartranft, John F. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Henry, Charles W. School</fullName>
+        <default>false</default>
+        <label>Henry, Charles W. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Heston, Edward School</fullName>
+        <default>false</default>
+        <label>Heston, Edward School</label>
+    </customValue>
+    <customValue>
+        <fullName>High School of Engineering and Science - Carver</fullName>
+        <default>false</default>
+        <label>High School of Engineering and Science - Carver</label>
+    </customValue>
+    <customValue>
+        <fullName>High School of the Future</fullName>
+        <default>false</default>
+        <label>High School of the Future</label>
     </customValue>
     <customValue>
         <fullName>Hill-Freedman World Academy</fullName>
@@ -101,34 +621,94 @@
         <label>Hill-Freedman World Academy</label>
     </customValue>
     <customValue>
-        <fullName>Hill-Freedman World Academy High School</fullName>
+        <fullName>Holme, Thomas School</fullName>
         <default>false</default>
-        <label>Hill-Freedman World Academy High School</label>
+        <label>Holme, Thomas School</label>
     </customValue>
     <customValue>
-        <fullName>Horace Furness High School</fullName>
+        <fullName>Hopkinson, Francis School</fullName>
         <default>false</default>
-        <label>Horace Furness High School</label>
+        <label>Hopkinson, Francis School</label>
     </customValue>
     <customValue>
-        <fullName>John Bartram High School</fullName>
+        <fullName>Houston, Henry H. School</fullName>
         <default>false</default>
-        <label>John Bartram High School</label>
+        <label>Houston, Henry H. School</label>
     </customValue>
     <customValue>
-        <fullName>Julia R. Masterman School</fullName>
+        <fullName>Howe, Julia Ward School</fullName>
         <default>false</default>
-        <label>Julia R. Masterman School</label>
+        <label>Howe, Julia Ward School</label>
     </customValue>
     <customValue>
-        <fullName>Kensington Creative &amp; Performing Arts High School</fullName>
+        <fullName>Hunter, William H. School</fullName>
         <default>false</default>
-        <label>Kensington Creative &amp; Performing Arts High School</label>
+        <label>Hunter, William H. School</label>
     </customValue>
     <customValue>
-        <fullName>Kensington Health Sciences Academy High School</fullName>
+        <fullName>Imhotep Institute Charter High School</fullName>
         <default>false</default>
-        <label>Kensington Health Sciences Academy High School</label>
+        <label>Imhotep Institute Charter High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Independence Charter School</fullName>
+        <default>false</default>
+        <label>Independence Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Independence Charter School West</fullName>
+        <default>false</default>
+        <label>Independence Charter School West</label>
+    </customValue>
+    <customValue>
+        <fullName>Inquiry Charter School</fullName>
+        <default>false</default>
+        <label>Inquiry Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Jenks Academy for Arts and Sciences</fullName>
+        <default>false</default>
+        <label>Jenks Academy for Arts and Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Jenks, Abram S. School</fullName>
+        <default>false</default>
+        <label>Jenks, Abram S. School</label>
+    </customValue>
+    <customValue>
+        <fullName>John Hancock Demonstration School</fullName>
+        <default>false</default>
+        <label>John Hancock Demonstration School</label>
+    </customValue>
+    <customValue>
+        <fullName>Juniata Park Academy</fullName>
+        <default>false</default>
+        <label>Juniata Park Academy</label>
+    </customValue>
+    <customValue>
+        <fullName>Kearny, General Philip School</fullName>
+        <default>false</default>
+        <label>Kearny, General Philip School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kelley, William D. School</fullName>
+        <default>false</default>
+        <label>Kelley, William D. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kelly, John B. School</fullName>
+        <default>false</default>
+        <label>Kelly, John B. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kenderton Elementary School</fullName>
+        <default>false</default>
+        <label>Kenderton Elementary School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kensington Health Sciences Academy</fullName>
+        <default>false</default>
+        <label>Kensington Health Sciences Academy</label>
     </customValue>
     <customValue>
         <fullName>Kensington High School</fullName>
@@ -136,14 +716,364 @@
         <label>Kensington High School</label>
     </customValue>
     <customValue>
-        <fullName>Martin Luther King High School</fullName>
+        <fullName>Kensington High School for Creative and Performing Arts (CAPA)</fullName>
         <default>false</default>
-        <label>Martin Luther King High School</label>
+        <label>Kensington High School for Creative and Performing Arts (CAPA)</label>
     </customValue>
     <customValue>
-        <fullName>Middle Years Alternative (MYA)</fullName>
+        <fullName>Key, Francis S. School</fullName>
         <default>false</default>
-        <label>Middle Years Alternative (MYA)</label>
+        <label>Key, Francis S. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Keystone Academy Charter School</fullName>
+        <default>false</default>
+        <label>Keystone Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>King, Martin Luther High School</fullName>
+        <default>false</default>
+        <label>King, Martin Luther High School</label>
+    </customValue>
+    <customValue>
+        <fullName>KIPP DuBois Charter School</fullName>
+        <default>false</default>
+        <label>KIPP DuBois Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>KIPP North Philadelphia Charter School</fullName>
+        <default>false</default>
+        <label>KIPP North Philadelphia Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>KIPP Philadelphia Charter School</fullName>
+        <default>false</default>
+        <label>KIPP Philadelphia Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>KIPP Philadelphia Octavius Catto Charter School</fullName>
+        <default>false</default>
+        <label>KIPP Philadelphia Octavius Catto Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>KIPP West Philadelphia Charter School</fullName>
+        <default>false</default>
+        <label>KIPP West Philadelphia Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Kirkbride, Eliza B. School</fullName>
+        <default>false</default>
+        <label>Kirkbride, Eliza B. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Laboratory Charter School of Communication and Languages</fullName>
+        <default>false</default>
+        <label>Laboratory Charter School of Communication and Languages</label>
+    </customValue>
+    <customValue>
+        <fullName>Lamberton, Robert E. School</fullName>
+        <default>false</default>
+        <label>Lamberton, Robert E. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Lankenau High School</fullName>
+        <default>false</default>
+        <label>Lankenau High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Lawton, Henry W. School</fullName>
+        <default>false</default>
+        <label>Lawton, Henry W. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Lea, Henry C. School</fullName>
+        <default>false</default>
+        <label>Lea, Henry C. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Liguori Academy-Fortis</fullName>
+        <default>false</default>
+        <label>Liguori Academy-Fortis</label>
+    </customValue>
+    <customValue>
+        <fullName>Lincoln, Abraham High School</fullName>
+        <default>false</default>
+        <label>Lincoln, Abraham High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Lindley Academy Charter at Birney</fullName>
+        <default>false</default>
+        <label>Lindley Academy Charter at Birney</label>
+    </customValue>
+    <customValue>
+        <fullName>Lingelbach, Anna L. School</fullName>
+        <default>false</default>
+        <label>Lingelbach, Anna L. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Locke, Alain School</fullName>
+        <default>false</default>
+        <label>Locke, Alain School</label>
+    </customValue>
+    <customValue>
+        <fullName>Loesche, William H. School</fullName>
+        <default>false</default>
+        <label>Loesche, William H. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Logan, James School</fullName>
+        <default>false</default>
+        <label>Logan, James School</label>
+    </customValue>
+    <customValue>
+        <fullName>Longstreth, William C. School</fullName>
+        <default>false</default>
+        <label>Longstreth, William C. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Lowell, James R. School</fullName>
+        <default>false</default>
+        <label>Lowell, James R. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Ludlow, James R. School</fullName>
+        <default>false</default>
+        <label>Ludlow, James R. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Maritime Academy Charter School (MACHS)</fullName>
+        <default>false</default>
+        <label>Maritime Academy Charter School (MACHS)</label>
+    </customValue>
+    <customValue>
+        <fullName>Marshall, John School</fullName>
+        <default>false</default>
+        <label>Marshall, John School</label>
+    </customValue>
+    <customValue>
+        <fullName>Marshall, Thurgood School</fullName>
+        <default>false</default>
+        <label>Marshall, Thurgood School</label>
+    </customValue>
+    <customValue>
+        <fullName>MAST III Charter</fullName>
+        <default>false</default>
+        <label>MAST III Charter</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastbaum, Jules E. Area Vocational Technical High School</fullName>
+        <default>false</default>
+        <label>Mastbaum, Jules E. Area Vocational Technical High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Masterman, Julia R. High School</fullName>
+        <default>false</default>
+        <label>Masterman, Julia R. High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Cleveland</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Cleveland</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Clymer</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Clymer</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Frederick Douglass</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Frederick Douglass</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Gratz</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Gratz</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Hardy Williams</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Hardy Williams</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Harrity</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Harrity</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Lenfest</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Lenfest</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Mann</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Mann</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Pastorius</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Pastorius</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Pickett</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Pickett</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Shoemaker</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Shoemaker</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Smedley</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Smedley</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Thomas</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Thomas</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Charter at Wister</fullName>
+        <default>false</default>
+        <label>Mastery Charter at Wister</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery Prep Elementary Charter School</fullName>
+        <default>false</default>
+        <label>Mastery Prep Elementary Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Mathematics, Science, and Technology (MaST) Community Charter School</fullName>
+        <default>false</default>
+        <label>Mathematics, Science, and Technology (MaST) Community Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Mathematics, Science, and Technology (MaST) Community Charter School II</fullName>
+        <default>false</default>
+        <label>Mathematics, Science, and Technology (MaST) Community Charter School II</label>
+    </customValue>
+    <customValue>
+        <fullName>Mayfair School</fullName>
+        <default>false</default>
+        <label>Mayfair School</label>
+    </customValue>
+    <customValue>
+        <fullName>McCall, General George A. School</fullName>
+        <default>false</default>
+        <label>McCall, General George A. School</label>
+    </customValue>
+    <customValue>
+        <fullName>McCloskey, John F. School</fullName>
+        <default>false</default>
+        <label>McCloskey, John F. School</label>
+    </customValue>
+    <customValue>
+        <fullName>McClure, Alexander K. School</fullName>
+        <default>false</default>
+        <label>McClure, Alexander K. School</label>
+    </customValue>
+    <customValue>
+        <fullName>McDaniel, Delaplaine School</fullName>
+        <default>false</default>
+        <label>McDaniel, Delaplaine School</label>
+    </customValue>
+    <customValue>
+        <fullName>McKinley, William School</fullName>
+        <default>false</default>
+        <label>McKinley, William School</label>
+    </customValue>
+    <customValue>
+        <fullName>McMichael, Morton School</fullName>
+        <default>false</default>
+        <label>McMichael, Morton School</label>
+    </customValue>
+    <customValue>
+        <fullName>Meade, General George G. School</fullName>
+        <default>false</default>
+        <label>Meade, General George G. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Memphis Street Academy Charter School at J.P. Jones</fullName>
+        <default>false</default>
+        <label>Memphis Street Academy Charter School at J.P. Jones</label>
+    </customValue>
+    <customValue>
+        <fullName>Meredith, William M. School</fullName>
+        <default>false</default>
+        <label>Meredith, William M. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle Years Alternative (MYA) School</fullName>
+        <default>false</default>
+        <label>Middle Years Alternative (MYA) School</label>
+    </customValue>
+    <customValue>
+        <fullName>Mifflin, Thomas School</fullName>
+        <default>false</default>
+        <label>Mifflin, Thomas School</label>
+    </customValue>
+    <customValue>
+        <fullName>Mitchell, S. Weir Elementary School</fullName>
+        <default>false</default>
+        <label>Mitchell, S. Weir Elementary School</label>
+    </customValue>
+    <customValue>
+        <fullName>Moffet, John School</fullName>
+        <default>false</default>
+        <label>Moffet, John School</label>
+    </customValue>
+    <customValue>
+        <fullName>Moore, J. Hampton School</fullName>
+        <default>false</default>
+        <label>Moore, J. Hampton School</label>
+    </customValue>
+    <customValue>
+        <fullName>Morris, Robert School</fullName>
+        <default>false</default>
+        <label>Morris, Robert School</label>
+    </customValue>
+    <customValue>
+        <fullName>Morrison, Andrew J. School</fullName>
+        <default>false</default>
+        <label>Morrison, Andrew J. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Morton, Thomas G. School</fullName>
+        <default>false</default>
+        <label>Morton, Thomas G. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Motivation High School</fullName>
+        <default>false</default>
+        <label>Motivation High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Multicultural Academy Charter School</fullName>
+        <default>false</default>
+        <label>Multicultural Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Munoz-Marin, Honorable Luis School</fullName>
+        <default>false</default>
+        <label>Munoz-Marin, Honorable Luis School</label>
+    </customValue>
+    <customValue>
+        <fullName>Nebinger, George W. School</fullName>
+        <default>false</default>
+        <label>Nebinger, George W. School</label>
+    </customValue>
+    <customValue>
+        <fullName>New Foundations Charter School</fullName>
+        <default>false</default>
+        <label>New Foundations Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Northeast Community Propel Academy</fullName>
+        <default>false</default>
+        <label>Northeast Community Propel Academy</label>
     </customValue>
     <customValue>
         <fullName>Northeast High School</fullName>
@@ -151,24 +1081,269 @@
         <label>Northeast High School</label>
     </customValue>
     <customValue>
+        <fullName>Northeast High School - EOP</fullName>
+        <default>false</default>
+        <label>Northeast High School - EOP</label>
+    </customValue>
+    <customValue>
+        <fullName>Northwood Academy Charter School</fullName>
+        <default>false</default>
+        <label>Northwood Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>OIC Career and Academic Development Institute (CADI)</fullName>
+        <default>false</default>
+        <label>OIC Career and Academic Development Institute (CADI)</label>
+    </customValue>
+    <customValue>
+        <fullName>Olney High School</fullName>
+        <default>false</default>
+        <label>Olney High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Olney School</fullName>
+        <default>false</default>
+        <label>Olney School</label>
+    </customValue>
+    <customValue>
+        <fullName>One Bright Ray - Elmwood Campus</fullName>
+        <default>false</default>
+        <label>One Bright Ray - Elmwood Campus</label>
+    </customValue>
+    <customValue>
+        <fullName>One Bright Ray - Fairhill</fullName>
+        <default>false</default>
+        <label>One Bright Ray - Fairhill</label>
+    </customValue>
+    <customValue>
+        <fullName>One Bright Ray - Simpson</fullName>
+        <default>false</default>
+        <label>One Bright Ray - Simpson</label>
+    </customValue>
+    <customValue>
+        <fullName>One Bright Ray Mansion</fullName>
+        <default>false</default>
+        <label>One Bright Ray Mansion</label>
+    </customValue>
+    <customValue>
+        <fullName>One Bright Ray Mansion Evening</fullName>
+        <default>false</default>
+        <label>One Bright Ray Mansion Evening</label>
+    </customValue>
+    <customValue>
+        <fullName>Overbrook Educational Center</fullName>
+        <default>false</default>
+        <label>Overbrook Educational Center</label>
+    </customValue>
+    <customValue>
+        <fullName>Overbrook Elementary School</fullName>
+        <default>false</default>
+        <label>Overbrook Elementary School</label>
+    </customValue>
+    <customValue>
         <fullName>Overbrook High School</fullName>
         <default>false</default>
         <label>Overbrook High School</label>
     </customValue>
     <customValue>
-        <fullName>Penn Treaty School</fullName>
+        <fullName>Pan American Academy Charter School</fullName>
         <default>false</default>
-        <label>Penn Treaty School</label>
+        <label>Pan American Academy Charter School</label>
     </customValue>
     <customValue>
-        <fullName>Philadelphia High School for Creative and Performing Arts (CAPA)</fullName>
+        <fullName>Pantoja, Antonia Charter School</fullName>
         <default>false</default>
-        <label>Philadelphia High School for Creative and Performing Arts (CAPA)</label>
+        <label>Pantoja, Antonia Charter School</label>
     </customValue>
     <customValue>
-        <fullName>Roberto Clemente Middle School</fullName>
+        <fullName>Parkway Center City Middle College High School</fullName>
         <default>false</default>
-        <label>Roberto Clemente Middle School</label>
+        <label>Parkway Center City Middle College High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Parkway Northwest High School</fullName>
+        <default>false</default>
+        <label>Parkway Northwest High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Parkway West High School</fullName>
+        <default>false</default>
+        <label>Parkway West High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Patterson, John M. School</fullName>
+        <default>false</default>
+        <label>Patterson, John M. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Peirce, Thomas M. School</fullName>
+        <default>false</default>
+        <label>Peirce, Thomas M. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Penn Alexander School</fullName>
+        <default>false</default>
+        <label>Penn Alexander School</label>
+    </customValue>
+    <customValue>
+        <fullName>Penn Treaty High School</fullName>
+        <default>false</default>
+        <label>Penn Treaty High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Pennell, Joseph School</fullName>
+        <default>false</default>
+        <label>Pennell, Joseph School</label>
+    </customValue>
+    <customValue>
+        <fullName>Pennypack House School</fullName>
+        <default>false</default>
+        <label>Pennypack House School</label>
+    </customValue>
+    <customValue>
+        <fullName>Pennypacker, Samuel School</fullName>
+        <default>false</default>
+        <label>Pennypacker, Samuel School</label>
+    </customValue>
+    <customValue>
+        <fullName>Penrose School</fullName>
+        <default>false</default>
+        <label>Penrose School</label>
+    </customValue>
+    <customValue>
+        <fullName>People for People Charter School</fullName>
+        <default>false</default>
+        <label>People for People Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Academy Charter School</fullName>
+        <default>false</default>
+        <label>Philadelphia Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Charter School for the Arts and Sciences</fullName>
+        <default>false</default>
+        <label>Philadelphia Charter School for the Arts and Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Continuation Academy</fullName>
+        <default>false</default>
+        <label>Philadelphia Continuation Academy</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Electrical and Technology Charter School</fullName>
+        <default>false</default>
+        <label>Philadelphia Electrical and Technology Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Hebrew Charter</fullName>
+        <default>false</default>
+        <label>Philadelphia Hebrew Charter</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia High School for Girls</fullName>
+        <default>false</default>
+        <label>Philadelphia High School for Girls</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Juvenile Justice Services Center School</fullName>
+        <default>false</default>
+        <label>Philadelphia Juvenile Justice Services Center School</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Learning Academy North (PLAN)</fullName>
+        <default>false</default>
+        <label>Philadelphia Learning Academy North (PLAN)</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Learning Academy West (PLAW)</fullName>
+        <default>false</default>
+        <label>Philadelphia Learning Academy West (PLAW)</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Military Academy (PMA)</fullName>
+        <default>false</default>
+        <label>Philadelphia Military Academy (PMA)</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Montessori Charter School</fullName>
+        <default>false</default>
+        <label>Philadelphia Montessori Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Performing Arts: A String Theory Charter School</fullName>
+        <default>false</default>
+        <label>Philadelphia Performing Arts: A String Theory Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia Virtual Academy (PVA)</fullName>
+        <default>false</default>
+        <label>Philadelphia Virtual Academy (PVA)</label>
+    </customValue>
+    <customValue>
+        <fullName>Pollock, Robert B. School</fullName>
+        <default>false</default>
+        <label>Pollock, Robert B. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Potter-Thomas School</fullName>
+        <default>false</default>
+        <label>Potter-Thomas School</label>
+    </customValue>
+    <customValue>
+        <fullName>Powel, Samuel School</fullName>
+        <default>false</default>
+        <label>Powel, Samuel School</label>
+    </customValue>
+    <customValue>
+        <fullName>Preparatory Charter School of Mathematics, Science, Technology and Careers</fullName>
+        <default>false</default>
+        <label>Preparatory Charter School of Mathematics, Science, Technology and Careers</label>
+    </customValue>
+    <customValue>
+        <fullName>Prince Hall School</fullName>
+        <default>false</default>
+        <label>Prince Hall School</label>
+    </customValue>
+    <customValue>
+        <fullName>Randolph, A. Philip Career and Technical High School</fullName>
+        <default>false</default>
+        <label>Randolph, A. Philip Career and Technical High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Rhawnhurst School</fullName>
+        <default>false</default>
+        <label>Rhawnhurst School</label>
+    </customValue>
+    <customValue>
+        <fullName>Rhoads, James School</fullName>
+        <default>false</default>
+        <label>Rhoads, James School</label>
+    </customValue>
+    <customValue>
+        <fullName>Rhodes, E. Washington Elementary School</fullName>
+        <default>false</default>
+        <label>Rhodes, E. Washington Elementary School</label>
+    </customValue>
+    <customValue>
+        <fullName>Richmond School</fullName>
+        <default>false</default>
+        <label>Richmond School</label>
+    </customValue>
+    <customValue>
+        <fullName>Robeson, Paul High School for Human Services</fullName>
+        <default>false</default>
+        <label>Robeson, Paul High School for Human Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Roosevelt Elementary School</fullName>
+        <default>false</default>
+        <label>Roosevelt Elementary School</label>
+    </customValue>
+    <customValue>
+        <fullName>Rowen, William School</fullName>
+        <default>false</default>
+        <label>Rowen, William School</label>
     </customValue>
     <customValue>
         <fullName>Roxborough High School</fullName>
@@ -176,19 +1351,54 @@
         <label>Roxborough High School</label>
     </customValue>
     <customValue>
-        <fullName>Russell Conwell Magnet Middle School</fullName>
+        <fullName>Sankofa Freedom Academy Charter School</fullName>
         <default>false</default>
-        <label>Russell Conwell Magnet Middle School</label>
+        <label>Sankofa Freedom Academy Charter School</label>
     </customValue>
     <customValue>
-        <fullName>Samuel Fels High School</fullName>
+        <fullName>Saul, Walter B. High School</fullName>
         <default>false</default>
-        <label>Samuel Fels High School</label>
+        <label>Saul, Walter B. High School</label>
     </customValue>
     <customValue>
-        <fullName>Science Leadership Academy Middle School (SLA-MS)</fullName>
+        <fullName>Sayre, William L. High School</fullName>
         <default>false</default>
-        <label>Science Leadership Academy Middle School (SLA-MS)</label>
+        <label>Sayre, William L. High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Science Leadership Academy (SLA)</fullName>
+        <default>false</default>
+        <label>Science Leadership Academy (SLA)</label>
+    </customValue>
+    <customValue>
+        <fullName>Science Leadership Academy (SLA) at Beeber</fullName>
+        <default>false</default>
+        <label>Science Leadership Academy (SLA) at Beeber</label>
+    </customValue>
+    <customValue>
+        <fullName>Science Leadership Academy Middle School (SLAMS)</fullName>
+        <default>false</default>
+        <label>Science Leadership Academy Middle School (SLAMS)</label>
+    </customValue>
+    <customValue>
+        <fullName>Sharswood, George W. School</fullName>
+        <default>false</default>
+        <label>Sharswood, George W. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Shawmont School</fullName>
+        <default>false</default>
+        <label>Shawmont School</label>
+    </customValue>
+    <customValue>
+        <fullName>Sheppard, Isaac A. School</fullName>
+        <default>false</default>
+        <label>Sheppard, Isaac A. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Solis-Cohen, Solomon School</fullName>
+        <default>false</default>
+        <label>Solis-Cohen, Solomon School</label>
     </customValue>
     <customValue>
         <fullName>South Philadelphia High School</fullName>
@@ -196,24 +1406,184 @@
         <label>South Philadelphia High School</label>
     </customValue>
     <customValue>
+        <fullName>South Philadelphia High School - EOP</fullName>
+        <default>false</default>
+        <label>South Philadelphia High School - EOP</label>
+    </customValue>
+    <customValue>
+        <fullName>Southwark School</fullName>
+        <default>false</default>
+        <label>Southwark School</label>
+    </customValue>
+    <customValue>
+        <fullName>Southwest Leadership Academy Charter School</fullName>
+        <default>false</default>
+        <label>Southwest Leadership Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Spring Garden School</fullName>
+        <default>false</default>
+        <label>Spring Garden School</label>
+    </customValue>
+    <customValue>
+        <fullName>Spruance, Gilbert School</fullName>
+        <default>false</default>
+        <label>Spruance, Gilbert School</label>
+    </customValue>
+    <customValue>
+        <fullName>Stanton, Edwin M. School</fullName>
+        <default>false</default>
+        <label>Stanton, Edwin M. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Stearne, Allen M. School</fullName>
+        <default>false</default>
+        <label>Stearne, Allen M. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Steel, Edward T. School</fullName>
+        <default>false</default>
+        <label>Steel, Edward T. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Stetson, John B. Middle School</fullName>
+        <default>false</default>
+        <label>Stetson, John B. Middle School</label>
+    </customValue>
+    <customValue>
         <fullName>Strawberry Mansion High School</fullName>
         <default>false</default>
         <label>Strawberry Mansion High School</label>
     </customValue>
     <customValue>
-        <fullName>The Arts Academy at Benjamin Rush</fullName>
+        <fullName>Sullivan, James J. School</fullName>
         <default>false</default>
-        <label>The Arts Academy at Benjamin Rush</label>
+        <label>Sullivan, James J. School</label>
     </customValue>
     <customValue>
-        <fullName>Thomas A. Edison High School</fullName>
+        <fullName>Swenson Arts and Technology High School</fullName>
         <default>false</default>
-        <label>Thomas A. Edison High School</label>
+        <label>Swenson Arts and Technology High School</label>
     </customValue>
     <customValue>
-        <fullName>Warren G. Harding Middle School</fullName>
+        <fullName>Tacony Academy Charter School</fullName>
         <default>false</default>
-        <label>Warren G. Harding Middle School</label>
+        <label>Tacony Academy Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Taggart, John H. School</fullName>
+        <default>false</default>
+        <label>Taggart, John H. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Taylor, Bayard School</fullName>
+        <default>false</default>
+        <label>Taylor, Bayard School</label>
+    </customValue>
+    <customValue>
+        <fullName>TECH Freire Charter School</fullName>
+        <default>false</default>
+        <label>TECH Freire Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>The LINC</fullName>
+        <default>false</default>
+        <label>The LINC</label>
+    </customValue>
+    <customValue>
+        <fullName>The U School</fullName>
+        <default>false</default>
+        <label>The U School</label>
+    </customValue>
+    <customValue>
+        <fullName>The Workshop School</fullName>
+        <default>false</default>
+        <label>The Workshop School</label>
+    </customValue>
+    <customValue>
+        <fullName>Tilden, William T. Middle School</fullName>
+        <default>false</default>
+        <label>Tilden, William T. Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Universal Charter Alcorn</fullName>
+        <default>false</default>
+        <label>Universal Charter Alcorn</label>
+    </customValue>
+    <customValue>
+        <fullName>Universal Charter Audenried</fullName>
+        <default>false</default>
+        <label>Universal Charter Audenried</label>
+    </customValue>
+    <customValue>
+        <fullName>Universal Charter Creighton</fullName>
+        <default>false</default>
+        <label>Universal Charter Creighton</label>
+    </customValue>
+    <customValue>
+        <fullName>Universal Charter Institute</fullName>
+        <default>false</default>
+        <label>Universal Charter Institute</label>
+    </customValue>
+    <customValue>
+        <fullName>Universal Charter Vare</fullName>
+        <default>false</default>
+        <label>Universal Charter Vare</label>
+    </customValue>
+    <customValue>
+        <fullName>Vare-Washington School</fullName>
+        <default>false</default>
+        <label>Vare-Washington School</label>
+    </customValue>
+    <customValue>
+        <fullName>Vaux High School - Big Picture</fullName>
+        <default>false</default>
+        <label>Vaux High School - Big Picture</label>
+    </customValue>
+    <customValue>
+        <fullName>Wagner, General Louis Middle School</fullName>
+        <default>false</default>
+        <label>Wagner, General Louis Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Waring, Laura W. School</fullName>
+        <default>false</default>
+        <label>Waring, Laura W. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Washington, George High School</fullName>
+        <default>false</default>
+        <label>Washington, George High School</label>
+    </customValue>
+    <customValue>
+        <fullName>Washington, Grover Jr. Middle School</fullName>
+        <default>false</default>
+        <label>Washington, Grover Jr. Middle School</label>
+    </customValue>
+    <customValue>
+        <fullName>Washington, Martha School</fullName>
+        <default>false</default>
+        <label>Washington, Martha School</label>
+    </customValue>
+    <customValue>
+        <fullName>Webster, John H. School</fullName>
+        <default>false</default>
+        <label>Webster, John H. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Welsh, John School</fullName>
+        <default>false</default>
+        <label>Welsh, John School</label>
+    </customValue>
+    <customValue>
+        <fullName>West Oak Lane Charter School</fullName>
+        <default>false</default>
+        <label>West Oak Lane Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>West Philadelphia Achievement Charter School</fullName>
+        <default>false</default>
+        <label>West Philadelphia Achievement Charter School</label>
     </customValue>
     <customValue>
         <fullName>West Philadelphia High School</fullName>
@@ -221,14 +1591,44 @@
         <label>West Philadelphia High School</label>
     </customValue>
     <customValue>
-        <fullName>William L. Sayre High School</fullName>
+        <fullName>Widener Memorial School</fullName>
         <default>false</default>
-        <label>William L. Sayre High School</label>
+        <label>Widener Memorial School</label>
     </customValue>
     <customValue>
-        <fullName>William T. Tilden Middle School</fullName>
+        <fullName>Willard, Frances E. School</fullName>
         <default>false</default>
-        <label>William T. Tilden Middle School</label>
+        <label>Willard, Frances E. School</label>
+    </customValue>
+    <customValue>
+        <fullName>Wissahickon Charter School</fullName>
+        <default>false</default>
+        <label>Wissahickon Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Wright, Richard R. School</fullName>
+        <default>false</default>
+        <label>Wright, Richard R. School</label>
+    </customValue>
+    <customValue>
+        <fullName>YESPhilly</fullName>
+        <default>false</default>
+        <label>YESPhilly</label>
+    </customValue>
+    <customValue>
+        <fullName>Young Scholars Charter School</fullName>
+        <default>false</default>
+        <label>Young Scholars Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>YouthBuild Philadelphia Charter School</fullName>
+        <default>false</default>
+        <label>YouthBuild Philadelphia Charter School</label>
+    </customValue>
+    <customValue>
+        <fullName>Ziegler, William H. School</fullName>
+        <default>false</default>
+        <label>Ziegler, William H. School</label>
     </customValue>
     <masterLabel>Schools</masterLabel>
     <sorted>false</sorted>
