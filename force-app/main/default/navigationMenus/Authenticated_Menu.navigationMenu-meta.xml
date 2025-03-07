@@ -15,8 +15,8 @@
         <label>My Applications</label>
         <position>2</position>
         <publiclyAvailable>false</publiclyAvailable>
-        <target>Launchpad__Applicant_Tracking__c</target>
-        <type>SalesforceObject</type>
+        <target>/my-applications</target>
+        <type>InternalLink</type>
     </navigationMenuItem>
     <navigationMenuItem>
         <label>My Profile</label>

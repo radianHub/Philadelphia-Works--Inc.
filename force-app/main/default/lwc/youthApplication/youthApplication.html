@@ -1,50 +1,75 @@
 <template>
-    <div class="slds-var-m-bottom_large">
-        <h1 class="title" style={headerStyle}>C2L-PHL Youth Application</h1>
-        <div lwc:if={inProgress}>
-            <lightning-icon variant="warning" icon-name="utility:note" alternative-text="In Progress" size="small"></lightning-icon>
-            <span class="application-status">Application In Progress</span>
-        </div>
-        <div lwc:else>
-            <lightning-icon class="slds-var-m-right_x-small" variant="success" icon-name="utility:success" alternative-text="Submitted" size="small"></lightning-icon>
-            <span class="application-status">Application Submitted</span>
-        </div>
-    </div>
-    <template lwc:if={isEditing}>
-        <c-univ-app record-id={recordId} app-dev-name={appDevName} can-show-restart={canShowRestart}></c-univ-app>
+    <template lwc:if={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
     </template>
     <template lwc:else>
-        <lightning-layout horizontal-align="spread" multiple-rows>
-            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="7">
-                <div class="next-steps slds-var-m-bottom_medium">
-                    <p style={headerStyle} class="slds-var-m-bottom_small slds-text-heading_medium">What happens next?</p>
+        <div class="slds-var-m-bottom_large slds-var-m-top_medium">
+            <h1 class="title" style={headerStyle}>C2L-PHL Youth Application</h1>
+            <div lwc:if={inProgress}>
+                <lightning-icon class="slds-var-m-right_x-small" variant="warning" icon-name="utility:note" alternative-text="In Progress" size="small"></lightning-icon>
+                <span class="application-status">Application In Progress</span>
+            </div>
+            <div lwc:elseif={submitted}>
+                <lightning-icon class="slds-var-m-right_x-small" variant="success" icon-name="utility:success" alternative-text="Submitted" size="small"></lightning-icon>
+                <span class="application-status">Application Submitted</span>
+            </div>
+            <div lwc:else>
+                <lightning-icon class="slds-var-m-right_x-small" variant="warning" icon-name="utility:warning" alternative-text="Not Started" size="small"></lightning-icon>
+                <span class="application-status">Application Not Started</span>
+            </div>
+        </div>
+        <template lwc:if={inProgress}>
+            <c-univ-app record-id={applicationId} app-dev-name={appDevName} can-show-restart={canShowRestart}></c-univ-app>
+        </template>
+        <template lwc:elseif={submitted}>
+            <lightning-layout horizontal-align="spread" multiple-rows>
+                <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="7">
+                    <div class="next-steps slds-var-m-bottom_medium">
+                        <p style={headerStyle} class="slds-var-m-bottom_small slds-text-heading_medium">Your Application has been submitted to:</p>
+        
+                        <ul class="slds-list_ordered">
+                            <template for:each={applications} for:item="app">
+                                <li key={app.Id} class="slds-item">{app.Launchpad__Job_Order__r.Name}</li>
+                            </template>
+                        </ul>
+                    </div>  
+                    <div class="next-steps slds-var-m-bottom_medium">
+                        <p style={headerStyle} class="slds-var-m-bottom_small slds-text-heading_medium">What happens next?</p>
+        
+                        <ul class="slds-list_dotted">
+                            <li class="slds-item">Complete the required documents on your Document Checklist.</li>
+                            <li class="slds-item">Providers may reach out to you for additional information before placement.</li>
+                            <li class="slds-item">Your placement will be on announced on XX/XX/XXXX</li>
+                        </ul>
+                    </div>  
+                    <div class="next-steps slds-var-m-bottom_medium">
     
-                    <ul class="slds-list_dotted">
-                        <li class="slds-item">Complete the required documents on your Document Checklist.</li>
-                        <li class="slds-item">Providers may reach out to you for additional information before placement.</li>
-                        <li class="slds-item">Your placement will be on announced on XX/XX/XXXX</li>
-                    </ul>
-                </div>  
-                <div class="next-steps slds-var-m-bottom_medium">
+                        <p style={headerStyle} class="slds-var-m-bottom_small slds-text-heading_medium">Need Help?</p>
+        
+                        <ul class="slds-list_dotted">
+                            <li class="slds-item"><a href="mailto:C2LPHL@jevs.org">C2LPHL@jevs.org</a></li>
+                            <li class="slds-item"><a href="tel:8337505627">(833)750-5627</a></li>
+                        </ul>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="5">
+                    <c-document-checklist
+                        record-id={contactId}
+                        title="Document Checklist"
+                        description="Please upload the following documents. All required documents must be submitted before you can be placed with a provider."
+                        checklist-name="C2L_PHL_Youth_Document_Checklist"
+                        lookup-field="Launchpad__Contact__c"
+                        header-color={headerColor}
+                    ></c-document-checklist>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        <template lwc:else>
+            <div class="slds-text-align_center slds-var-p-around_xx-large slds-var-m-around_xx-large">
+                <p class="slds-var-m-bottom_medium">You haven't started your application yet</p>
 
-                    <p style={headerStyle} class="slds-var-m-bottom_small slds-text-heading_medium">Need Help?</p>
-    
-                    <ul class="slds-list_dotted">
-                        <li class="slds-item"><a href="mailto:C2LPHL@jevs.org">C2LPHL@jevs.org</a></li>
-                        <li class="slds-item"><a href="tel:8337505627">(833)750-5627</a></li>
-                    </ul>
-                </div>
-            </lightning-layout-item>
-            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="5">
-                <c-document-checklist
-                    record-id={contactId}
-                    title="Document Checklist"
-                    description="Please upload the following documents. All required documents must be submitted before you can be placed with a provider."
-                    checklist-name="C2L_PHL_Youth_Document_Checklist"
-                    lookup-field="Launchpad__Contact__c"
-                    header-color={headerColor}
-                ></c-document-checklist>
-            </lightning-layout-item>
-        </lightning-layout>
+                <lightning-button label="Click Here to Apply" title="Click Here to Apply" onclick={handleNavigateToApply} variant="brand"></lightning-button>
+            </div>
+        </template>
     </template>
 </template>

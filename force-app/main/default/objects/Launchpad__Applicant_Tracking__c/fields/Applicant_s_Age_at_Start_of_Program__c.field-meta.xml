@@ -4,9 +4,9 @@
     <externalId>false</externalId>
     <formula>IF(
     NOT(ISBLANK(Applicant_s_Date_of_Birth_MM_DD_YYYY__c)) &amp;&amp;
-    NOT(ISBLANK(Launchpad__Participant__r.Enrollment__r.Launchpad__Program__r.Application_Close_Date__c)),
+    NOT(ISBLANK(Program__r.Application_Close_Date__c)),
     FLOOR(
-        (Launchpad__Participant__r.Enrollment__r.Launchpad__Program__r.Application_Close_Date__c - 
+        (Program__r.Application_Close_Date__c - 
          Applicant_s_Date_of_Birth_MM_DD_YYYY__c) / 365.25
     ),
     null

@@ -9,31 +9,6 @@
     "regionName" : "header",
     "type" : "region"
   }, {
-    "components" : [ {
-      "componentAttributes" : {
-        "scopes" : [ {
-          "isPublic" : true,
-          "name" : "FeedPost"
-        }, {
-          "isPublic" : true,
-          "name" : "KnowledgeArticleVersion"
-        }, {
-          "isPublic" : false,
-          "name" : "Case"
-        }, {
-          "isPublic" : true,
-          "name" : "CollaborationGroup"
-        } ],
-        "searchResultFiltering" : true,
-        "searchTerm" : "{!term}",
-        "showTopResults" : true
-      },
-      "componentName" : "forceCommunity:search",
-      "id" : "21bb2d92-f82c-4dd2-b5dc-a85a5d9582d5",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    } ],
     "id" : "e0bc4372-d8d2-4063-9873-b33bdf15e046",
     "regionName" : "content",
     "type" : "region"
