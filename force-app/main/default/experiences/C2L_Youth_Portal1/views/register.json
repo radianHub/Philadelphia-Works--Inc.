@@ -8,8 +8,8 @@
     "components" : [ {
       "componentAttributes" : {
         "loginButtonLabel" : "Login to my Account",
-        "loginUrl" : "/Participants/s/login",
-        "staticResource" : "PCCommunityLogo"
+        "loginUrl" : "/youth/s/login",
+        "staticResource" : "C2LLogo"
       },
       "componentName" : "Launchpad:pcSelfRegistrationHeader",
       "id" : "c26a675e-c02a-407e-a466-a704cb3391a5",
@@ -18,9 +18,9 @@
       "type" : "component"
     }, {
       "componentAttributes" : {
-        "Descriptioncolor" : "rgb(84, 105, 141)",
-        "Headercolor" : "rgb(84, 105, 141)",
-        "Page1Description" : "Please provide your Contact information so we can check and see if you already have an Account",
+        "Descriptioncolor" : "rgb(38, 105, 168)",
+        "Headercolor" : "rgb(38, 105, 168)",
+        "Page1Description" : "Please provide your contact information, or the applicant's if you are applying for someone else.",
         "Page1Header" : "Let's Get Started",
         "Page2Description" : "Let’s get you signed up!  It will only take you a few minutes to finish the form.  Hover over the \"i\" icon for more information about each question.",
         "Page2Header" : "Account Sign Up",
@@ -33,18 +33,20 @@
         "existingActiveUserMessage" : "It looks like your email is already in our system, please click \"Login to my Account\" and then click \"Forgot Your Password\" to reset your password. If that doesn't work, call us at (888)888-8888 M-F between 8AM and 5PM.",
         "existingContactMessage" : "It looks like your email is already in our system, please click \"Login to my Account\" and then click \"Forgot Your Password\" to reset your password. If that doesn't work, call us at (888)888-8888 M-F between 8AM and 5PM.",
         "footer" : "If you are having trouble logging in or need help, call us at (888)888-8888.",
-        "minimumMaximumAgeerrorMessage" : "Birthdate must be between {0} and  {1}.",
+        "minimumMaximumAgeerrorMessage" : "Applicants to the C2L-PHL youth program must be between {0} and  {1}.",
         "nextStepBtn" : "Click to Continue",
+        "participantaccountassignment" : "",
+        "participantprofileassignment" : "",
         "participantrecordtypeassignment" : "Job_Seeker",
         "passwordLabel" : "Please Set Your Password",
         "passwordMismatchError" : "Password and Confirm Password do not match.  Please re-enter.",
         "passwordSectionTitle" : "Set Up Your Password",
-        "pattern" : ".{9,}",
-        "patternMessage" : "Your Password must be  at least 9 characters",
-        "redirectURlLogin" : "/Participants/s/login",
+        "pattern" : "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W]).{10,64})",
+        "patternMessage" : "Your password must be: At least 10 characters long, and contain at least one uppercase letter, one lowercase letter one number, and one special character",
+        "redirectURlLogin" : "/youth/s/login",
         "registerBtn" : "Register",
         "requiredFieldMessage" : "Please fill out all required fields",
-        "requiredFieldMsg" : "Please update this Field",
+        "requiredFieldMsg" : "This field is required",
         "step1of2" : "Step 1 of 2",
         "step2of2" : "Step 2 of 2"
       },

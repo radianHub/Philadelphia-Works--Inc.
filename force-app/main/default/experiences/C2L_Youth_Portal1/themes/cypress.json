@@ -84,7 +84,7 @@
               "buttonTextColor" : "",
               "buttonTextHoverColor" : "",
               "customizableUserProfileMenuEditor" : "Default_User_Profile_Menu1",
-              "menuStyleSettings" : "{\"selectedMenuStyleSetting\":\"iconOnly\",\"selectedIconSetting\":\"userAvatar\",\"includeCompanyName\":false,\"selectedTextOrientationSetting\":\"right\"}"
+              "menuStyleSettings" : "{\"selectedMenuStyleSetting\":\"nameOnly\",\"selectedIconSetting\":\"userAvatar\",\"includeCompanyName\":false,\"selectedTextOrientationSetting\":\"right\"}"
             },
             "componentName" : "forceCommunity:customizableUserProfileMenu",
             "id" : "c8920e4b-e7fe-42af-847d-a690ce2f0222",
