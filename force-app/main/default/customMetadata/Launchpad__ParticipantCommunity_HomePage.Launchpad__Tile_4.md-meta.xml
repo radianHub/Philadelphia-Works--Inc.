@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Tile 4</label>
+    <protected>false</protected>
+    <values>
+        <field>Launchpad__Active__c</field>
+        <value xsi:type="xsd:string">Yes</value>
+    </values>
+    <values>
+        <field>Launchpad__Details__c</field>
+        <value xsi:type="xsd:string">View your Application status and next steps</value>
+    </values>
+    <values>
+        <field>Launchpad__Header__c</field>
+        <value xsi:type="xsd:string">My Application</value>
+    </values>
+    <values>
+        <field>Launchpad__Image_URL__c</field>
+        <value xsi:type="xsd:string">https://launchpad-managedpackage-dev-ed.file.force.com/servlet/servlet.ImageServer?id=0154w0000248BTs&amp;oid=00DG0000000kRAu&amp;lastMod=1664370701000</value>
+    </values>
+    <values>
+        <field>Launchpad__Language__c</field>
+        <value xsi:type="xsd:string">en_US</value>
+    </values>
+    <values>
+        <field>Launchpad__Open_in_New_Tab__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Launchpad__Order__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+    <values>
+        <field>Launchpad__Redirect_URL__c</field>
+        <value xsi:type="xsd:string">/youth/s/my-applications</value>
+    </values>
+    <values>
+        <field>Launchpad__Row__c</field>
+        <value xsi:type="xsd:string">1</value>
+    </values>
+</CustomMetadata>

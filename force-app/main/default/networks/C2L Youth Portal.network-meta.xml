@@ -36,6 +36,7 @@
     <networkMemberGroups>
         <permissionSet>CLONED_Participant_Community_Permission_Set</permissionSet>
         <profile>admin</profile>
+        <profile>customer community login user</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
@@ -45,6 +46,7 @@
         <selfRegProfilePageOverrideSetting>Designer</selfRegProfilePageOverrideSetting>
     </networkPageOverrides>
     <picassoSite>C2L_Youth_Portal1</picassoSite>
+    <selfRegProfile>customer community login user</selfRegProfile>
     <selfRegistration>true</selfRegistration>
     <sendWelcomeEmail>false</sendWelcomeEmail>
     <site>C2L_Youth_Portal</site>

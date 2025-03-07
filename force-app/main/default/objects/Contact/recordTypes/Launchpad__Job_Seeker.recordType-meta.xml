@@ -160,6 +160,37 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Grade__c</picklist>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Is_This_Youth_TANF_Eligible__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -4629,6 +4660,69 @@
         </values>
         <values>
             <fullName>White</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>School__c</picklist>
+        <values>
+            <fullName>Academy at Palumbo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baldi Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castor Gardens Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossroads Accelerated Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankford High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Girard Academic Music Program %28GAMP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hill-Freedman World Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overbrook High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roxborough High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Philadelphia High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strawberry Mansion High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Philadelphia High School</fullName>
             <default>false</default>
         </values>
     </picklistValues>

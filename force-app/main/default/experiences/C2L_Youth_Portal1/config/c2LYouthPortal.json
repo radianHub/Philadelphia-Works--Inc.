@@ -7,5 +7,12 @@
   "mainAppPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
   "preferredDomain" : "none",
   "selfRegistrationRouteId" : "47e01945-8073-4d16-b1e4-8104f31dbd0e",
+  "trustedSitesForScript" : [ {
+    "id" : "7a476bba-bcba-43d9-9d00-246ad9889a32",
+    "isActive" : true,
+    "trustedSiteName" : "LP",
+    "trustedSiteUrl" : "https://launchpad-managedpackage-dev-ed.file.force.com",
+    "type" : "trustedSitesForScripts"
+  } ],
   "type" : "site"
 }

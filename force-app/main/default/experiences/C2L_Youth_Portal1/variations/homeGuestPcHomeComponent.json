@@ -1,0 +1,13 @@
+{
+  "componentVariants" : [ {
+    "id" : "83fb9bb2-7ff3-47e5-b748-8881067fd2d2",
+    "propertyOverrides" : {
+      "isVisible" : true
+    },
+    "targetId" : "33311ae0-c3f0-4d9a-8dac-1fc1f841f299",
+    "type" : "componentVariant"
+  } ],
+  "developerName" : "Home_Guest_pcHome_Component",
+  "id" : "23cbb8c8-e477-427f-9dc8-ccfc60063bb5",
+  "type" : "experienceVariation"
+}
