@@ -58,7 +58,6 @@ public with sharing class CreateApplicationController {
 				FROM Launchpad__Applicant_Tracking__c
 				WHERE
 					Launchpad__Participant__c = :contactId
-					AND Launchpad__Job_Order__c IN :jobIds
 					AND Program__r.Launchpad__Active__c = 'Yes'
 					AND Program__r.RecordType.Name = 'Session'
 			];
