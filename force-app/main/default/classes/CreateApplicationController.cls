@@ -63,7 +63,7 @@ public with sharing class CreateApplicationController {
 					AND Program__r.RecordType.Name = 'Session'
 			];
 			if (!existingApplications.isEmpty()) {
-				return existingApplications[0].Id;
+				throw new AuraHandledException('You have already applied to a program in this session.');
 			}
 
 			Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
