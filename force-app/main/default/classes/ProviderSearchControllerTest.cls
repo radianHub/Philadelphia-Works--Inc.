@@ -1,5 +1,6 @@
-@isTest
+@IsTest
 private class ProviderSearchControllerTest {
+
 	@TestSetup
 	static void createJobs() {
 		List<Account> accounts = new List<Account>();
@@ -149,6 +150,27 @@ private class ProviderSearchControllerTest {
 				ProviderSearchController.getJobFieldSetMembers('Launchpad__Advanced_Job_Search_Filters');
 		Test.stopTest();
 		Assert.isTrue(!fieldData.isEmpty());
+	}
+
+	@IsTest
+	static void testGettingContactJobEligibilityMaps() {
+		Test.startTest();
+		ProviderSearchController.getContactJobEligibilityMaps();
+		Test.stopTest();
+	}
+
+	@IsTest
+	static void testGetFieldDataByObjectAndFieldNames() {
+		Test.startTest();
+		ProviderSearchController.getFieldDataByObjectAndFieldNames('Launchpad__Job__c', new String[]{ 'Schools_Served__c' });
+		Test.stopTest();
+	}
+
+	@IsTest
+	static void testGetCurrentUsersContactFields() {
+		Test.startTest();
+		ProviderSearchController.getCurrentUsersContactFieldValues(new String[]{ 'School__c '});
+		Test.stopTest();
 	}
 
 }
