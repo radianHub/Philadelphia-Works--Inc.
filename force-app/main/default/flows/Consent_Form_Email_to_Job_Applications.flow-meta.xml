@@ -53,6 +53,13 @@
                     <numberValue>18.0</numberValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Loop_over_Job_Applications.Guardian_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>null</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Send_Consent_Form_Email_Action_1</targetReference>
             </connector>
