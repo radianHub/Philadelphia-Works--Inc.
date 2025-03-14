@@ -38,6 +38,7 @@ public class JobApplicationTriggerHandlerTest {
                 firstApp.Previous_Stage__c = 'Provider Selected';
                 firstApp.Launchpad__Job_Order__c = job.Id;
                 firstApp.Applicant_s_Email_Address__c = 'Test12@test12345.com';
+                firstApp.Applicants_Tax_Id__c = '2366545'+String.valueOf(i);
                 jobApplications.add(firstApp);
             }else{
                 jobApplications.add(new Launchpad__Applicant_Tracking__c(
@@ -46,7 +47,8 @@ public class JobApplicationTriggerHandlerTest {
                 Provider_Rank__c = String.ValueOf(i+1),
                 Previous_Stage__c = 'Provider Selected',
                 Launchpad__Job_Order__c = job.Id, 
-                Applicant_s_Email_Address__c = 'Test12@test12345.com'
+                Applicant_s_Email_Address__c = 'Test12@test12345.com',
+                Applicants_Tax_Id__c = '236666445'
             ));
             }
             
@@ -66,7 +68,7 @@ public class JobApplicationTriggerHandlerTest {
         Test.stopTest();
 
         List<Launchpad__Applicant_Tracking__c> jobApplicationsMatched = [SELECT Id, Launchpad__Participant__c, Launchpad__Job_Order__c, Launchpad__Stage__c, Previous_Stage__c, Provider_Rank__c FROM Launchpad__Applicant_Tracking__c WHERE Launchpad__Stage__c = 'Matched with Provider' ORDER BY Provider_Rank__c];
-        
+        System.debug(jobApplicationsMatched);
         Launchpad__Applicant_Tracking__c firstApp = new Launchpad__Applicant_Tracking__c();
                 firstApp.Launchpad__Participant__c = jobApplicationsMatched[0].Launchpad__Participant__c; 
                 firstApp.Launchpad__Stage__c = 'Submitted';
