@@ -69,6 +69,8 @@ public class JobApplicationTriggerHandler {
                        			masterJobApplicationsToUpdate.add(otherApp);
                             }
                         }else{
+                          
+                            
                             setExecutedRecords.add(otherApp.Id);
                         	masterJobApplicationsToUpdate.add(otherApp); 
                         }
@@ -165,6 +167,17 @@ public class JobApplicationTriggerHandler {
         return contactToAppMap;
     }
     
+    public static void checkForDuplicates(List<Launchpad__Applicant_Tracking__c> applications){
+        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c FROM Launchpad__Applicant_Tracking__c];
+        
+        for(Launchpad__Applicant_Tracking__c app : applications){
+            for(Launchpad__Applicant_Tracking__c appInSystem : allApps){
+                if(app.Applicants_Tax_Id__c == appInSystem.Applicants_Tax_Id__c && app.Id != appInSystem.Id){
+                    app.Launchpad__Stage__c = 'Potential Duplicate';
+                }
+            }
+        }
+    }
    
 
 }

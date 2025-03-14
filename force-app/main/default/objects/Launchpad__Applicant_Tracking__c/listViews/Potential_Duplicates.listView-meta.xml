@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_Duplicates</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Launchpad__Stage__c</field>
+        <operation>equals</operation>
+        <value>Potential Match</value>
+    </filters>
+    <label>Potential Duplicates</label>
+</ListView>
