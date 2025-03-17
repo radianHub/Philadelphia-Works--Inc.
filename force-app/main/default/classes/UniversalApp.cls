@@ -321,7 +321,7 @@ public with sharing class UniversalApp {
 				Applicant_s_Email_Address__c,
 				Applicant_City__c,
 				Applicant_s_State__c,
-				Applicant_s_Zip_Code__c,
+				Applicants_Zip_Code__c,
 				Applicant_s_Phone_Number__c,
 				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
 				Applicants_Tax_Id__c,
@@ -382,7 +382,7 @@ public with sharing class UniversalApp {
 				Applicant_s_Email_Address__c,
 				Applicant_City__c,
 				Applicant_s_State__c,
-				Applicant_s_Zip_Code__c,
+				Applicants_Zip_Code__c,
 				Applicant_s_Phone_Number__c,
 				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
 				Applicants_Tax_Id__c,
@@ -444,7 +444,7 @@ public with sharing class UniversalApp {
 				app.Applicant_s_Email_Address__c;
 			app.Applicant_City__c = currentApp.Applicant_City__c ?? app.Applicant_City__c;
 			app.Applicant_s_State__c = currentApp.Applicant_s_State__c ?? app.Applicant_s_State__c;
-			app.Applicant_s_Zip_Code__c = currentApp.Applicant_s_Zip_Code__c ?? app.Applicant_s_Zip_Code__c;
+			app.Applicants_Zip_Code__c = currentApp.Applicants_Zip_Code__c ?? app.Applicants_Zip_Code__c;
 			app.Applicant_s_Phone_Number__c = currentApp.Applicant_s_Phone_Number__c ?? app.Applicant_s_Phone_Number__c;
 			app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c = currentApp.Applicant_s_Date_of_Birth_MM_DD_YYYY__c ??
 				app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c;
@@ -545,7 +545,32 @@ public with sharing class UniversalApp {
 			// ! IF ADJUSTMENTS ARE NEEDED TO SPECIFIC APPLICATIONS, USE A SWITCH STATEMENT AND UNCOMMENT THE CODE CODE BELOW
             // Pre upsert logic
             if (application == 'C2L_Program_Application' && isSaveForLater != true) {
-                sObj.put('Launchpad__Stage__c', 'Submitted');
+                List<C2L_PHL_Eligible_Zip_Codes__mdt> zipCodeList = [SELECT Id, Label from C2L_PHL_Eligible_Zip_Codes__mdt];
+                Map<String, Id> zipCodeMap = new Map<String, Id>();
+                
+                for (C2L_PHL_Eligible_Zip_Codes__mdt zipCode : zipCodeList) {
+    				zipCodeMap.put(zipCode.Label, zipCode.Id);
+				}
+                String enteredZip = String.valueOf(sObj.get('Applicants_Zip_Code__c'));
+                if(zipCodeMap.get(enteredZip) == null){
+                    ret.put('error', 'The Zip Code entered is not valid for this program.');
+                	return ret;
+                }
+				sObj.put('Launchpad__Stage__c', 'Submitted'); 
+            }
+            
+             Database.UpsertResult result;
+            if(application == 'Consent_Form' && isSaveForLater != true){
+                
+                Launchpad__Applicant_Tracking__c currentAppForConsent = GuestUserApplicationController.getCurrentJobApplication(appId);
+                if(currentAppForConsent.Guardian_Consent_Required__c == false){
+                    ret.put('error', 'The Consent Form has already been submitted for this youth.');
+                	return ret;
+                }
+                GuestUserApplicationController.updateSingleJobApplication(sobj);
+                result = saveConsentFormToApplicationAndUpdateFields(appId)[0];
+            }else{
+               result = Database.upsert(sObj, false);
             }
 
 			Database.UpsertResult result = Database.upsert(sObj, false);
