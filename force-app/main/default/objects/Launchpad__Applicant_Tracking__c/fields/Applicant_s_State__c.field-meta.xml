@@ -3,7 +3,7 @@
     <fullName>Applicant_s_State__c</fullName>
     <externalId>false</externalId>
     <label>Applicant&apos;s State</label>
-    <length>2</length>
+    <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

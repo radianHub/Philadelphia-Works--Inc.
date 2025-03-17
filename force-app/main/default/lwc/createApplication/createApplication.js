@@ -72,7 +72,7 @@ export default class CreateApplication extends NavigationMixin(LightningElement)
                 .catch(error => {
                     const event = new ShowToastEvent({
                         title: 'Error',
-                        message: 'There was an error creating the application',
+                        message: error.body && error.body.message ? error.body.message : 'There was an error creating the application',
                         variant: 'error'
                     })
                     this.dispatchEvent(event);
