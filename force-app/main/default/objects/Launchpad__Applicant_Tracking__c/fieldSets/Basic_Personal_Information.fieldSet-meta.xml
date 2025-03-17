@@ -48,7 +48,7 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Zip_Code__c</field>
+        <field>Applicants_Zip_Code__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
