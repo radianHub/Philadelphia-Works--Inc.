@@ -444,10 +444,8 @@ public with sharing class UniversalApp {
 		List<Launchpad__Applicant_Tracking__c> appsToUpdate = new List<Launchpad__Applicant_Tracking__c>();
 
 		for (Launchpad__Applicant_Tracking__c app : relatedApps) {
-			app.Applicant_s_Street_Address__c = currentApp.Applicant_s_Street_Address__c ??
-				app.Applicant_s_Street_Address__c;
-			app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ??
-				app.Applicant_s_Email_Address__c;
+			app.Applicant_s_Street_Address__c = currentApp.Applicant_s_Street_Address__c ?? app.Applicant_s_Street_Address__c;
+			app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ?? app.Applicant_s_Email_Address__c;
 			app.Applicant_City__c = currentApp.Applicant_City__c ?? app.Applicant_City__c;
 			app.Applicant_s_State__c = currentApp.Applicant_s_State__c ?? app.Applicant_s_State__c;
 			app.Applicant_s_Zip_Code__c = currentApp.Applicant_s_Zip_Code__c ?? app.Applicant_s_Zip_Code__c;
@@ -563,6 +561,7 @@ public with sharing class UniversalApp {
         
     }
     
+    
 	@AuraEnabled
 	public static Map<String, Object> submitApp(
 		SObject sObj,
@@ -581,7 +580,18 @@ public with sharing class UniversalApp {
           
             Id appId = sobj.Id;
             if (application == 'C2L_Program_Application' && isSaveForLater != true) {
-                sObj.put('Launchpad__Stage__c', 'Submitted'); 
+                List<C2L_PHL_Eligible_Zip_Codes__mdt> zipCodeList = [SELECT Id, Label from C2L_PHL_Eligible_Zip_Codes__mdt];
+                Map<String, Id> zipCodeMap = new Map<String, Id>();
+                
+                for (C2L_PHL_Eligible_Zip_Codes__mdt zipCode : zipCodeList) {
+    				zipCodeMap.put(zipCode.Label, zipCode.Id);
+				}
+                String enteredZip = String.valueOf(sObj.get('Applicant_s_Zip_Code__c'));
+                if(zipCodeMap.get(enteredZip) == null){
+                    ret.put('error', 'The Zip Code entered is not valid for this program.');
+                	return ret;
+                }
+				sObj.put('Launchpad__Stage__c', 'Submitted'); 
             }
             
              Database.UpsertResult result;
