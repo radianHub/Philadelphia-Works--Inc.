@@ -267,9 +267,18 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	}
 
 	// * PREPARES THE UPCOMING PAGE
-	setPage() {
+	async setPage() {
 		this.clearPagePopulation();
 		this.page = this.sections[this.pageIndex[this.pageCurrent - 1]];
+
+		// Need to manually trigger dynamicRequire event for formula fields
+		await Promise.resolve();
+		const inputs = this.template.querySelectorAll('lightning-input-field');
+		inputs.forEach((el) => {
+			if (el.fieldName === 'Applicant_s_Age_at_Start_of_Program__c') {
+				this.dynamicRequire({ target: el });
+			}
+		})
 	}
 
 	// * POPULATES THE PAGE PROPERTIES
@@ -536,6 +545,7 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 		}
 		this.setObjectFields();
 		if (this.validateFields(this.REQUIRED_FIELDS, 'error')) {
+			this.saveForLater();
 			this.pageCurrent++;
 			this.setPage();
 		} else {
