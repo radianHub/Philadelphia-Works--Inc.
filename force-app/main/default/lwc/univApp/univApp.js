@@ -267,9 +267,18 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	}
 
 	// * PREPARES THE UPCOMING PAGE
-	setPage() {
+	async setPage() {
 		this.clearPagePopulation();
 		this.page = this.sections[this.pageIndex[this.pageCurrent - 1]];
+
+		// Need to manually trigger dynamicRequire event for formula fields
+		await Promise.resolve();
+		const inputs = this.template.querySelectorAll('lightning-input-field');
+		inputs.forEach((el) => {
+			if (el.fieldName === 'Applicant_s_Age_at_Start_of_Program__c' && el.value) {
+				this.dynamicRequire({ target: el });
+			}
+		})
 	}
 
 	// * POPULATES THE PAGE PROPERTIES
@@ -529,20 +538,35 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 		this.setPage();
 	}
 
+	handleSubmit(evt) {
+		this.alert = '';
+
+		evt.preventDefault();
+		const fields = evt.detail.fields;
+		this.template.querySelector('lightning-record-edit-form').submit(fields);
+	}
+
+	handleSuccess() {
+		this.next();
+	}
+
+	handleError() {
+		this.alert = 'Please fix all fields with errors.';
+		this.alertType = 'error';
+	}
+
 	// * GOES TO THE NEXT PAGE
 	next() {
 		if (!this.finished) {
 			this.alert = '';
 		}
 		this.setObjectFields();
+
 		if (this.validateFields(this.REQUIRED_FIELDS, 'error')) {
 			this.pageCurrent++;
 			this.setPage();
 		} else {
 			this.setPage();
-			setTimeout(() => {
-				this.validateFields();
-			}, 200);
 		}
 	}
 

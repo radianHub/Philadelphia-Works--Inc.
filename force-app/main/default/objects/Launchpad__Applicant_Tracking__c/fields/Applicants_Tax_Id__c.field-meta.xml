@@ -2,9 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Applicants_Tax_Id__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>Enter your Social Security Number as 9 digits</inlineHelpText>
+    <inlineHelpText>Enter SSN with dashes (ex: XXX-XX-XXXX)</inlineHelpText>
     <label>Applicants Social Security Number</label>
-    <length>9</length>
+    <length>11</length>
     <maskChar>asterisk</maskChar>
     <maskType>ssn</maskType>
     <required>false</required>
