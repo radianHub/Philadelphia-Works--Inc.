@@ -86,7 +86,7 @@ public with sharing class CreateApplicationController {
                     Applicant_s_Street_Address__c = con?.MailingStreet,
                     Applicant_City__c = con?.MailingCity,
                     Applicant_s_State__c = con?.MailingState,
-                    Applicant_s_Zip_Code__c = postalCode,
+                    Applicants_Zip_Code__c = String.valueOf(postalCode),
                     Applicant_s_Date_of_Birth_MM_DD_YYYY__c  = con?.Birthdate,
 					Launchpad__Participant__c = contactId,
 					Launchpad__Job_Order__c = (String) app.get('id'),
