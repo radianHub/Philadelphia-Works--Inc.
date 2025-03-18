@@ -612,9 +612,6 @@ public with sharing class UniversalApp {
                 		return ret;
                     }
                 }
-                //Compare age based on birthday
-                //Manually calculate and ensure applicant is between 12 - 24 at the START of the program
-                //Program should be active and be of record type session
 
                 
 				sObj.put('Launchpad__Stage__c', 'Submitted'); 
