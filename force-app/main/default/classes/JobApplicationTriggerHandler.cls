@@ -168,11 +168,11 @@ public class JobApplicationTriggerHandler {
     }
     
     public static void checkForDuplicates(List<Launchpad__Applicant_Tracking__c> applications){
-        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c FROM Launchpad__Applicant_Tracking__c];
+        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c];
         
         for(Launchpad__Applicant_Tracking__c app : applications){
             for(Launchpad__Applicant_Tracking__c appInSystem : allApps){
-                if(app.Applicants_Tax_Id__c == appInSystem.Applicants_Tax_Id__c && app.Id != appInSystem.Id){
+                if(app.Applicants_Tax_Id__c == appInSystem.Applicants_Tax_Id__c && app.Id != appInSystem.Id && app.Launchpad__Participant__c != appInSystem.Launchpad__Participant__c){
                     app.Launchpad__Stage__c = 'Potential Duplicate';
                 }
             }
