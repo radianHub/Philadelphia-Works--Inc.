@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Enter your Social Security Number as 9 digits</inlineHelpText>
     <label>Applicants Social Security Number</label>
-    <length>9</length>
+    <length>11</length>
     <maskChar>asterisk</maskChar>
     <maskType>ssn</maskType>
     <required>false</required>
