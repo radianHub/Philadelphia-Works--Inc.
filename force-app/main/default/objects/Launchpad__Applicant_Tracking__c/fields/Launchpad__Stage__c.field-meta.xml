@@ -62,6 +62,11 @@
                 <default>false</default>
                 <label>Hired</label>
             </value>
+            <value>
+                <fullName>Potential Match</fullName>
+                <default>false</default>
+                <label>Potential Match</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

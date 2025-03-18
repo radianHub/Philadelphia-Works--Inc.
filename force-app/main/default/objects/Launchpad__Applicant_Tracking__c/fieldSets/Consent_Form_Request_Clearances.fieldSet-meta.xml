@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consent_Form_Request_Clearances</fullName>
+    <description>Consent Form</description>
+    <displayedFields>
+        <field>Consent_to_Request_Clearance__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <label>Consent Form Request Clearances</label>
+</FieldSet>
