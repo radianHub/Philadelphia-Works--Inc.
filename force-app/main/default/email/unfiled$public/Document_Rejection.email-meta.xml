@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Document Rejection</name>
+    <style>none</style>
+    <subject>[C2L-PHL] Document Rejected</subject>
+    <textOnly>Hi {!Applicant_Name__c},  The {!Launchpad__Type__c} you have uploaded for your C2L-PHL Youth Application has been rejected for {!Rejection_Reason__c}.
+
+Log in to  to re-upload.
+
+Please reach out to {Placeholder Support Info} if you need assistance.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
