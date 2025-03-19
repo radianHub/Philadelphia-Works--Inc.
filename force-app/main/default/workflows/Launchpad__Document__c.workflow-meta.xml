@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Rejection_for_Document</fullName>
+        <description>Send Rejection for Document</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Launchpad__Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Document_Rejection</template>
+    </alerts>
+</Workflow>
