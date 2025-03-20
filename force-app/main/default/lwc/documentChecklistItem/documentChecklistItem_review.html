@@ -1,0 +1,120 @@
+<template>
+	<div class="slds-border_bottom">
+		<lightning-card
+			label={document.name}
+			hide-header>
+			<div class="slds-var-p-horizontal_x-small">
+				<div class="slds-grid slds-grid_align-spread">
+					<div class="slds-col">
+						<div class="slds-grid slds-grid_vertical-align-start slds-var-m-bottom_x-small">
+							<div class="slds-col slds-grow-none">
+								<lightning-icon
+									class="slds-var-m-right_x-small"
+									icon-name={statusIconName}
+									alternative-text={statusIconText}
+									title={statusIconText}
+									size="x-small"
+									variant={statusIconVariant}></lightning-icon>
+							</div>
+							<div class="slds-col">
+								<p class="slds-text-heading_small">{document.name}</p>
+							</div>
+							<div class="slds-col">
+								<span
+									class="slds-badge slds-theme_error slds-var-m-left_x-small"
+									lwc:if={document.required}
+									>Required</span
+								>
+							</div>
+						</div>
+						<lightning-badge
+							class={statusBadgeClass}
+							label={document.status}></lightning-badge>
+					</div>
+					<div class="slds-col">
+						<div class="slds-grid slds-wrap slds-var-m-left_x-small slds-grid_align-end">
+							<template lwc:if={document.submitted}>
+								<!-- <template lwc:if={isInReview}>
+                                    <lightning-button
+                                        class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+                                        title="Approve"
+                                        label="Approve"
+                                        alternative-text="Approve"
+                                        variant="success"
+                                        onclick={handleApprove}>
+                                    </lightning-button>
+                                    <lightning-button
+                                        class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+                                        title="Reject"
+                                        label="Reject"
+                                        alternative-text="Reject"
+                                        variant="destructive"
+                                        onclick={handleReject}>
+                                    </lightning-button>
+                                </template> -->
+								<lightning-button
+									class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+									title="View"
+									label="View"
+									alternative-text="View"
+									onclick={handlePreview}>
+								</lightning-button>
+								<lightning-button
+									lwc:if={canUpload}
+									class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+									title="Upload"
+									label="Upload"
+									alternative-text="Upload"
+									onclick={handleUpload}></lightning-button>
+							</template>
+							<template lwc:else>
+								<lightning-button
+									lwc:if={canUpload}
+									class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+									title="Upload"
+									label="Upload"
+									alternative-text="Upload"
+									onclick={handleUpload}></lightning-button>
+							</template>
+						</div>
+					</div>
+				</div>
+				<div
+					lwc:if={document.rejectionReason}
+					class="slds-box slds-theme_error slds-var-m-vertical_small">
+					<p class="slds-text-body_small document-description">{document.rejectionReason}</p>
+				</div>
+
+				<div
+					lwc:if={isInReview}
+					class="slds-box slds-var-m-top_small">
+					<p>Please review this document for accuracy and approve or reject it.</p>
+					<lightning-radio-group
+						name="radioGroup"
+						class="slds-var-m-bottom_small"
+						label="Document Status"
+						options={documentOptions}
+						value={selectedStatus}
+						onchange={handleStatusChange}
+						type="radio"
+						required></lightning-radio-group>
+					<lightning-input
+						type="text"
+						class="slds-var-m-bottom_small"
+						label="Rejection Reason"
+						value={rejectionReason}
+						lwc:if={showRejectionReasonField}
+						onblur={handleRejectionReasonChange}
+						required>
+					</lightning-input>
+					<lightning-button
+						variant="brand"
+						label="Submit"
+						atlernative-text="Submit"
+						onclick={handleSubmit}
+						disabled={isSubmitting}></lightning-button>
+				</div>
+			</div>
+		</lightning-card>
+	</div>
+</template>

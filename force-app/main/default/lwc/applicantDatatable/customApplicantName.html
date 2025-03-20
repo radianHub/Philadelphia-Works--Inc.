@@ -1,0 +1,13 @@
+<template>
+    <p>
+        <span><strong>{typeAttributes.applicantName}</strong></span>
+        <!-- <span
+            lwc:if={typeAttributes.isPriority}
+            class="slds-badge slds-theme_success slds-var-m-vertical_x-small slds-var-m-left_x-small"
+            >Priority Population</span
+        > -->
+        <lightning-icon class="slds-var-m-left_x-small" icon-name="custom:custom11" title="Priority Population" alternative-text="Priority Population" size="x-small" lwc:if={typeAttributes.isPriority}></lightning-icon>
+    </p>
+    <p>{typeAttributes.programName}</p>
+    <p lwc:if={typeAttributes.rank}>#<strong>{typeAttributes.rank}</strong> Rank</p>
+</template>
