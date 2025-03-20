@@ -1,0 +1,74 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "8edaa5d8-86a9-4b44-aa31-85f22177450f",
+  "label" : "Applicants",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "64e3b3cd-063d-4055-a584-7619afcff3fc",
+          "columns" : [ {
+            "UUID" : "1e864ff9-a16b-4e1e-a2f5-c6dde96aa6a0",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "64e3b3cd-063d-4055-a584-7619afcff3fc",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "description" : "Review applicants to your programs.",
+            "detailsFieldSetApiName" : "Default_Provider_Search_Field_Set",
+            "headerColor" : "rgb(38, 105, 168)",
+            "tableFieldSetApiName" : "Default_Provider_Search_Field_Set",
+            "title" : "Applicants"
+          },
+          "componentName" : "c:providerApplicants",
+          "id" : "5610cdd9-caf7-48cc-9df5-9c0b45e2ccd4",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1e864ff9-a16b-4e1e-a2f5-c6dde96aa6a0",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ff994b02-840b-4aec-856b-738262a3e523",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Applicants"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "6f28b0ad-560b-4fa3-a035-3ced2215bdc2",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "df224716-edd8-4148-9000-aab82b3ca0d5",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-applicants"
+}

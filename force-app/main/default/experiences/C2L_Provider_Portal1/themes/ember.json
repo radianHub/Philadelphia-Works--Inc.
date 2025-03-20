@@ -47,10 +47,10 @@
         "componentAttributes" : {
           "background" : "background: rgb(255,255,255)",
           "backgroundOverlayColor" : "rgba(0, 0, 0, 0.3)",
-          "borderBottomColor" : "rgba(0, 15, 89, 0.8)",
-          "borderTopColor" : "rgba(0, 15, 89, 0.8)",
+          "borderBottomColor" : "rgb(38, 105, 168)",
+          "borderTopColor" : "rgba(255, 255, 255, 0)",
           "bottomRowHeight" : 5,
-          "bottomRowOverlayColor" : "rgb(84, 105, 141)",
+          "bottomRowOverlayColor" : "rgb(38, 105, 168)",
           "containHeader" : true,
           "containHeaderWidth" : 1440,
           "dropdownBackgroundColor" : "rgb(255, 255, 255)",
