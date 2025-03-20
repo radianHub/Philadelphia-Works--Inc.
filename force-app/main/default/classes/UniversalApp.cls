@@ -327,7 +327,7 @@ public with sharing class UniversalApp {
 				Applicant_s_Email_Address__c,
 				Applicant_City__c,
 				Applicant_s_State__c,
-				Applicants_Zip_Code__c ,
+				Applicant_s_Zip_Code__c,
 				Applicant_s_Phone_Number__c,
 				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
 				Applicants_Tax_Id__c,
@@ -388,7 +388,7 @@ public with sharing class UniversalApp {
 				Applicant_s_Email_Address__c,
 				Applicant_City__c,
 				Applicant_s_State__c,
-				Applicants_Zip_Code__c,
+				Applicant_s_Zip_Code__c,
 				Applicant_s_Phone_Number__c,
 				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
 				Applicants_Tax_Id__c,
@@ -448,7 +448,7 @@ public with sharing class UniversalApp {
 			app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ?? app.Applicant_s_Email_Address__c;
 			app.Applicant_City__c = currentApp.Applicant_City__c ?? app.Applicant_City__c;
 			app.Applicant_s_State__c = currentApp.Applicant_s_State__c ?? app.Applicant_s_State__c;
-			app.Applicants_Zip_Code__c = currentApp.Applicants_Zip_Code__c ?? app.Applicants_Zip_Code__c;
+			app.Applicant_s_Zip_Code__c = currentApp.Applicant_s_Zip_Code__c ?? app.Applicant_s_Zip_Code__c;
 			app.Applicant_s_Phone_Number__c = currentApp.Applicant_s_Phone_Number__c ?? app.Applicant_s_Phone_Number__c;
 			app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c = currentApp.Applicant_s_Date_of_Birth_MM_DD_YYYY__c ??
 				app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c;
@@ -596,16 +596,23 @@ public with sharing class UniversalApp {
                 
                 //Get program Launchpad__Program_Year_Start__c
                 Launchpad__Applicant_Tracking__c currentAppForConsent = GuestUserApplicationController.getCurrentJobApplication(appId);
-                Integer applicantAge = Integer.valueOf(sObj.get('Applicant_s_Age_at_Start_of_Program__c'));
-                
-                if(applicantAge < 12){
-                    ret.put('error', 'The Applicant is too young for this program.');
-                    return ret;
+                if(currentAppForConsent.Program__r.Launchpad__Active__c == 'Yes'){
+                    Date birthday = Date.valueOf(sObj.get('Applicant_s_Date_of_Birth_MM_DD_YYYY__c'));
+                    Date startDate = currentAppForConsent.Program__r.Launchpad__Program_Year_Start__c;
+                    Decimal applicantAge = birthday.daysBetween(startDate) / 365.25;
+                    applicantAge = Math.floor(applicantAge);
+                    
+                    System.debug('applicantAge: ' + applicantAge);
+                    if(applicantAge < 12){
+                        ret.put('error', 'The Applicant is too young for this program.');
+                		return ret;
+                    }
+                    if(applicantAge > 24){
+                        ret.put('error', 'The Applicant is too old for this program.');
+                		return ret;
+                    }
                 }
-                if(applicantAge > 24){
-                    ret.put('error', 'The Applicant is too old for this program.');
-                    return ret;
-                }
+
                 
 				sObj.put('Launchpad__Stage__c', 'Submitted'); 
             }
