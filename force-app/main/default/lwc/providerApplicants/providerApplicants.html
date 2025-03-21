@@ -19,17 +19,17 @@
 					name="stage"
 					label="Program"
 					value={program}
-					placeholder="All Programs"
+					placeholder="Select A Program"
 					options={programOptions}
 					onchange={handleProgramChange}></lightning-combobox>
 			</div>
 			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
 				<lightning-combobox
 					name="stage"
-					label="Applicant Stage"
+					label="Provider Choice"
 					value={stage}
-					placeholder="All Stages"
-					options={stageOptions}
+					placeholder="Select A Choice"
+					options={stageFilterOptions}
 					onchange={handleStageChange}></lightning-combobox>
 			</div>
 			<div class="slds-col">
@@ -46,7 +46,7 @@
 				<lightning-button
 					class="slds-var-m-right_small"
 					variant="brand"
-					label="Clear Filters"
+					label="Reset Filters"
 					onclick={handleClear}></lightning-button>
 			</div>
 		</div>
@@ -63,36 +63,17 @@
 	<div
 		class="applicant-datatable-actions slds-border_bottom slds-border_right slds-border_left slds-var-p-vertical_x-small">
 		<div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-center">
-			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+			<div class="slds-col slds-grow-none">
 				<p class="slds-var-p-horizontal_small">{selectedRows.length} Selected</p>
 			</div>
-			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
-				<lightning-combobox
-					class="slds-m-bottom_none"
-					name="stage"
-					label="Stage"
-					value={stage}
-					placeholder="Select Stage"
-					options={stageOptions}
-					onchange={handleStageChange}
-					variant="label-inline"></lightning-combobox>
-			</div>
-			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+			<div class="slds-col">
 				<lightning-button
 					variant="brand"
-					label="Update"
-					onclick={handleUpdateStage}
-					disabled={hasNoSelections}></lightning-button>
+					label="Update Selected"
+					onclick={handleUpdateChoice}
+					disabled={hasNoSelections}
+					field-level-help="Why have you decided to pass on these applicants?"></lightning-button>
 			</div>
 		</div>
 	</div>
-
-	<template
-		for:each={applicants}
-		for:item="applicant">
-		<c-applicant-tile
-			key={applicant.Id}
-			applicant={applicant}
-			onselect={handleSelect}></c-applicant-tile>
-	</template>
 </template>

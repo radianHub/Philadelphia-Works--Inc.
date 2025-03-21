@@ -27,6 +27,11 @@
                 <default>false</default>
                 <label>Passed</label>
             </value>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -1,7 +1,30 @@
 public with sharing class ProviderApplicantsController {
-	// Todo: Sort by Priority Population, then provider rank, then created date
 	@AuraEnabled(cacheable=true)
-	public static List<Launchpad__Applicant_Tracking__c> getApplicants(Id accountId) {
+	public static List<Launchpad__Job__c> getActiveJobs(Id accountId) {
+		List<Launchpad__Program__c> programs = [
+			SELECT Id
+			FROM Launchpad__Program__c
+			WHERE Launchpad__Active__c = 'Yes' AND RecordType.Name = 'Session'
+		];
+		Id programId = programs[0].Id;
+
+		List<Launchpad__Job__c> jobs = [
+			SELECT Id, Name
+			FROM Launchpad__Job__c
+			WHERE Program__c = :programId AND (Launchpad__Account__c = :accountId OR Placement_Site__c = :accountId)
+			ORDER BY Name ASC
+		];
+
+		return jobs;
+	}
+
+	@AuraEnabled(cacheable=true)
+	public static List<Launchpad__Applicant_Tracking__c> getApplicants(
+		Id accountId,
+		String choice,
+		Id jobId,
+		Boolean isPriority
+	) {
 		if (accountId == null) {
 			return null;
 		}
@@ -12,24 +35,36 @@ public with sharing class ProviderApplicantsController {
 			WHERE Launchpad__Active__c = 'Yes' AND RecordType.Name = 'Session'
 		];
 		Id programId = programs[0].Id;
-		return [
-			SELECT
-				Id,
-				Provider_Rank__c,
-				Launchpad__Participant__r.Name,
-				Launchpad__Job_Order__r.Name,
-				Priority_Population__c,
-				Launchpad__Stage__c,
-				CreatedDate,
-				RecordTypeId
-			FROM Launchpad__Applicant_Tracking__c
-			WHERE
-				Launchpad__Stage__c != 'In Progress'
-				AND Launchpad__Job_Order__r.Program__c = :programId
-				AND (Launchpad__Job_Order__r.Launchpad__Account__c = :accountId
-				OR Launchpad__Job_Order__r.Placement_Site__c = :accountId)
-			ORDER BY Priority_Population__c DESC, Provider_Rank__c ASC, CreatedDate DESC
-		];
+
+		String query =
+			'SELECT Id, Provider_Rank__c, Launchpad__Participant__r.Name, ' +
+			'Launchpad__Job_Order__c, Launchpad__Job_Order__r.Name, ' +
+			'Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, ' +
+			'CreatedDate, RecordTypeId ' +
+			'FROM Launchpad__Applicant_Tracking__c ' +
+			'WHERE Launchpad__Stage__c != \'In Progress\' ' +
+			'AND Launchpad__Job_Order__r.Program__c = :programId ' +
+			'AND (Launchpad__Job_Order__r.Launchpad__Account__c = :accountId ' +
+			'OR Launchpad__Job_Order__r.Placement_Site__c = :accountId) ';
+
+		// Add filter for Provider_Choice__c only if choice is not null
+		if (choice != null) {
+			query += 'AND Provider_Choice__c = :choice ';
+		}
+
+		// Add filter for Job only if jobId is not null
+		if (jobId != null) {
+			query += 'AND Launchpad__Job_Order__c = :jobId ';
+		}
+
+		// Add filter for Priority Population if isPriority is true
+		if (isPriority) {
+			query += 'AND Priority_Population__c = true ';
+		}
+
+		query += 'ORDER BY Priority_Population__c DESC, Provider_Rank__c ASC, CreatedDate DESC';
+
+		return Database.query(query);
 	}
 
 	@AuraEnabled
@@ -60,7 +95,7 @@ public with sharing class ProviderApplicantsController {
 	}
 
 	@AuraEnabled
-	public static void bulkUpdateApplicantStage(List<String> applicantIds, String stage, String passReason) {
+	public static Boolean bulkUpdateApplicantStage(List<String> applicantIds, String choice, String passReason) {
 		List<Launchpad__Applicant_Tracking__c> applicants = [
 			SELECT Id, Launchpad__Stage__c
 			FROM Launchpad__Applicant_Tracking__c
@@ -70,9 +105,14 @@ public with sharing class ProviderApplicantsController {
 		List<Launchpad__Applicant_Tracking__c> applicantsToUpdate = new List<Launchpad__Applicant_Tracking__c>();
 
 		for (Launchpad__Applicant_Tracking__c applicant : applicants) {
-			if (applicant.Launchpad__Stage__c != stage) {
-				applicant.Launchpad__Stage__c = stage;
-				// applicant.Pass_Reason__c = passReason; // TODO: Save to new pass reason field
+			if (applicant.Launchpad__Stage__c != choice) {
+				applicant.Provider_Choice__c = choice;
+				applicant.Launchpad__Stage__c = choice == 'None' ? 'Submitted' : choice;
+
+				if (passReason != null) {
+					applicant.Passed_Reason__c = passReason;
+				}
+
 				applicantsToUpdate.add(applicant);
 			}
 		}
@@ -80,6 +120,8 @@ public with sharing class ProviderApplicantsController {
 		if (!applicantsToUpdate.isEmpty()) {
 			update applicantsToUpdate;
 		}
+
+		return true;
 	}
 
 	public static Schema.DescribeSObjectResult getSObjSchema(String sObj) {
