@@ -10,4 +10,10 @@ export default class ApplicantTile extends LightningElement {
             size: 'full'
         });
     }
+
+    handleSelect() {
+        this.dispatchEvent(new CustomEvent('select', {
+            detail: this.applicant
+        }));
+    }
 }

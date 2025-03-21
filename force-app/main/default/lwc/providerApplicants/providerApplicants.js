@@ -33,7 +33,7 @@ const columns = [
 		type: 'customApplicantName',
 		typeAttributes: {
 			applicantName: { fieldName: 'ParticipantName' },
-			isPriority: { fieldName: 'Priority_Population__c' },
+			isPriority: { fieldName: 'PriorityPopulation' },
 			programName: { fieldName: 'ProgramName' },
 			rank: { fieldName: 'Provider_Rank__c' },
 		},
@@ -114,9 +114,6 @@ export default class ProviderApplicants extends LightningElement {
 	@wire(getApplicants, { accountId: '$accountId', choice: '$stage', jobId: '$program', isPriority: '$priority' })
 	wiredApplicants(result) {
 		this.wiredResult = result;
-		console.log('result', result);
-		console.log('choice', this.stage);
-		console.log('program', this.program);
 
 		if (result.data) {
 			this.applicants = this.formatApplicants(result.data);
@@ -165,6 +162,7 @@ export default class ProviderApplicants extends LightningElement {
 				...applicant,
 				ParticipantName: applicant.Launchpad__Participant__r.Name,
 				ProgramName: applicant.Launchpad__Job_Order__r.Name,
+				PriorityPopulation: applicant.Launchpad__Participant__r.Priority_Population__c,
 			};
 		});
 	}
