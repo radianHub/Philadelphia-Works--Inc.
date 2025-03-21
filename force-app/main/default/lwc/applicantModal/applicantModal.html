@@ -1,17 +1,14 @@
 <template>
-	<lightning-modal-header label="Applicant Information"></lightning-modal-header>
+	<lightning-modal-header label={label}>
+		<div class="action-container">
+			<span class="slds-var-m-right_small">Choice: {choice}</span>
+			<lightning-button
+				label="Update Choice"
+				variant="brand"
+				onclick={handleUpdateChoice}></lightning-button>
+		</div>
+	</lightning-modal-header>
 	<lightning-modal-body>
-		<lightning-record-edit-form record-id={applicationId} object-api-name="Launchpad__Applicant_Tracking__c" onsuccess={handleProviderChoiceSuccess}>
-			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small slds-var-m-bottom_small">
-				<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
-					<lightning-input-field field-name={providerChoiceField}></lightning-input-field>
-				</div>
-				<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-var-m-top_xx-small">
-					<lightning-button variant="brand" type="submit" label="Save">
-					</lightning-button>
-				</div>
-			</div>
-		</lightning-record-edit-form>
 		<lightning-record-view-form
 			record-id={applicationId}
 			object-api-name="Launchpad__Applicant_Tracking__c"

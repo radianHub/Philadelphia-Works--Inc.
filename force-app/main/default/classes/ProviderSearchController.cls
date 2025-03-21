@@ -122,6 +122,7 @@ public with sharing class ProviderSearchController {
         @AuraEnabled public String type;
         @AuraEnabled public List<Map<String, Object>> options = new List<Map<String, Object>>();
         @AuraEnabled public Boolean isPicklist = false;
+        @AuraEnabled public Boolean isMultiselect = false;
 
         public FieldData(String apiName, String label, String type) {
             this.apiName = apiName;
@@ -135,6 +136,9 @@ public with sharing class ProviderSearchController {
             this.type = type;
             this.options = options;
             this.isPicklist = true;
+            if (type.containsIgnoreCase('multi')) {
+                this.isMultiselect = true;
+            }
         }
     }
 
