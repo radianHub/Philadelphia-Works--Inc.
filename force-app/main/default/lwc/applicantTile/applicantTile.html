@@ -1,14 +1,27 @@
 <template>
-	<div class="slds-card slds-var-p-around_medium slds-var-m-bottom_small applicant-tile" onclick={viewApplication}>
+	<div
+		class="slds-card slds-var-p-around_medium slds-var-m-bottom_small applicant-tile"
+		onclick={viewApplication}>
 		<div class="slds-grid slds-grid_align-spread">
+			<div class="slds-col">
+				<lightning-input
+					type="checkbox"
+					name="selected"
+					checked={isSelected}
+					onchange={handleSelect}></lightning-input>
+			</div>
 			<div class="slds-col">
 				<p><strong>{applicant.Launchpad__Participant__r.Name}</strong></p>
 				<ul class="slds-list_horizontal slds-has-dividers_right">
-					<li lwc:if={applicant.Provider_Rank__c} class="slds-item"><strong>#{applicant.Provider_Rank__c}</strong>&nbsp;Choice</li>
+					<li
+						lwc:if={applicant.Provider_Rank__c}
+						class="slds-item">
+						<strong>#{applicant.Provider_Rank__c}</strong>&nbsp;Choice
+					</li>
 					<li class="slds-item">{applicant.Launchpad__Job_Order__r.Name}</li>
 				</ul>
 				<span
-					lwc:if={applicant.Priority_Population__c}
+					lwc:if={applicant.PriorityPopulation}
 					class="slds-badge slds-theme_success slds-var-m-top_x-small"
 					>Priority Population</span
 				>
