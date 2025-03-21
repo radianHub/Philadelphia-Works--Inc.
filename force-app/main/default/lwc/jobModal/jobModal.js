@@ -71,7 +71,11 @@ export default class JobModal extends LightningModal {
     }
 
     handleChange(e) {
-        this.job[e.target.name] = e.detail.value;
+        const fieldApiName = e.target.name;
+        let value = e.detail.value;
+        const isReference = this.fieldData.find((data) => data.apiName === fieldApiName).type === 'REFERENCE'
+        if (isReference) value = value[0];
+        this.job[fieldApiName] = value;
     }
 
     handleClose() {
@@ -89,6 +93,7 @@ export default class JobModal extends LightningModal {
             const fieldValue = this.multiselectFieldValuesMap[field];
             fields[field] = (fieldValue ? fieldValue : null);
         }
+        console.log('JOB TO SAVE: ', JSON.stringify(fields));
         updateJob({ job: fields })
             .then((response) => {
                 if (response.hasOwnProperty('success')) {
