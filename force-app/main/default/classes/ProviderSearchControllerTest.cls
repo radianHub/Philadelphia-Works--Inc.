@@ -23,7 +23,6 @@ private class ProviderSearchControllerTest {
 				Program__c = program.Id,
 				Launchpad__Job_Description__c = 'Test Description 1',
 				Ages_Served__c = '12;13',
-                Schools_Served__c = 'AMY Northwest',
 				Grades_Served__c = '7;8',
                 Genders_Served__c = 'Male'
 			)
@@ -36,7 +35,6 @@ private class ProviderSearchControllerTest {
 				Program__c = program.Id,
 				Launchpad__Job_Description__c = 'Test Description 1',
 				Ages_Served__c = '13;14',
-                Schools_Served__c = 'AMY Northwest',
 				Grades_Served__c = '7;8',
                 Genders_Served__c = 'Male'
 			)
@@ -49,7 +47,6 @@ private class ProviderSearchControllerTest {
 				Program__c = program.Id,
 				Launchpad__Job_Description__c = 'Test Description 1',
 				Ages_Served__c = '13;14',
-                Schools_Served__c = 'AMY Northwest',
 				Grades_Served__c = '6;7;8;',
                 Genders_Served__c = 'Male'
 			)
@@ -62,7 +59,6 @@ private class ProviderSearchControllerTest {
 				Program__c = program.Id,
 				Launchpad__Job_Description__c = 'Test Description 1',
 				Ages_Served__c = '13;14;15',
-                Schools_Served__c = 'AMY at James Martin',
 				Grades_Served__c = '7;8',
                 Genders_Served__c = 'Male'
 			)
@@ -76,7 +72,6 @@ private class ProviderSearchControllerTest {
 				Launchpad__Job_Description__c = 'Test Description 1',
 				Ages_Served__c = '13;14',
 				Grades_Served__c = '7;8',
-                Schools_Served__c = 'AMY Northwest',
                 Genders_Served__c = 'Female'
 			)
 		);
@@ -89,7 +84,6 @@ private class ProviderSearchControllerTest {
 				Launchpad__Job_Description__c = 'Test Description 4',
 				Ages_Served__c = '13;14',
 				Grades_Served__c = '9;10',
-                Schools_Served__c = 'AMY Northwest',
                 Genders_Served__c = 'Male'
 			)
 		);
