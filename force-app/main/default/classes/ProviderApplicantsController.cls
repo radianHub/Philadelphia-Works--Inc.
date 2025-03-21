@@ -39,7 +39,7 @@ public with sharing class ProviderApplicantsController {
 		String query =
 			'SELECT Id, Provider_Rank__c, Launchpad__Participant__r.Name, ' +
 			'Launchpad__Job_Order__c, Launchpad__Job_Order__r.Name, ' +
-			'Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, ' +
+			'Launchpad__Participant__r.Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, ' +
 			'CreatedDate, RecordTypeId ' +
 			'FROM Launchpad__Applicant_Tracking__c ' +
 			'WHERE Launchpad__Stage__c != \'In Progress\' ' +
@@ -59,10 +59,10 @@ public with sharing class ProviderApplicantsController {
 
 		// Add filter for Priority Population if isPriority is true
 		if (isPriority) {
-			query += 'AND Priority_Population__c = true ';
+			query += 'AND Launchpad__Participant__r.Priority_Population__c = true ';
 		}
 
-		query += 'ORDER BY Priority_Population__c DESC, Provider_Rank__c ASC, CreatedDate DESC';
+		query += 'ORDER BY Launchpad__Participant__r.Priority_Population__c DESC, Provider_Rank__c ASC, CreatedDate DESC';
 
 		return Database.query(query);
 	}
