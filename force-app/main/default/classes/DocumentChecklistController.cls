@@ -124,7 +124,7 @@ public with sharing class DocumentChecklistController {
 				doc.put(documentDateField, dateValue);
 			}
 
-			if (rejectionReasonField != null && rejectionReason != null) {
+			if (rejectionReasonField != null) {
 				doc.put(rejectionReasonField, rejectionReason);
 			}
 
@@ -200,7 +200,7 @@ public with sharing class DocumentChecklistController {
 				' WHERE ' +
 				lookupField +
 				' = :recordId AND ' +
-                ' Launchpad__Available_in_Community__c = \'Yes\' AND ' + // implementation-specific
+				' Launchpad__Available_in_Community__c = \'Yes\' AND ' + // implementation-specific
 				documentTypeField +
 				' IN :docTypes ORDER BY CreatedDate ASC';
 			List<sObject> docs = Database.query(query);

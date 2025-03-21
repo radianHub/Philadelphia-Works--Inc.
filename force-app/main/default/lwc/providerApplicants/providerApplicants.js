@@ -2,20 +2,27 @@ import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getPicklistValues } from 'lightning/uiObjectInfoApi';
+import { refreshApex } from '@salesforce/apex';
+import { notifyRecordUpdateAvailable } from 'lightning/uiRecordApi';
+
 import USER_ID from '@salesforce/user/Id';
 import ACCOUNT_ID from '@salesforce/schema/User.AccountId';
 import STAGE from '@salesforce/schema/Launchpad__Applicant_Tracking__c.Launchpad__Stage__c';
+import PROVIDER_CHOICE from '@salesforce/schema/Launchpad__Applicant_Tracking__c.Provider_Choice__c';
 
 import getApplicants from '@salesforce/apex/ProviderApplicantsController.getApplicants';
+import getActiveJobs from '@salesforce/apex/ProviderApplicantsController.getActiveJobs';
 import bulkUpdateApplicantStage from '@salesforce/apex/ProviderApplicantsController.bulkUpdateApplicantStage';
+import ApplicantModal from 'c/applicantModal';
+import ApplicantBulkUpdateModal from 'c/applicantBulkUpdateModal';
 
 const DEFAULT_STAGE = {
-	label: 'All Stages',
-	value: 'All',
+	label: 'All Choices',
+	value: null,
 };
 const DEFAULT_PROGRAM = {
 	label: 'All Programs',
-	value: 'All',
+	value: null,
 };
 
 const actions = [{ label: 'View details', name: 'view' }];
@@ -33,7 +40,7 @@ const columns = [
 		hideDefaultActions: true,
 		wrapText: true,
 	},
-	{ label: 'Stage', fieldName: 'Launchpad__Stage__c', hideDefaultActions: true, wrapText: true },
+	{ label: 'Provider Choice', fieldName: 'Provider_Choice__c', hideDefaultActions: true, wrapText: true },
 	{ type: 'action', typeAttributes: { rowActions: actions } },
 ];
 
@@ -49,42 +56,28 @@ export default class ProviderApplicants extends LightningElement {
 	isLoading = true;
 	columns = columns;
 	actions = actions;
+	wiredResult;
 	@track selectedRows = [];
 
 	// filters
-	stageOptions = [DEFAULT_STAGE];
-	stage;
+	stageFilterOptions = [DEFAULT_STAGE];
+	stage = DEFAULT_STAGE.value;
 	programOptions = [DEFAULT_PROGRAM];
-	program;
+	program = DEFAULT_STAGE.value;
 	priorityOptions = [
 		{
 			label: 'All Applicants',
-			value: 'All',
+			value: false,
 		},
 		{
 			label: 'Priority Population',
-			value: 'Priority',
+			value: true,
 		},
 	];
-	priority = 'All Applicants';
+	priority = false;
 
-	// Bulk Stage Options
-	bulkStageOptions = [
-		{
-			value: 'Provider Selected',
-			label: 'Provider Selected',
-		},
-		{
-			value: 'Shortlisted',
-			label: 'Shortlisted',
-		},
-		{
-			value: 'Passed',
-			label: 'Passed',
-		},
-	];
-	selectedBulkStage;
-	passReason;
+	// Provider Choice Options for bulk update modal
+	choiceOptions = [];
 
 	get accountId() {
 		return getFieldValue(this.user.data, ACCOUNT_ID);
@@ -95,58 +88,68 @@ export default class ProviderApplicants extends LightningElement {
 	}
 
 	get hasNoSelections() {
-		console.log('length', this.selectedRows.length);
 		return this.selectedRows.length === 0;
 	}
 
 	@wire(getRecord, { recordId: USER_ID, fields: [ACCOUNT_ID] })
 	user;
 
-	@wire(getApplicants, { accountId: '$accountId' })
-	wiredApplicants({ error, data }) {
+	@wire(getActiveJobs, { accountId: '$accountId' })
+	wiredJobs({ error, data }) {
 		if (data) {
-			this.applicants = this.formatApplicants(data);
-			// this.applicants = data;
-			this.recordTypeId = this.applicants[0]?.RecordTypeId;
-
 			this.programOptions = [
 				DEFAULT_PROGRAM,
-				...this.applicants.map((applicant) => {
+				...data.map((job) => {
 					return {
-						label: applicant.Launchpad__Job_Order__r.Name,
-						value: applicant.Launchpad__Job_Order__r.Name,
+						label: job.Name,
+						value: job.Id,
 					};
 				}),
 			];
-			console.log('applicants', this.applicants);
-			this.isLoading = false;
 		} else if (error) {
+			this.programOptions = [DEFAULT_PROGRAM];
+		}
+	}
+
+	@wire(getApplicants, { accountId: '$accountId', choice: '$stage', jobId: '$program', isPriority: '$priority' })
+	wiredApplicants(result) {
+		this.wiredResult = result;
+		console.log('result', result);
+		console.log('choice', this.stage);
+		console.log('program', this.program);
+
+		if (result.data) {
+			this.applicants = this.formatApplicants(result.data);
+			this.recordTypeId = this.applicants[0]?.RecordTypeId;
+			this.isLoading = false;
+		} else if (result.error) {
 			this.applicants = null;
 			this.isLoading = false;
 		}
 	}
 
-	@wire(getPicklistValues, { recordTypeId: '$recordTypeId', fieldApiName: STAGE })
+	@wire(getPicklistValues, { recordTypeId: '$recordTypeId', fieldApiName: PROVIDER_CHOICE, STAGE })
 	wiredStages({ error, data }) {
 		if (data) {
-			this.stageOptions = [DEFAULT_STAGE, ...data.values.filter(({ value }) => value !== 'In Progress')];
+			this.choiceOptions = [...data.values];
+			this.stageFilterOptions = [DEFAULT_STAGE, ...data.values];
 		} else if (error) {
-			this.stageOptions = DEFAULT_STAGE;
+			this.stageFilterOptions = [DEFAULT_STAGE];
 		}
 	}
 
 	handleStageChange(evt) {
-		console.log('evt', evt.detail.value);
+		this.isLoading = true;
 		this.stage = evt.detail.value;
 	}
 
 	handleProgramChange(evt) {
-		console.log('evt', evt.detail.value);
+		this.isLoading = true;
 		this.program = evt.detail.value;
 	}
 
 	handlePriorityChange(evt) {
-		console.log('evt', evt.detail.value);
+		this.isLoading = true;
 		this.priority = evt.detail.value;
 	}
 
@@ -168,7 +171,6 @@ export default class ProviderApplicants extends LightningElement {
 
 	handleRowSelection(evt) {
 		this.selectedRows = evt.detail.selectedRows;
-		console.log('selectedRows', JSON.parse(JSON.stringify(this.selectedRows)));
 	}
 
 	handleRowAction(evt) {
@@ -176,28 +178,66 @@ export default class ProviderApplicants extends LightningElement {
 		const row = evt.detail.row;
 		switch (actionName) {
 			case 'view':
-				// this.viewDetails(row);
-				// TODO: open modal
+				this.viewDetails(row);
 				break;
 			default:
 		}
 	}
 
-	handleUpdateStage() {
-		try {
-			console.log('selectedRows', this.selectedRows);
-			const applicantIds = this.selectedRows.map((applicant) => applicant.Id);
-			const stage = this.selectedBulkStage;
-			const passReason = this.passReason;
-			bulkUpdateApplicantStage({ applicantIds, stage, passReason }).then(() => {
-				this.dispatchEvent(
-					new ShowToastEvent({
-						title: 'Success',
-						message: 'Applicants updated successfully',
-						variant: 'success',
-					})
-				);
+	async viewDetails(row) {
+		const result = await ApplicantModal.open({
+			applicationId: row.Id,
+			label: row.ParticipantName,
+			choice: row.Provider_Choice__c,
+			choiceOptions: this.choiceOptions,
+			size: 'full',
+		});
+
+		if (result) {
+			const updateChoiceResult = await this.updateChoice(result);
+
+			if (!updateChoiceResult) {
+				return;
+			}
+
+			this.viewDetails({
+				...row,
+				Provider_Choice__c: updateChoiceResult.choice,
 			});
+		}
+	}
+
+	async updateChoice(id) {
+		try {
+			const result = await ApplicantBulkUpdateModal.open({
+				choiceOptions: this.choiceOptions,
+				size: 'small',
+				description: 'Update all selected applicants to the same choice',
+			});
+
+			if (!result) {
+				return;
+			}
+
+			this.isLoading = true;
+			const applicantIds = id ? [id] : this.selectedRows.map((applicant) => applicant.Id);
+			const choice = result.choice;
+			const passReason = result.reason;
+
+			await bulkUpdateApplicantStage({ applicantIds: applicantIds, choice: choice, passReason: passReason }).then(
+				() => {
+					this.dispatchEvent(
+						new ShowToastEvent({
+							title: 'Success',
+							message: 'Applicants updated successfully',
+							variant: 'success',
+						})
+					);
+				}
+			);
+
+			await refreshApex(this.wiredResult);
+			await notifyRecordUpdateAvailable(applicantIds.map((appId) => ({ recordId: appId })));
 		} catch (error) {
 			console.error('Stage update error', error);
 			this.dispatchEvent(
@@ -207,6 +247,11 @@ export default class ProviderApplicants extends LightningElement {
 					variant: 'error',
 				})
 			);
+			this.isLoading = false;
 		}
+	}
+
+	handleUpdateChoice() {
+		this.updateChoice();
 	}
 }

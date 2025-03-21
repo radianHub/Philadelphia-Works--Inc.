@@ -15,7 +15,7 @@
 }
 
 .applicant-datatable-container {
-	height: 300px;
+	height: calc(100vh - 400px);
 }
 
 .applicant-datatable-actions {
