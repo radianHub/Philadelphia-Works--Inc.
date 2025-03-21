@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <description>Provider Jobs</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Provider Jobs</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                    name="title"
+                    type="String"
+                    label="Title"
+                    default="Programs"
+            />
+            <property
+                    name="description"
+                    type="String"
+                    label="Description"
+                    default="Review your programs."
+            />
+            <property
+                    name="jobDetailsFieldSetName"
+                    type="String"
+                    label="Job Details Field Set Name"
+                    placeholder="Details_Field_Set"
+                    default="Provider_Jobs_List_View_Details_Fields"
+                    description="Field Set API Name of fields used for Job view details modal"
+            />
+            <property
+                    name="jobEditFieldSetName"
+                    type="String"
+                    label="Job Edit Field Set Name"
+                    placeholder="Edit_Field_Set"
+                    default="Provider_Jobs_List_View_Edit_Fields"
+                    description="Field Set API Name of fields used for Job edit modal"
+            />
+            <property
+                    name="headerColor"
+                    type="Color"
+                    default="rgb(84, 105, 141)"
+                    label="Header Color"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
