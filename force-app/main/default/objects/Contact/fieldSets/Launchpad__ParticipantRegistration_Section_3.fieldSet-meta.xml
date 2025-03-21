@@ -257,11 +257,6 @@
         <isRequired>false</isRequired>
     </availableFields>
     <availableFields>
-        <field>Launchpad__CIF_School_Status_at_Participation__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </availableFields>
-    <availableFields>
         <field>Launchpad__CIF_Single_Parent__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -1044,6 +1039,11 @@
     </displayedFields>
     <displayedFields>
         <field>Grade__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Launchpad__CIF_School_Status_at_Participation__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
