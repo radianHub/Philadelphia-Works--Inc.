@@ -322,6 +322,7 @@ public with sharing class UniversalApp {
 			SELECT
 				Id,
 				Program__c,
+                Middle_Name__c,
 				Launchpad__Participant__c,
 				Applicant_s_Street_Address__c,
 				Applicant_s_Email_Address__c,
@@ -383,6 +384,7 @@ public with sharing class UniversalApp {
 			SELECT
 				Id,
 				Program__c,
+                Middle_Name__c,
 				Launchpad__Participant__c,
 				Applicant_s_Street_Address__c,
 				Applicant_s_Email_Address__c,
@@ -444,6 +446,7 @@ public with sharing class UniversalApp {
 		List<Launchpad__Applicant_Tracking__c> appsToUpdate = new List<Launchpad__Applicant_Tracking__c>();
 
 		for (Launchpad__Applicant_Tracking__c app : relatedApps) {
+            app.Middle_Name__c = currentApp.Middle_Name__c ?? app.Middle_Name__c;
 			app.Applicant_s_Street_Address__c = currentApp.Applicant_s_Street_Address__c ?? app.Applicant_s_Street_Address__c;
 			app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ?? app.Applicant_s_Email_Address__c;
 			app.Applicant_City__c = currentApp.Applicant_City__c ?? app.Applicant_City__c;
@@ -591,13 +594,12 @@ public with sharing class UniversalApp {
                     ret.put('error', 'The Zip Code entered is not valid for this program.');
                 	return ret;
                 } 
-                
-                System.debug(sObj.get('Applicant_s_Date_of_Birth_MM_DD_YYYY__c'));
+
                 
                 //Get program Launchpad__Program_Year_Start__c
                 Launchpad__Applicant_Tracking__c currentAppForConsent = GuestUserApplicationController.getCurrentJobApplication(appId);
                 if(currentAppForConsent.Program__r.Launchpad__Active__c == 'Yes'){
-                    Date birthday = Date.valueOf(sObj.get('Applicant_s_Date_of_Birth_MM_DD_YYYY__c'));
+                    Date birthday = Date.valueOf(currentAppForConsent.Applicant_s_Date_of_Birth_MM_DD_YYYY__c);
                     Date startDate = currentAppForConsent.Program__r.Launchpad__Program_Year_Start__c;
                     Decimal applicantAge = birthday.daysBetween(startDate) / 365.25;
                     applicantAge = Math.floor(applicantAge);
