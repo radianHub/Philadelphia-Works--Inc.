@@ -13,17 +13,38 @@ public class ContactTriggerHandler {
     
     @future
     public static void makeUpdatesAsync(Set<Id> contactIds){
-        List<Contact> contacts = [SELECT Id, LastName, MailingCity, MailingStreet, MailingState, MailingPostalCode, AccountId, Account.Name FROM Contact WHERE Id IN :contactIDs];
+        List<Contact> contacts = [SELECT Id, LastName, MailingCity, MailingStreet, MailingState, MailingPostalCode, AccountId, Account.Name, recordType.Name FROM Contact WHERE Id IN :contactIDs];
         List<Contact> consToUpdate = new List<Contact>();
         Set<Id> consWithNewAccounts = new Set<Id>();
         List<Account> accountsToInsert = new List<Account>();
         Map<String, Account> conIdToAccountMap = new Map<String, Account>();
         RecordType householdRecordType = [SELECT Id, Name FROM RecordType WHERE Name = 'Household'];
         
+        List<Account> allAccountList = [SELECT Id, Name, BillingCity, BillingStreet, BillingState, recordType.Name FROM Account];
+        Map<String, List<Account>> accountNameToObjectMap = new Map<String,List<Account>>();
+        
+        for(Account a : allAccountList){
+            if(accountNameToObjectMap.get(a.Name) == null){
+                List<Account> tempList = new List<Account>();
+                tempList.add(a);
+                accountNameToObjectMap.put(a.Name, tempList);
+            }else{
+                List<Account> tempList = accountNameToObjectMap.get(a.Name);
+                tempList.add(a);
+                accountNameToObjectMap.put(a.Name, tempList);
+            }
+            
+        }
+        
         for(Contact contact : contacts){
+            if(contact.recordType.Name != 'Job Seeker'){
+                continue;
+            }
+            
             String tempName = contact.LastName + ' Household';
-            List<Account> accountList = [SELECT Id, Name, BillingCity, BillingStreet, BillingState FROM Account WHERE Name = :tempName];
-            if(accountList.Size() == 0){
+           //List<Account> accountList = [SELECT Id, Name, BillingCity, BillingStreet, BillingState, recordType.Name FROM Account WHERE Name = :tempName ];
+            List<Account> accountList = accountNameToObjectMap.get(tempName);
+            if(accountList == null){
                 Account newAccount = new Account();
                 newAccount.Name = contact.LastName != null ? contact.LastName + ' Household' : 'Unnamed Account';
                 newAccount.BillingStreet = contact.MailingStreet != null ? contact.MailingStreet : null;
