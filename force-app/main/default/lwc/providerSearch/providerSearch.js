@@ -1,7 +1,10 @@
 import { LightningElement, api, wire, track } from 'lwc';
-
+import isGuest from '@salesforce/user/isGuest';
 import searchJobsDynamic from '@salesforce/apex/ProviderSearchController.searchJobsDynamic';
 import getJobFieldSetData from '@salesforce/apex/ProviderSearchController.getJobFieldSetMembers';
+import getFieldDataByObjectAndFieldNames from '@salesforce/apex/ProviderSearchController.getFieldDataByObjectAndFieldNames';
+import getCurrentUsersContactFieldValues from '@salesforce/apex/ProviderSearchController.getCurrentUsersContactFieldValues';
+import getContactJobEligibilityMappings from '@salesforce/apex/ProviderSearchController.getContactJobEligibilityMaps';
 
 export default class ProviderSearch extends LightningElement {
 	@api title;
@@ -12,7 +15,7 @@ export default class ProviderSearch extends LightningElement {
 	@api cardHeaderColor;
 	@api cardBodyBgColor;
 	@api showApply;
-
+	isGuest = isGuest;
 	hasLoaded;
 	timeout;
 	isLoading = true;
@@ -20,11 +23,13 @@ export default class ProviderSearch extends LightningElement {
 	providers = [];
 	mapProviders = [];
 	zipCode = null;
+	eligibilityCriteriaFieldData = [];
 	searchFiltersFieldData = [];
 	detailsFieldData = [];
 	detailsFieldApiNames = [];
 	textFiltersSelected = {};
 	picklistFiltersSelected = {};
+	contactJobEligibilityMappings = {};
 	activeSectionName;
 
 	// Used by cart
@@ -57,7 +62,12 @@ export default class ProviderSearch extends LightningElement {
 		return this.selectedProvidersCount < 3 || this.selectedProvidersCount > 5;
 	}
 
-	connectedCallback() {
+	async connectedCallback() {
+		if (!isGuest) {
+			await this.getContactJobEligibilityMappings();
+			await this.getEligibilitySearchFieldData();
+			this.setEligibilitySearchFieldValues();
+		}
 		if (this.searchFiltersFieldSetApiName) {
 			this.getSearchFiltersFieldData();
 		}
@@ -66,10 +76,63 @@ export default class ProviderSearch extends LightningElement {
 		}
 	}
 
+	async getContactJobEligibilityMappings() {
+		try {
+			const mappings = await getContactJobEligibilityMappings();
+			for (const fieldMapping of mappings) {
+				this.contactJobEligibilityMappings[fieldMapping.Contact_Field_API_Name__c] = fieldMapping.Job_Field_API_Name__c;
+			}
+		} catch (e) {
+			console.log('GET_CONTACT_JOB_ELIGIBILITY_MAPPINGS_ERROR', e);
+		}
+	}
+
+	async getEligibilitySearchFieldData() {
+		try {
+			const fieldNames = Object.keys(this.contactJobEligibilityMappings);
+			const fieldData = await getFieldDataByObjectAndFieldNames({ sObjectName: 'Contact', fieldNames });
+			this.eligibilityCriteriaFieldData = fieldData.sort((a, b) => {
+				if (a.label < b.label) {
+					return -1;
+				} else if (a.label > b.label) {
+					return 1;
+				}
+				return 0;
+			});
+		} catch (e) {
+			console.log('GET_ELIGIBILITY_SEARCH_FIELD_DATA_ERROR', e);
+		}
+	}
+
+	async setEligibilitySearchFieldValues() {
+		try {
+			const fieldNames = Object.keys(this.contactJobEligibilityMappings);
+			const fieldValuesContact = await getCurrentUsersContactFieldValues({ fieldNames });
+			const eligibilityCriteriaData = [ ...this.eligibilityCriteriaFieldData ];
+			if (fieldValuesContact) {
+				for (const field of Object.keys(fieldValuesContact)) {
+					const fieldValue = fieldValuesContact[field];
+					if (Object.keys(this.contactJobEligibilityMappings).includes(field) && fieldValue) {
+						const fieldDataIndex = eligibilityCriteriaData.findIndex((data) => data.apiName === field);
+						const fieldData = eligibilityCriteriaData[fieldDataIndex];
+						fieldData.value = fieldValue;
+						eligibilityCriteriaData[fieldDataIndex] = fieldData;
+					}
+				}
+				this.eligibilityCriteriaFieldData = eligibilityCriteriaData;
+				this.picklistFiltersSelected = this.getEligibilityCriteriaPicklistFiltersSelected();
+			}
+		} catch (e) {
+			console.log('GET_ELIGIBILITY_SEARCH_FIELD_VALUES_ERROR', JSON.stringify(e));
+		}
+	}
+
 	async getSearchFiltersFieldData() {
 		try {
 			const fieldData = await getJobFieldSetData({ fieldSetName: this.searchFiltersFieldSetApiName });
-			this.searchFiltersFieldData = fieldData.filter((data) => data.apiName !== 'Launchpad__Zip__c');
+			const eligibilityFields = Object.values(this.contactJobEligibilityMappings);
+			this.searchFiltersFieldData = fieldData.filter((data) => data.apiName !== 'Launchpad__Zip__c' &&
+				!eligibilityFields.includes(data.apiName));
 		} catch (e) {
 			console.error('GET_SEARCH_FILTERS_ERROR: ', e);
 		}
@@ -78,12 +141,7 @@ export default class ProviderSearch extends LightningElement {
 	async getDetailsFieldData() {
 		try {
 			const fieldData = await getJobFieldSetData({ fieldSetName: this.detailsFieldSetApiName });
-			const alwaysQueriedFields = [
-				'Name',
-				'Launchpad__Job_Description__c',
-				'Launchpad__Account_Address__c',
-				'Job_Site_Address__c',
-			];
+			const alwaysQueriedFields = ['Name', 'Launchpad__Job_Description__c', 'Launchpad__Account_Address__c', 'Job_Site_Address__c' ];
 			this.detailsFieldData = fieldData.filter((data) => !alwaysQueriedFields.includes(data.apiName));
 			this.detailsFieldApiNames = this.detailsFieldData.map((data) => data.apiName);
 		} catch (e) {
@@ -141,14 +199,23 @@ export default class ProviderSearch extends LightningElement {
 	handleClear() {
 		this.zipCode = null;
 		this.textFiltersSelected = {};
-		this.picklistFiltersSelected = {};
+		this.picklistFiltersSelected = this.getEligibilityCriteriaPicklistFiltersSelected();
 
-		this.template.querySelectorAll('lightning-input').forEach((input) => {
+		this.template.querySelectorAll('lightning-input.filter').forEach((input) => {
 			input.value = '';
 		});
-		this.template.querySelectorAll('c-multi-select-combobox').forEach((combobox) => {
+		this.template.querySelectorAll('c-multi-select-combobox.filter').forEach((combobox) => {
 			combobox.clear();
 		});
+	}
+
+	getEligibilityCriteriaPicklistFiltersSelected() {
+		const picklistFiltersSelected = {}
+		for (const fieldData of this.eligibilityCriteriaFieldData) {
+			const searchFilterField = this.contactJobEligibilityMappings[fieldData.apiName];
+			picklistFiltersSelected[searchFilterField] = [ fieldData.value.toString() ];
+		}
+		return picklistFiltersSelected;
 	}
 
 	formatProviders(data, isMapFormat) {
@@ -268,4 +335,5 @@ export default class ProviderSearch extends LightningElement {
 	handleSectionToggle() {
 		this.activeSectionName = this.activeSectionName ? null : 'selections';
 	}
+
 }

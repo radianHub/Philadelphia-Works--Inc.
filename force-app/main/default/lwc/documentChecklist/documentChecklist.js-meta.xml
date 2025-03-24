@@ -39,6 +39,13 @@
                 required="true"
 			/>
 			<property
+				name="reviewMode"
+				type="Boolean"
+				default="false"
+                description="Set to true to enable document review actions"
+				label="Review Mode"
+			/>
+			<property
 				name="instructionsLink"
 				type="String"
 				default=""
@@ -80,6 +87,13 @@
 				type="Color"
 				default="rgb(84, 105, 141)"
 				label="Header Color"
+			/>
+			<property
+				name="reviewMode"
+				type="Boolean"
+				default="false"
+                description="Set to true to enable document review actions"
+				label="Review Mode"
 			/>
 			<property
 				name="instructionsLink"

@@ -20,13 +20,13 @@
         "eventTileHeaderColor" : "rgb(235, 235, 235)",
         "featuredEventsDescription" : "Watch On Demand Videos or save your seat and Register now!",
         "featuredEventsHeader" : "Check out these Featured Events",
-        "header" : "Welcome to the Launchpad Labor Exchange Community!",
-        "headerColor" : "rgb(84, 105, 141)",
+        "header" : "Welcome to the C2L-PHL Provider Portal",
+        "headerColor" : "rgb(38, 105, 168)",
         "homeTile" : true,
         "registerEventButtonLabel" : "Register for Event",
         "registerEventRedirectUrl" : "/s/my-registered-events",
         "registerEventSuccessMessage" : "You have been Successfully Registered for the Event!ed",
-        "showFeaturedEvents" : true,
+        "showFeaturedEvents" : false,
         "watchVideoEventButtonLabel" : "Watch Video"
       },
       "componentName" : "LaunchpadCo:lexHome",
@@ -73,7 +73,7 @@
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],
-  "themeLayoutType" : "Inner",
+  "themeLayoutType" : "Home",
   "type" : "view",
   "viewType" : "home"
 }
