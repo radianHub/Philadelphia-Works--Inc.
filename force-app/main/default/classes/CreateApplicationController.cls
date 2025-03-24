@@ -66,28 +66,30 @@ public with sharing class CreateApplicationController {
 			}
 
 			Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
-            
-            Contact con = [SELECT Id, MailingCity, MailingStreet, MailingState, MailingPostalCode, Birthdate FROM Contact WHERE Id = :contactId];
+
+			Contact con = [
+				SELECT Id, MailingCity, MailingStreet, MailingState, MailingPostalCode, Birthdate
+				FROM Contact
+				WHERE Id = :contactId
+			];
 
 			List<Launchpad__Applicant_Tracking__c> newApplications = new List<Launchpad__Applicant_Tracking__c>();
 			for (Map<String, Object> app : applications) {
-                
-                Integer postalCode = null;
-                                
-                if(con.MailingPostalCode != null){
-                    postalCode = Integer.valueOf(con?.MailingPostalCode);
-                }
-                
-                if(con.Birthdate != null){
-                    
-                }
-                
+				Integer postalCode = null;
+
+				if (con.MailingPostalCode != null) {
+					postalCode = Integer.valueOf(con?.MailingPostalCode);
+				}
+
+				if (con.Birthdate != null) {
+				}
+
 				Launchpad__Applicant_Tracking__c application = new Launchpad__Applicant_Tracking__c(
-                    Applicant_s_Street_Address__c = con?.MailingStreet,
-                    Applicant_City__c = con?.MailingCity,
-                    Applicant_s_State__c = con?.MailingState,
-                    Applicants_Zip_Code__c = String.valueOf(postalCode),
-                    Applicant_s_Date_of_Birth_MM_DD_YYYY__c  = con?.Birthdate,
+					Applicant_s_Street_Address__c = con?.MailingStreet,
+					Applicant_City__c = con?.MailingCity,
+					Applicant_s_State__c = con?.MailingState,
+					Applicants_Zip_Code__c = String.valueOf(postalCode),
+					Applicant_s_Date_of_Birth_MM_DD_YYYY__c = con?.Birthdate,
 					Launchpad__Participant__c = contactId,
 					Launchpad__Job_Order__c = (String) app.get('id'),
 					Provider_Rank__c = (String) app.get('order'),
@@ -97,6 +99,16 @@ public with sharing class CreateApplicationController {
 				);
 				newApplications.add(application);
 			}
+
+			Launchpad__Enrollment__c enrollment = new Launchpad__Enrollment__c();
+			enrollment.Launchpad__Client__c = contactId;
+			enrollment.Launchpad__Program__c = job.Program__c;
+			insert enrollment;
+
+			Contact contact = new Contact();
+			contact.Id = contactId;
+			contact.Enrollment__c = enrollment.Id;
+			update contact;
 
 			insert newApplications;
 			return newApplications[0].Id;
@@ -118,29 +130,29 @@ public with sharing class CreateApplicationController {
 					AND Program__r.RecordType.Name = 'Session'
 			];
 
-            return applications;
+			return applications;
 		} catch (Exception e) {
 			System.debug('Error getting applications: ' + e.getMessage());
 			throw e;
 		}
 	}
 
-    @AuraEnabled
-    public static Boolean hasActiveApplication(Id contactId) {
-        try {
-            List<Launchpad__Applicant_Tracking__c> applications = [
-                SELECT Id
-                FROM Launchpad__Applicant_Tracking__c
-                WHERE
-                    Launchpad__Participant__c = :contactId
-                    AND Program__r.Launchpad__Active__c = 'Yes'
-                    AND Program__r.RecordType.Name = 'Session'
-            ];
+	@AuraEnabled
+	public static Boolean hasActiveApplication(Id contactId) {
+		try {
+			List<Launchpad__Applicant_Tracking__c> applications = [
+				SELECT Id
+				FROM Launchpad__Applicant_Tracking__c
+				WHERE
+					Launchpad__Participant__c = :contactId
+					AND Program__r.Launchpad__Active__c = 'Yes'
+					AND Program__r.RecordType.Name = 'Session'
+			];
 
-            return !applications.isEmpty();
-        } catch (Exception e) {
-            System.debug('Error getting applications: ' + e.getMessage());
-            throw e;
-        }
-    }
+			return !applications.isEmpty();
+		} catch (Exception e) {
+			System.debug('Error getting applications: ' + e.getMessage());
+			throw e;
+		}
+	}
 }

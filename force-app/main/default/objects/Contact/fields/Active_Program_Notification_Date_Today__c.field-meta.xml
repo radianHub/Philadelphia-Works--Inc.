@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Program_Notification_Date_Today__c</fullName>
+    <externalId>false</externalId>
+    <formula>Enrollment__r.Launchpad__Program__r.Youth_Notification_Date__c == TODAY() &amp;&amp; ISPICKVAL(Enrollment__r.Launchpad__Program__r.Launchpad__Active__c, &apos;Yes&apos;) &amp;&amp; Enrollment__r.Launchpad__Program__r.RecordType.DeveloperName == &apos;Session&apos;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Active Program Notification Date Today</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
