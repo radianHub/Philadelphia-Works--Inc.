@@ -5108,6 +5108,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Delta School</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Dick%2C William School</fullName>
             <default>false</default>
         </values>
@@ -6149,6 +6153,10 @@
         </values>
         <values>
             <fullName>Wissahickon Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop School</fullName>
             <default>false</default>
         </values>
         <values>
