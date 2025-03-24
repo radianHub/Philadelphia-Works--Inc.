@@ -3,12 +3,12 @@
     <fullName>Applicant_s_Guardian_Information</fullName>
     <description>Page 1 Section 2 of C2L Application</description>
     <displayedFields>
-        <field>Guardian_Name__c</field>
+        <field>Applicant_s_Age_at_Start_of_Program__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Relationship_to_this_Young_Person__c</field>
+        <field>Guardian_Name__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
@@ -19,6 +19,11 @@
     </displayedFields>
     <displayedFields>
         <field>Guardian_Email__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Relationship_to_this_Young_Person__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicant_Phone_Validation</fullName>
+    <active>true</active>
+    <description>· Area codes start with a number 2–9, followed by 0–8, and then any third digit.
+· The second group of three digits starts with a number 2–9, followed by any two digits.
+· The field must be all numbers
+· No 555 as exchange code</description>
+    <errorConditionFormula>AND(
+NOT( ISBLANK( Applicant_s_Phone_Number__c  ) ),
+NOT(
+REGEX( Applicant_s_Phone_Number__c , &quot;^(?!.*555\\d{4})[2-9][0-8]\\d[2-9]\\d{2}\\d{4}$&quot; )
+)
+)</errorConditionFormula>
+    <errorDisplayField>Applicant_s_Phone_Number__c</errorDisplayField>
+    <errorMessage>You must enter a valid phone number without dashes</errorMessage>
+</ValidationRule>

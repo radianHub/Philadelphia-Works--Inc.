@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Guardian_Phone_Number__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Enter only digits (ex: 1234567890)</inlineHelpText>
     <label>Guardian Phone Number</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

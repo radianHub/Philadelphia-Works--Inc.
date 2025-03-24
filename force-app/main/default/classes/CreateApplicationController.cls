@@ -58,12 +58,11 @@ public with sharing class CreateApplicationController {
 				FROM Launchpad__Applicant_Tracking__c
 				WHERE
 					Launchpad__Participant__c = :contactId
-					AND Launchpad__Job_Order__c IN :jobIds
 					AND Program__r.Launchpad__Active__c = 'Yes'
 					AND Program__r.RecordType.Name = 'Session'
 			];
 			if (!existingApplications.isEmpty()) {
-				return existingApplications[0].Id;
+				throw new AuraHandledException('You have already applied to a program in this session.');
 			}
 
 			Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
@@ -87,7 +86,7 @@ public with sharing class CreateApplicationController {
                     Applicant_s_Street_Address__c = con?.MailingStreet,
                     Applicant_City__c = con?.MailingCity,
                     Applicant_s_State__c = con?.MailingState,
-                    Applicant_s_Zip_Code__c = postalCode,
+                    Applicants_Zip_Code__c = String.valueOf(postalCode),
                     Applicant_s_Date_of_Birth_MM_DD_YYYY__c  = con?.Birthdate,
 					Launchpad__Participant__c = contactId,
 					Launchpad__Job_Order__c = (String) app.get('id'),

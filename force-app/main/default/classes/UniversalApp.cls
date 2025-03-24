@@ -15,7 +15,7 @@ public with sharing class UniversalApp {
 	// Descr.   - Segregated (for testing) mdt query which updates the class static variable "apps"
 	// Input    - String DeveloperName of CustomMetadata 'Universal App'
 	private static void queryApps(String appDevName) {
-		apps = [
+      apps = [
 			SELECT
 				Id,
 				CSS__c,
@@ -34,40 +34,42 @@ public with sharing class UniversalApp {
 			FROM Universal_App__mdt
 			WHERE DeveloperName = :appDevName
 		];
+
 	}
 
 	// Method   - querySections
 	// Descr.   - Segregated (for testing) mdt query which updates the class static variable "sections"
 	// Input    - Id of 'Universal App'
 	private static void querySections(String appId) {
-		// sections = [
-		//  SELECT
-		//      Id,
-		//      DeveloperName,
-		//      MasterLabel,
-		//      Order__c,
-		//      Page__c,
-		//      Section_Body__c,
-		//      Section_Field_Set__c,
-		//      Section_Field_Columns__c,
-		//      Section_Field_Flow__c,
-		//      Section_Header__c,
-		//      conditionalRequire__c,
-		//      conditionalRender__c,
-		//      DisplayByDefault__c,
-		//      AddChildButtonLabel__c,
-		//      ChildFieldSet__c,
-		//      ChildObject__c,
-		//      ChildObjectRecordLimit__c,
-		//      ChildTableTitle__c,
-		//      ParentField__c,
-		//      isEnableChildRecords__c,
-		//      Include_Signature__c
-		//  FROM Universal_App_Section__mdt
-		//  WHERE Universal_App__c = :appId
-		// ];
+		 sections = [
+		  SELECT
+		      Id,
+		      DeveloperName,
+		      MasterLabel,
+		      Order__c,
+		      Page__c,
+		      Section_Body__c,
+		      Section_Field_Set__c,
+		      Section_Field_Columns__c,
+		      Section_Field_Flow__c,
+		      Section_Header__c,
+		      conditionalRequire__c,
+		      conditionalRender__c,
+		      DisplayByDefault__c,
+		      AddChildButtonLabel__c,
+		      ChildFieldSet__c,
+		      ChildObject__c,
+		      ChildObjectRecordLimit__c,
+		      ChildTableTitle__c,
+		     ParentField__c,
+		      isEnableChildRecords__c,
+		      Include_Signature__c
+		  FROM Universal_App_Section__mdt
+		  WHERE Universal_App__c = :appId
+		 ];
 
-		sections = Universal_App_Section__mdt.getAll().values();
+		//sections = Universal_App_Section__mdt.getAll().values();
+        System.debug('sections: ' + sections);
 	}
 
 	/**
@@ -102,6 +104,7 @@ public with sharing class UniversalApp {
 	 * @return sObject
 	 **/
 	public static sObject queryRecord(Id rId, String objName) {
+        
 		Map<String, Schema.SObjectField> fields = ((SObject) Type.forName('Schema', objName)?.newInstance())
 			?.getSObjectType()
 			?.getDescribe()
@@ -115,6 +118,9 @@ public with sharing class UniversalApp {
 		}
 		expr += fields.values()[fields.values().size() - 1];
 		String qry = 'SELECT' + expr + ' FROM ' + objName + ' WHERE Id = ' + '\'' + rId + '\'';
+        System.debug('query: ' + qry);
+        System.debug('objName: ' + objName);
+        System.debug('rId: ' + rId);
 		obj = Database.query(qry);
 
 		return obj;
@@ -321,7 +327,7 @@ public with sharing class UniversalApp {
 				Applicant_s_Email_Address__c,
 				Applicant_City__c,
 				Applicant_s_State__c,
-				Applicant_s_Zip_Code__c,
+				Applicants_Zip_Code__c ,
 				Applicant_s_Phone_Number__c,
 				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
 				Applicants_Tax_Id__c,
@@ -382,7 +388,7 @@ public with sharing class UniversalApp {
 				Applicant_s_Email_Address__c,
 				Applicant_City__c,
 				Applicant_s_State__c,
-				Applicant_s_Zip_Code__c,
+				Applicants_Zip_Code__c,
 				Applicant_s_Phone_Number__c,
 				Applicant_s_Date_of_Birth_MM_DD_YYYY__c,
 				Applicants_Tax_Id__c,
@@ -438,13 +444,11 @@ public with sharing class UniversalApp {
 		List<Launchpad__Applicant_Tracking__c> appsToUpdate = new List<Launchpad__Applicant_Tracking__c>();
 
 		for (Launchpad__Applicant_Tracking__c app : relatedApps) {
-			app.Applicant_s_Street_Address__c = currentApp.Applicant_s_Street_Address__c ??
-				app.Applicant_s_Street_Address__c;
-			app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ??
-				app.Applicant_s_Email_Address__c;
+			app.Applicant_s_Street_Address__c = currentApp.Applicant_s_Street_Address__c ?? app.Applicant_s_Street_Address__c;
+			app.Applicant_s_Email_Address__c = currentApp.Applicant_s_Email_Address__c ?? app.Applicant_s_Email_Address__c;
 			app.Applicant_City__c = currentApp.Applicant_City__c ?? app.Applicant_City__c;
 			app.Applicant_s_State__c = currentApp.Applicant_s_State__c ?? app.Applicant_s_State__c;
-			app.Applicant_s_Zip_Code__c = currentApp.Applicant_s_Zip_Code__c ?? app.Applicant_s_Zip_Code__c;
+			app.Applicants_Zip_Code__c = currentApp.Applicants_Zip_Code__c ?? app.Applicants_Zip_Code__c;
 			app.Applicant_s_Phone_Number__c = currentApp.Applicant_s_Phone_Number__c ?? app.Applicant_s_Phone_Number__c;
 			app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c = currentApp.Applicant_s_Date_of_Birth_MM_DD_YYYY__c ??
 				app.Applicant_s_Date_of_Birth_MM_DD_YYYY__c;
@@ -525,12 +529,39 @@ public with sharing class UniversalApp {
 			app.Release_of_Information__c = currentApp.Release_of_Information__c ?? app.Release_of_Information__c;
 
 			app.Launchpad__Stage__c = 'Submitted';
+            
+            app.Guardian_Consent_Required__c = true;
 
 			appsToUpdate.add(app);
 		}
 
 		update appsToUpdate;
 	}
+    
+    
+   
+    
+    public static List<Database.UpsertResult> saveConsentFormToApplicationAndUpdateFields(Id appId){
+        Launchpad__Applicant_Tracking__c currentApp = GuestUserApplicationController.getCurrentJobApplication(appId);
+        
+        List<Launchpad__Applicant_Tracking__c> relatedApps = GuestUserApplicationController.getRelatedJobApplications(appId);
+        List<Launchpad__Applicant_Tracking__c> appsToUpdate = new List<Launchpad__Applicant_Tracking__c>();
+     
+        
+        for(Launchpad__Applicant_Tracking__c relatedApp : relatedApps){
+            relatedApp.Media_Picture_Release__c = currentApp.Media_Picture_Release__c ?? relatedApp.Media_Picture_Release__c;
+            relatedApp.Parent_s_Consent__c = currentApp.Parent_s_Consent__c ?? relatedApp.Parent_s_Consent__c;
+            relatedApp.Release_of_Information__c = currentApp.Release_of_Information__c ?? relatedApp.Release_of_Information__c;
+            relatedApp.Consent_to_Request_Clearance__c = currentApp.Consent_to_Request_Clearance__c ?? relatedApp.Consent_to_Request_Clearance__c;
+            relatedApp.Guardian_Consent_Required__c = false;
+            appsToUpdate.add(relatedApp);
+        }
+        System.debug('currentApp media release: ' + currentApp.Media_Picture_Release__c);
+        return GuestUserApplicationController.updateJobApplications(appsToUpdate);
+        
+    }
+    
+    
 	@AuraEnabled
 	public static Map<String, Object> submitApp(
 		SObject sObj,
@@ -541,14 +572,59 @@ public with sharing class UniversalApp {
 		Map<String, Object> ret = new Map<String, Object>();
 		Id sObjectId;
 
+        
 		try {
 			// ! IF ADJUSTMENTS ARE NEEDED TO SPECIFIC APPLICATIONS, USE A SWITCH STATEMENT AND UNCOMMENT THE CODE CODE BELOW
             // Pre upsert logic
+            // 
+          
+            Id appId = sobj.Id;
             if (application == 'C2L_Program_Application' && isSaveForLater != true) {
-                sObj.put('Launchpad__Stage__c', 'Submitted');
+                List<C2L_PHL_Eligible_Zip_Codes__mdt> zipCodeList = [SELECT Id, Label from C2L_PHL_Eligible_Zip_Codes__mdt];
+                Map<String, Id> zipCodeMap = new Map<String, Id>();
+                
+                for (C2L_PHL_Eligible_Zip_Codes__mdt zipCode : zipCodeList) {
+    				zipCodeMap.put(zipCode.Label, zipCode.Id);
+				}
+                String enteredZip = String.valueOf(sObj.get('Applicants_Zip_Code__c'));
+                if(zipCodeMap.get(enteredZip) == null){
+                    ret.put('error', 'The Zip Code entered is not valid for this program.');
+                	return ret;
+                } 
+                
+                System.debug(sObj.get('Applicant_s_Date_of_Birth_MM_DD_YYYY__c'));
+                
+                //Get program Launchpad__Program_Year_Start__c
+                Launchpad__Applicant_Tracking__c currentAppForConsent = GuestUserApplicationController.getCurrentJobApplication(appId);
+                Integer applicantAge = Integer.valueOf(sObj.get('Applicant_s_Age_at_Start_of_Program__c'));
+                
+                if(applicantAge < 12){
+                    ret.put('error', 'The Applicant is too young for this program.');
+                    return ret;
+                }
+                if(applicantAge > 24){
+                    ret.put('error', 'The Applicant is too old for this program.');
+                    return ret;
+                }
+                
+				sObj.put('Launchpad__Stage__c', 'Submitted'); 
+            }
+            
+            Database.UpsertResult result;
+            
+            if(application == 'Consent_Form' && isSaveForLater != true){
+                Launchpad__Applicant_Tracking__c currentAppForConsent = GuestUserApplicationController.getCurrentJobApplication(appId);
+                if(currentAppForConsent.Guardian_Consent_Required__c == false){
+                    ret.put('error', 'The Consent Form has already been submitted for this youth.');
+                	return ret;
+                }
+                GuestUserApplicationController.updateSingleJobApplication(sobj);
+                result = saveConsentFormToApplicationAndUpdateFields(appId)[0];
+            }else{
+               result = Database.upsert(sObj, false);
             }
 
-			Database.UpsertResult result = Database.upsert(sObj, false);
+			
 			if (!result.isSuccess()) {
 				throw new CustomException(result.getErrors()[0].getMessage());
 			}
@@ -557,7 +633,13 @@ public with sharing class UniversalApp {
 			sObjectId = result.Id;
 
             // Post upsert logic
-            if (application == 'C2L_Program_Application' && isSaveForLater != true) {
+            if (application == 'C2L_Program_Application' && isSaveForLater != true && result.isSuccess()){
+                Launchpad__Applicant_Tracking__c currentApp = [SELECT Id, Guardian_Consent_Required__c, Submitted_From_Universal_App__c FROM Launchpad__Applicant_Tracking__c WHERE Id = :appId LIMIT 1];
+                currentApp.Guardian_Consent_Required__c = true;
+                currentApp.Submitted_From_Universal_App__c = true;
+                update currentApp;
+                
+                System.Debug('About to call updateOtherAppsInSameSession');
                 updateOtherAppsInSameSession(sObjectId);
             }
 
