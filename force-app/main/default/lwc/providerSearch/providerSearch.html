@@ -11,13 +11,39 @@
 	</h2>
 	<p class="description slds-var-m-bottom_large">{description}</p>
 	<lightning-layout
-		class="filter-container slds-var-p-around_medium slds-var-m-bottom_medium"
+			class="filter-container slds-var-p-horizontal_medium slds-var-p-top_x-small eligibility-criteria"
+			multiple-rows="true"
+			if:false={isGuest}
+			vertical-align="end">
+		<lightning-layout-item size="12">
+			<div class="slds-text-title_bold">Your Profile</div>
+		</lightning-layout-item>
+		<template
+			for:each={eligibilityCriteriaFieldData}
+			for:item="field">
+			<lightning-layout-item
+					key={field.apiName}
+					flexibility="auto">
+				<lightning-input
+						read-only="true"
+						label={field.label}
+						value={field.value}
+				></lightning-input>
+			</lightning-layout-item>
+		</template>
+	</lightning-layout>
+	<lightning-layout
+		class="filter-container slds-var-p-top_x-small slds-var-p-horizontal_medium slds-var-p-bottom_medium slds-var-m-bottom_medium"
 		multiple-rows="true"
 		vertical-align="end">
+		<lightning-layout-item size="12">
+			<div class="slds-text-title_bold">Program Filters</div>
+		</lightning-layout-item>
 		<lightning-layout-item
 			padding="around-small"
 			flexibility="auto">
 			<lightning-input
+				class="filter"
 				name="zipcode"
 				label="Zip"
 				type="search"
@@ -32,6 +58,7 @@
 					padding="around-small"
 					flexibility="auto">
 					<c-multi-select-combobox
+						class="filter"
 						label={field.label}
 						name={field.apiName}
 						options={field.options}
@@ -44,6 +71,7 @@
 					padding="around-small"
 					flexibility="auto">
 					<lightning-input
+						class="filter"
 						label={field.label}
 						name={field.apiName}
 						type="search"

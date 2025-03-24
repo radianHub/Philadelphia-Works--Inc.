@@ -1,0 +1,90 @@
+<!--
+ - Created by holden on 3/20/25.
+ -->
+
+<!-- Job Modal -->
+<template>
+    <lightning-modal-header label={jobName}></lightning-modal-header>
+    <lightning-modal-body>
+        <template lwc:if={isEditMode}>
+            <div style="padding-bottom: 200px" class="slds-is-relative">
+                <template if:true={isLoading}>
+                    <lightning-spinner variant="brand" size="medium"></lightning-spinner>
+                </template>
+                <lightning-record-edit-form id="record-edit-form" record-id={recordId} object-api-name="Launchpad__Job__c">
+                    <div class="slds-grid slds-wrap slds-size_1-of-1">
+                        <template for:each={fieldData} for:item="field">
+                            <div key={field.apiName} class="slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <template lwc:if={field.isMultiselect}>
+                                    <div class="slds-p-horizontal_xx-small">
+                                        <c-multi-select-combobox
+                                                label={field.label}
+                                                name={field.apiName}
+                                                options={field.options}
+                                                onchange={handleMultiselectChange}
+                                        ></c-multi-select-combobox>
+                                    </div>
+                                </template>
+                                <template lwc:else>
+                                    <lightning-input-field
+                                            field-name={field.apiName}
+                                            variant="label-stacked"
+                                            name={field.apiName}
+                                            onchange={handleChange}
+                                    ></lightning-input-field>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-record-edit-form>
+            </div>
+        </template>
+        <template lwc:else>
+            <div class="slds-is-relative">
+                <template if:true={isLoading}>
+                    <lightning-spinner variant="brand" size="medium"></lightning-spinner>
+                </template>
+                <lightning-record-view-form record-id={recordId} object-api-name="Launchpad__Job__c">
+                    <div style="min-height: 200px" class="slds-grid slds-wrap slds-size_1-of-1">
+                        <template for:each={fieldData} for:item="field">
+                            <div key={field.apiName} class="slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <template lwc:if={field.isTextarea}>
+                                    <div class="slds-form-element__label">{field.label}</div>
+                                    <div class="slds-p-top_x-small" style="padding-left: 1px;">
+                                        <lightning-formatted-rich-text
+                                                value={field.value}
+                                        ></lightning-formatted-rich-text>
+                                    </div>
+                                </template>
+                                <template lwc:else>
+                                    <lightning-input
+                                            label={field.label}
+                                            value={field.value}
+                                            read-only
+                                    ></lightning-input>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-record-view-form>
+            </div>
+        </template>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button
+                label="Close"
+                onclick={handleClose}
+                disabled={isLoading}
+        ></lightning-button>
+        <template lwc:if={isEditMode}>
+            <span class="slds-p-left_small">
+                <lightning-button
+                        label="Save"
+                        variant="brand"
+                        onclick={handleSave}
+                        disabled={isLoading}
+                ></lightning-button>
+            </span>
+        </template>
+    </lightning-modal-footer>
+</template>

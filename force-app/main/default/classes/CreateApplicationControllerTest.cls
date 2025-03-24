@@ -1,7 +1,7 @@
-@isTest
+@IsTest
 public class CreateApplicationControllerTest {
     
-    @testSetup
+    @TestSetup
     static void setupTestData() {
         Account testAccount = new Account(
             Name = 'Test Account'
@@ -15,7 +15,7 @@ public class CreateApplicationControllerTest {
         );
         insert testContact;
 
-        RecordType sessionRecordType = [SELECT Id FROM RecordType WHERE SObjectType = 'Launchpad__Program__c' AND Name = 'Session' LIMIT 1];
+        RecordType sessionRecordType = [SELECT Id FROM RecordType WHERE SobjectType = 'Launchpad__Program__c' AND Name = 'Session' LIMIT 1];
 
         Launchpad__Program__c program = new Launchpad__Program__c(
             Name = 'Test Program',
@@ -46,7 +46,7 @@ public class CreateApplicationControllerTest {
         insert testJobs;
     }
     
-    @isTest
+    @IsTest
     static void testCreateNewApplication() {
         Contact testContact = [SELECT Id, Email FROM Contact LIMIT 1];
         Launchpad__Job__c testJob = [SELECT Id FROM Launchpad__Job__c LIMIT 1];
@@ -73,7 +73,7 @@ public class CreateApplicationControllerTest {
         System.assertEquals(testContact.Email, createdApp.Applicant_s_Email_Address__c, 'Email should match');
     }
     
-    @isTest
+    @IsTest
     static void testInvalidContactId() {
         Launchpad__Job__c testJob = [SELECT Id FROM Launchpad__Job__c LIMIT 1];
         
@@ -93,7 +93,7 @@ public class CreateApplicationControllerTest {
         Test.stopTest();
     }
 
-    @isTest
+    @IsTest
     static void testCreateBulkApplications() {
         Contact testContact = [SELECT Id, Email FROM Contact LIMIT 1];
         List<Launchpad__Job__c> testJobs = [SELECT Id FROM Launchpad__Job__c ORDER BY Name];
@@ -135,4 +135,5 @@ public class CreateApplicationControllerTest {
         
         System.assertEquals(createdApps[0].Id, resultId, 'First application ID should be returned');
     }
+
 }

@@ -1,0 +1,32 @@
+<template>
+	<lightning-modal-header label="Update Applicants"> </lightning-modal-header>
+	<lightning-modal-body>
+		<lightning-combobox
+			class="slds-m-bottom_none"
+			name="stage"
+			label="Provider Choice"
+			value={selectedChoice}
+			placeholder="Select A Choice"
+			options={choiceOptions}
+			onchange={handleChoiceChange}
+			required></lightning-combobox>
+		<lightning-textarea
+			lwc:if={showReason}
+			type="textarea"
+			label="Pass Reason"
+			value={reason}
+			onchange={handleReasonChange}
+			max-length="255"
+			required></lightning-textarea>
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<lightning-button
+			label="Cancel"
+			onclick={handleCancel}></lightning-button>
+		<lightning-button
+			class="slds-m-left_x-small"
+			variant="brand"
+			label="Save"
+			onclick={handleSave}></lightning-button>
+	</lightning-modal-footer>
+</template>

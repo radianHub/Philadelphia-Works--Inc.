@@ -31,7 +31,7 @@
 						label={document.status}></lightning-badge>
 				</div>
 				<div class="slds-col">
-					<div class="slds-grid slds-wrap slds-var-m-left_x-small">
+					<div class="slds-grid slds-wrap slds-var-m-left_x-small slds-grid_align-end">
 						<template lwc:if={document.submitted}>
 							<lightning-button
 								variant="destructive"
@@ -49,6 +49,7 @@
 						</template>
 						<template lwc:else>
 							<lightning-button
+								lwc:if={canUpload}
 								class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
 								title="Upload"
 								label="Upload"

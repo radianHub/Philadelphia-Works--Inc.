@@ -11,6 +11,29 @@
   }, {
     "components" : [ {
       "componentAttributes" : {
+        "applicationListHeader" : "Applications",
+        "contactUsButtonLabel" : "Contact Us Button Label",
+        "contactUsCancelButtonLabel" : "Cancel",
+        "contactUsDescription" : "Contact Us Description",
+        "contactUsHeader" : "Contact Us Header",
+        "contactUsPlaceholderText" : "Placeholder",
+        "contactUsSubmitButtonLabel" : "Submit",
+        "contactUsSuccessMessage" : "Success",
+        "description" : "Description",
+        "headerColor" : "rgb(84, 105, 141)",
+        "noJobApplicationMessage" : "No applications found",
+        "redirectButtonLabel" : "Search",
+        "redirectButtonRedirectUrl" : "",
+        "showContactUsButton" : "",
+        "showRedirectButton" : ""
+      },
+      "componentName" : "LaunchpadCo:lexCandidateApplicationsAura",
+      "id" : "dc966bbf-4d55-449e-aabc-df912b35f7f8",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
         "enableInlineEdit" : false,
         "filterName" : "Provider_Selected_Applications",
         "layout" : "FULL",
