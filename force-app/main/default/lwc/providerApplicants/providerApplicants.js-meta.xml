@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Provider Applicants</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+				name="title"
+				type="String"
+				label="Title"
+				default="Applicants"
+			/>
+            <property
+				name="description"
+				type="String"
+				label="Description"
+				default="Review applicants to your programs."
+			/>
+			<property
+				name="tableFieldSetApiName"
+				type="String"
+				label="Table Columns Field Set API Name"
+				placeholder="Search_Filters_Field_Set"
+				default="Default_Provider_Search_Field_Set"
+				description="Field Set API Name of table column fields from Launchpad__Job__c object"
+			/>
+			<property
+				name="detailsFieldSetApiName"
+				type="String"
+				label="Application Details Field Set API Name"
+				placeholder="Details_Field_Set"
+				default="Default_Provider_Search_Field_Set"
+				description="Field Set API Name of application detail fields from Launchpad__Job__c object"
+			/>
+            <property
+				name="headerColor"
+				type="Color"
+				default="rgb(84, 105, 141)"
+				label="Header Color"
+			/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
