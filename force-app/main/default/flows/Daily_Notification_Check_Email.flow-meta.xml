@@ -3,18 +3,15 @@
     <actionCalls>
         <name>Send_Email_Alert_to_Matched_Participants</name>
         <label>Send Email Alert to Matched Participants</label>
-        <locationX>138</locationX>
-        <locationY>1200</locationY>
+        <locationX>50</locationX>
+        <locationY>1176</locationY>
         <actionName>Launchpad__Applicant_Tracking__c.Matched_Participant_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Loop_through_applications_of_matched_contacts</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
-                <elementReference>Loop_through_applications_of_matched_contacts.Id</elementReference>
+                <elementReference>applicationIdForAlert</elementReference>
             </value>
         </inputParameters>
         <nameSegment>Launchpad__Applicant_Tracking__c.Matched_Participant_Email_Alert</nameSegment>
@@ -22,131 +19,158 @@
     <actionCalls>
         <name>Unmatched_Participant_Email_Action</name>
         <label>Unmatched Participant Email Action</label>
-        <locationX>138</locationX>
-        <locationY>1608</locationY>
+        <locationX>314</locationX>
+        <locationY>1176</locationY>
         <actionName>Launchpad__Applicant_Tracking__c.Unmatched_Participant_Email</actionName>
         <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>Loop_through_applications_of_unmatched_contacts</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
-                <elementReference>Loop_through_applications_of_unmatched_contacts.Id</elementReference>
+                <elementReference>applicationIdForAlert</elementReference>
             </value>
         </inputParameters>
         <nameSegment>Launchpad__Applicant_Tracking__c.Unmatched_Participant_Email</nameSegment>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
     <assignments>
-        <name>Assign_Contact_IDs</name>
-        <label>Assign Contact and Enrollment IDs</label>
-        <locationX>138</locationX>
-        <locationY>684</locationY>
+        <name>Assign_an_Application_ID_for_Alert</name>
+        <label>Assign an Application ID for Alert</label>
+        <locationX>270</locationX>
+        <locationY>576</locationY>
         <assignmentItems>
-            <assignToReference>ContactIDs</assignToReference>
-            <operator>Add</operator>
+            <assignToReference>applicationIdForAlert</assignToReference>
+            <operator>Assign</operator>
             <value>
-                <elementReference>Loop_through_Enrollments.Launchpad__Client__r.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>EnrollmentIDs</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Loop_through_Enrollments.Id</elementReference>
+                <elementReference>Loop_Through_Applications.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_through_Enrollments</targetReference>
+            <targetReference>Is_Application_In_Matched_or_Placed_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Matched_or_Placed_to_True</name>
+        <label>Set Matched or Placed to True</label>
+        <locationX>138</locationX>
+        <locationY>792</locationY>
+        <assignmentItems>
+            <assignToReference>hasMatchedOrPlacedApplicationStatus</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Applications</targetReference>
         </connector>
     </assignments>
     <decisions>
-        <description>Checks to see if the Youth Notification Date field = Today and RecordType is Session</description>
-        <name>Is_Youth_Notification_Date_Today</name>
-        <label>Is Youth Notification Date Today?</label>
-        <locationX>182</locationX>
-        <locationY>360</locationY>
-        <defaultConnectorLabel>Youth Notification Date is not Today</defaultConnectorLabel>
+        <name>Is_Application_In_Matched_or_Placed_Status</name>
+        <label>Is Application In Matched or Placed Status</label>
+        <locationX>270</locationX>
+        <locationY>684</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Through_Applications</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Unmatched</defaultConnectorLabel>
         <rules>
-            <name>Youth_Notification_Date_is_Today</name>
-            <conditionLogic>and</conditionLogic>
+            <name>Is_Matched_or_Placed</name>
+            <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Youth_Notification_Date__c</leftValueReference>
+                <leftValueReference>Loop_Through_Applications.Applicant_s_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Today</elementReference>
+                    <stringValue>Matched with Provider</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.RecordType.Id</leftValueReference>
+                <leftValueReference>Loop_Through_Applications.Applicant_s_Status__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Get_Session_Record_Types.Id</elementReference>
+                    <stringValue>Placed</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Enrollments_with_Triggering_Session</targetReference>
+                <targetReference>Set_Matched_or_Placed_to_True</targetReference>
             </connector>
-            <label>Youth Notification Date is Today</label>
+            <label>Is Matched or Placed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Contact_Email_Blank</name>
+        <label>Is Contact Email Blank</label>
+        <locationX>314</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Email Is Blank</defaultConnectorLabel>
+        <rules>
+            <name>Email_Is_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Email</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Applications_Related_to_Contact</targetReference>
+            </connector>
+            <label>Email Is Not Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Participant_Matched_or_Placed</name>
+        <label>Is Participant Matched or Placed</label>
+        <locationX>50</locationX>
+        <locationY>1068</locationY>
+        <defaultConnector>
+            <targetReference>Unmatched_Participant_Email_Action</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Unmatched</defaultConnectorLabel>
+        <rules>
+            <name>No_Applications_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Applications_Related_to_Contact</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>No Applications Found</label>
+        </rules>
+        <rules>
+            <name>Is_Matched_Placed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>hasMatchedOrPlacedApplicationStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Alert_to_Matched_Participants</targetReference>
+            </connector>
+            <label>Is Matched or Placed</label>
         </rules>
     </decisions>
     <environments>Default</environments>
-    <formulas>
-        <name>MatchedContactsEmpty</name>
-        <dataType>Boolean</dataType>
-        <expression>LEN({!MatchedContactEmails})&lt;=2</expression>
-    </formulas>
-    <formulas>
-        <name>Today</name>
-        <dataType>Date</dataType>
-        <expression>TODAY()</expression>
-    </formulas>
-    <formulas>
-        <name>UnmatchedContactsEmpty</name>
-        <dataType>Boolean</dataType>
-        <expression>LEN({!UnmatchedContactsEmails})&lt;=2</expression>
-    </formulas>
     <interviewLabel>Daily Notification Check &amp; Email {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Daily Notification Check &amp; Email</label>
     <loops>
-        <name>Loop_through_applications_of_matched_contacts</name>
-        <label>Loop through applications of matched contacts</label>
+        <name>Loop_Through_Applications</name>
+        <label>Loop Through Applications</label>
         <locationX>50</locationX>
-        <locationY>1092</locationY>
-        <collectionReference>Get_Job_Applications_with_Contacts_with_Enrollments_with_Session</collectionReference>
+        <locationY>468</locationY>
+        <collectionReference>Get_Applications_Related_to_Contact</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Send_Email_Alert_to_Matched_Participants</targetReference>
+            <targetReference>Assign_an_Application_ID_for_Alert</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Get_Job_Applications_of_Unmatched_Contacts</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
-        <name>Loop_through_applications_of_unmatched_contacts</name>
-        <label>Loop through applications of unmatched contacts</label>
-        <locationX>50</locationX>
-        <locationY>1500</locationY>
-        <collectionReference>Get_Job_Applications_of_Unmatched_Contacts</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Unmatched_Participant_Email_Action</targetReference>
-        </nextValueConnector>
-    </loops>
-    <loops>
-        <name>Loop_through_Enrollments</name>
-        <label>Loop through Enrollments</label>
-        <locationX>50</locationX>
-        <locationY>576</locationY>
-        <collectionReference>Get_Enrollments_with_Triggering_Session</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Assign_Contact_IDs</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Get_Contacts_with_Enrollments</targetReference>
+            <targetReference>Is_Participant_Matched_or_Placed</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -169,173 +193,48 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Contacts_with_Enrollments</name>
-        <label>Get Contacts with Enrollments</label>
+        <name>Get_Applications_Related_to_Contact</name>
+        <label>Get Applications Related to Contact</label>
         <locationX>50</locationX>
-        <locationY>876</locationY>
+        <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Job_Applications_with_Contacts_with_Enrollments_with_Session</targetReference>
+            <targetReference>Loop_Through_Applications</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Enrollment__c</field>
-            <operator>In</operator>
-            <value>
-                <elementReference>EnrollmentIDs</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Contact</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Enrollments_with_Triggering_Session</name>
-        <label>Get Enrollments with Session</label>
-        <locationX>50</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Loop_through_Enrollments</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Launchpad__Program__c</field>
+            <field>Launchpad__Participant__c</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Launchpad__Enrollment__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Job_Applications_of_Unmatched_Contacts</name>
-        <label>Get Job Applications of Unmatched Contacts</label>
-        <locationX>50</locationX>
-        <locationY>1392</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Loop_through_applications_of_unmatched_contacts</targetReference>
-        </connector>
-        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6)</filterLogic>
         <filters>
-            <field>Launchpad__Participant__c</field>
-            <operator>In</operator>
-            <value>
-                <elementReference>ContactIDs</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Applicant_s_Status__c</field>
+            <field>Youth_Notification_Date_is_Today__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Shortlisted</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Applicant_s_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Provider Selected, Awaiting Match</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Applicant_s_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Passed</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Applicant_s_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>In Progress</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Applicant_s_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Submitted</stringValue>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Launchpad__Applicant_Tracking__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Job_Applications_with_Contacts_with_Enrollments_with_Session</name>
-        <label>Get Job Applications of Matched Contacts</label>
-        <locationX>50</locationX>
-        <locationY>984</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Loop_through_applications_of_matched_contacts</targetReference>
-        </connector>
-        <filterLogic>1 AND (2 OR 3)</filterLogic>
-        <filters>
-            <field>Launchpad__Participant__c</field>
-            <operator>In</operator>
-            <value>
-                <elementReference>ContactIDs</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Applicant_s_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Matched with Provider</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Applicant_s_Status__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Placed</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Launchpad__Applicant_Tracking__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Session_Record_Types</name>
-        <label>Get Session Record Types</label>
-        <locationX>182</locationX>
-        <locationY>252</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Is_Youth_Notification_Date_Today</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>SobjectType</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Launchpad__Program__c</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>DeveloperName</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Session</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Session_Record_Types</targetReference>
+            <targetReference>Is_Contact_Email_Blank</targetReference>
         </connector>
-        <object>Launchpad__Program__c</object>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Active_Program_Notification_Date_Today__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Contact</object>
         <schedule>
             <frequency>Daily</frequency>
             <startDate>2025-02-18</startDate>
@@ -344,100 +243,21 @@
         <triggerType>Scheduled</triggerType>
     </start>
     <status>Active</status>
-    <textTemplates>
-        <name>MatchedContactsEmail</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Test Email Matched List&lt;/p&gt;</text>
-    </textTemplates>
-    <textTemplates>
-        <name>MatchedContactsEmailSubject</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Matched Contacts Test Subject&lt;/p&gt;</text>
-    </textTemplates>
-    <textTemplates>
-        <name>UnmatchedContactsEmail</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Unmatched Contacts Test&lt;/p&gt;</text>
-    </textTemplates>
-    <textTemplates>
-        <name>UnmatchedContactsEmailSubject</name>
-        <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Unmatched Contacts Test Subject&lt;/p&gt;</text>
-    </textTemplates>
     <variables>
-        <name>ApplicationswithContactswithEnrollments</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Launchpad__Applicant_Tracking__c</objectType>
-    </variables>
-    <variables>
-        <name>ContactIDs</name>
+        <name>applicationIdForAlert</name>
         <dataType>String</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>ContactswithEnrollments</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Contact</objectType>
-    </variables>
-    <variables>
-        <name>ContactswithEnrollmentsandJobApplications</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Contact</objectType>
-    </variables>
-    <variables>
-        <name>currentItem_Collection_Filter_1</name>
-        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Launchpad__Enrollment__c</objectType>
     </variables>
     <variables>
-        <name>EnrollmentIDs</name>
-        <dataType>String</dataType>
-        <isCollection>true</isCollection>
+        <name>hasMatchedOrPlacedApplicationStatus</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>EnrollmentswithSession</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Launchpad__Enrollment__c</objectType>
-    </variables>
-    <variables>
-        <name>MatchedContactEmails</name>
-        <dataType>String</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>MatchedContacts</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>Contact</objectType>
-    </variables>
-    <variables>
-        <name>UnmatchedContactsEmails</name>
-        <dataType>String</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
 </Flow>
