@@ -8,9 +8,9 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Legal_Middle_Name__c</field>
+        <field>Middle_Name__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_s_Legal_Last_Name__c</field>
