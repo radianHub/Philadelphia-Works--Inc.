@@ -1,0 +1,7 @@
+Hi {!Launchpad__Document__c.Applicant_Name__c},
+
+The {!Launchpad__Document__c.Launchpad__Type__c} you have uploaded for your C2L-PHL Youth Application has been rejected for {!Launchpad__Document__c.Rejection_Reason__c}. 
+<br/><br/>
+<a href="https://philaworks--integrate.sandbox.my.site.com/youth/s/login/">Log in to  to re-upload.<a/>
+<br/><br/>
+Please reach out to {Placeholder Support Info} if you need assistance.
