@@ -1,20 +1,30 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
-import getDocumentStatuses from '@salesforce/apex/DocumentChecklistController.getDocumentStatuses';
 import getContentVersionFromDocumentId from '@salesforce/apex/DocumentChecklistController.getContentVersionFromDocumentId';
+import template from './documentChecklistItem.html';
+import reviewTemplate from './documentChecklistItem_review.html';
 
 export default class DocumentChecklistItem extends LightningElement {
 	@api document;
 	@api recordId;
 	@api checklistName;
 	@api lookupField;
-    documentStatuses = {
-        approvedStatus: 'Approved',
-        rejectedStatus: 'Rejected',
-        submittedStatus: 'Submitted',
-        defaultStatus: 'Not Started',
-    };
+    @api reviewMode;
+    @api documentStatuses;
     url;
+    selectedStatus;
+    isSubmitting;
+    rejectionReason;
+
+    documentOptions = [
+        {
+            label: 'Approve',
+            value: 'Approved'
+        }, {
+            label: 'Reject',
+            value: 'Rejected'
+        }
+    ]
 
     get statusIconName() {
         switch (this.document.status) {
@@ -59,13 +69,23 @@ export default class DocumentChecklistItem extends LightningElement {
         }
     }
 
-    @wire(getDocumentStatuses, { checklistName: '$checklistName' })
-    wiredStatuses({ data, error }) {
-        if (data) {
-            this.documentStatuses = data;
-        } else if (error) {
-            console.error('getDocumentStatuses error', error);
+    get isInReview() {
+        return this.document.status === this.documentStatuses.submittedStatus;
+    }
+
+    get canUpload() {
+        return this.document.status !== this.documentStatuses.approvedStatus;
+    }
+
+    get showRejectionReasonField() {
+        return this.selectedStatus === 'Rejected';
+    }
+
+    render() {
+        if (this.reviewMode) {
+            return reviewTemplate;
         }
+        return template;
     }
 
 	handleUpload() {
@@ -84,7 +104,7 @@ export default class DocumentChecklistItem extends LightningElement {
 		);
 	}
 
-	handleDelete(evt) {
+	handleDelete() {
 		this.dispatchEvent(
 			new CustomEvent('delete', {
 				detail: {
@@ -98,10 +118,7 @@ export default class DocumentChecklistItem extends LightningElement {
         getContentVersionFromDocumentId({ documentId: this.document.documentId })
         .then((data) => {
             let url;
-            // const communityId = getCommunityId();
             const communityId = null;
-            console.log('communityId', communityId);
-            console.log('getContentVersionFromDocumentId', data);
 
             if (communityId) {
                 url = `/sfsites/c/sfc/servlet.shepherd/document/download/${data.ContentDocumentId}`;
@@ -113,5 +130,54 @@ export default class DocumentChecklistItem extends LightningElement {
         .catch((error) => {
             console.error('getContentVersionFromDocumentId error', error);
         })
+    }
+
+    handleApprove() {
+        this.dispatchEvent(
+			new CustomEvent('approve', {
+				detail: {
+					documentId: this.document.documentId,
+				},
+			})
+		);
+    }
+
+    handleReject() {
+        this.dispatchEvent(
+			new CustomEvent('reject', {
+				detail: {
+					documentId: this.document.documentId,
+                    rejectionReason: this.rejectionReason
+				},
+			})
+		);
+    }
+
+    handleStatusChange(evt) {
+        this.selectedStatus = evt.detail.value;
+    }
+
+    handleRejectionReasonChange(evt) {
+        this.rejectionReason = evt.target.value;
+    }
+
+    handleSubmit() {
+        this.isSubmitting = true;
+
+        const allValid = [
+            ...this.template.querySelectorAll('lightning-input'),
+            ...this.template.querySelectorAll('lightning-radio-group')
+        ].reduce((validSoFar, inputCmp) => {
+            inputCmp.reportValidity();
+            return validSoFar && inputCmp.checkValidity();
+        }, true);
+
+        if (allValid) {
+            if (this.selectedStatus === 'Approved') {
+                this.handleApprove();
+            } else if (this.selectedStatus === 'Rejected') {
+                this.handleReject();
+            }
+        }
     }
 }

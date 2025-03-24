@@ -9,29 +9,6 @@
     "regionName" : "header",
     "type" : "region"
   }, {
-    "components" : [ {
-      "componentAttributes" : {
-        "enableInlineEdit" : true,
-        "filterName" : "{!filterId}",
-        "layout" : "FULL",
-        "pageSize" : 25,
-        "scope" : "{!objectName}",
-        "showActionBar" : true,
-        "showChartsPanel" : true,
-        "showDisplay" : "showall",
-        "showFilterPanel" : true,
-        "showImageIcon" : true,
-        "showManualRefreshButton" : true,
-        "showObjectName" : true,
-        "showPinnedList" : true,
-        "showSearchBar" : true
-      },
-      "componentName" : "forceCommunity:objectHome",
-      "id" : "ee387188-d1aa-4bea-a27b-850d98e8cd11",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    } ],
     "id" : "5ada5a6b-13dd-4939-bf94-b9bc9348d778",
     "regionName" : "content",
     "type" : "region"

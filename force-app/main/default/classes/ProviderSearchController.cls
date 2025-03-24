@@ -1,5 +1,10 @@
 public with sharing class ProviderSearchController {
 
+    @AuraEnabled
+    public static Contact_Job_Eligibility_Map__mdt[] getContactJobEligibilityMaps() {
+        return Contact_Job_Eligibility_Map__mdt.getAll().values();
+    }
+
     @AuraEnabled(Cacheable = true)
     public static List<Launchpad__Job__c> searchJobsDynamic(
             String zipCode, String[] fieldsToQuery, Map<String, String> textFilters, Map<String, String[]> picklistFilters) {
@@ -51,7 +56,7 @@ public with sharing class ProviderSearchController {
         FieldSetMember[] fieldSetMembers = Schema.SObjectType.Launchpad__Job__c.fieldSets.getMap().get(fieldSetName).getFields();
         for (FieldSetMember fsm : fieldSetMembers) {
             String fieldType = String.valueOf(fsm.getType());
-            if (fieldType.contains('PICKLIST')) {
+            if (fieldType.containsIgnoreCase('picklist')) {
                 result.add(new FieldData(fsm.getFieldPath(), fsm.getLabel(), fieldType,
                         getPicklistValues('Launchpad__Job__c', fsm.getFieldPath())));
             } else {
@@ -59,6 +64,34 @@ public with sharing class ProviderSearchController {
             }
         }
         return result;
+    }
+
+    @AuraEnabled
+    public static FieldData[] getFieldDataByObjectAndFieldNames(String sObjectName, String[] fieldNames) {
+        FieldData[] result = new FieldData[]{};
+        Map<String, SObjectField> jobFieldsMap = Schema.getGlobalDescribe().get(sObjectName).getDescribe().fields.getMap();
+        DescribeFieldResult[] fieldResults = new DescribeFieldResult[]{};
+        for (String field : fieldNames) {
+            fieldResults.add(jobFieldsMap.get(field).getDescribe());
+        }
+        for (DescribeFieldResult fieldResult : fieldResults) {
+            String fieldType = String.valueOf(fieldResult.getType());
+            if (fieldType.containsIgnoreCase('picklist')) {
+                result.add(new FieldData(fieldResult.getName(), fieldResult.getLabel(), fieldType,
+                        getPicklistValues(sObjectName, fieldResult.getName())));
+            } else {
+                result.add(new FieldData(fieldResult.getName(), fieldResult.getLabel(), fieldType));
+            }
+        }
+        return result;
+    }
+
+    @AuraEnabled
+    public static Contact getCurrentUsersContactFieldValues(String[] fieldNames) {
+        Id contactId = [SELECT ContactId FROM User WHERE Id = :UserInfo.getUserId()].ContactId;
+        if (contactId == null) return null;
+        String query = 'SELECT ' + getFieldsQueryString(fieldNames) + ' Id FROM Contact WHERE Id = :contactId';
+        return Database.query(query);
     }
 
     private static List<Map<String, Object>> getPicklistValues(String objectName, String fieldName) {
@@ -89,6 +122,7 @@ public with sharing class ProviderSearchController {
         @AuraEnabled public String type;
         @AuraEnabled public List<Map<String, Object>> options = new List<Map<String, Object>>();
         @AuraEnabled public Boolean isPicklist = false;
+        @AuraEnabled public Boolean isMultiselect = false;
 
         public FieldData(String apiName, String label, String type) {
             this.apiName = apiName;
@@ -102,6 +136,9 @@ public with sharing class ProviderSearchController {
             this.type = type;
             this.options = options;
             this.isPicklist = true;
+            if (type.containsIgnoreCase('multi')) {
+                this.isMultiselect = true;
+            }
         }
     }
 

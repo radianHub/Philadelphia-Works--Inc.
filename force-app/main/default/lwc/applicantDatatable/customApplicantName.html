@@ -1,0 +1,12 @@
+<template>
+	<p>
+		<span><strong>{typeAttributes.applicantName}</strong></span>
+		<span
+			lwc:if={typeAttributes.isPriority}
+			class="slds-badge slds-theme_success slds-var-m-left_x-small"
+			>Priority Population</span
+		>
+	</p>
+	<p>{typeAttributes.programName}</p>
+	<p lwc:if={typeAttributes.rank}>#<strong>{typeAttributes.rank}</strong> Rank</p>
+</template>

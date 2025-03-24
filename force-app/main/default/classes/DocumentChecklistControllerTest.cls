@@ -74,7 +74,7 @@ public class DocumentChecklistControllerTest {
         Launchpad__Document__c document = [SELECT Id FROM Launchpad__Document__c LIMIT 1];
         
         Test.startTest();
-        DocumentChecklistController.updateDocumentStatus('TestChecklist', document.Id, 'Default');
+        DocumentChecklistController.updateDocumentStatus('TestChecklist', document.Id, 'Default', null);
         Test.stopTest();
         
         document = [SELECT Launchpad__Status__c FROM Launchpad__Document__c WHERE Id = :document.Id];

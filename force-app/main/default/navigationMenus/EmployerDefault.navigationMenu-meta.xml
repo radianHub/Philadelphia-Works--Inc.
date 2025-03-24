@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>C2L Provider Portal</container>
+    <containerType>Network</containerType>
+    <label>EmployerDefault</label>
+    <navigationMenuItem>
+        <label>Company Profile</label>
+        <position>1</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/company-profile</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Applicants</label>
+        <position>2</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/applicants</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Candidate Applications</label>
+        <position>3</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/candidate-applications</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>My Hires</label>
+        <position>4</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/my-hires</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+</NavigationMenu>
