@@ -48,14 +48,14 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Zip_Code__c</field>
+        <field>Applicants_Zip_Code__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Date_of_Birth_MM_DD_YYYY__c</field>
+        <field>Applicants_DOB_Readonly__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicants_Tax_Id__c</field>
