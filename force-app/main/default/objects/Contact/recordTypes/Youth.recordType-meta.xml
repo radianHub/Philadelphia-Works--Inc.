@@ -5,6 +5,28 @@
     <description>Young Person/C2L Program Participant</description>
     <label>Youth</label>
     <picklistValues>
+        <picklist>Attestation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Birth_Certificate__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>BuyerAttributes</picklist>
         <values>
             <fullName>BusinessUser</fullName>
@@ -36,6 +58,61 @@
         </values>
         <values>
             <fullName>TechnicalExpert</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Citizenship__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearances_requested_through_Justifacts__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Consent_to_Request_Clearance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Consents__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -159,6 +236,59 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Grade__c</picklist>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ID_Doc__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Income__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Is_This_Youth_TANF_Eligible__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -166,6 +296,17 @@
         </values>
         <values>
             <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Last_Clearance_Result__c</picklist>
+        <values>
+            <fullName>Cleared</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -4744,6 +4885,1346 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Report_Card__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Residency__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SSN_Doc__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>School__c</picklist>
+        <values>
+            <fullName>Academy at Palumbo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Academy for the Middle Years %28AMY%29 at Northwest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Achieve Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Achieve Academy East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ad Prima Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adaire%2C Alexander School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allen%2C Dr%2E Ethel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allen%2C Ethan School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allen%2C Richard Preparatory Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alliance For Progress Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alternative Middle Years %28AMY%29 at James Martin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anderson%2C Add B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anderson%2C Marian Neighborhood Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arts Academy at Benjamin Rush</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bache-Martin School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baldi Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barry%2C John Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barton%2C Clara School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bartram%2C John High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Belmont Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bethune%2C Mary M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blaine%2C James G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blankenburg%2C Rudolph School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bodine%2C William W%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boys Latin of Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bracetti%2C Mariana Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bregy%2C F%2E Amedee School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bridesburg School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brown%2C Henry A%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brown%2C Joseph H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bryant%2C William C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Building 21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Byers%2C Russell Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carnell%2C Laura H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cassidy%2C Lewis C%2E Academics Plus School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castor Gardens Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catharine%2C Joseph W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cayuga School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Childs%2C George W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clemente%2C Roberto Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbus%2C Christopher Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comegys%2C Benjamin B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comly%2C Watson School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Academy of Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Constitution High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conwell%2C Russell H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cook-Wissahickon School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cooke%2C Jay School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coppin%2C Fanny Jackson School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cramp%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creative and Performing Arts %28CAPA%29 High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossan%2C Kennedy C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossroads Accelerated Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossroads at Hunting Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Day%2C Anna B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De Burgos%2C Julia School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De Hostos%2C Eugenio Maria Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decatur%2C Stephen School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deep Roots Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dick%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disston%2C Hamilton School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dobbins%2C Murrell Career and Technical Education High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dobson%2C James School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duckrey%2C Tanner G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dunbar%2C Paul L%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Edison%2C Thomas A%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Edmonds%2C Franklin S%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>El Centro de Estudiantes - Big Picture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elkin%2C Lewis School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ellwood School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emlen%2C Eleanor C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Esperanza Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Academy Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Academy North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Academy South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Middle Years Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farrell%2C Louis H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fell%2C D%2E Newlin School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fels%2C Samuel High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feltonville Intermediate School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feltonville School of Arts and Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finletter%2C Thomas K%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Philadelphia Preparatory Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fitler Academics Plus School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fitzpatrick%2C A%2E L%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Folk Arts-Cultural Treasures Charter School %28FACTS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forrest%2C Edwin School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fox Chase School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frank%2C Anne School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankford High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin Learning Center %28FLC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin Towne Charter Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin Towne Charter High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin%2C Benjamin High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin%2C Benjamin High School - EOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin%2C Benjamin K8 School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freire Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Furness%2C Horace High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateway to College - Community College of Philadelphia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gideon%2C Edward School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Girard Academic Music Program %28GAMP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Girard%2C Stephen School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Leadership Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Leadership Academy at Huey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gloria Casarez Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gompers%2C Samuel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Woods Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenberg%2C Joseph School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenfield%2C Albert M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guion S%2E Bluford Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hackett%2C Horatio B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamilton%2C Andrew School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harambee Institute of Science and Technology Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harding%2C Warren G%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harrington%2C Avery D%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hartranft%2C John F%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Henry%2C Charles W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heston%2C Edward School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High School of Engineering and Science - Carver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High School of the Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hill-Freedman World Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holme%2C Thomas School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hopkinson%2C Francis School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Houston%2C Henry H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Howe%2C Julia Ward School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hunter%2C William H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imhotep Institute Charter High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independence Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independence Charter School West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inquiry Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jenks Academy for Arts and Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jenks%2C Abram S%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Hancock Demonstration School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Juniata Park Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP DuBois Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP North Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP Philadelphia Octavius Catto Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP West Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kearny%2C General Philip School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelley%2C William D%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelly%2C John B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kenderton Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington Health Sciences Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington High School for Creative and Performing Arts %28CAPA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Key%2C Francis S%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Keystone Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>King%2C Martin Luther High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kirkbride%2C Eliza B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laboratory Charter School of Communication and Languages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lamberton%2C Robert E%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lankenau High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawton%2C Henry W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lea%2C Henry C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liguori Academy-Fortis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln%2C Abraham High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lindley Academy Charter at Birney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lingelbach%2C Anna L%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locke%2C Alain School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loesche%2C William H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logan%2C James School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Longstreth%2C William C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lowell%2C James R%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ludlow%2C James R%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAST III Charter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maritime Academy Charter School %28MACHS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshall%2C John School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshall%2C Thurgood School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastbaum%2C Jules E%2E Area Vocational Technical High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Masterman%2C Julia R%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Cleveland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Clymer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Frederick Douglass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Gratz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Hardy Williams</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Harrity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Lenfest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Mann</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Pastorius</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Pickett</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Shoemaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Smedley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Thomas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Wister</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Prep Elementary Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mathematics%2C Science%2C and Technology %28MaST%29 Community Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mathematics%2C Science%2C and Technology %28MaST%29 Community Charter School II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mayfair School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McCall%2C General George A%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McCloskey%2C John F%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McClure%2C Alexander K%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McDaniel%2C Delaplaine School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McKinley%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McMichael%2C Morton School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meade%2C General George G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memphis Street Academy Charter School at J%2EP%2E Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meredith%2C William M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Years Alternative %28MYA%29 School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mifflin%2C Thomas School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mitchell%2C S%2E Weir Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moffet%2C John School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moore%2C J%2E Hampton School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morris%2C Robert School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morrison%2C Andrew J%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morton%2C Thomas G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motivation High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multicultural Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Munoz-Marin%2C Honorable Luis School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nebinger%2C George W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Foundations Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast Community Propel Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast High School - EOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northwood Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OIC Career and Academic Development Institute %28CADI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Olney High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Olney School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray - Elmwood Campus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray - Fairhill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray - Simpson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray Mansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray Mansion Evening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Overbrook Educational Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overbrook Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overbrook High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pan American Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pantoja%2C Antonia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Center City Middle College High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Northwest High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway West High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patterson%2C John M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peirce%2C Thomas M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penn Alexander School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penn Treaty High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennell%2C Joseph School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennypack House School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennypacker%2C Samuel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penrose School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People for People Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Charter School for the Arts and Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Continuation Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Electrical and Technology Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Hebrew Charter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia High School for Girls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Juvenile Justice Services Center School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Learning Academy North %28PLAN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Learning Academy West %28PLAW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Military Academy %28PMA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Montessori Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Performing Arts%3A A String Theory Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Virtual Academy %28PVA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pollock%2C Robert B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potter-Thomas School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Powel%2C Samuel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preparatory Charter School of Mathematics%2C Science%2C Technology and Careers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prince Hall School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Randolph%2C A%2E Philip Career and Technical High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhawnhurst School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhoads%2C James School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhodes%2C E%2E Washington Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richmond School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robeson%2C Paul High School for Human Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roosevelt Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rowen%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roxborough High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sankofa Freedom Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saul%2C Walter B%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sayre%2C William L%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Leadership Academy %28SLA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Leadership Academy %28SLA%29 at Beeber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Leadership Academy Middle School %28SLAMS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sharswood%2C George W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shawmont School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sheppard%2C Isaac A%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solis-Cohen%2C Solomon School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Philadelphia High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Philadelphia High School - EOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southwark School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southwest Leadership Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring Garden School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spruance%2C Gilbert School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stanton%2C Edwin M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stearne%2C Allen M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steel%2C Edward T%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stetson%2C John B%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strawberry Mansion High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sullivan%2C James J%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swenson Arts and Technology High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECH Freire Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tacony Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taggart%2C John H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor%2C Bayard School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The LINC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The U School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Workshop School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tilden%2C William T%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Alcorn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Audenried</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Creighton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Vare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vare-Washington School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vaux High School - Big Picture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wagner%2C General Louis Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waring%2C Laura W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington%2C George High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington%2C Grover Jr%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington%2C Martha School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webster%2C John H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Welsh%2C John School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Oak Lane Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Philadelphia Achievement Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Philadelphia High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Widener Memorial School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Willard%2C Frances E%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wissahickon Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wright%2C Richard R%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YESPhilly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Young Scholars Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YouthBuild Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ziegler%2C William H%2E School</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Sex_Assigned_At_Birth__c</picklist>
         <values>
             <fullName>Female</fullName>
@@ -4759,6 +6240,39 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Supervisor_Clearances__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>W9__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Work_Permit__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Youth_Blind_Serious_Difficulty_Seeing__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -4766,6 +6280,17 @@
         </values>
         <values>
             <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Youth_Clearances__c</picklist>
+        <values>
+            <fullName>No</fullName>
             <default>false</default>
         </values>
         <values>
