@@ -46,7 +46,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Is_Application_In_Matched_or_Placed_Status</targetReference>
+            <targetReference>Is_Application_In_Matched_or_Placed_Stage</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -66,8 +66,8 @@
         </connector>
     </assignments>
     <decisions>
-        <name>Is_Application_In_Matched_or_Placed_Status</name>
-        <label>Is Application In Matched or Placed Status</label>
+        <name>Is_Application_In_Matched_or_Placed_Stage</name>
+        <label>Is Application In Matched or Placed Stage</label>
         <locationX>270</locationX>
         <locationY>684</locationY>
         <defaultConnector>
@@ -78,14 +78,14 @@
             <name>Is_Matched_or_Placed</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
-                <leftValueReference>Loop_Through_Applications.Applicant_s_Status__c</leftValueReference>
+                <leftValueReference>Loop_Through_Applications.Launchpad__Stage__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Matched with Provider</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Loop_Through_Applications.Applicant_s_Status__c</leftValueReference>
+                <leftValueReference>Loop_Through_Applications.Launchpad__Stage__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Placed</stringValue>
