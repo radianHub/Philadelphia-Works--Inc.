@@ -16,13 +16,17 @@ import bulkUpdateApplicantStage from '@salesforce/apex/ProviderApplicantsControl
 import ApplicantModal from 'c/applicantModal';
 import ApplicantBulkUpdateModal from 'c/applicantBulkUpdateModal';
 
-const DEFAULT_STAGE = {
+const DEFAULT_CHOICE = {
 	label: 'All Choices',
-	value: null,
+	value: 'All',
+};
+const DEFAULT_STAGE = {
+	label: 'All Stages',
+	value: 'All',
 };
 const DEFAULT_PROGRAM = {
 	label: 'All Programs',
-	value: null,
+	value: 'All',
 };
 
 const actions = [{ label: 'View details', name: 'view' }];
@@ -35,7 +39,8 @@ const columns = [
 			applicantName: { fieldName: 'ParticipantName' },
 			isPriority: { fieldName: 'PriorityPopulation' },
 			programName: { fieldName: 'ProgramName' },
-			rank: { fieldName: 'Provider_Rank__c' },
+			rank: { fieldName: 'ProviderRank' },
+			stage: { fieldName: 'Stage' },
 		},
 		hideDefaultActions: true,
 		wrapText: true,
@@ -60,21 +65,23 @@ export default class ProviderApplicants extends LightningElement {
 	@track selectedRows = [];
 
 	// filters
+	choiceFilterOptions = [DEFAULT_CHOICE];
+	choice = DEFAULT_CHOICE.value;
 	stageFilterOptions = [DEFAULT_STAGE];
 	stage = DEFAULT_STAGE.value;
 	programOptions = [DEFAULT_PROGRAM];
-	program = DEFAULT_STAGE.value;
+	program = DEFAULT_CHOICE.value;
 	priorityOptions = [
 		{
 			label: 'All Applicants',
-			value: false,
+			value: 'All',
 		},
 		{
 			label: 'Priority Population',
-			value: true,
+			value: 'Priority',
 		},
 	];
-	priority = false;
+	priority = 'All';
 
 	// Provider Choice Options for bulk update modal
 	choiceOptions = [];
@@ -111,7 +118,13 @@ export default class ProviderApplicants extends LightningElement {
 		}
 	}
 
-	@wire(getApplicants, { accountId: '$accountId', choice: '$stage', jobId: '$program', isPriority: '$priority' })
+	@wire(getApplicants, {
+		accountId: '$accountId',
+		choice: '$choice',
+		jobId: '$program',
+		priority: '$priority',
+		stage: '$stage',
+	})
 	wiredApplicants(result) {
 		this.wiredResult = result;
 
@@ -125,14 +138,29 @@ export default class ProviderApplicants extends LightningElement {
 		}
 	}
 
-	@wire(getPicklistValues, { recordTypeId: '$recordTypeId', fieldApiName: PROVIDER_CHOICE, STAGE })
-	wiredStages({ error, data }) {
+	@wire(getPicklistValues, { recordTypeId: '$recordTypeId', fieldApiName: PROVIDER_CHOICE })
+	wiredChoices({ error, data }) {
 		if (data) {
 			this.choiceOptions = [...data.values];
+			this.choiceFilterOptions = [DEFAULT_CHOICE, ...data.values];
+		} else if (error) {
+			this.choiceFilterOptions = [DEFAULT_CHOICE];
+		}
+	}
+
+	@wire(getPicklistValues, { recordTypeId: '$recordTypeId', fieldApiName: STAGE })
+	wiredStages({ error, data }) {
+		if (data) {
+			this.stageOptions = [...data.values];
 			this.stageFilterOptions = [DEFAULT_STAGE, ...data.values];
 		} else if (error) {
 			this.stageFilterOptions = [DEFAULT_STAGE];
 		}
+	}
+
+	handleChoiceChange(evt) {
+		this.isLoading = true;
+		this.choice = evt.detail.value;
 	}
 
 	handleStageChange(evt) {
@@ -152,6 +180,7 @@ export default class ProviderApplicants extends LightningElement {
 
 	handleClear() {
 		this.stage = DEFAULT_STAGE.value;
+		this.choice = DEFAULT_CHOICE.value;
 		this.program = DEFAULT_PROGRAM.value;
 		this.priority = 'All';
 	}
@@ -163,6 +192,8 @@ export default class ProviderApplicants extends LightningElement {
 				ParticipantName: applicant.Launchpad__Participant__r.Name,
 				ProgramName: applicant.Launchpad__Job_Order__r.Name,
 				PriorityPopulation: applicant.Launchpad__Participant__r.Priority_Population__c,
+				ProviderRank: applicant.Provider_Rank__c ? `Rank ${applicant.Provider_Rank__c}` : null,
+				Stage: applicant.Launchpad__Stage__c ? `Stage: ${applicant.Launchpad__Stage__c}` : null,
 			};
 		});
 	}

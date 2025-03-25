@@ -1,12 +1,31 @@
 <template>
 	<p>
-		<span><strong>{typeAttributes.applicantName}</strong></span>
-		<span
-			lwc:if={typeAttributes.isPriority}
-			class="slds-badge slds-theme_success slds-var-m-left_x-small"
-			>Priority Population</span
-		>
+		<strong>{typeAttributes.applicantName}</strong>
 	</p>
 	<p>{typeAttributes.programName}</p>
-	<p lwc:if={typeAttributes.rank}>#<strong>{typeAttributes.rank}</strong> Rank</p>
+	<div>
+		<span
+			class="slds-badge slds-theme_success"
+			lwc:if={typeAttributes.isPriority}
+			>Priority Population</span
+		>
+		<span
+			lwc:if={typeAttributes.rank}
+			class="slds-badge">
+			<!-- <lightning-icon
+				class="slds-var-m-right_xx-small"
+				icon-name="utility:favorite"
+				size="xx-small"></lightning-icon> -->
+			{typeAttributes.rank}</span
+		>
+		<span
+			lwc:if={typeAttributes.stage}
+			class="slds-badge">
+			<!-- <lightning-icon
+				class="slds-var-m-right_xx-small"
+				icon-name="utility:breadcrumbs"
+				size="xx-small"></lightning-icon> -->
+			{typeAttributes.stage}</span
+		>
+	</div>
 </template>
