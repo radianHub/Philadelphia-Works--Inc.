@@ -22,8 +22,9 @@ public with sharing class ProviderApplicantsController {
 	public static List<Launchpad__Applicant_Tracking__c> getApplicants(
 		Id accountId,
 		String choice,
-		Id jobId,
-		Boolean isPriority
+		String jobId,
+		String priority,
+		String stage
 	) {
 		if (accountId == null) {
 			return null;
@@ -48,17 +49,22 @@ public with sharing class ProviderApplicantsController {
 			'OR Launchpad__Job_Order__r.Placement_Site__c = :accountId) ';
 
 		// Add filter for Provider_Choice__c only if choice is not null
-		if (choice != null) {
+		if (choice != null && choice != 'All') {
 			query += 'AND Provider_Choice__c = :choice ';
 		}
 
+		// Add filter for Stage only if choice is not null
+		if (stage != null && stage != 'All') {
+			query += 'AND Launchpad__Stage__c = :stage ';
+		}
+
 		// Add filter for Job only if jobId is not null
-		if (jobId != null) {
+		if (jobId != null && jobId != 'All') {
 			query += 'AND Launchpad__Job_Order__c = :jobId ';
 		}
 
 		// Add filter for Priority Population if isPriority is true
-		if (isPriority) {
+		if (priority != null && priority == 'Priority') {
 			query += 'AND Launchpad__Participant__r.Priority_Population__c = true ';
 		}
 
