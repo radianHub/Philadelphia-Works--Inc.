@@ -26,20 +26,11 @@
 			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
 				<lightning-combobox
 					name="stage"
-					label="Applicant Stage"
+					label="Provider Choice"
 					value={stage}
-					placeholder="Select A Stage"
+					placeholder="Select A Choice"
 					options={stageFilterOptions}
 					onchange={handleStageChange}></lightning-combobox>
-			</div>
-			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
-				<lightning-combobox
-					name="stage"
-					label="Provider Choice"
-					value={choice}
-					placeholder="Select A Choice"
-					options={choiceFilterOptions}
-					onchange={handleChoiceChange}></lightning-combobox>
 			</div>
 			<div class="slds-col">
 				<lightning-radio-group
