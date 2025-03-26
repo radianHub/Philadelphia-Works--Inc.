@@ -67,6 +67,10 @@ public with sharing class ProviderApplicantsController {
 		if (priority != null && priority == 'Priority') {
 			query += 'AND Launchpad__Participant__r.Priority_Population__c = true ';
 		}
+        
+        String excludedStage = 'Placed';
+        
+        query += 'AND Launchpad__Stage__c != :excludedStage ';
 
 		query += 'ORDER BY Launchpad__Participant__r.Priority_Population__c DESC, Provider_Rank__c ASC, CreatedDate DESC';
 
@@ -113,7 +117,10 @@ public with sharing class ProviderApplicantsController {
 		for (Launchpad__Applicant_Tracking__c applicant : applicants) {
 			if (applicant.Launchpad__Stage__c != choice) {
 				applicant.Provider_Choice__c = choice;
-				applicant.Launchpad__Stage__c = choice == 'None' ? 'Submitted' : choice;
+                if(applicant.Launchpad__Stage__c != 'Unavailable'){
+                    applicant.Launchpad__Stage__c = choice == 'None' ? 'Submitted' : choice;
+                }
+				
 
 				if (passReason != null) {
 					applicant.Passed_Reason__c = passReason;
