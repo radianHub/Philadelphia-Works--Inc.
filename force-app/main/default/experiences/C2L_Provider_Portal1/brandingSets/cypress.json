@@ -13,7 +13,7 @@
     "HeaderFonts" : "Montserrat",
     "LinkColor" : "rgb(237, 111, 35)",
     "LoginBackgroundColor" : "#F4F4F4",
-    "LoginBackgroundImage" : "../../../../sfsites/picasso/core/external/salesforceIdentity/images/background.jpg?v=1",
+    "LoginBackgroundImage" : "",
     "OverlayTextColor" : "rgb(255, 255, 255)",
     "PageBackgroundColor" : "rgb(255, 255, 255)",
     "PrimaryFont" : "Open Sans",
