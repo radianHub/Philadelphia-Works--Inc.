@@ -1,0 +1,74 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "d209c06f-3471-42ef-b9b9-09da8ee452aa",
+  "label" : "Jobs",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "1448cae3-2e1f-4d78-b25c-933580383679",
+          "columns" : [ {
+            "UUID" : "03ceb003-9cd4-43de-a7a3-683cf8e51a93",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "1448cae3-2e1f-4d78-b25c-933580383679",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "description" : "Review your programs.",
+            "headerColor" : "rgb(84, 105, 141)",
+            "jobDetailsFieldSetName" : "Provider_Jobs_List_View_Details_Fields",
+            "jobEditFieldSetName" : "Provider_Jobs_List_View_Edit_Fields",
+            "title" : "Programs"
+          },
+          "componentName" : "c:providerJobs",
+          "id" : "29d23c9e-664b-45e7-a9fa-34587559228f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "03ceb003-9cd4-43de-a7a3-683cf8e51a93",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "79778682-ccc6-49b5-a97a-c95be3636f12",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Programs"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "3be8fe92-db35-41bc-8ef0-05ae70e3c46d",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4778ded0-e4c2-4db1-94a0-b1f7d63e37b2",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-jobs"
+}
