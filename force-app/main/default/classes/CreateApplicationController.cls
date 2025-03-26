@@ -22,7 +22,13 @@ public with sharing class CreateApplicationController {
 				return existingApplications[0].Id;
 			}
 
-			Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobId];
+			Launchpad__Job__c job = [SELECT Id, Program__c, Program__r.Application_Close_Date__c FROM Launchpad__Job__c WHERE Id = :jobId];
+            
+            if(job != null){
+                if(job.Program__r.Application_Close_Date__c < System.Today()){
+                    throw new AuraHandledException('Application date has passed for the program');
+                }
+            }
 
 			Launchpad__Applicant_Tracking__c application = new Launchpad__Applicant_Tracking__c(
 				Launchpad__Participant__c = contactId,
@@ -65,10 +71,16 @@ public with sharing class CreateApplicationController {
 				throw new AuraHandledException('You have already applied to a program in this session.');
 			}
 
-			Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
+			Launchpad__Job__c job = [SELECT Id, Program__c, Program__r.Application_Close_Date__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
+            
+            if(job != null){
+                if(job.Program__r.Application_Close_Date__c < System.Today()){
+                    throw new AuraHandledException('Application date has passed for the program');
+                }
+            }
 
 			Contact con = [
-				SELECT Id, MailingCity, MailingStreet, MailingState, MailingPostalCode, Birthdate
+				SELECT Id, MailingCity, MailingStreet, MailingState, MailingPostalCode, Birthdate, Launchpad__Gender__c, School__c
 				FROM Contact
 				WHERE Id = :contactId
 			];
@@ -89,6 +101,8 @@ public with sharing class CreateApplicationController {
 					Applicant_City__c = con?.MailingCity,
 					Applicant_s_State__c = con?.MailingState,
 					Applicants_Zip_Code__c = String.valueOf(postalCode),
+                    Applicant_s_Current_Gender__c = con?.Launchpad__Gender__c,
+                    Applicants_Current_Most_Recent_School__c = con?.School__c,
 					Applicant_s_Date_of_Birth_MM_DD_YYYY__c = con?.Birthdate,
 					Launchpad__Participant__c = contactId,
 					Launchpad__Job_Order__c = (String) app.get('id'),
@@ -155,4 +169,6 @@ public with sharing class CreateApplicationController {
 			throw e;
 		}
 	}
+    
+   
 }
