@@ -16,7 +16,7 @@
     "LoginBackgroundImage" : "../../../../sfsites/picasso/core/external/salesforceIdentity/images/background.jpg?v=1",
     "OverlayTextColor" : "rgb(255, 255, 255)",
     "PageBackgroundColor" : "rgb(255, 255, 255)",
-    "PrimaryFont" : "Lato",
+    "PrimaryFont" : "Open Sans",
     "TextColor" : "rgba(0, 0, 0, 0.8)",
     "TextTransformStyle" : "none",
     "_ActionColorDarker" : "#cc5711",
