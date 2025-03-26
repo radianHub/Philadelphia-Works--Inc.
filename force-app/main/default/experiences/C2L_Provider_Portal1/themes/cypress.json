@@ -332,7 +332,7 @@
           "components" : [ {
             "componentAttributes" : {
               "navAlignment" : "left",
-              "navItemThreshold" : 4,
+              "navItemThreshold" : 10,
               "navigationMenuEditorRefresh" : "EmployerDefault"
             },
             "componentName" : "forceCommunity:themeNav",

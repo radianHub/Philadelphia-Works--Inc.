@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Tile 4</label>
+    <protected>false</protected>
+    <values>
+        <field>LaunchpadCo__Active__c</field>
+        <value xsi:type="xsd:string">No</value>
+    </values>
+    <values>
+        <field>LaunchpadCo__Details__c</field>
+        <value xsi:type="xsd:string">Check out Job Seekers who match your jobs</value>
+    </values>
+    <values>
+        <field>LaunchpadCo__Header__c</field>
+        <value xsi:type="xsd:string">Matches to My Jobs</value>
+    </values>
+    <values>
+        <field>LaunchpadCo__Image_Link__c</field>
+        <value xsi:type="xsd:string">[INSERT BASE URL HERE]/resource/EmployerHomeTile4</value>
+    </values>
+    <values>
+        <field>LaunchpadCo__Image_URL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>LaunchpadCo__Open_in_New_Tab__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>LaunchpadCo__Order__c</field>
+        <value xsi:type="xsd:string">1</value>
+    </values>
+    <values>
+        <field>LaunchpadCo__Redirect_URL__c</field>
+        <value xsi:type="xsd:string">matches-to-my-jobs</value>
+    </values>
+    <values>
+        <field>LaunchpadCo__Row__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+</CustomMetadata>

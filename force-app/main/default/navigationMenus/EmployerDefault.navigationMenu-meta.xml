@@ -4,31 +4,24 @@
     <containerType>Network</containerType>
     <label>EmployerDefault</label>
     <navigationMenuItem>
-        <label>Company Profile</label>
+        <label>My Programs</label>
         <position>1</position>
         <publiclyAvailable>false</publiclyAvailable>
-        <target>/company-profile</target>
+        <target>/programs</target>
         <type>InternalLink</type>
     </navigationMenuItem>
     <navigationMenuItem>
-        <label>Applicants</label>
+        <label>My Applicants</label>
         <position>2</position>
         <publiclyAvailable>false</publiclyAvailable>
         <target>/applicants</target>
         <type>InternalLink</type>
     </navigationMenuItem>
     <navigationMenuItem>
-        <label>Candidate Applications</label>
+        <label>Company Profile</label>
         <position>3</position>
         <publiclyAvailable>false</publiclyAvailable>
-        <target>/candidate-applications</target>
-        <type>InternalLink</type>
-    </navigationMenuItem>
-    <navigationMenuItem>
-        <label>My Hires</label>
-        <position>4</position>
-        <publiclyAvailable>false</publiclyAvailable>
-        <target>/my-hires</target>
+        <target>/company-profile</target>
         <type>InternalLink</type>
     </navigationMenuItem>
 </NavigationMenu>
