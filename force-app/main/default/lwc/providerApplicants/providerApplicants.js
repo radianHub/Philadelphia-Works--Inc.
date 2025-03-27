@@ -151,7 +151,7 @@ export default class ProviderApplicants extends LightningElement {
 	@wire(getPicklistValues, { recordTypeId: '$recordTypeId', fieldApiName: STAGE })
 	wiredStages({ error, data }) {
 		if (data) {
-			this.stageOptions = [...data.values];
+			this.stageOptions = [...data.values.filter((val) => val.value != 'In Progress')];
 			this.stageFilterOptions = [DEFAULT_STAGE, ...data.values];
 		} else if (error) {
 			this.stageFilterOptions = [DEFAULT_STAGE];
@@ -269,24 +269,13 @@ export default class ProviderApplicants extends LightningElement {
 			await notifyRecordUpdateAvailable(applicantIds.map((appId) => ({ recordId: appId })));
 		} catch (error) {
 			console.error('Stage update error', error);
-			if(JSON.stringify(error.body.pageErrors[0].message) == '"The Job Seeker associated with this Application already has an application with the stage Matched with Provider."'){
-				this.dispatchEvent(
-					new ShowToastEvent({
-						title: 'Error updating stage',
-						message: 'The Job Seeker associated with this Application already has an application with the stage Matched with Provider.',
-						variant: 'error',
-					})
-				);
-			}else{
-				this.dispatchEvent(
-					new ShowToastEvent({
-						title: 'Error updating stage',
-						message: 'An error occurred while updating the stage',
-						variant: 'error',
-					})
-				);
-			}
-			
+			this.dispatchEvent(
+				new ShowToastEvent({
+					title: 'Error updating stage',
+					message: 'An error occurred while updating the stage',
+					variant: 'error',
+				})
+			);
 			this.isLoading = false;
 		}
 	}
