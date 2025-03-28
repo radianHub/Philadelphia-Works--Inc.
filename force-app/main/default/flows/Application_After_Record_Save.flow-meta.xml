@@ -4,7 +4,7 @@
     <description>Updates &quot;Priority Population&quot; checkbox field to &quot;True&quot; on related &quot;Youth&quot; contact if any priority population fields on the application have a &quot;Yes&quot; value.</description>
     <environments>Default</environments>
     <interviewLabel>Application - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Application - After Record Save</label>
+    <label>Application - After Record Save [Priority Population Update]</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
