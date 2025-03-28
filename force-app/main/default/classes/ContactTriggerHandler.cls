@@ -13,7 +13,7 @@ public class ContactTriggerHandler {
     
     @future
     public static void makeUpdatesAsync(Set<Id> contactIds){
-        List<Contact> contacts = [SELECT Id, LastName, MailingCity, MailingStreet, MailingState, MailingPostalCode, AccountId, Account.Name, recordType.Name FROM Contact WHERE Id IN :contactIDs];
+        List<Contact> contacts = [SELECT Id, LastName, MailingCity, MailingStreet, MailingState, MailingPostalCode, AccountId, Account.Name, recordType.Name, Historical_Email__c, Email FROM Contact WHERE Id IN :contactIDs];
         List<Contact> consToUpdate = new List<Contact>();
         Set<Id> consWithNewAccounts = new Set<Id>();
         List<Account> accountsToInsert = new List<Account>();
@@ -40,6 +40,7 @@ public class ContactTriggerHandler {
             if(contact.recordType.Name != 'Job Seeker'){
                 continue;
             }
+            contact.Historical_Email__c = contact.Email;
             
             String tempName = contact.LastName + ' Household';
            //List<Account> accountList = [SELECT Id, Name, BillingCity, BillingStreet, BillingState, recordType.Name FROM Account WHERE Name = :tempName ];
