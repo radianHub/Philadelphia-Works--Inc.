@@ -10,7 +10,6 @@ import getFieldSetData from '@salesforce/apex/ProviderSearchController.getJobFie
 import getJob from '@salesforce/apex/ProviderJobsController.getJob';
 import updateJob from '@salesforce/apex/ProviderJobsController.updateJob';
 import getClearedSupervisors from '@salesforce/apex/ProviderJobsController.getClearedSupervisors';
-import JobSupervisorUpdate from 'c/jobSupervisorUpdate';
 
 export default class JobModal extends LightningModal {
 	@api recordId;
@@ -50,6 +49,7 @@ export default class JobModal extends LightningModal {
 				};
 			});
 		}
+		console.log('SupervisorId: ' + this.currentSupervisorId);
 
 		console.log(this.contacts);
 
@@ -163,27 +163,4 @@ export default class JobModal extends LightningModal {
 			obj[field] = newValue;
 		}
 	}
-
-	// handleSupervisorUpdate() {
-	// 	console.log('AccountId: ' + this.accountId);
-	// 	// this.retrieveClearedSupervisors();
-	// 	// console.log('Contacts: ' + JSON.stringify(this.contacts));
-	// 	// console.log(this.noSupervisors);
-	// 	JobSupervisorUpdate.open({
-	// 		accountId: this.accountId,
-	// 		currentContactId: this.currentSupervisorId,
-	// 		// noSupervisors: this.noSupervisors,
-	// 	});
-	// }
-
-	// retrieveClearedSupervisors() {
-	// 	getClearedSupervisors({ accountId: this.accountId })
-	// 		.then((data) => {
-	// 			this.contacts = data;
-	// 		})
-	// 		.catch((error) => {
-	// 			this.noSupervisors = true;
-	// 			console.log(error);
-	// 		});
-	// }
 }
