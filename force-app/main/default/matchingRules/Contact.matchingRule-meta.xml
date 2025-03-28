@@ -2,6 +2,7 @@
 <MatchingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <matchingRules>
         <fullName>Contact_Matching_Rule</fullName>
+        <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
         <label>Contact Matching Rule</label>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
@@ -18,6 +19,11 @@
             <fieldName>Email</fieldName>
             <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
-        <ruleStatus>Inactive</ruleStatus>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>Historical_Email__c</fieldName>
+            <matchingMethod>Exact</matchingMethod>
+        </matchingRuleItems>
+        <ruleStatus>Active</ruleStatus>
     </matchingRules>
 </MatchingRules>
