@@ -3,7 +3,12 @@
     <fullName>Default_Provider_Search_Field_Set</fullName>
     <description>Used as the default field set on the provider search map component</description>
     <displayedFields>
-        <field>Name</field>
+        <field>Program_Name__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Ages_Served__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
