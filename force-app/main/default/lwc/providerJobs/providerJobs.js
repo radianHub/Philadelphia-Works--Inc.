@@ -95,10 +95,6 @@ export default class ProviderJobs extends LightningElement {
 			accountId: this.accountId,
 			fieldSet: this.jobDetailsFieldSetName,
 			isEditMode: false,
-			supervisorName: this.jobs.find((job) => job.Id === row.Id).Launchpad__Contact__c
-				? this.jobs.find((job) => job.Id === row.Id).Launchpad__Contact__r.Name
-				: 'None',
-			size: 'full',
 		}).catch((e) => {
 			console.log('OPEN_VIEW_MODAL_ERROR', e.message);
 		});
@@ -111,7 +107,7 @@ export default class ProviderJobs extends LightningElement {
 				jobName: this.jobs.find((job) => job.Id === row.Id).Name,
 				accountId: this.accountId,
 				fieldSet: this.jobEditFieldSetName,
-				currentSupervisorId: this.jobs.find((job) => job.Id === row.Id).Launchpad__Contact__c,
+				currentSupervisor: this.jobs.find((job) => job.Id === row.Id).Launchpad__Contact__c,
 				isEditMode: true,
 				supervisorName: this.jobs.find((job) => job.Id === row.Id).Launchpad__Contact__c
 					? this.jobs.find((job) => job.Id === row.Id).Launchpad__Contact__r.Name
