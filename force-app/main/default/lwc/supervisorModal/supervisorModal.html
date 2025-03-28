@@ -1,0 +1,47 @@
+<template>
+	<lightning-modal-header label={supervisorName}></lightning-modal-header>
+	<lightning-modal-body>
+		<template if:true={isLoading}>
+			<lightning-spinner
+				variant="brand"
+				size="medium"></lightning-spinner>
+		</template>
+		<template if:false={isLoading}>
+			<lightning-record-view-form
+				record-id={recordId}
+				object-api-name="Contact"
+				density="comfy">
+				<div
+					class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+					Supervisor Information
+				</div>
+				<div class="slds-grid slds-no-flex slds-wrap slds-gutters slds-var-p-horizontal_small">
+					<template
+						for:each={contactInfo}
+						for:item="field">
+						<div
+							key={field.fieldApiName}
+							class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom slds-no-flex">
+							<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+						</div>
+					</template>
+				</div>
+				<div
+					class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+					Documents
+				</div>
+				<c-document-checklist
+					record-id={recordId}
+					title=""
+					description=""
+					checklist-name="C2L_PHL_Supervisor_Document_Checklist"
+					lookup-field="Launchpad__Contact__c"></c-document-checklist>
+			</lightning-record-view-form>
+		</template>
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<lightning-button
+			label="Close"
+			onclick={handleClose}></lightning-button>
+	</lightning-modal-footer>
+</template>
