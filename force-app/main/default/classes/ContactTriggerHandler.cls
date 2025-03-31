@@ -13,7 +13,7 @@ public class ContactTriggerHandler {
     
     @future
     public static void makeUpdatesAsync(Set<Id> contactIds){
-        List<Contact> contacts = [SELECT Id, LastName, MailingCity, MailingStreet, MailingState, MailingPostalCode, AccountId, Account.Name, recordType.Name, Historical_Email__c, Email FROM Contact WHERE Id IN :contactIDs];
+        List<Contact> contacts = [SELECT Id, LastName, MailingCity, MailingStreet, MailingState, MailingPostalCode, AccountId, Account.Name, recordType.Name FROM Contact WHERE Id IN :contactIDs];
         List<Contact> consToUpdate = new List<Contact>();
         Set<Id> consWithNewAccounts = new Set<Id>();
         List<Account> accountsToInsert = new List<Account>();
@@ -40,30 +40,30 @@ public class ContactTriggerHandler {
             if(contact.recordType.Name != 'Job Seeker'){
                 continue;
             }
-            contact.Historical_Email__c = contact.Email;
             
             String tempName = contact.LastName + ' Household';
-           //List<Account> accountList = [SELECT Id, Name, BillingCity, BillingStreet, BillingState, recordType.Name FROM Account WHERE Name = :tempName ];
+
             List<Account> accountList = accountNameToObjectMap.get(tempName);
             if(accountList == null){
-                Account newAccount = new Account();
-                newAccount.Name = contact.LastName != null ? contact.LastName + ' Household' : 'Unnamed Account';
-                newAccount.BillingStreet = contact.MailingStreet != null ? contact.MailingStreet : null;
-                newAccount.BillingCity = contact.MailingCity != null ? contact.MailingCity : null;
-                newAccount.BillingState = contact.MailingState != null ? contact.MailingState : null;
-                newAccount.BillingPostalCode = contact.MailingPostalCode  != null ? contact.MailingPostalCode  : null;
-                newAccount.BillingCountry = 'USA';
-                newAccount.RecordTypeId = householdRecordType.Id;
-                
+                Account newAccount = createNewAccount(contact, householdRecordType);
                 accountsToInsert.add(newAccount);
                 consWithNewAccounts.add(contact.Id);
             }else{
+                boolean foundMatchingAccount = false;
                 for(Account a : accountList){
                     if(a.BillingCity == contact.MailingCity && a.BillingStreet == contact.MailingStreet && a.BillingState == contact.MailingState){
                         contact.AccountId = a.Id;
+                        foundMatchingAccount = true;
                     }
             	}
-                consToUpdate.add(contact);
+                if(foundMatchingAccount == true){
+                    consToUpdate.add(contact);
+                }else{
+                    Account a = createNewAccount(contact, householdRecordType);
+                    accountsToInsert.add(a);
+                    consWithNewAccounts.add(contact.Id);
+                }
+                
             }
             
             
@@ -89,4 +89,17 @@ public class ContactTriggerHandler {
         }
         update consToUpdate;
    }
+    
+    public static Account createNewAccount(Contact contact, recordType householdRecordType){
+        Account newAccount = new Account();
+        newAccount.Name = contact.LastName != null ? contact.LastName + ' Household' : 'Unnamed Account';
+        newAccount.BillingStreet = contact.MailingStreet != null ? contact.MailingStreet : null;
+        newAccount.BillingCity = contact.MailingCity != null ? contact.MailingCity : null;
+        newAccount.BillingState = contact.MailingState != null ? contact.MailingState : null;
+        newAccount.BillingPostalCode = contact.MailingPostalCode  != null ? contact.MailingPostalCode  : null;
+        newAccount.BillingCountry = 'USA';
+        newAccount.RecordTypeId = householdRecordType.Id;
+        
+        return newAccount;
+    }
 }
