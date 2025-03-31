@@ -5,7 +5,7 @@
         <name>Assign_Job_Application_IDs</name>
         <label>Assign Job Application IDs</label>
         <locationX>264</locationX>
-        <locationY>647</locationY>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>FilteredJobApplicationIDs</assignToReference>
             <operator>Add</operator>
@@ -17,6 +17,22 @@
             <targetReference>Loop_through_Job_Applications</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Assign_Session_Record_Type_IDs</name>
+        <label>Assign Session Record Type IDs</label>
+        <locationX>264</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>SessionRecordID</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_through_Session_Record_Type.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_Session_Record_Type</targetReference>
+        </connector>
+    </assignments>
     <description>When Job Seeker Contact is updated, update associated Job Applications in the current Session</description>
     <environments>Default</environments>
     <interviewLabel>Contact - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
@@ -25,7 +41,7 @@
         <name>Loop_through_Job_Applications</name>
         <label>Loop through Job Applications</label>
         <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationY>947</locationY>
         <collectionReference>Get_Job_Applications</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -33,6 +49,20 @@
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Update_Application_Records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_through_Session_Record_Type</name>
+        <label>Loop through Session Record Type</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <collectionReference>Get_Session_Record_Type</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Session_Record_Type_IDs</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Current_Session_Program</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -58,7 +88,7 @@
         <name>Get_Current_Session_Program</name>
         <label>Get Current Session (Program)</label>
         <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationY>731</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Job_Applications</targetReference>
@@ -66,9 +96,9 @@
         <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
-            <operator>EqualTo</operator>
+            <operator>In</operator>
             <value>
-                <stringValue>012DL0000075rK8YAI</stringValue>
+                <elementReference>SessionRecordID</elementReference>
             </value>
         </filters>
         <filters>
@@ -87,7 +117,7 @@
         <name>Get_Job_Applications</name>
         <label>Get Job Applications</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>839</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_through_Job_Applications</targetReference>
@@ -111,11 +141,32 @@
         <object>Launchpad__Applicant_Tracking__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Session_Record_Type</name>
+        <label>Get Session Record Type</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Session_Record_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Session</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Application_Records</name>
         <label>Update Application Records</label>
         <locationX>176</locationX>
-        <locationY>839</locationY>
+        <locationY>1247</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -382,7 +433,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Current_Session_Program</targetReference>
+            <targetReference>Get_Session_Record_Type</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -416,6 +467,13 @@
         <name>JobApplicationIDs</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SessionRecordID</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
