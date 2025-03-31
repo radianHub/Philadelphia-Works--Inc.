@@ -14,6 +14,11 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
                 <fullName>Has access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</fullName>
                 <default>false</default>
                 <label>Has access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</label>
