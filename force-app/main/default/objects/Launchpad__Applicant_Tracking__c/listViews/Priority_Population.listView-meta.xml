@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Priority_Population</fullName>
+    <columns>Launchpad__Account__c</columns>
     <columns>NAME</columns>
+    <columns>Applicant_s_Legal_First_Name__c</columns>
+    <columns>Applicant_s_Legal_Last_Name__c</columns>
+    <columns>Provider_Rank__c</columns>
+    <columns>Launchpad__Stage__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Priority_Population__c</field>
