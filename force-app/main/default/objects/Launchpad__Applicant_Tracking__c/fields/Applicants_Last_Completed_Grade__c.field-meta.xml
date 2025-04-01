@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Applicants_Last_Completed_Grade__c</fullName>
     <externalId>false</externalId>
-    <label>Applicant&apos;s Last Completed Grade</label>
+    <label>Applicant&apos;s Last Completed Grade[DEFUNCT</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
