@@ -104,7 +104,7 @@ public with sharing class CreateApplicationController {
                     Race_and_or_Ethnicity__c = con?.Race_Ethnicity__c,
                     Applicant_s_Internet_Connectivity__c = con?.Youth_s_Internet_Connectivity__c,
                     Current_Living_Situation__c = con?.Youth_s_Current_Living_Situation__c,
-                    //Applicant_s_Last_Completed_Grade = con?.Last_Completed_Grade__c, 
+                    Applicant_s_Last_Completed_Grade__c = con?.Last_Completed_Grade__c, 
                     Applicant_s_Current_Employment_Status__c = con?.Current_Employment_Status__c,
                     Applicant_s_Preferred_Pronoun__c = con?.Pronouns, 
                     Applicant_s_Sex_Assigned_at_Birth__c = con?.Sex_Assigned_At_Birth__c,                                                                                
