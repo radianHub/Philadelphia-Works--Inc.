@@ -2,6 +2,11 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Rank_2_Apps</fullName>
     <columns>NAME</columns>
+    <columns>Launchpad__Participant__c</columns>
+    <columns>Launchpad__Job_Order__c</columns>
+    <columns>Launchpad__Account__c</columns>
+    <columns>Provider_Rank__c</columns>
+    <columns>Launchpad__Stage__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Launchpad__Stage__c</field>
