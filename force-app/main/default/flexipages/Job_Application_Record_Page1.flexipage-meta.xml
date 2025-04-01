@@ -53,8 +53,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Applicant_s_Status__c</fieldItem>
-                <identifier>RecordApplicant_s_Status_cField</identifier>
+                <fieldItem>Record.Launchpad__Stage__c</fieldItem>
+                <identifier>RecordLaunchpad_Stage_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -85,6 +85,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Launchpad__Job_Order__c</fieldItem>
                 <identifier>RecordLaunchpad_Job_Order_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Provider_Rank__c</fieldItem>
+                <identifier>RecordProvider_Rank_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -773,6 +783,16 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Priority_Population__c</fieldItem>
+                <identifier>RecordPriority_Population_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
