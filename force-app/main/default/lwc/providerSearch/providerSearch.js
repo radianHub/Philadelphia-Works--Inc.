@@ -39,11 +39,10 @@ export default class ProviderSearch extends LightningElement {
 	}
 	set selectedProviders(value) {
 		// Reorder selections whenever selectedProviders is set
-		this._selectedProviders = value
-			.map((val, idx) => {
-				val.order = idx + 1;
-				return val;
-			})
+		this._selectedProviders = value.map((val, idx) => {
+			val.order = idx + 1;
+			return val;
+		});
 	}
 
 	get selectedProvidersCount() {
@@ -80,7 +79,8 @@ export default class ProviderSearch extends LightningElement {
 		try {
 			const mappings = await getContactJobEligibilityMappings();
 			for (const fieldMapping of mappings) {
-				this.contactJobEligibilityMappings[fieldMapping.Contact_Field_API_Name__c] = fieldMapping.Job_Field_API_Name__c;
+				this.contactJobEligibilityMappings[fieldMapping.Contact_Field_API_Name__c] =
+					fieldMapping.Job_Field_API_Name__c;
 			}
 		} catch (e) {
 			console.log('GET_CONTACT_JOB_ELIGIBILITY_MAPPINGS_ERROR', e);
@@ -108,7 +108,7 @@ export default class ProviderSearch extends LightningElement {
 		try {
 			const fieldNames = Object.keys(this.contactJobEligibilityMappings);
 			const fieldValuesContact = await getCurrentUsersContactFieldValues({ fieldNames });
-			const eligibilityCriteriaData = [ ...this.eligibilityCriteriaFieldData ];
+			const eligibilityCriteriaData = [...this.eligibilityCriteriaFieldData];
 			if (fieldValuesContact) {
 				for (const field of Object.keys(fieldValuesContact)) {
 					const fieldValue = fieldValuesContact[field];
@@ -123,7 +123,7 @@ export default class ProviderSearch extends LightningElement {
 				this.picklistFiltersSelected = this.getEligibilityCriteriaPicklistFiltersSelected();
 			}
 		} catch (e) {
-			console.log('GET_ELIGIBILITY_SEARCH_FIELD_VALUES_ERROR', JSON.stringify(e));
+			console.log('GET_ELIGIBILITY_SEARCH_FIELD_VALUES_ERROR', e);
 		}
 	}
 
@@ -131,8 +131,9 @@ export default class ProviderSearch extends LightningElement {
 		try {
 			const fieldData = await getJobFieldSetData({ fieldSetName: this.searchFiltersFieldSetApiName });
 			const eligibilityFields = Object.values(this.contactJobEligibilityMappings);
-			this.searchFiltersFieldData = fieldData.filter((data) => data.apiName !== 'Launchpad__Zip__c' &&
-				!eligibilityFields.includes(data.apiName));
+			this.searchFiltersFieldData = fieldData.filter(
+				(data) => data.apiName !== 'Launchpad__Zip__c' && !eligibilityFields.includes(data.apiName)
+			);
 		} catch (e) {
 			console.error('GET_SEARCH_FILTERS_ERROR: ', e);
 		}
@@ -141,7 +142,12 @@ export default class ProviderSearch extends LightningElement {
 	async getDetailsFieldData() {
 		try {
 			const fieldData = await getJobFieldSetData({ fieldSetName: this.detailsFieldSetApiName });
-			const alwaysQueriedFields = ['Name', 'Launchpad__Job_Description__c', 'Launchpad__Account_Address__c', 'Job_Site_Address__c' ];
+			const alwaysQueriedFields = [
+				'Name',
+				'Launchpad__Job_Description__c',
+				'Launchpad__Account_Address__c',
+				'Job_Site_Address__c',
+			];
 			this.detailsFieldData = fieldData.filter((data) => !alwaysQueriedFields.includes(data.apiName));
 			this.detailsFieldApiNames = this.detailsFieldData.map((data) => data.apiName);
 		} catch (e) {
@@ -177,17 +183,17 @@ export default class ProviderSearch extends LightningElement {
 		const textFiltersSelected = { ...this.textFiltersSelected };
 
 		// eslint-disable-next-line @lwc/lwc/no-async-operation
-        this.timeout = setTimeout(() => {
-            switch (name) {
-                case 'zipcode':
-                    this.zipCode = value;
-                    break;
-                default:
+		this.timeout = setTimeout(() => {
+			switch (name) {
+				case 'zipcode':
+					this.zipCode = value;
+					break;
+				default:
 					textFiltersSelected[name] = value;
 					this.textFiltersSelected = textFiltersSelected;
-                    break;
-            }
-        }, 300);
+					break;
+			}
+		}, 300);
 	}
 
 	handleMultiselectChange(e) {
@@ -210,10 +216,10 @@ export default class ProviderSearch extends LightningElement {
 	}
 
 	getEligibilityCriteriaPicklistFiltersSelected() {
-		const picklistFiltersSelected = {}
+		const picklistFiltersSelected = {};
 		for (const fieldData of this.eligibilityCriteriaFieldData) {
 			const searchFilterField = this.contactJobEligibilityMappings[fieldData.apiName];
-			picklistFiltersSelected[searchFilterField] = [ fieldData.value.toString() ];
+			picklistFiltersSelected[searchFilterField] = fieldData.value ? [fieldData.value.toString()] : [];
 		}
 		return picklistFiltersSelected;
 	}
@@ -260,7 +266,7 @@ export default class ProviderSearch extends LightningElement {
 					PostalCode: provider[locationSource].BillingPostalCode,
 					Country: 'USA',
 				},
-				isSelected: false
+				isSelected: false,
 			};
 		});
 	}
@@ -274,19 +280,20 @@ export default class ProviderSearch extends LightningElement {
 		const selectedProviderIdx = this.providers.findIndex((provider) => provider.id === providerId);
 
 		this.selectedProviders = [
-			...this.selectedProviders, {
+			...this.selectedProviders,
+			{
 				...this.providers[selectedProviderIdx],
-				isSelected: true
-			}
+				isSelected: true,
+			},
 		];
 
 		this.providers = [
 			...this.providers.slice(0, selectedProviderIdx),
 			{
 				...this.providers[selectedProviderIdx],
-				isSelected: true
+				isSelected: true,
 			},
-			...this.providers.slice(selectedProviderIdx + 1)
+			...this.providers.slice(selectedProviderIdx + 1),
 		];
 	}
 
@@ -300,9 +307,9 @@ export default class ProviderSearch extends LightningElement {
 			...this.providers.slice(0, selectedProviderIdx),
 			{
 				...this.providers[selectedProviderIdx],
-				isSelected: false
+				isSelected: false,
 			},
-			...this.providers.slice(selectedProviderIdx + 1)
+			...this.providers.slice(selectedProviderIdx + 1),
 		];
 	}
 
@@ -310,12 +317,12 @@ export default class ProviderSearch extends LightningElement {
 		const providerId = evt.detail.providerId;
 		const selectedProviderIdx = this.selectedProviders.findIndex((provider) => provider.id === providerId);
 
-		// Use splice or slice or move element up one index 
+		// Use splice or slice or move element up one index
 		this.selectedProviders = [
 			...this.selectedProviders.slice(0, selectedProviderIdx - 1),
 			this.selectedProviders[selectedProviderIdx],
 			this.selectedProviders[selectedProviderIdx - 1],
-			...this.selectedProviders.slice(selectedProviderIdx + 1)
+			...this.selectedProviders.slice(selectedProviderIdx + 1),
 		];
 	}
 
@@ -328,12 +335,11 @@ export default class ProviderSearch extends LightningElement {
 			...this.selectedProviders.slice(0, selectedProviderIdx),
 			this.selectedProviders[selectedProviderIdx + 1],
 			this.selectedProviders[selectedProviderIdx],
-			...this.selectedProviders.slice(selectedProviderIdx + 2)
+			...this.selectedProviders.slice(selectedProviderIdx + 2),
 		];
 	}
 
 	handleSectionToggle() {
 		this.activeSectionName = this.activeSectionName ? null : 'selections';
 	}
-
 }
