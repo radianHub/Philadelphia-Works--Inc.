@@ -80,7 +80,7 @@ public with sharing class CreateApplicationController {
             }
 
 			Contact con = [
-				SELECT Id, Race_Ethnicity__c, 	GenderIdentity, HomePhone, Youth_s_Internet_Connectivity__c, Youth_s_Current_Living_Situation__c, Last_Completed_Grade__c, Current_Employment_Status__c, Pronouns, 
+				SELECT Id, Race_Ethnicity__c, GenderIdentity, HomePhone, Youth_s_Internet_Connectivity__c, Youth_s_Current_Living_Situation__c, Last_Completed_Grade__c, Current_Employment_Status__c, Pronouns, 
                         Sex_Assigned_At_Birth__c, Launchpad__Parent_Guardian_Phone__c, Launchpad__Parent_Guardian_Name__c, Guardian_Email__c, Emergency_Contact_Relationship__c, 
                         Emergency_Contact_Phone__c, Emergency_Contact_Last_Name__c, Emergency_Contact_First_Name__c,  Emergency_Contact_Email__c, 
                         Launchpad__Primary_Language_Spoken_at_Home__c, Country_of_Nationality__c, Middle_Name__c, Phone, Launchpad__Unique_ID_SSN__c, MailingCity, MailingStreet, 
@@ -125,7 +125,7 @@ public with sharing class CreateApplicationController {
 					Applicant_City__c = con?.MailingCity,
 					Applicant_s_State__c = con?.MailingState,
 					Applicants_Zip_Code__c = String.valueOf(postalCode),
-                    Applicant_s_Current_Gender__c = con?.GenderIdentity,
+                    Applicant_s_Current_Gender__c = con?.Launchpad__Gender__c,
                     Applicants_Current_Most_Recent_School__c = con?.School__c,
 					Applicant_s_Date_of_Birth_MM_DD_YYYY__c = con?.Birthdate,
 					Launchpad__Participant__c = contactId,
