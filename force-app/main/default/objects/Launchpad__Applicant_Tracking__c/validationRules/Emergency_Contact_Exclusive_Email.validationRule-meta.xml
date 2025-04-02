@@ -3,5 +3,6 @@
     <fullName>Emergency_Contact_Exclusive_Email</fullName>
     <active>true</active>
     <errorConditionFormula>Emergency_Contact_Email__c =  Applicant_s_Email_Address__c</errorConditionFormula>
+    <errorDisplayField>Emergency_Contact_Email__c</errorDisplayField>
     <errorMessage>Applicant cannot have the same email address as their emergency contact.</errorMessage>
 </ValidationRule>

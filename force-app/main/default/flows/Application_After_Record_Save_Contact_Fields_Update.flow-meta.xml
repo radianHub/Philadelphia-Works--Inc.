@@ -2,6 +2,11 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
     <environments>Default</environments>
+    <formulas>
+        <name>PriorValueInProgress</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!$Record__Prior.Launchpad__Stage__c},&apos;In Progress&apos;)</expression>
+    </formulas>
     <interviewLabel>After {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Application - After Record Save [Contact Fields Update]</label>
     <processMetadataValues>
@@ -308,15 +313,7 @@
         <connector>
             <targetReference>Update_Related_Youth_Contact</targetReference>
         </connector>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Launchpad__Stage__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Submitted</stringValue>
-            </value>
-        </filters>
+        <filterFormula>AND(ISPICKVAL({!$Record__Prior.Launchpad__Stage__c},&apos;In Progress&apos;), ISPICKVAL({!$Record.Launchpad__Stage__c},&apos;Submitted&apos;))</filterFormula>
         <object>Launchpad__Applicant_Tracking__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
