@@ -599,17 +599,11 @@ public with sharing class UniversalApp {
                 //Get program Launchpad__Program_Year_Start__c
                 Launchpad__Applicant_Tracking__c currentAppForConsent = GuestUserApplicationController.getCurrentJobApplication(appId);
                 if(currentAppForConsent.Program__r.Launchpad__Active__c == 'Yes'){
-                    Date birthday = Date.valueOf(currentAppForConsent.Applicant_s_Date_of_Birth_MM_DD_YYYY__c);
-                    Date startDate = currentAppForConsent.Program__r.Launchpad__Program_Year_Start__c;
-                    Decimal applicantAge = birthday.daysBetween(startDate) / 365.25;
-                    applicantAge = Math.floor(applicantAge);
-                    System.Debug('currentAppForConsent.Launchpad__Participant__r.Age_at_Start_of_Program__c: ' + currentAppForConsent.Launchpad__Participant__r.Age_at_Start_of_Program__c);
-                    System.debug('applicantAge: ' + applicantAge);
-                    if(applicantAge < 12){
+                    if(currentAppForConsent.Launchpad__Participant__r.Age_at_Start_of_Program__c < 12){
                         ret.put('error', 'The Applicant is too young for this program.');
                 		return ret;
                     }
-                    if(applicantAge > 24){
+                    if(currentAppForConsent.Launchpad__Participant__r.Age_at_Start_of_Program__c > 24){
                         ret.put('error', 'The Applicant is too old for this program.');
                 		return ret;
                     }

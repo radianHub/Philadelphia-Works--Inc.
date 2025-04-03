@@ -178,7 +178,7 @@ public class JobApplicationTriggerHandler {
         
         for(Launchpad__Applicant_Tracking__c app : applications){
             for(Launchpad__Applicant_Tracking__c appInSystem : allApps){
-                if(app.Applicants_Tax_Id__c == appInSystem.Applicants_Tax_Id__c && app.Id != appInSystem.Id && app.Launchpad__Participant__c != appInSystem.Launchpad__Participant__c){
+                if(app.Applicants_Tax_Id__c != null && appInSystem.Applicants_Tax_Id__c != null && app.Applicants_Tax_Id__c == appInSystem.Applicants_Tax_Id__c && app.Id != appInSystem.Id && app.Launchpad__Participant__c != appInSystem.Launchpad__Participant__c){
                     app.Launchpad__Stage__c = 'Potential Duplicate';
                 }
             }
