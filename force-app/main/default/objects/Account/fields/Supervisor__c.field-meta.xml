@@ -4,6 +4,16 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Supervisor</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Supervisor</value>
+        </filterItems>
+        <infoMessage>Supervisor&apos;s Contact record must be the Supervisor record type.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>Placement Site (Supervisor)</relationshipLabel>
     <relationshipName>Placement_Site</relationshipName>

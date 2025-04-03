@@ -6,6 +6,7 @@
     <columns>ACCOUNT.PHONE1</columns>
     <columns>Launchpad__Owner_Full_Name__c</columns>
     <columns>Launchpad__Active__c</columns>
+    <columns>Launchpad__Available_in_Community__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>ACCOUNT.RECORDTYPE</field>
