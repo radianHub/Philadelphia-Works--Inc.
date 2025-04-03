@@ -603,7 +603,7 @@ public with sharing class UniversalApp {
                     Date startDate = currentAppForConsent.Program__r.Launchpad__Program_Year_Start__c;
                     Decimal applicantAge = birthday.daysBetween(startDate) / 365.25;
                     applicantAge = Math.floor(applicantAge);
-                    
+                    System.Debug('currentAppForConsent.Launchpad__Participant__r.Age_at_Start_of_Program__c: ' + currentAppForConsent.Launchpad__Participant__r.Age_at_Start_of_Program__c);
                     System.debug('applicantAge: ' + applicantAge);
                     if(applicantAge < 12){
                         ret.put('error', 'The Applicant is too young for this program.');
