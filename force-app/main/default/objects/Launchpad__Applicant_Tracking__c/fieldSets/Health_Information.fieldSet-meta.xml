@@ -28,11 +28,6 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_Involved_in_Justice_System__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>Applicant_Need_Support_Assistance__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
