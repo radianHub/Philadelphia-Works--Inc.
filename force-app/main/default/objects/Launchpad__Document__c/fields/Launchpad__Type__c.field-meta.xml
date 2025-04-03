@@ -44,6 +44,11 @@
                 <label>Proof of Income</label>
             </value>
             <value>
+                <fullName>Proof of Clearance</fullName>
+                <default>false</default>
+                <label>Proof of Clearance</label>
+            </value>
+            <value>
                 <fullName>Resume</fullName>
                 <default>false</default>
                 <isActive>false</isActive>

@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Contact_Field_API_Name__c</field>
-        <value xsi:type="xsd:string">Launchpad__Age__c</value>
+        <value xsi:type="xsd:string">Age_at_Start_of_Program__c</value>
     </values>
     <values>
         <field>Job_Field_API_Name__c</field>
