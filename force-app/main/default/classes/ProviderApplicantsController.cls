@@ -71,10 +71,6 @@ public with sharing class ProviderApplicantsController {
 			query += 'AND Launchpad__Participant__r.Priority_Population__c = true ';
 		}
 
-		String excludedStage = 'Placed';
-
-		query += 'AND Launchpad__Stage__c != :excludedStage ';
-
 		query += 'ORDER BY Launchpad__Participant__r.Priority_Population__c DESC, Provider_Rank__c ASC, CreatedDate DESC';
 
 		return Database.query(query);
