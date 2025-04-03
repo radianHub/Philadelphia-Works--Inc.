@@ -1,0 +1,24 @@
+<template>
+	<template if:true={isLoading}>
+		<lightning-spinner
+			variant="brand"
+			size="large"></lightning-spinner>
+	</template>
+
+	<h2
+		class="title"
+		style={headerStyle}>
+		{title}
+	</h2>
+	<p class="description slds-var-m-bottom_large">{description}</p>
+
+	<div class="job-datatable-container slds-border_top slds-border_right slds-border_bottom slds-border_left">
+		<c-supervisor-datatable
+			key-field="Id"
+			data={supervisors}
+			columns={columns}
+			max-column-width="1500"
+			onrowaction={handleRowAction}
+			hide-checkbox-column></c-supervisor-datatable>
+	</div>
+</template>

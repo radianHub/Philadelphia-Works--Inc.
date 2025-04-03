@@ -39,4 +39,11 @@ public with sharing class ProviderJobsController {
         return result;
     }
 
+    @AuraEnabled
+	public static List<Contact> getClearedSupervisors(Id accountId) {
+		Id supervisorTypeId = Schema.Contact.sObjectType.getDescribe().getRecordTypeInfosByName().get('Supervisor').getRecordTypeId();
+        return [SELECT Id,Name,Supervisor_Clearance__c FROM Contact WHERE AccountId = :accountId AND RecordTypeId = :supervisorTypeId  AND Supervisor_Clearance__c = true ORDER BY Name ASC ];
+
+	}
+
 }
