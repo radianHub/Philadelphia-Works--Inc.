@@ -151,7 +151,7 @@ export default class ProviderApplicants extends LightningElement {
 	@wire(getPicklistValues, { recordTypeId: '$recordTypeId', fieldApiName: STAGE })
 	wiredStages({ error, data }) {
 		if (data) {
-			this.stageOptions = [...data.values];
+			this.stageOptions = [...data.values.filter((val) => val.value != 'In Progress')];
 			this.stageFilterOptions = [DEFAULT_STAGE, ...data.values];
 		} else if (error) {
 			this.stageFilterOptions = [DEFAULT_STAGE];
