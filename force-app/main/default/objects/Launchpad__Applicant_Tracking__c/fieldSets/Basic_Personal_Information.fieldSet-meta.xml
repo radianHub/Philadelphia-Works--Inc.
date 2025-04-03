@@ -10,7 +10,7 @@
     <displayedFields>
         <field>Middle_Name__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_s_Legal_Last_Name__c</field>

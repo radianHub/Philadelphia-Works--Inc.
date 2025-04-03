@@ -1026,7 +1026,7 @@
     <displayedFields>
         <field>Middle_Name__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>LastName</field>
