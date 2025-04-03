@@ -22,7 +22,13 @@ public with sharing class CreateApplicationController {
 				return existingApplications[0].Id;
 			}
 
-			Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobId];
+			Launchpad__Job__c job = [SELECT Id, Program__c, Program__r.Application_Close_Date__c FROM Launchpad__Job__c WHERE Id = :jobId];
+            
+            if(job != null){
+                if(job.Program__r.Application_Close_Date__c < System.Today()){
+                    throw new AuraHandledException('Application date has passed for the program');
+                }
+            }
 
 			Launchpad__Applicant_Tracking__c application = new Launchpad__Applicant_Tracking__c(
 				Launchpad__Participant__c = contactId,
@@ -65,11 +71,21 @@ public with sharing class CreateApplicationController {
 				throw new AuraHandledException('You have already applied to a program in this session.');
 			}
 
-			Launchpad__Job__c job = [SELECT Id, Program__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
+			Launchpad__Job__c job = [SELECT Id, Program__c, Program__r.Application_Close_Date__c FROM Launchpad__Job__c WHERE Id = :jobIds[0]];
+            
+            if(job != null){
+                if(job.Program__r.Application_Close_Date__c < System.Today()){
+                    throw new AuraHandledException('Application date has passed for the program');
+                }
+            }
 
 			Contact con = [
-				SELECT Id, MailingCity, MailingStreet, MailingState, MailingPostalCode, Birthdate
-				FROM Contact
+				SELECT Id, Race_Ethnicity__c, GenderIdentity, HomePhone, Youth_s_Internet_Connectivity__c, Youth_s_Current_Living_Situation__c, Last_Completed_Grade__c, Current_Employment_Status__c, Pronouns, 
+                        Sex_Assigned_At_Birth__c, Launchpad__Parent_Guardian_Phone__c, Launchpad__Parent_Guardian_Name__c, Guardian_Email__c, Emergency_Contact_Relationship__c, 
+                        Emergency_Contact_Phone__c, Emergency_Contact_Last_Name__c, Emergency_Contact_First_Name__c,  Emergency_Contact_Email__c, 
+                        Launchpad__Primary_Language_Spoken_at_Home__c, Country_of_Nationality__c, Middle_Name__c, Phone, Launchpad__Unique_ID_SSN__c, MailingCity, MailingStreet, 
+                        MailingState, MailingPostalCode, Birthdate, Launchpad__Gender__c, School__c
+                        FROM Contact
 				WHERE Id = :contactId
 			];
 
@@ -85,10 +101,32 @@ public with sharing class CreateApplicationController {
 				}
 
 				Launchpad__Applicant_Tracking__c application = new Launchpad__Applicant_Tracking__c(
+                    Race_and_or_Ethnicity__c = con?.Race_Ethnicity__c,
+                    Applicant_s_Internet_Connectivity__c = con?.Youth_s_Internet_Connectivity__c,
+                    Current_Living_Situation__c = con?.Youth_s_Current_Living_Situation__c,
+                    Applicant_s_Last_Completed_Grade__c = con?.Last_Completed_Grade__c, 
+                    Applicant_s_Current_Employment_Status__c = con?.Current_Employment_Status__c,
+                    Applicant_s_Preferred_Pronoun__c = con?.Pronouns, 
+                    Applicant_s_Sex_Assigned_at_Birth__c = con?.Sex_Assigned_At_Birth__c,                                                                                
+                    Guardian_Name__c = con?.Launchpad__Parent_Guardian_Name__c,
+                    Guardian_Email__c = con?.Guardian_Email__c,
+                    Guardian_Phone_Number__c = con?.Launchpad__Parent_Guardian_Phone__c,
+                    Emergency_Contact_Email__c = con?.Emergency_Contact_Email__c,
+                    Emergency_Contact_First_Name__c = con?.Emergency_Contact_First_Name__c,
+                    Emergency_Contact_Last_Name__c = con?.Emergency_Contact_Last_Name__c,
+                    Emergency_Contact_Phone__c = con?.Emergency_Contact_Phone__c,
+                    Emergency_Contact_Relationship__c = con?.Emergency_Contact_Relationship__c,
+                    Applicant_s_Primary_Language__c = con?.Launchpad__Primary_Language_Spoken_at_Home__c,
+                    Applicant_s_Country_of_Nationality__c = con?.Country_of_Nationality__c,
+                    Middle_Name__c = con?.Middle_Name__c,
+                    Applicant_s_Phone_Number__c = con?.	HomePhone,
+                    Applicants_Tax_Id__c = con?.Launchpad__Unique_ID_SSN__c,
 					Applicant_s_Street_Address__c = con?.MailingStreet,
 					Applicant_City__c = con?.MailingCity,
 					Applicant_s_State__c = con?.MailingState,
 					Applicants_Zip_Code__c = String.valueOf(postalCode),
+                    Applicant_s_Current_Gender__c = con?.Launchpad__Gender__c,
+                    Applicants_Current_Most_Recent_School__c = con?.School__c,
 					Applicant_s_Date_of_Birth_MM_DD_YYYY__c = con?.Birthdate,
 					Launchpad__Participant__c = contactId,
 					Launchpad__Job_Order__c = (String) app.get('id'),
@@ -155,4 +193,6 @@ public with sharing class CreateApplicationController {
 			throw e;
 		}
 	}
+    
+   
 }

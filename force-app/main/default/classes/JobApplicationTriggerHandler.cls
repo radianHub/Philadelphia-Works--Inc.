@@ -144,6 +144,8 @@ public class JobApplicationTriggerHandler {
                                                              FROM Launchpad__Applicant_Tracking__c
                                                              WHERE Launchpad__Participant__c IN :ContactIds
                                                              AND Id NOT IN :setExecutedRecords
+                         									 AND Program__r.Launchpad__Active__c = 'Yes'
+															 AND Program__r.RecordType.Name = 'Session' 
                                                              ]; 
         }
         if(getSelf == false){
@@ -151,6 +153,8 @@ public class JobApplicationTriggerHandler {
                                                              FROM Launchpad__Applicant_Tracking__c
                                                              WHERE Launchpad__Participant__c IN :ContactIds
                                                              AND Id NOT IN :JobAppIds AND Id NOT IN :setExecutedRecords
+                         									 AND Program__r.Launchpad__Active__c = 'Yes'
+															 AND Program__r.RecordType.Name = 'Session'
                          									 ORDER BY Provider_Rank__c
                                                              ]; 
         }
@@ -168,7 +172,9 @@ public class JobApplicationTriggerHandler {
     }
     
     public static void checkForDuplicates(List<Launchpad__Applicant_Tracking__c> applications){
-        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c];
+        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c WHERE 
+                                                          Program__r.Launchpad__Active__c = 'Yes'
+													      AND Program__r.RecordType.Name = 'Session'];
         
         for(Launchpad__Applicant_Tracking__c app : applications){
             for(Launchpad__Applicant_Tracking__c appInSystem : allApps){
