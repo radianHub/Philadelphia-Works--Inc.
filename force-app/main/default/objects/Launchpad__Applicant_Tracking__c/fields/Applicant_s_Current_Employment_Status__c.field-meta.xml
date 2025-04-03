@@ -42,6 +42,11 @@
                 <default>false</default>
                 <label>Out of the work force</label>
             </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
