@@ -1024,11 +1024,6 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Middle_Name__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>LastName</field>
         <isFieldManaged>true</isFieldManaged>
         <isRequired>true</isRequired>
