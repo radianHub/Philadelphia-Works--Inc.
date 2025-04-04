@@ -1,12 +1,18 @@
-public class JobApplicationConsentFormController {
-    @InvocableMethod(label='Send Consent Form Email' description='Sends an email to the guardian email')
-    public static void sendConsentFormEmail(List<List<Id>> applications){
-       ConsentFormBatchEmail batch = new ConsentFormBatchEmail(applications[0]);
-	   Database.executeBatch(batch, 50);
-        /*List<Messaging.SingleEmailMessage> emailList = new List<Messaging.SingleEmailMessage>();
+public class ConsentFormBatchEmail implements Database.Batchable<sObject> {
+    private List<Id> applicationList;
+    
+    public ConsentFormBatchEmail(List<Id> applications) {
+        this.applicationList = applications;
+    }
+    public Database.QueryLocator start(Database.BatchableContext BC) {
+        return Database.getQueryLocator('SELECT Id, Guardian_Email__c FROM Launchpad__Applicant_Tracking__c WHERE Id IN :applicationList');
+    }
+
+    public void execute(Database.BatchableContext BC, List<Launchpad__Applicant_Tracking__c> scope) {
+        List<Messaging.SingleEmailMessage> emailList = new List<Messaging.SingleEmailMessage>();
         EmailTemplate et = [SELECT Id, HtmlValue FROM EmailTemplate WHERE DeveloperName ='Consent_Form_Email_Template'];
-        for(Launchpad__Applicant_Tracking__c app : applications){
-            
+        
+        for(Launchpad__Applicant_Tracking__c app : scope){
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
             
             mail.setTemplateId(et?.Id);
@@ -31,10 +37,10 @@ public class JobApplicationConsentFormController {
         }
         
         if(!Test.isRunningTest()){
-        System.Debug('About to send mail');
-            Messaging.sendEmail(emailList);
-        }*/
+        	Messaging.sendEmail(emailList);
+        }
     }
-    
-    
+
+    public void finish(Database.BatchableContext BC) {
+    }
 }
