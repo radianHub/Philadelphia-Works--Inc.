@@ -1,0 +1,13 @@
+.eligibility-alert {
+	z-index: 100;
+	position: fixed;
+	top: 70px;
+	left: 0;
+	right: 0;
+}
+
+@media (max-width: 768px) {
+	.eligibility-alert {
+		top: 48px;
+	}
+}
