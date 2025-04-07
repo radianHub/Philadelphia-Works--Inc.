@@ -1036,7 +1036,7 @@
     <displayedFields>
         <field>Launchpad__Gender__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
     </displayedFields>
     <label>ParticipantCommunity_MyProfile_DemographicInfo</label>
 </FieldSet>
