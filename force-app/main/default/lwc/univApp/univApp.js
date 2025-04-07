@@ -157,7 +157,7 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 			sObj: this.sObj,
 			application: this.appDevName,
 			filesString: JSON.stringify(filesToInsert),
-			isSaveForLater: isSaveForLater
+			isSaveForLater: isSaveForLater,
 		})
 			.then((result) => {
 				if (result.data) {
@@ -223,7 +223,6 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 					if (!isSaveForLater) {
 						window.location.reload();
 					}
-
 				} else if (result.error) {
 					this.finished = false;
 					this.alert = result.error;
@@ -278,7 +277,7 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 			if (el.fieldName === 'Applicant_s_Age_at_Start_of_Program__c' && el.value) {
 				this.dynamicRequire({ target: el });
 			}
-		})
+		});
 	}
 
 	// * POPULATES THE PAGE PROPERTIES
@@ -544,10 +543,20 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 		evt.preventDefault();
 		const fields = evt.detail.fields;
 		this.template.querySelector('lightning-record-edit-form').submit(fields);
+
+		console.log('name', evt.target.dataset.name);
+		console.log('name', evt.currentTarget.name);
+
+		console.log('showFinish?' + this.showFinish);
 	}
 
 	handleSuccess() {
-		this.next();
+		// Submit if this is the last step
+		if (this.showFinish) {
+			this.submit();
+		} else {
+			this.next();
+		}
 	}
 
 	handleError() {
@@ -582,6 +591,7 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	finish(isSaveForLater) {
 		this.alert = '';
 		this.setObjectFields();
+
 		if (this.validateFields(this.REQUIRED_FIELDS, 'error')) {
 			//this.canShowRestart = true;
 			if (this.appData.Post_Submit_Fields__c) {
@@ -602,6 +612,9 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 
 				this.submitSObj(isSaveForLater);
 			}
+		} else {
+			console.log('had error on finish.');
+			this.setPage();
 		}
 	}
 

@@ -5,32 +5,32 @@
     <displayedFields>
         <field>Applicant_Medical_Conditions__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_Mental_Health_Diagnosis__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_Mental_Disability_Diagnosis__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_Deaf_Difficulty_Hearing__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_Blind_Difficulty_Seeing__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Applicant_Need_Support_Assistance__c</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <label>Health Information</label>
 </FieldSet>
