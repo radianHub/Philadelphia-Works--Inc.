@@ -3,17 +3,7 @@
     <fullName>Consents</fullName>
     <description>C2L Application Section 7</description>
     <displayedFields>
-        <field>Willing_to_accept_an_unselected_program__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>Media_Picture_Release__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Parent_s_Consent__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
@@ -24,6 +14,11 @@
     </displayedFields>
     <displayedFields>
         <field>Consent_to_Request_Clearance__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Willing_to_accept_an_unselected_program__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
