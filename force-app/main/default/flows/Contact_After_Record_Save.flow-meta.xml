@@ -190,7 +190,7 @@
         <inputAssignments>
             <field>Applicant_City__c</field>
             <value>
-                <elementReference>$Record.Launchpad__Mailing_City__c</elementReference>
+                <elementReference>$Record.MailingCity</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -250,13 +250,13 @@
         <inputAssignments>
             <field>Applicant_s_Current_Gender__c</field>
             <value>
-                <elementReference>$Record.GenderIdentity</elementReference>
+                <elementReference>$Record.Launchpad__Gender__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Applicant_s_Current_Most_Recent_School__c</field>
             <value>
-                <elementReference>$Record.Current_Most_Recent_School__c</elementReference>
+                <elementReference>$Record.School__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -280,7 +280,7 @@
         <inputAssignments>
             <field>Applicant_s_Last_Completed_Grade__c</field>
             <value>
-                <elementReference>$Record.Last_Completed_Grade__c</elementReference>
+                <elementReference>$Record.Grade__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -304,7 +304,7 @@
         <inputAssignments>
             <field>Applicant_s_Preferred_Pronoun__c</field>
             <value>
-                <elementReference>$Record.Pronouns</elementReference>
+                <elementReference>$Record.Launchpad__Gender_Pronoun__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

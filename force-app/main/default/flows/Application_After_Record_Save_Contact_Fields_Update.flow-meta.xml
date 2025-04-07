@@ -60,12 +60,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Current_Most_Recent_School__c</field>
-            <value>
-                <elementReference>$Record.Applicant_s_Current_Most_Recent_School__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Current_Relationship_Status__c</field>
             <value>
                 <elementReference>$Record.What_is_the_Applicant_s_Current_Relation__c</elementReference>
@@ -108,15 +102,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>GenderIdentity</field>
-            <value>
-                <elementReference>$Record.Applicant_s_Current_Gender__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Government_Benefits_Applicant_Receives__c</field>
             <value>
                 <elementReference>$Record.What_Governmental_Benefits_Does__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Grade__c</field>
+            <value>
+                <elementReference>$Record.Applicant_s_Last_Completed_Grade__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -144,9 +138,15 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Last_Completed_Grade__c</field>
+            <field>Launchpad__Gender_Pronoun__c</field>
             <value>
-                <elementReference>$Record.Applicant_s_Last_Completed_Grade__c</elementReference>
+                <elementReference>$Record.Applicant_s_Preferred_Pronoun__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Launchpad__Gender__c</field>
+            <value>
+                <elementReference>$Record.Applicant_s_Current_Gender__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -204,12 +204,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Pronouns</field>
-            <value>
-                <elementReference>$Record.Applicant_s_Preferred_Pronoun__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Race_Ethnicity__c</field>
             <value>
                 <elementReference>$Record.Race_and_or_Ethnicity__c</elementReference>
@@ -219,6 +213,12 @@
             <field>Relationship_To_This_Young_Person__c</field>
             <value>
                 <elementReference>$Record.Relationship_to_this_Young_Person__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>School__c</field>
+            <value>
+                <stringValue>$Record.Applicant_s_Current_Most_Recent_School__c</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

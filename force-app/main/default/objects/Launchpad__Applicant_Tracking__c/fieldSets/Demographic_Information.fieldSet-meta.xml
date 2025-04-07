@@ -23,11 +23,6 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Applicant_s_Legal_Last_Name__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>Applicants_Current_Most_Recent_School__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>

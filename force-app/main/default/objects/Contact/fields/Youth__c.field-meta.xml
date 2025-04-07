@@ -4,7 +4,7 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Guardian/Parent&apos;s Youth</description>
     <externalId>false</externalId>
-    <label>Contact</label>
+    <label>Youth Contact</label>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>Youth</relationshipLabel>
     <relationshipName>Contacts</relationshipName>
