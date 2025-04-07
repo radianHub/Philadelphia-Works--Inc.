@@ -2778,14 +2778,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>None</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Applicable</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Yes</fullName>
             <default>false</default>
         </values>
@@ -3131,14 +3123,6 @@
         <picklist>Parent_s_Consent__c</picklist>
         <values>
             <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>None</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Not Applicable</fullName>
             <default>false</default>
         </values>
         <values>
