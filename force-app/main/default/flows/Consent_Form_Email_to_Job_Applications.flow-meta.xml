@@ -3,23 +3,36 @@
     <actionCalls>
         <name>Send_Consent_Form_Email_Action_1</name>
         <label>Send Consent Form to Guardian</label>
-        <locationX>264</locationX>
-        <locationY>576</locationY>
+        <locationX>176</locationX>
+        <locationY>852</locationY>
         <actionName>JobApplicationConsentFormController</actionName>
         <actionType>apex</actionType>
-        <connector>
-            <targetReference>Loop_over_Job_Applications</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>applications</name>
             <value>
-                <elementReference>Loop_over_Job_Applications</elementReference>
+                <elementReference>varApplicationIds</elementReference>
             </value>
         </inputParameters>
         <nameSegment>JobApplicationConsentFormController</nameSegment>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Assignment_1</name>
+        <label>Add Application Ids to List</label>
+        <locationX>264</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>varApplicationIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_over_Job_Applications.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_over_Job_Applications</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Meet_Criteria_for_Guardian_Consent_Form</name>
         <label>Meet Criteria for Guardian Consent Form?</label>
@@ -61,7 +74,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Send_Consent_Form_Email_Action_1</targetReference>
+                <targetReference>Assignment_1</targetReference>
             </connector>
             <label>Meets Criteria</label>
         </rules>
@@ -79,6 +92,9 @@
         <nextValueConnector>
             <targetReference>Meet_Criteria_for_Guardian_Consent_Form</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_Consent_Form_Email_Action_1</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -120,10 +136,17 @@
         </connector>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2025-03-11</startDate>
-            <startTime>00:00:00.000Z</startTime>
+            <startDate>2025-04-04</startDate>
+            <startTime>13:15:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
     <status>Draft</status>
+    <variables>
+        <name>varApplicationIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
