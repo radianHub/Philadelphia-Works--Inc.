@@ -543,11 +543,6 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 		evt.preventDefault();
 		const fields = evt.detail.fields;
 		this.template.querySelector('lightning-record-edit-form').submit(fields);
-
-		console.log('name', evt.target.dataset.name);
-		console.log('name', evt.currentTarget.name);
-
-		console.log('showFinish?' + this.showFinish);
 	}
 
 	handleSuccess() {
@@ -612,9 +607,6 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 
 				this.submitSObj(isSaveForLater);
 			}
-		} else {
-			console.log('had error on finish.');
-			this.setPage();
 		}
 	}
 
