@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consent_to_Request_Clearance_Validation</fullName>
+    <active>true</active>
+    <description>Don&apos;t accept applications without consent</description>
+    <errorConditionFormula>ISPICKVAL(Consent_to_Request_Clearance__c,&apos;No&apos;)</errorConditionFormula>
+    <errorDisplayField>Consent_to_Request_Clearance__c</errorDisplayField>
+    <errorMessage>You must answer Yes in order to submit your application</errorMessage>
+</ValidationRule>
