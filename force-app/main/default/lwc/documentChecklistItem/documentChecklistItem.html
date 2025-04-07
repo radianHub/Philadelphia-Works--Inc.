@@ -47,15 +47,12 @@
 								alternative-text="View"
 								onclick={handlePreview}></lightning-button>
 						</template>
-						<template lwc:else>
-							<lightning-button
-								lwc:if={canUpload}
-								class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
-								title="Upload"
-								label="Upload"
-								alternative-text="Upload"
-								onclick={handleUpload}></lightning-button>
-						</template>
+						<lightning-button
+							class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
+							title="Upload"
+							label="Upload"
+							alternative-text="Upload"
+							onclick={handleUpload}></lightning-button>
 					</div>
 				</div>
 			</div>

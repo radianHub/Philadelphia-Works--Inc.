@@ -10,8 +10,8 @@ import approveDocument from '@salesforce/apex/DocumentChecklistController.approv
 import rejectDocument from '@salesforce/apex/DocumentChecklistController.rejectDocument';
 import DocumentChecklistModal from 'c/documentChecklistModal';
 import getDocumentStatuses from '@salesforce/apex/DocumentChecklistController.getDocumentStatuses';
+import DocumentChecklistPreview from 'c/documentChecklistPreview';
 
-// TODO: Allow user to upload NEW version of an expired or rejected document
 export default class DocumentChecklist extends LightningElement {
 	@api recordId;
 	@api title;
@@ -159,5 +159,13 @@ export default class DocumentChecklist extends LightningElement {
 				});
 				this.dispatchEvent(event);
 			});
+	}
+
+	handlePreview(evt) {
+		DocumentChecklistPreview.open({
+			title: evt.detail.title,
+			src: evt.detail.src,
+			fileExtension: evt.detail.fileExtension,
+		});
 	}
 }
