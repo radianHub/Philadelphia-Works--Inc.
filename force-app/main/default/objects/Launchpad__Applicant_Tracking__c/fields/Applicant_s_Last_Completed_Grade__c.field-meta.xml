@@ -13,69 +13,117 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>6th</fullName>
+                <fullName>6</fullName>
                 <default>false</default>
-                <label>6th</label>
+                <label>6</label>
             </value>
             <value>
-                <fullName>7th</fullName>
+                <fullName>7</fullName>
                 <default>false</default>
-                <label>7th</label>
+                <label>7</label>
             </value>
             <value>
-                <fullName>8th</fullName>
+                <fullName>8</fullName>
                 <default>false</default>
-                <label>8th</label>
+                <label>8</label>
             </value>
             <value>
-                <fullName>9th</fullName>
+                <fullName>9</fullName>
                 <default>false</default>
-                <label>9th</label>
+                <label>9</label>
+            </value>
+            <value>
+                <fullName>10</fullName>
+                <default>false</default>
+                <label>10</label>
+            </value>
+            <value>
+                <fullName>11</fullName>
+                <default>false</default>
+                <label>11</label>
+            </value>
+            <value>
+                <fullName>12</fullName>
+                <default>false</default>
+                <label>12</label>
             </value>
             <value>
                 <fullName>10th</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>10th</label>
             </value>
             <value>
                 <fullName>11th</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>11th</label>
             </value>
             <value>
                 <fullName>12th or High School Diploma obtained</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>12th or High School Diploma obtained</label>
             </value>
             <value>
-                <fullName>GED (or other HS equivalent)</fullName>
+                <fullName>6th</fullName>
                 <default>false</default>
-                <label>GED (or other HS equivalent)</label>
+                <isActive>false</isActive>
+                <label>6th</label>
             </value>
             <value>
-                <fullName>Some college or technical school</fullName>
+                <fullName>7th</fullName>
                 <default>false</default>
-                <label>Some college or technical school</label>
+                <isActive>false</isActive>
+                <label>7th</label>
+            </value>
+            <value>
+                <fullName>8th</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>8th</label>
+            </value>
+            <value>
+                <fullName>9th</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>9th</label>
             </value>
             <value>
                 <fullName>Associate Degree</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Associate Degree</label>
             </value>
             <value>
                 <fullName>Bachelor’s Degree</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Bachelor’s Degree</label>
+            </value>
+            <value>
+                <fullName>GED (or other HS equivalent)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GED (or other HS equivalent)</label>
             </value>
             <value>
                 <fullName>Master’s Degree and above</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Master’s Degree and above</label>
             </value>
             <value>
                 <fullName>Prefer not to say</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Prefer not to say</label>
+            </value>
+            <value>
+                <fullName>Some college or technical school</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Some college or technical school</label>
             </value>
         </valueSetDefinition>
     </valueSet>
