@@ -1,0 +1,75 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "1cffe1cd-2c88-4c28-8d89-15c1dd55e44b",
+  "label" : "Application",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "e8909cfe-5a46-4af1-b8d0-adbe0e7d2f64",
+          "columns" : [ {
+            "UUID" : "c55881b5-b2e2-43f0-87dd-4a8b1b9deddc",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "e8909cfe-5a46-4af1-b8d0-adbe0e7d2f64",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "c:providerApplication",
+          "id" : "30bcdf3c-072f-4f66-bc31-29aac8d8215d",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:univApp",
+          "id" : "39fbb5d9-f090-47b7-b91b-15364365eec8",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "c55881b5-b2e2-43f0-87dd-4a8b1b9deddc",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8eca827e-81b3-45f9-853f-18a533eace1b",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Application"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "316bb73d-41a9-4e87-a45e-9c3a96d464e3",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c5c92073-583a-4316-b924-cb7555eef27a",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-application"
+}

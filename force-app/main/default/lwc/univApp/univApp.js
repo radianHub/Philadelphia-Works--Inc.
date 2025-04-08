@@ -9,11 +9,15 @@ import getBoolFieldValue from '@salesforce/apex/UniversalApp.queryForBoolean';
 import saveSignature from '@salesforce/apex/SignatureUtils.saveSignature';
 import submitChildObjects from '@salesforce/apex/UniversalApp.submitChildObjects';
 
+import tmpl from './univApp.html';
+import tmpl_toggle from './univApp_toggle.html';
+
 export default class UnivApp extends NavigationMixin(LightningElement) {
 	// # PUBLIC PROPERTIES
 	@api recordId;
 	@api appDevName;
 	@api canShowRestart;
+	@api toggleEdit;
 
 	// # APP DATA
 	appData;
@@ -32,6 +36,7 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	finished; // After submission - set fields to read-only
 	_cssLoaded;
 	@track files = {};
+	isEditing;
 
 	// # PAGE DATA
 	pageIndex = [];
@@ -64,6 +69,29 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 	savingData = false;
 
 	// # LIFECYCLE HOOKS
+
+	render() {
+		if (this.toggleEdit) {
+			return tmpl_toggle;
+		}
+		return tmpl;
+	}
+
+	handleEdit() {
+		this.isEditing = true;
+	}
+
+	handleCancel() {
+		this.isEditing = false;
+	}
+
+	get showEdit() {
+		return this.toggleEdit && !this.isEditing;
+	}
+
+	get showSave() {
+		return this.toggleEdit && this.isEditing;
+	}
 
 	// * ESTABLISH UNIVERSAL APP DATA
 	connectedCallback() {
@@ -223,6 +251,8 @@ export default class UnivApp extends NavigationMixin(LightningElement) {
 					if (!isSaveForLater) {
 						window.location.reload();
 					}
+
+					this.isEditing = false;
 				} else if (result.error) {
 					this.finished = false;
 					this.alert = result.error;
