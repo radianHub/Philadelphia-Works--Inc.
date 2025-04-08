@@ -33,7 +33,7 @@
             <targetReference>Loop_through_Session_Record_Type</targetReference>
         </connector>
     </assignments>
-    <description>When Job Seeker Contact is updated, update associated Job Applications in the current Session</description>
+    <description>Fix school fields</description>
     <environments>Default</environments>
     <interviewLabel>Contact - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contact - After Record Save</label>
@@ -328,7 +328,7 @@
         <inputAssignments>
             <field>Applicants_Current_Most_Recent_School__c</field>
             <value>
-                <stringValue>$Record.School__c</stringValue>
+                <elementReference>$Record.School__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
