@@ -31,7 +31,7 @@ public class JobApplicationTriggerHandler {
                 List<Launchpad__Applicant_Tracking__c> tempApplicationList = new List<Launchpad__Applicant_Tracking__c>();
                 Launchpad__Applicant_Tracking__c highestScoredApplication = null;
                 for(Launchpad__Applicant_Tracking__c relatedApplication : passingContactToApplicationsMap.get(application.Launchpad__Participant__c)){
-                    if(relatedApplication.Launchpad__Stage__c != 'Passed' && relatedApplication.Launchpad__Stage__c != 'Waitlisted'){
+                    if(relatedApplication.Launchpad__Stage__c != 'Passed' && relatedApplication.Launchpad__Stage__c != 'Shortlisted'){
                         if(relatedApplication.previous_stage__c == 'Provider Selected' || relatedApplication.Launchpad__Stage__c == 'Provider Selected'){
                             if(highestScoredApplication == null){
                                 highestScoredApplication = relatedApplication;
