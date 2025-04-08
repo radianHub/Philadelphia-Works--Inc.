@@ -40,7 +40,7 @@ public with sharing class ProviderApplicantsController {
 		String query =
 			'SELECT Id, Provider_Rank__c, Launchpad__Participant__r.Name, ' +
 			'Launchpad__Job_Order__c, Launchpad__Job_Order__r.Name, ' +
-			'Launchpad__Participant__r.Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, ' +
+			'Launchpad__Participant__r.Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, Launchpad__Participant__c, ' +
 			'CreatedDate, RecordTypeId ' +
 			'FROM Launchpad__Applicant_Tracking__c ' +
 			'WHERE Launchpad__Stage__c != \'In Progress\' ' +
