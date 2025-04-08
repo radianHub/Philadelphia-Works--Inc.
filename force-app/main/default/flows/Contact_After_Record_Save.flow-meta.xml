@@ -254,12 +254,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Applicant_s_Current_Most_Recent_School__c</field>
-            <value>
-                <elementReference>$Record.School__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Applicant_s_Date_of_Birth_MM_DD_YYYY__c</field>
             <value>
                 <elementReference>$Record.Birthdate</elementReference>
@@ -329,6 +323,12 @@
             <field>Applicant_s_Street_Address__c</field>
             <value>
                 <elementReference>$Record.MailingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Applicants_Current_Most_Recent_School__c</field>
+            <value>
+                <stringValue>$Record.School__c</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
