@@ -219,7 +219,7 @@
             <targetReference>Get_Related_Job_Applications</targetReference>
         </connector>
         <object>Launchpad__Applicant_Tracking__c</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
