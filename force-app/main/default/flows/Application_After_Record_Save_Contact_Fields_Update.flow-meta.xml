@@ -218,7 +218,7 @@
         <inputAssignments>
             <field>School__c</field>
             <value>
-                <stringValue>$Record.Applicant_s_Current_Most_Recent_School__c</stringValue>
+                <elementReference>$Record.Applicants_Current_Most_Recent_School__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
