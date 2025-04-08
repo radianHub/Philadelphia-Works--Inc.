@@ -2,64 +2,45 @@
   "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
   "componentName" : "siteforce:sldsOneColLayout",
   "dataProviders" : [ ],
-  "id" : "e7cb22d2-e1a6-4802-9920-e6991029c67f",
+  "id" : "bf911fc6-f2a2-4f87-9b54-409a4f58b4c6",
   "label" : "Candidate Applications",
   "regions" : [ {
-    "id" : "abf8d9bc-6115-46ac-bf30-d410375909bf",
-    "regionName" : "header",
-    "type" : "region"
-  }, {
     "components" : [ {
       "componentAttributes" : {
         "applicationListHeader" : "Applications",
-        "contactUsButtonLabel" : "Contact Us Button Label",
+        "contactUsButtonLabel" : "Contact Applicant",
         "contactUsCancelButtonLabel" : "Cancel",
-        "contactUsDescription" : "Contact Us Description",
-        "contactUsHeader" : "Contact Us Header",
-        "contactUsPlaceholderText" : "Placeholder",
+        "contactUsDescription" : "You can send an email to the applicant from here.",
+        "contactUsHeader" : "Want to Contact the Applicant?",
+        "contactUsPlaceholderText" : "Type here...",
         "contactUsSubmitButtonLabel" : "Submit",
-        "contactUsSuccessMessage" : "Success",
-        "description" : "Description",
+        "contactUsSuccessMessage" : "Success!",
+        "description" : "A list of applications",
+        "header" : "Submitted Job Applications",
         "headerColor" : "rgb(84, 105, 141)",
-        "noJobApplicationMessage" : "No applications found",
-        "redirectButtonLabel" : "Search",
-        "redirectButtonRedirectUrl" : "",
-        "showContactUsButton" : "",
-        "showRedirectButton" : ""
+        "noJobApplicationMessage" : "No Applications to show",
+        "redirectButtonLabel" : "Redirect Button",
+        "showContactUsButton" : true,
+        "showRedirectButton" : true,
+        "tile1Name" : "New Applications",
+        "tile2Name" : "Pending Applications",
+        "tile3Name" : "Processed Applications"
       },
-      "componentName" : "LaunchpadCo:lexCandidateApplicationsAura",
-      "id" : "dc966bbf-4d55-449e-aabc-df912b35f7f8",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    }, {
-      "componentAttributes" : {
-        "enableInlineEdit" : false,
-        "filterName" : "Provider_Selected_Applications",
-        "layout" : "FULL",
-        "pageSize" : 25,
-        "scope" : "Launchpad__Applicant_Tracking__c",
-        "showActionBar" : true,
-        "showChartsPanel" : true,
-        "showDisplay" : "showall",
-        "showFilterPanel" : true,
-        "showImageIcon" : true,
-        "showManualRefreshButton" : true,
-        "showObjectName" : true,
-        "showPinnedList" : true,
-        "showSearchBar" : true
-      },
-      "componentName" : "forceCommunity:objectHome",
-      "id" : "c00cf1f1-1022-4283-9f33-75f25637fa47",
+      "componentName" : "LaunchpadCo:lexCandidateApplication",
+      "id" : "7f63b56a-9107-4243-bf27-bced07f0d3dd",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "ab2dcc81-7035-4346-8eba-65aadf2f69e6",
+    "id" : "89c4ddf8-a53c-452f-8329-08f63535fb80",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "e4ec575c-aa3b-42c2-b446-2eb5f0b15604",
     "regionName" : "content",
     "type" : "region"
   }, {
-    "id" : "e346a7d4-4043-4674-bf63-d9c432e9371f",
+    "id" : "8c6bd45d-3199-4e19-ac45-abba01bc3e43",
     "regionName" : "footer",
     "type" : "region"
   }, {
@@ -70,11 +51,11 @@
         "title" : "Candidate Applications"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "21871e46-1e6d-4596-95c1-078774dafffa",
+      "id" : "2c5cb294-d656-43ef-8fba-d4fe35c9bd29",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "94cd4049-dea8-43d5-a356-5091e44e58ea",
+    "id" : "64448258-e05b-4a53-b23e-c4bf1f7ab671",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],

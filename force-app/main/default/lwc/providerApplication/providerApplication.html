@@ -1,0 +1,33 @@
+<template>
+	<template lwc:if={canView}>
+		<lightning-layout>
+			<lightning-layout-item
+				padding="around-small"
+				size="12"
+				medium-device-size="8">
+				<c-univ-app
+					record-id={recordId}
+					app-dev-name="C2L_Program_Contact"
+					toggle-edit="true"></c-univ-app>
+			</lightning-layout-item>
+			<lightning-layout-item
+				padding="around-small"
+				size="12"
+				medium-device-size="4">
+				<c-document-checklist
+					record-id={recordId}
+					title="Document Checklist"
+					description="Please review the documents below for accuracy."
+					checklist-name="C2L_PHL_Youth_Document_Checklist"
+					lookup-field="Launchpad__Contact__c"
+					review-mode="true"></c-document-checklist>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+	<template lwc:else>
+		<p
+			class="slds-var-m-around_xx-large slds-var-p-around_xx-large slds-text-align_center slds-text-heading_medium">
+			You do not have permission to view this page.
+		</p>
+	</template>
+</template>
