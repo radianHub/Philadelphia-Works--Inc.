@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
+    <description>Fixed flow entry criteria</description>
     <environments>Default</environments>
     <formulas>
         <name>PriorValueInProgress</name>
@@ -188,7 +189,7 @@
         <inputAssignments>
             <field>MiddleName</field>
             <value>
-                <elementReference>$Record.Applicant_s_Legal_Middle_Name__c</elementReference>
+                <elementReference>$Record.Middle_Name__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -315,7 +316,7 @@
         </connector>
         <filterFormula>AND(ISPICKVAL({!$Record__Prior.Launchpad__Stage__c},&apos;In Progress&apos;), ISPICKVAL({!$Record.Launchpad__Stage__c},&apos;Submitted&apos;))</filterFormula>
         <object>Launchpad__Applicant_Tracking__c</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

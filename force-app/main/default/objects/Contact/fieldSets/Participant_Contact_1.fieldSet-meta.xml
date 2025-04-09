@@ -3,7 +3,17 @@
     <fullName>Participant_Contact_1</fullName>
     <description>Editable Contact information on the Youth Portal (Part 1/3)</description>
     <displayedFields>
-        <field>Name</field>
+        <field>FirstName</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>MiddleName</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>LastName</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
@@ -23,29 +33,19 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
+        <field>Age_at_Start_of_Program__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
         <field>Launchpad__Unique_ID_SSN__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>MobilePhone</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>HomePhone</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Launchpad__Work_Phone__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>OtherPhone</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>Email</field>
@@ -58,6 +58,11 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
+        <field>Country_of_Nationality__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
         <field>MailingStreet</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
@@ -65,15 +70,15 @@
     <displayedFields>
         <field>MailingCity</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>MailingState</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
         <field>MailingPostalCode</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Country_of_Nationality__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
