@@ -5,6 +5,10 @@
   "id" : "ab52801a-1e97-4d9c-b607-6813db0ad9e9",
   "label" : "My Applications",
   "regions" : [ {
+    "id" : "04bfa665-0764-470d-8f5b-b1629df0f04c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
     "components" : [ {
       "componentAttributes" : {
         "appDevName" : "C2L_Program_Application",
@@ -16,10 +20,6 @@
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "04bfa665-0764-470d-8f5b-b1629df0f04c",
-    "regionName" : "header",
-    "type" : "region"
-  }, {
     "id" : "34a0cd8a-a5a0-4a53-984f-a36754e3c2a3",
     "regionName" : "content",
     "type" : "region"
