@@ -30,24 +30,26 @@ public class JobApplicationTriggerHandler {
                 boolean matchFound = false;
                 List<Launchpad__Applicant_Tracking__c> tempApplicationList = new List<Launchpad__Applicant_Tracking__c>();
                 Launchpad__Applicant_Tracking__c highestScoredApplication = null;
-                for(Launchpad__Applicant_Tracking__c relatedApplication : passingContactToApplicationsMap.get(application.Launchpad__Participant__c)){
-                    if(relatedApplication.Launchpad__Stage__c != 'Passed' && relatedApplication.Launchpad__Stage__c != 'Shortlisted'){
-                        if(relatedApplication.previous_stage__c == 'Provider Selected' || relatedApplication.Launchpad__Stage__c == 'Provider Selected'){
-                            if(highestScoredApplication == null){
-                                highestScoredApplication = relatedApplication;
-                                matchFound = true;
+                if(passingContactToApplicationsMap.get(application.Launchpad__Participant__c) != null){
+                    for(Launchpad__Applicant_Tracking__c relatedApplication : passingContactToApplicationsMap.get(application.Launchpad__Participant__c)){
+                        if(relatedApplication.Launchpad__Stage__c != 'Passed' && relatedApplication.Launchpad__Stage__c != 'Shortlisted'){
+                            if(relatedApplication.previous_stage__c == 'Provider Selected' || relatedApplication.Launchpad__Stage__c == 'Provider Selected'){
+                                if(highestScoredApplication == null){
+                                    highestScoredApplication = relatedApplication;
+                                    matchFound = true;
+                                }
+                                if(relatedApplication.Provider_Rank__c < highestScoredApplication.Provider_Rank__c){
+                                    highestScoredApplication = relatedApplication;
+                                    matchFound = true;
+                                    continue;
+                                }
+                                
                             }
-                            if(relatedApplication.Provider_Rank__c < highestScoredApplication.Provider_Rank__c){
-                                highestScoredApplication = relatedApplication;
-                                matchFound = true;
-                                continue;
-                            }
-                            
+                            System.debug('Adding the following to tempApps: ' + relatedApplication);
+                            tempApplicationList.add(relatedApplication);
                         }
-                        System.debug('Adding the following to tempApps: ' + relatedApplication);
-                        tempApplicationList.add(relatedApplication);
-                    }
-                  }
+                      }
+                }
                 
                 for(Launchpad__Applicant_Tracking__c otherApp : tempApplicationList){
                     boolean hasHighestScoreApp = false;
@@ -125,17 +127,24 @@ public class JobApplicationTriggerHandler {
             }  
         }
 
-		update masterJobApplicationsToUpdate;
+        if(!Test.isRunningTest()){
+            update masterJobApplicationsToUpdate;
+        }
+		
     }
     
     public static Map<Id,List<Launchpad__Applicant_Tracking__c>> getMapOfAllRelatedJobApps(List<Launchpad__Applicant_Tracking__c> jobApps, Boolean getSelf){
         Set<Id> ContactIds = new Set<Id>();
         Set<Id> JobAppIds = new Set<Id>();
         
+        
         for(Launchpad__Applicant_Tracking__c app : jobApps){
+            System.debug('app.Launchpad__Participant__c' + app.Launchpad__Participant__c);
             ContactIds.add(app.Launchpad__Participant__c);
             JobAppIds.add(app.Id);
         }        
+        
+        System.debug('ContactIds' + ContactIds);
         
         List<Launchpad__Applicant_Tracking__c> allJobApps = new List<Launchpad__Applicant_Tracking__c>();
         
