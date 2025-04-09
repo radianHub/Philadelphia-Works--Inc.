@@ -43,6 +43,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Any_other_source_of_income__c</field>
+            <value>
+                <elementReference>$Record.Any_other_source_not_named_above__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Birthdate</field>
             <value>
                 <elementReference>$Record.Applicant_s_Date_of_Birth_MM_DD_YYYY__c</elementReference>
@@ -103,6 +109,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Explanation_of_Attestations__c</field>
+            <value>
+                <elementReference>$Record.Explanation_of_Attestations__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Government_Benefits_Applicant_Receives__c</field>
             <value>
                 <elementReference>$Record.What_Governmental_Benefits_Does__c</elementReference>
@@ -130,6 +142,24 @@
             <field>How_Many_Children_in_Youth_s_Household__c</field>
             <value>
                 <elementReference>$Record.How_Many_Children_in_Youth_s_Household__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Income__c</field>
+            <value>
+                <elementReference>$Record.Income_Attestation__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Income_from_operation_of_a_business__c</field>
+            <value>
+                <elementReference>$Record.Income_from_operation_of_a_business__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Interest_in_dividends_from_assets__c</field>
+            <value>
+                <elementReference>$Record.Interest_in_dividends_from_assets__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -205,6 +235,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Public_Assistance_Payments__c</field>
+            <value>
+                <elementReference>$Record.Public_assistance_payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Race_Ethnicity__c</field>
             <value>
                 <elementReference>$Record.Race_and_or_Ethnicity__c</elementReference>
@@ -226,6 +262,24 @@
             <field>Sex_Assigned_At_Birth__c</field>
             <value>
                 <elementReference>$Record.Applicant_s_Sex_Assigned_at_Birth__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Social_Security_or_Other_Payments__c</field>
+            <value>
+                <elementReference>$Record.Social_Security_or_Other_Payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unemployment_or_disability_payments__c</field>
+            <value>
+                <elementReference>$Record.Unemployment_or_disability_payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Wages_from_Employment__c</field>
+            <value>
+                <elementReference>$Record.Wages_from_Employment__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
