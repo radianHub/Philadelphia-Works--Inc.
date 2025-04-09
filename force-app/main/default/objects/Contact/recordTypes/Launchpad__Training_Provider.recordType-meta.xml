@@ -6,6 +6,17 @@
     <description>Contacts of training providers.</description>
     <label>Training Provider</label>
     <picklistValues>
+        <picklist>Any_other_source_of_income__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Attestation__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -1040,6 +1051,28 @@
     </picklistValues>
     <picklistValues>
         <picklist>Income__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Income_from_operation_of_a_business__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interest_in_dividends_from_assets__c</picklist>
         <values>
             <fullName>No</fullName>
             <default>false</default>
@@ -5467,6 +5500,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Public_Assistance_Payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Race_Ethnicity__c</picklist>
         <values>
             <fullName>American Indian or Alaska Native</fullName>
@@ -6877,6 +6921,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Social_Security_or_Other_Payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Supervisor_Clearances__c</picklist>
         <values>
             <fullName>No</fullName>
@@ -6888,7 +6943,29 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Unemployment_or_disability_payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>W9__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wages_from_Employment__c</picklist>
         <values>
             <fullName>No</fullName>
             <default>false</default>
