@@ -33,7 +33,6 @@
             <targetReference>Loop_through_Session_Record_Type</targetReference>
         </connector>
     </assignments>
-    <description>Fix school fields</description>
     <environments>Default</environments>
     <interviewLabel>Contact - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contact - After Record Save</label>
@@ -175,6 +174,12 @@
                 <elementReference>FilteredJobApplicationIDs</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Any_other_source_not_named_above__c</field>
+            <value>
+                <elementReference>$Record.Any_other_source_of_income__c</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Applicant_Blind_Difficulty_Seeing__c</field>
             <value>
@@ -374,6 +379,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Explanation_of_Attestations__c</field>
+            <value>
+                <elementReference>$Record.Explanation_of_Attestations__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Guardian_Email__c</field>
             <value>
                 <elementReference>$Record.Guardian_Email__c</elementReference>
@@ -392,6 +403,24 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Income_Attestation__c</field>
+            <value>
+                <elementReference>$Record.Income__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Income_from_operation_of_a_business__c</field>
+            <value>
+                <elementReference>$Record.Income_from_operation_of_a_business__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Interest_in_dividends_from_assets__c</field>
+            <value>
+                <elementReference>$Record.Interest_in_dividends_from_assets__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Is_this_Youth_TANF_Eligible__c</field>
             <value>
                 <elementReference>$Record.Is_This_Youth_TANF_Eligible__c</elementReference>
@@ -404,6 +433,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Public_assistance_payments__c</field>
+            <value>
+                <elementReference>$Record.Public_Assistance_Payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Race_and_or_Ethnicity__c</field>
             <value>
                 <elementReference>$Record.Race_Ethnicity__c</elementReference>
@@ -413,6 +448,24 @@
             <field>Relationship_to_this_Young_Person__c</field>
             <value>
                 <elementReference>$Record.Relationship_To_This_Young_Person__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Social_Security_or_Other_Payments__c</field>
+            <value>
+                <elementReference>$Record.Social_Security_or_Other_Payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unemployment_or_disability_payments__c</field>
+            <value>
+                <elementReference>$Record.Unemployment_or_disability_payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Wages_from_Employment__c</field>
+            <value>
+                <elementReference>$Record.Wages_from_Employment__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
