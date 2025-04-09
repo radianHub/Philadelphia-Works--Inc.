@@ -147,6 +147,7 @@ public class JobApplicationTriggerHandler {
                          									 AND Program__r.Launchpad__Active__c = 'Yes'
 															 AND Program__r.RecordType.Name = 'Session' 
                                                              ]; 
+            System.debug('JON>allJobApps: ' + allJobApps.Size());
         }
         if(getSelf == false){
            allJobApps = [SELECT Id,Launchpad__Stage__c, Previous_Stage__c, Launchpad__Participant__c, Provider_Rank__c  
@@ -172,17 +173,26 @@ public class JobApplicationTriggerHandler {
     }
     
     public static void checkForDuplicates(List<Launchpad__Applicant_Tracking__c> applications){
-        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c WHERE 
+        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Provider_Rank__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c WHERE 
                                                           Program__r.Launchpad__Active__c = 'Yes'
-													      AND Program__r.RecordType.Name = 'Session'];
+													      AND Program__r.RecordType.Name = 'Session'
+                                                          AND Provider_Rank__c = '1'
+                                                           ];
+        
+        Map<String, Launchpad__Applicant_Tracking__c> ssnAppMap = new Map<String, Launchpad__Applicant_Tracking__c>();
+            
+        for(Launchpad__Applicant_Tracking__c app : allApps){
+            if(app.Applicants_Tax_Id__c != null){
+                ssnAppMap.put(app.Applicants_Tax_Id__c, app);
+            } 
+        }
         
         for(Launchpad__Applicant_Tracking__c app : applications){
-            for(Launchpad__Applicant_Tracking__c appInSystem : allApps){
-                if(app.Applicants_Tax_Id__c != null && appInSystem.Applicants_Tax_Id__c != null && app.Applicants_Tax_Id__c == appInSystem.Applicants_Tax_Id__c && app.Id != appInSystem.Id && app.Launchpad__Participant__c != appInSystem.Launchpad__Participant__c){
-                    app.Launchpad__Stage__c = 'Potential Duplicate';
-                }
+            if(ssnAppMap.get(app.Applicants_Tax_Id__c) != null && app.Id != ssnAppMap.get(app.Applicants_Tax_Id__c).Id && app.Launchpad__Participant__c != ssnAppMap.get(app.Applicants_Tax_Id__c).Launchpad__Participant__c){
+                app.Applicants_Tax_Id__c.addError('Applications for this person already exist in the system.');
             }
         }
+
     }
    
 
