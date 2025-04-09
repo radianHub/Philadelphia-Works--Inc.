@@ -1,14 +1,14 @@
 <template>
 	<lightning-modal-header label={title}></lightning-modal-header>
 	<lightning-modal-body>
-		<template if:false={showFrame}>
+		<template lwc:if={canPreview}>
 			<img src={src} />
 		</template>
-		<template if:true={showFrame}>
+		<template lwc:else>
 			View file in downloads
 			<iframe
 				src={src}
-				style="width: 100%; height: 0"></iframe>
+				style="width: 100%; height: 0; visibility: hidden"></iframe>
 		</template>
 	</lightning-modal-body>
 	<lightning-modal-footer>
