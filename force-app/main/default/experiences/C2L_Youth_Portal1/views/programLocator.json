@@ -26,10 +26,19 @@
       "id" : "62bc331a-497d-4b83-8e45-079ad9ab9b10",
       "regions" : [ {
         "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "c:applicantEligibilityAlert",
+          "id" : "c2ef5ebb-60c7-48b7-9630-d8f9061e675f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
           "componentAttributes" : {
             "cardBodyBgColor" : "rgb(235, 235, 235)",
             "cardHeaderColor" : "rgb(38, 105, 168)",
-            "description" : "Select and apply to 3-5 programs that interest you.",
+            "cartDescription" : "You can change the order of your choices by using the arrow.",
+            "cartNotes" : "Important Notes:<br/><p>Please keep in mind that slots at Parks and Recreation Facilities and Free Libraries are very limited, so we suggest that you choose a variety of sites.</p><br/><p>Once you hit the “proceed to application” button, you will not longer be able to change your program selection or order</p>",
+            "description" : "Use the filters to find programs that are best for you. Then scroll to the bottom of the screen to select and apply to 3-5 programs that interest you.",
             "detailsFieldSetApiName" : "Job_Details_Fields",
             "headerColor" : "rgb(38, 105, 168)",
             "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",
