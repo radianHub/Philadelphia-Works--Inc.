@@ -1,5 +1,6 @@
 trigger JobApplicationTrigger on Launchpad__Applicant_Tracking__c (before insert, before update, After insert, after update) {
     if(Trigger.isBefore && (Trigger.isInsert || Trigger.isUpdate) ){
+        
         List<Launchpad__Applicant_Tracking__c> listToMatch = new List<Launchpad__Applicant_Tracking__c>();
         List<Launchpad__Applicant_Tracking__c> listToPass = new List<Launchpad__Applicant_Tracking__c>();
            
@@ -18,6 +19,8 @@ trigger JobApplicationTrigger on Launchpad__Applicant_Tracking__c (before insert
         if(listToMatch.size() > 0 || listToPass.size() > 0){
             JobApplicationTriggerHandler.matchProvider(listToMatch, listToPass);
         }
+        
+        JobApplicationTriggerHandler.checkForDuplicates(Trigger.New);
        
     }
     
