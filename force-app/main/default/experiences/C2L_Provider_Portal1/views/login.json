@@ -7,20 +7,11 @@
   "regions" : [ {
     "components" : [ {
       "componentAttributes" : {
-        "richTextValue" : "<p><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.LaunchpadLogo.1}\"></p>"
-      },
-      "componentName" : "forceCommunity:richTextInline",
-      "id" : "bb1f64e8-c0f1-4a54-a4ed-9b92a48beda0",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    }, {
-      "componentAttributes" : {
         "defaultTilebackgroundColor" : "rgb(8, 92, 160)",
         "description" : "",
-        "footer" : "If you are having trouble logging in or need help, call us at (888)888-8888",
+        "footer" : "If you are having trouble logging in or need help, call us at (833)750-5627",
         "forgotpasswordlabel" : "Please click here if you forgot your password",
-        "header" : "C2L-PHL Provider Log In",
+        "header" : "Welcome to the C2L-PHL Provider Portal!",
         "headerColor" : "rgb(38, 105, 168)",
         "invalidInputErrorMessage" : "The email or password you entered does not match our records. Please try again.",
         "loginButtonLabel" : "Log In",
