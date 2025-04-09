@@ -12,6 +12,10 @@ public class ConsentFormBatchEmail implements Database.Batchable<sObject> {
         List<Messaging.SingleEmailMessage> emailList = new List<Messaging.SingleEmailMessage>();
         EmailTemplate et = [SELECT Id, HtmlValue FROM EmailTemplate WHERE DeveloperName ='Consent_Form_Email_Template'];
         
+        Site site = [SELECT Id FROM Site WHERE UrlPathPrefix = 'youth' LIMIT 1];
+
+		String communityUrl = [SELECT SecureURL FROM SiteDetail WHERE DurableId =: site.Id].SecureUrl;
+        
         for(Launchpad__Applicant_Tracking__c app : scope){
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
             
@@ -19,12 +23,11 @@ public class ConsentFormBatchEmail implements Database.Batchable<sObject> {
             
             List<String> toAddresses = new List<String>();
             toAddresses.add(app.Guardian_Email__c); 
-            
             mail.setToAddresses(toAddresses);  
            
-            mail.setSubject('Test Email from Apex'); 
+            mail.setSubject('Approve Consents for Applicant'); 
             
-            String href = 'https://philaworks--developer.sandbox.my.site.com/youth/s/consentform?recordId=' + String.valueOf(app.Id) ;
+            String href = communityUrl + '/s/consentform?recordId=' + String.valueOf(app.Id) ;
             
             String emailBody = et?.HtmlValue;
             emailBody += ' <br/> <a href='+href+' target=_blank> Click here to view the Consent Form</a><br><br>';
@@ -32,7 +35,6 @@ public class ConsentFormBatchEmail implements Database.Batchable<sObject> {
             
             mail.setSaveAsActivity(false);
             mail.setUseSignature(false);
-            System.debug('About to add mail');
             emailList.add(mail); 
         }
         
