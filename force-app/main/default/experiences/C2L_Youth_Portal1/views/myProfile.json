@@ -22,7 +22,7 @@
         "myDocumentsHeader" : "My Documents",
         "mySkillsHeader" : "My Skills",
         "noSkillMessage" : "You have not selected any Skills yet.  Please add your Skills.",
-        "redirectmyProfileURL" : "/Participants/s/my-profile",
+        "redirectmyProfileURL" : "/youth/s/my-profile",
         "removeSkillButtonLabel" : "Remove Skill",
         "requiredFieldMessage" : "Please populate the required Fields",
         "requiredSkillsMessage" : "Please select at least {0} Skills",

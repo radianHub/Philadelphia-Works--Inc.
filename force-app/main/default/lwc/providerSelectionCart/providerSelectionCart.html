@@ -1,5 +1,7 @@
 <template>
-	<lightning-card class="provider-selection-cart" label="Your Selection" >
+	<lightning-card
+		class="provider-selection-cart"
+		label="Your Selection">
 		<div
 			lwc:if={standalone}
 			slot="title"
@@ -11,7 +13,7 @@
 			</h2>
 		</div>
 		<div class="slds-var-m-around_medium">
-			<p class="slds-var-m-bottom_x-small">Select and rank 3-5 programs in order of preference</p>
+			<p class="slds-var-m-bottom_x-small">{cartDescription}</p>
 			<div>
 				<template iterator:provider={selectedProviders}>
 					<lightning-layout
@@ -54,14 +56,30 @@
 			</div>
 
 			<div lwc:if={standalone}>
-				<p class="slds-var-m-bottom_x-small"><strong>{selectedProvidersCount}</strong> of 3-5 programs selected</p>
-				<p lwc:if={canProceed} class="slds-var-m-bottom_x-small slds-text-color_success">
-					<lightning-icon class="slds-var-m-right_x-small" icon-name="utility:success" variant="success" alternative-text="Ready" title="Ready" size="small"></lightning-icon>
+				<p class="slds-var-m-bottom_x-small">
+					<strong>{selectedProvidersCount}</strong> of 3-5 programs selected
+				</p>
+				<p
+					lwc:if={canProceed}
+					class="slds-var-m-bottom_x-small slds-text-color_success">
+					<lightning-icon
+						class="slds-var-m-right_x-small"
+						icon-name="utility:success"
+						variant="success"
+						alternative-text="Ready"
+						title="Ready"
+						size="small"></lightning-icon>
 					Ready to proceed
 				</p>
 				<c-create-application
 					selected-providers={selectedProviders}
 					disabled={isDisabled}></c-create-application>
+
+				<div
+					lwc:if={cartNotes}
+					class="slds-var-m-top_small">
+					<lightning-formatted-rich-text value={cartNotes}></lightning-formatted-rich-text>
+				</div>
 			</div>
 		</div>
 	</lightning-card>
