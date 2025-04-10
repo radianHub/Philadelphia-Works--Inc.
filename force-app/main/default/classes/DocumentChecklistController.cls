@@ -265,7 +265,7 @@ public with sharing class DocumentChecklistController {
 			return [
 				SELECT Id, Title, FileExtension, ContentDocumentId, ContentSize, ContentUrl, VersionData, VersionDataURL
 				FROM ContentVersion
-				WHERE ContentDocumentId = :contentDocumentId AND FileExtension IN ('docx', 'pdf', 'jpeg', 'png', 'jpg')
+				WHERE ContentDocumentId = :contentDocumentId
 				WITH USER_MODE
 				LIMIT 1
 			];

@@ -5,6 +5,14 @@
   "id" : "ec6133bb-2ae3-42c4-8faa-ce9a9543c2b0",
   "label" : "Home - Guest",
   "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:applicantEligibilityAlert",
+      "id" : "433038d3-31c5-4b40-9af3-1dd40d3bfe76",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
     "id" : "a35c1962-8bd1-4781-9dda-7c995a1eec35",
     "regionName" : "header",
     "type" : "region"
@@ -80,7 +88,7 @@
       "componentAttributes" : {
         "cardBodyBgColor" : "rgb(235, 235, 235)",
         "cardHeaderColor" : "rgb(38, 105, 168)",
-        "description" : "Find a program that fits your needs.",
+        "description" : "Use the filters to find programs that are best for you",
         "detailsFieldSetApiName" : "Default_Provider_Search_Field_Set",
         "headerColor" : "rgb(38, 105, 168)",
         "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",

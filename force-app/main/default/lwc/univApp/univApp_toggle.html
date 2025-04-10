@@ -1,0 +1,535 @@
+<template>
+	<div class="rh_style"></div>
+
+	<article
+		class="rh_page slds-card slds-is-relative"
+		if:true={appData}>
+		<lightning-spinner
+			lwc:if={isLoading}
+			alternative-text="Loading"
+			size="medium"></lightning-spinner>
+		<lightning-record-edit-form
+			lwc:if={isEditing}
+			record-id={recordId}
+			object-api-name={appData.Object__c}
+			onsubmit={handleSubmit}
+			onsuccess={handleSuccess}
+			onerror={handleError}>
+			<div class="rh_page-header slds-card__header slds-grid">
+				<header
+					if:true={appData}
+					class="slds-media slds-media_center slds-has-flexi-truncate">
+					<div
+						if:true={appData.Logo_URL__c}
+						class="slds-media__figure">
+						<img src={appData.Logo_URL__c} />
+					</div>
+					<div class="slds-media__body">
+						<h2 class="slds-card__header-title"></h2>
+					</div>
+				</header>
+				<div if:true={showSaveForLater}>
+					<lightning-button
+						label="Save for Later"
+						name="saveForLater"
+						onclick={saveForLater}
+						variant="brand"></lightning-button>
+				</div>
+			</div>
+
+			<div class="rh_page-inner slds-card__body slds-card__body_inner">
+				<div
+					if:true={alert}
+					class={alertClass}
+					role="status">
+					<div class="slds-media__figure">
+						<span
+							class={alertSpan}
+							title="alert">
+							<lightning-icon
+								alternative-text="Alert Icon"
+								icon-name={alertIcon}
+								size="x-small"
+								variant="inverse"></lightning-icon>
+						</span>
+					</div>
+					<div class="slds-media__body">
+						<p>{alert}</p>
+					</div>
+				</div>
+
+				<template if:true={page}>
+					<template
+						for:each={currentPage}
+						for:item="section">
+						<div
+							lwc:if={section.data.DisplayByDefault__c}
+							key={section.data.Id}
+							class="rh_section-div">
+							<header
+								if:true={section.data.Section_Header__c}
+								class="slds-text-heading_medium">
+								<h2 class="rh_section-h2 slds-align_absolute-center slds-hyphenate">
+									{section.data.Section_Header__c}
+								</h2>
+							</header>
+							<lightning-formatted-rich-text
+								if:true={section.data.Section_Body__c}
+								value={section.data.Section_Body__c}></lightning-formatted-rich-text>
+
+							<template if:true={section.data.isEnableChildRecords__c}>
+								<div class="slds-var-p-bottom_small">
+									<c-univ-app-child-object
+										object-name={section.data.ChildObject__c}
+										field-set={section.data.ChildFieldSet__c}
+										title={section.data.ChildTableTitle__c}
+										parent-field={section.data.ParentField__c}
+										add-button-label={section.data.AddChildButtonLabel__c}
+										onalert={handleAlert}
+										onupdate={updateChild}></c-univ-app-child-object>
+								</div>
+							</template>
+
+							<!-- Wrap input fields in SLDS Grid -->
+							<template if:true={section.rows}>
+								<template
+									for:each={section.rows}
+									for:item="row">
+									<div
+										key={row.id}
+										class="rh_field-row slds-grid slds-gutters slds-wrap">
+										<template
+											for:each={row.fields}
+											for:item="field">
+											<div
+												key={field.api}
+												class={section.columnClass}>
+												<template if:true={field.hasAltLabel}>
+													<template if:true={hasValue}>
+														<div class="altLabelContainer">
+															<div class="altLabel slds-form-element__label">
+																<template lwc:if={field.isLink}
+																	><div style="height: 24px"></div
+																></template>
+																<template lwc:else>
+																	<div if:false={field.isBool}>
+																		<div
+																			if:true={field.req}
+																			class="req">
+																			*
+																		</div>
+																	</div>
+																	<label class="slds-form-element__label">
+																		{field.altLabel}
+																	</label>
+																</template>
+															</div>
+															<template lwc:if={field.isFile}>
+																<c-univ-app-file
+																	field={field}
+																	onfileselected={handleSelectFile}
+																	onfileremoved={handleRemoveFile}></c-univ-app-file>
+															</template>
+															<template lwc:elseif={field.isLink}>
+																<lightning-button
+																	label={field.altLabel}
+																	onclick={handleClickLink}
+																	data-url={field.linkURL}></lightning-button>
+															</template>
+															<template lwc:else>
+																<lightning-input-field
+																	field-name={field.api}
+																	required={field.req}
+																	variant="label-hidden"
+																	value={value}
+																	onchange={onChangeHandler}
+																	disabled={finished}>
+																</lightning-input-field>
+															</template>
+														</div>
+													</template>
+													<template if:false={hasValue}>
+														<div class="altLabelContainer">
+															<div
+																class="altLabel"
+																id={field.api}>
+																<template lwc:if={field.isLink}>
+																	<div style="height: 24px"></div>
+																</template>
+																<template lwc:else>
+																	<div if:false={field.isBool}>
+																		<div
+																			if:true={field.req}
+																			class="req slds-required">
+																			*
+																		</div>
+																	</div>
+																	<label class="slds-form-element__label">
+																		{field.altLabel}
+																	</label>
+																</template>
+															</div>
+															<template lwc:if={field.isFile}>
+																<c-univ-app-file
+																	field={field}
+																	onfileselected={handleSelectFile}
+																	onfileremoved={handleRemoveFile}></c-univ-app-file>
+															</template>
+															<template lwc:elseif={field.isLink}>
+																<lightning-button
+																	label={field.altLabel}
+																	onclick={handleClickLink}
+																	data-url={field.linkURL}></lightning-button>
+															</template>
+															<template lwc:else>
+																<lightning-input-field
+																	field-name={field.api}
+																	required={field.req}
+																	value={field.value}
+																	variant="label-hidden"
+																	onchange={onChangeHandler}
+																	disabled={finished}>
+																</lightning-input-field>
+															</template>
+														</div>
+													</template>
+												</template>
+												<template if:false={field.hasAltLabel}>
+													<template if:true={hasValue}>
+														<lightning-input-field
+															field-name={field.api}
+															required={field.req}
+															variant="label-stacked"
+															value={value}
+															onchange={onChangeHandler}
+															disabled={finished}></lightning-input-field>
+													</template>
+													<template if:false={hasValue}>
+														<template lwc:if={field.isFile}>
+															<c-univ-app-file
+																field={field}
+																onfileselected={handleSelectFile}
+																onfileremoved={handleRemoveFile}></c-univ-app-file>
+														</template>
+														<template lwc:else>
+															<lightning-input-field
+																field-name={field.api}
+																required={field.req}
+																variant="label-stacked"
+																value={field.value}
+																onchange={onChangeHandler}
+																disabled={finished}></lightning-input-field>
+														</template>
+													</template>
+												</template>
+											</div>
+										</template>
+									</div>
+								</template>
+							</template>
+						</div>
+					</template>
+				</template>
+			</div>
+
+			<div class="rh_page-footer slds-modal__footer btnContainer">
+				<div if:true={showRestart}>
+					<lightning-button
+						label="Restart"
+						name="restart"
+						onclick={restart}></lightning-button>
+				</div>
+				<div if:true={showPrevious}>
+					<lightning-button
+						label="Previous"
+						name="previous"
+						onclick={previous}></lightning-button>
+				</div>
+				<div class="slds-col_bump-left btnSubContainer">
+					<div if:true={showSignature}>
+						<lightning-button
+							label="Click to Sign"
+							name="signature"
+							onclick={clickSignatureButton}
+							disabled={disableSignature}></lightning-button>
+					</div>
+					<div if:true={showNext}>
+						<lightning-button
+							label="Next"
+							name="next"
+							type="submit"></lightning-button>
+					</div>
+					<div if:true={showSave}>
+						<lightning-button
+							class="slds-var-m-right_x-small"
+							label="Cancel"
+							name="cancel"
+							variant="neutral"
+							onclick={handleCancel}></lightning-button>
+						<lightning-button
+							label="Save"
+							name="save"
+							variant="brand"
+							type="submit"
+							disabled={disableFinish}></lightning-button>
+					</div>
+				</div>
+			</div>
+		</lightning-record-edit-form>
+		<lightning-record-view-form
+			lwc:else
+			record-id={recordId}
+			object-api-name={appData.Object__c}
+			onsubmit={handleSubmit}
+			onsuccess={handleSuccess}
+			onerror={handleError}>
+			<div class="rh_page-header slds-card__header slds-grid">
+				<header
+					if:true={appData}
+					class="slds-media slds-media_center slds-has-flexi-truncate">
+					<div
+						if:true={appData.Logo_URL__c}
+						class="slds-media__figure">
+						<img src={appData.Logo_URL__c} />
+					</div>
+					<div class="slds-media__body">
+						<h2 class="slds-card__header-title"></h2>
+					</div>
+				</header>
+				<div if:true={showSaveForLater}>
+					<lightning-button
+						label="Save for Later"
+						name="saveForLater"
+						onclick={saveForLater}
+						variant="brand"></lightning-button>
+				</div>
+			</div>
+
+			<div class="rh_page-inner slds-card__body slds-card__body_inner">
+				<div
+					if:true={alert}
+					class={alertClass}
+					role="status">
+					<div class="slds-media__figure">
+						<span
+							class={alertSpan}
+							title="alert">
+							<lightning-icon
+								alternative-text="Alert Icon"
+								icon-name={alertIcon}
+								size="x-small"
+								variant="inverse"></lightning-icon>
+						</span>
+					</div>
+					<div class="slds-media__body">
+						<p>{alert}</p>
+					</div>
+				</div>
+
+				<template if:true={page}>
+					<template
+						for:each={currentPage}
+						for:item="section">
+						<div
+							lwc:if={section.data.DisplayByDefault__c}
+							key={section.data.Id}
+							class="rh_section-div">
+							<header
+								if:true={section.data.Section_Header__c}
+								class="slds-text-heading_medium">
+								<h2 class="rh_section-h2 slds-align_absolute-center slds-hyphenate">
+									{section.data.Section_Header__c}
+								</h2>
+							</header>
+							<lightning-formatted-rich-text
+								if:true={section.data.Section_Body__c}
+								value={section.data.Section_Body__c}></lightning-formatted-rich-text>
+
+							<template if:true={section.data.isEnableChildRecords__c}>
+								<div class="slds-var-p-bottom_small">
+									<c-univ-app-child-object
+										object-name={section.data.ChildObject__c}
+										field-set={section.data.ChildFieldSet__c}
+										title={section.data.ChildTableTitle__c}
+										parent-field={section.data.ParentField__c}
+										add-button-label={section.data.AddChildButtonLabel__c}
+										onalert={handleAlert}
+										onupdate={updateChild}></c-univ-app-child-object>
+								</div>
+							</template>
+
+							<!-- Wrap input fields in SLDS Grid -->
+							<template if:true={section.rows}>
+								<template
+									for:each={section.rows}
+									for:item="row">
+									<div
+										key={row.id}
+										class="rh_field-row slds-grid slds-gutters slds-wrap">
+										<template
+											for:each={row.fields}
+											for:item="field">
+											<div
+												key={field.api}
+												class={section.columnClass}>
+												<template if:true={field.hasAltLabel}>
+													<template if:true={hasValue}>
+														<div class="altLabelContainer">
+															<div class="altLabel slds-form-element__label">
+																<template lwc:if={field.isLink}
+																	><div style="height: 24px"></div
+																></template>
+																<template lwc:else>
+																	<div if:false={field.isBool}>
+																		<div
+																			if:true={field.req}
+																			class="req">
+																			*
+																		</div>
+																	</div>
+																	<label class="slds-form-element__label">
+																		{field.altLabel}
+																	</label>
+																</template>
+															</div>
+															<template lwc:if={field.isFile}>
+																<c-univ-app-file
+																	field={field}
+																	onfileselected={handleSelectFile}
+																	onfileremoved={handleRemoveFile}></c-univ-app-file>
+															</template>
+															<template lwc:elseif={field.isLink}>
+																<lightning-button
+																	label={field.altLabel}
+																	onclick={handleClickLink}
+																	data-url={field.linkURL}></lightning-button>
+															</template>
+															<template lwc:else>
+																<lightning-output-field field-name={field.api}>
+																</lightning-output-field>
+															</template>
+														</div>
+													</template>
+													<template if:false={hasValue}>
+														<div class="altLabelContainer">
+															<div
+																class="altLabel"
+																id={field.api}>
+																<template lwc:if={field.isLink}>
+																	<div style="height: 24px"></div>
+																</template>
+																<template lwc:else>
+																	<div if:false={field.isBool}>
+																		<div
+																			if:true={field.req}
+																			class="req slds-required">
+																			*
+																		</div>
+																	</div>
+																	<label class="slds-form-element__label">
+																		{field.altLabel}
+																	</label>
+																</template>
+															</div>
+															<template lwc:if={field.isFile}>
+																<c-univ-app-file
+																	field={field}
+																	onfileselected={handleSelectFile}
+																	onfileremoved={handleRemoveFile}></c-univ-app-file>
+															</template>
+															<template lwc:elseif={field.isLink}>
+																<lightning-button
+																	label={field.altLabel}
+																	onclick={handleClickLink}
+																	data-url={field.linkURL}></lightning-button>
+															</template>
+															<template lwc:else>
+																<lightning-output-field field-name={field.api}>
+																</lightning-output-field>
+															</template>
+														</div>
+													</template>
+												</template>
+												<template if:false={field.hasAltLabel}>
+													<template if:true={hasValue}>
+														<lightning-output-field
+															field-name={field.api}></lightning-output-field>
+													</template>
+													<template if:false={hasValue}>
+														<template lwc:if={field.isFile}>
+															<c-univ-app-file
+																field={field}
+																onfileselected={handleSelectFile}
+																onfileremoved={handleRemoveFile}></c-univ-app-file>
+														</template>
+														<template lwc:else>
+															<lightning-output-field
+																field-name={field.api}></lightning-output-field>
+														</template>
+													</template>
+												</template>
+											</div>
+										</template>
+									</div>
+								</template>
+							</template>
+						</div>
+					</template>
+				</template>
+			</div>
+
+			<div class="rh_page-footer slds-modal__footer btnContainer">
+				<div if:true={showRestart}>
+					<lightning-button
+						label="Restart"
+						name="restart"
+						onclick={restart}></lightning-button>
+				</div>
+				<div if:true={showPrevious}>
+					<lightning-button
+						label="Previous"
+						name="previous"
+						onclick={previous}></lightning-button>
+				</div>
+				<div class="slds-col_bump-left btnSubContainer">
+					<div if:true={showSignature}>
+						<lightning-button
+							label="Click to Sign"
+							name="signature"
+							onclick={clickSignatureButton}
+							disabled={disableSignature}></lightning-button>
+					</div>
+					<div if:true={showNext}>
+						<lightning-button
+							label="Next"
+							name="next"
+							type="submit"></lightning-button>
+					</div>
+					<div if:true={showEdit}>
+						<lightning-button
+							label="Edit"
+							name="edit"
+							variant="brand"
+							type="submit"
+							onclick={handleEdit}></lightning-button>
+					</div>
+
+					<div if:true={showSave}>
+						<lightning-button
+							class="slds-var-m-right_x-small"
+							label="Cancel"
+							name="cancel"
+							variant="neutral"
+							onclick={handleCancel}></lightning-button>
+						<lightning-button
+							label="Save"
+							name="save"
+							variant="brand"
+							type="submit"
+							disabled={disableFinish}></lightning-button>
+					</div>
+				</div>
+			</div>
+		</lightning-record-view-form>
+	</article>
+</template>

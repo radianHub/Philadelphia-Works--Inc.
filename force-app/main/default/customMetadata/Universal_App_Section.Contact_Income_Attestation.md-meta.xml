@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Contact Income Attestation</label>
+    <protected>false</protected>
+    <values>
+        <field>AddChildButtonLabel__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ChildFieldSet__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ChildObjectRecordLimit__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ChildObject__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ChildTableTitle__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>DisplayByDefault__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Include_Signature__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">11.0</value>
+    </values>
+    <values>
+        <field>Page__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>ParentField__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Section_Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Section_Field_Columns__c</field>
+        <value xsi:type="xsd:string">2</value>
+    </values>
+    <values>
+        <field>Section_Field_Flow__c</field>
+        <value xsi:type="xsd:string">Left Right</value>
+    </values>
+    <values>
+        <field>Section_Field_Set__c</field>
+        <value xsi:type="xsd:string">Income_Attestation</value>
+    </values>
+    <values>
+        <field>Section_Header__c</field>
+        <value xsi:type="xsd:string">Income Attestations</value>
+    </values>
+    <values>
+        <field>Universal_App__c</field>
+        <value xsi:type="xsd:string">C2L_Program_Contact</value>
+    </values>
+    <values>
+        <field>conditionalRender__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>conditionalRequire__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;Fields&quot;: [
+    {
+      &quot;api&quot;: &quot;Wages_from_Employment__c&quot;,
+      &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
+      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+    },
+    {
+      &quot;api&quot;: &quot;Income_from_operation_of_a_business__c&quot;,
+      &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
+      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+    },
+    {
+      &quot;api&quot;: &quot;Interest_in_dividends_from_assets__c&quot;,
+      &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
+      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+    },
+    {
+      &quot;api&quot;: &quot;Social_Security_or_Other_Payments__c&quot;,
+      &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
+      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+    },
+    {
+      &quot;api&quot;: &quot;Unemployment_or_disability_payments__c&quot;,
+      &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
+      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+    },
+    {
+      &quot;api&quot;: &quot;Public_assistance_payments__c&quot;,
+      &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
+      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+    },
+    {
+      &quot;api&quot;: &quot;Any_other_source_not_named_above__c&quot;,
+      &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
+      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+    }
+  ]
+}</value>
+    </values>
+    <values>
+        <field>isEnableChildRecords__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>
