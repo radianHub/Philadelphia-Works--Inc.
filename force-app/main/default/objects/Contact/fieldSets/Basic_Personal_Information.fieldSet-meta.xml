@@ -43,7 +43,7 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>MobilePhone</field>
+        <field>HomePhone</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
