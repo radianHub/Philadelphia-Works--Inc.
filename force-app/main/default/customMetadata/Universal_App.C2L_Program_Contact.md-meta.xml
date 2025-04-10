@@ -8,7 +8,12 @@
     </values>
     <values>
         <field>CSS__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">.rh_section-h2 {
+	background: #2669a8;
+	color: #fff;
+	border: 1px solid #2669a8;
+	border-radius: 2px;
+}</value>
     </values>
     <values>
         <field>Logo_URL__c</field>

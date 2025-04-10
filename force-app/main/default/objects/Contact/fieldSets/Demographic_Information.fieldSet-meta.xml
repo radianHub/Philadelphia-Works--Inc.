@@ -23,7 +23,7 @@
         <isRequired>true</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Current_Most_Recent_School__c</field>
+        <field>School__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>

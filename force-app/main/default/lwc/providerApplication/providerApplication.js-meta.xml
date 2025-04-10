@@ -7,4 +7,13 @@
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+				name="headerColor"
+				type="Color"
+				default="rgb(84, 105, 141)"
+				label="Header Color" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

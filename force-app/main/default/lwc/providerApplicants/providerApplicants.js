@@ -244,6 +244,7 @@ export default class ProviderApplicants extends NavigationMixin(LightningElement
 			},
 			state: {
 				recordId: row.Launchpad__Participant__c,
+				applicationId: row.Id,
 			},
 		}).then((url) => {
 			console.log('url', url);
