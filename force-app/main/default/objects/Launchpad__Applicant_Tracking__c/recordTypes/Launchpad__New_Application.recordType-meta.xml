@@ -2853,6 +2853,10 @@
             <fullName>No</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Income_from_operation_of_a_business__c</picklist>
