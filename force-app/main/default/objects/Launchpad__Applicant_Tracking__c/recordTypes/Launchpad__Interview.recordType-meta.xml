@@ -2000,11 +2000,11 @@
     <picklistValues>
         <picklist>Income_Attestation__c</picklist>
         <values>
-            <fullName>No%2C the applicant receives zero income</fullName>
+            <fullName>No</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Yes%2C the applicant receives income</fullName>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>

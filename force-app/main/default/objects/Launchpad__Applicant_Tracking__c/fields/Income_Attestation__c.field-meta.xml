@@ -12,12 +12,12 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Yes, the applicant receives income</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
                 <label>Yes</label>
             </value>
             <value>
-                <fullName>No, the applicant receives zero income</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
                 <label>No</label>
             </value>
