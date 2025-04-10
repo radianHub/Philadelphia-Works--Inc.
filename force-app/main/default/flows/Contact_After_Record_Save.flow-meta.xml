@@ -33,6 +33,7 @@
             <targetReference>Loop_through_Session_Record_Type</targetReference>
         </connector>
     </assignments>
+    <description>Fix school fields</description>
     <environments>Default</environments>
     <interviewLabel>Contact - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contact - After Record Save</label>
@@ -259,12 +260,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Applicant_s_Current_Most_Recent_School__c</field>
-            <value>
-                <elementReference>$Record.School__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Applicant_s_Date_of_Birth_MM_DD_YYYY__c</field>
             <value>
                 <elementReference>$Record.Birthdate</elementReference>
@@ -334,6 +329,12 @@
             <field>Applicant_s_Street_Address__c</field>
             <value>
                 <elementReference>$Record.MailingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Applicants_Current_Most_Recent_School__c</field>
+            <value>
+                <elementReference>$Record.School__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

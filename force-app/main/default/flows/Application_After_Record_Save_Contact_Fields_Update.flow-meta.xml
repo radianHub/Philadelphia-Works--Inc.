@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
-    <description>Removed SSN field population</description>
+    <description>Fix School fields</description>
     <environments>Default</environments>
     <formulas>
         <name>PriorValueInProgress</name>
@@ -255,7 +255,7 @@
         <inputAssignments>
             <field>School__c</field>
             <value>
-                <stringValue>$Record.Applicant_s_Current_Most_Recent_School__c</stringValue>
+                <elementReference>$Record.Applicants_Current_Most_Recent_School__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
