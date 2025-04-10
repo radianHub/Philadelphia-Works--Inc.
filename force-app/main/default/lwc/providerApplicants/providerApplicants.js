@@ -4,6 +4,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getPicklistValues } from 'lightning/uiObjectInfoApi';
 import { refreshApex } from '@salesforce/apex';
 import { notifyRecordUpdateAvailable } from 'lightning/uiRecordApi';
+import { NavigationMixin } from 'lightning/navigation';
 
 import USER_ID from '@salesforce/user/Id';
 import ACCOUNT_ID from '@salesforce/schema/User.AccountId';
@@ -50,7 +51,7 @@ const columns = [
 ];
 
 // TODO: Set up field sets for the table and details
-export default class ProviderApplicants extends LightningElement {
+export default class ProviderApplicants extends NavigationMixin(LightningElement) {
 	@api title;
 	@api description;
 	@api tableFieldSetApiName;
@@ -219,26 +220,36 @@ export default class ProviderApplicants extends LightningElement {
 	}
 
 	async viewDetails(row) {
-		const result = await ApplicantModal.open({
-			applicationId: row.Id,
-			label: row.ParticipantName,
-			choice: row.Provider_Choice__c,
-			choiceOptions: this.choiceOptions,
-			size: 'full',
+		// const result = await ApplicantModal.open({
+		// 	applicationId: row.Id,
+		// 	label: row.ParticipantName,
+		// 	choice: row.Provider_Choice__c,
+		// 	choiceOptions: this.choiceOptions,
+		// 	size: 'full',
+		// });
+		// if (result) {
+		// 	const updateChoiceResult = await this.updateChoice(result);
+		// 	if (!updateChoiceResult) {
+		// 		return;
+		// 	}
+		// 	this.viewDetails({
+		// 		...row,
+		// 		Provider_Choice__c: updateChoiceResult.choice,
+		// 	});
+		// }
+		this[NavigationMixin.GenerateUrl]({
+			type: 'comm__namedPage',
+			attributes: {
+				name: 'Application__c',
+			},
+			state: {
+				recordId: row.Launchpad__Participant__c,
+				applicationId: row.Id,
+			},
+		}).then((url) => {
+			console.log('url', url);
+			window.open(url, '_blank');
 		});
-
-		if (result) {
-			const updateChoiceResult = await this.updateChoice(result);
-
-			if (!updateChoiceResult) {
-				return;
-			}
-
-			this.viewDetails({
-				...row,
-				Provider_Choice__c: updateChoiceResult.choice,
-			});
-		}
 	}
 
 	async updateChoice(id) {

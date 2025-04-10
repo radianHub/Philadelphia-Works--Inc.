@@ -49,6 +49,16 @@
                 <label>Proof of Clearance</label>
             </value>
             <value>
+                <fullName>W-4</fullName>
+                <default>false</default>
+                <label>W-4</label>
+            </value>
+            <value>
+                <fullName>I-9</fullName>
+                <default>false</default>
+                <label>I-9</label>
+            </value>
+            <value>
                 <fullName>Resume</fullName>
                 <default>false</default>
                 <isActive>false</isActive>

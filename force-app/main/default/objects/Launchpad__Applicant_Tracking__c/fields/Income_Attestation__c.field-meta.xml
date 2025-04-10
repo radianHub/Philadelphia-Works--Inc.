@@ -14,12 +14,12 @@
             <value>
                 <fullName>Yes, the applicant receives income</fullName>
                 <default>false</default>
-                <label>Yes, the applicant receives income</label>
+                <label>Yes</label>
             </value>
             <value>
                 <fullName>No, the applicant receives zero income</fullName>
                 <default>false</default>
-                <label>No, the applicant receives zero income</label>
+                <label>No</label>
             </value>
         </valueSetDefinition>
     </valueSet>

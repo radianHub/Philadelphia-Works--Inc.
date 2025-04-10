@@ -7,8 +7,9 @@ export default class DocumentChecklistPreview extends LightningModal {
 	@api fileExtension;
 	@api documentId;
 
-	get showFrame() {
-		return this.fileExtension === 'pdf' || this.fileExtension === 'docx' || this.fileExtension === 'doc';
+	get canPreview() {
+		const validExtensions = ['jpg', 'jpeg', 'png', 'bmp'];
+		return validExtensions.includes(this.fileExtension);
 	}
 
 	handleClose() {
