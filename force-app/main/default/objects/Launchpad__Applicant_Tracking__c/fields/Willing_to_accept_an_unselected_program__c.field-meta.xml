@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Willing_to_accept_an_unselected_program__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>Is the participant willing to be placed in other programs outside of their preferred selected programs if none of their preferred selected programs are available?</inlineHelpText>
+    <inlineHelpText>I give permission to the C2L-PHL and its contracted agencies, partners, and funders to place me in a program outside of my preferred selected programs if none of my preferred selections have availability.</inlineHelpText>
     <label>Willing to accept an unselected program?</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
