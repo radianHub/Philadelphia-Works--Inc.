@@ -104,6 +104,27 @@ public with sharing class ProviderApplicantsController {
 	}
 
 	@AuraEnabled
+	public static Boolean canViewApplication(String applicationId) {
+		try {
+			User user = [SELECT AccountId FROM User WHERE Id = :UserInfo.getUserId() LIMIT 1];
+			List<Launchpad__Applicant_Tracking__c> applications = [
+				SELECT Id
+				FROM Launchpad__Applicant_Tracking__c
+				WHERE Id = :applicationId AND Launchpad__Job_Order__r.Launchpad__Account__c = :user.AccountId
+				LIMIT 1
+			];
+
+			if (applications.isEmpty()) {
+				return false;
+			}
+
+			return true;
+		} catch (Exception e) {
+			throw new AuraHandledException(e.getMessage());
+		}
+	}
+
+	@AuraEnabled
 	public static Boolean bulkUpdateApplicantStage(List<String> applicantIds, String choice, String passReason) {
 		List<Launchpad__Applicant_Tracking__c> applicants = [
 			SELECT Id, Launchpad__Stage__c

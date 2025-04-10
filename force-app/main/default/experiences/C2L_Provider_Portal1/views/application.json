@@ -26,7 +26,9 @@
       "id" : "e8909cfe-5a46-4af1-b8d0-adbe0e7d2f64",
       "regions" : [ {
         "components" : [ {
-          "componentAttributes" : { },
+          "componentAttributes" : {
+            "headerColor" : "rgb(38, 105, 168)"
+          },
           "componentName" : "c:providerApplication",
           "id" : "30bcdf3c-072f-4f66-bc31-29aac8d8215d",
           "renderPriority" : "NEUTRAL",

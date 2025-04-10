@@ -405,13 +405,7 @@
 																	data-url={field.linkURL}></lightning-button>
 															</template>
 															<template lwc:else>
-																<lightning-output-field
-																	field-name={field.api}
-																	required={field.req}
-																	variant="label-hidden"
-																	value={value}
-																	onchange={onChangeHandler}
-																	disabled={finished}>
+																<lightning-output-field field-name={field.api}>
 																</lightning-output-field>
 															</template>
 														</div>
@@ -450,13 +444,7 @@
 																	data-url={field.linkURL}></lightning-button>
 															</template>
 															<template lwc:else>
-																<lightning-output-field
-																	field-name={field.api}
-																	required={field.req}
-																	value={field.value}
-																	variant="label-hidden"
-																	onchange={onChangeHandler}
-																	disabled={finished}>
+																<lightning-output-field field-name={field.api}>
 																</lightning-output-field>
 															</template>
 														</div>
@@ -465,12 +453,7 @@
 												<template if:false={field.hasAltLabel}>
 													<template if:true={hasValue}>
 														<lightning-output-field
-															field-name={field.api}
-															required={field.req}
-															variant="label-stacked"
-															value={value}
-															onchange={onChangeHandler}
-															disabled={finished}></lightning-output-field>
+															field-name={field.api}></lightning-output-field>
 													</template>
 													<template if:false={hasValue}>
 														<template lwc:if={field.isFile}>
@@ -481,12 +464,7 @@
 														</template>
 														<template lwc:else>
 															<lightning-output-field
-																field-name={field.api}
-																required={field.req}
-																variant="label-stacked"
-																value={field.value}
-																onchange={onChangeHandler}
-																disabled={finished}></lightning-output-field>
+																field-name={field.api}></lightning-output-field>
 														</template>
 													</template>
 												</template>

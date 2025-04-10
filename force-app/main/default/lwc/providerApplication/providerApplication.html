@@ -1,33 +1,97 @@
 <template>
-	<template lwc:if={canView}>
-		<lightning-layout>
-			<lightning-layout-item
-				padding="around-small"
-				size="12"
-				medium-device-size="8">
-				<c-univ-app
-					record-id={recordId}
-					app-dev-name="C2L_Program_Contact"
-					toggle-edit="true"></c-univ-app>
-			</lightning-layout-item>
-			<lightning-layout-item
-				padding="around-small"
-				size="12"
-				medium-device-size="4">
-				<c-document-checklist
-					record-id={recordId}
-					title="Document Checklist"
-					description="Please review the documents below for accuracy."
-					checklist-name="C2L_PHL_Youth_Document_Checklist"
-					lookup-field="Launchpad__Contact__c"
-					review-mode="true"></c-document-checklist>
-			</lightning-layout-item>
-		</lightning-layout>
+	<template lwc:if={isLoading}>
+		<lightning-spinner
+			alternative-text="Loading"
+			size="large"></lightning-spinner>
 	</template>
 	<template lwc:else>
-		<p
-			class="slds-var-m-around_xx-large slds-var-p-around_xx-large slds-text-align_center slds-text-heading_medium">
-			You do not have permission to view this page.
-		</p>
+		<template lwc:if={canView}>
+			<lightning-layout multiple-rows="true">
+				<lightning-layout-item
+					size="12"
+					padding="around-small">
+					<lightning-layout>
+						<lightning-layout-item>
+							<h1
+								class="title"
+								style={headerStyle}>
+								{applicantNameValue}'s Application
+							</h1>
+						</lightning-layout-item>
+					</lightning-layout>
+				</lightning-layout-item>
+				<lightning-layout-item
+					padding="around-small"
+					size="12"
+					medium-device-size="8">
+					<div class="slds-card">
+						<lightning-tabset>
+							<lightning-tab label="Application">
+								<header class="slds-text-heading_medium slds-var-p-horizontal_medium">
+									<h2 class="rh_section-h2 slds-align_absolute-center slds-hyphenate">
+										Application Information
+									</h2>
+								</header>
+
+								<lightning-record-view-form
+									object-api-name="Launchpad__Applicant_Tracking__c"
+									record-id={applicationId}
+									density="compact">
+									<lightning-layout multiple-rows="true">
+										<lightning-layout-item
+											padding="horizontal-small"
+											size="12">
+											<lightning-input
+												variant="label-inline"
+												label="Program Name"
+												value={jobNameValue}
+												readonly></lightning-input>
+										</lightning-layout-item>
+
+										<lightning-layout-item
+											padding="horizontal-small"
+											size="12">
+											<lightning-output-field field-name={stageField}></lightning-output-field>
+										</lightning-layout-item>
+										<lightning-layout-item
+											padding="horizontal-small"
+											size="12">
+											<lightning-output-field
+												field-name={providerChoiceField}></lightning-output-field>
+										</lightning-layout-item>
+									</lightning-layout>
+								</lightning-record-view-form>
+
+								<c-univ-app
+									record-id={recordId}
+									app-dev-name="C2L_Program_Contact"
+									toggle-edit="true"></c-univ-app>
+							</lightning-tab>
+							<lightning-tab label="Placement Information"> Coming Soon </lightning-tab>
+						</lightning-tabset>
+					</div>
+				</lightning-layout-item>
+				<lightning-layout-item
+					padding="around-small"
+					size="12"
+					medium-device-size="4">
+					<c-document-checklist
+						record-id={recordId}
+						title="Document Checklist"
+						description="Please review the documents below for accuracy."
+						checklist-name="C2L_PHL_Youth_Document_Checklist"
+						lookup-field="Launchpad__Contact__c"
+						review-mode="true"
+						header-color={headerColor}></c-document-checklist>
+				</lightning-layout-item>
+			</lightning-layout>
+		</template>
+		<template lwc:else>
+			<div class="slds-var-m-around_xx-large slds-var-p-around_xx-large">
+				<p class="slds-text-align_center slds-text-heading_medium">
+					You do not have permission to view this page.
+				</p>
+			</div>
+		</template>
 	</template>
 </template>
