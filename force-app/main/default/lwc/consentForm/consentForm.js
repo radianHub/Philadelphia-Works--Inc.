@@ -18,7 +18,7 @@ export default class ConsentForm extends LightningElement {
     @track mediaValue;
     @track informationValue;
     @track clearanceValue;
-    @track parentValue; 
+    @track parentValue = '--None--'; 
 
     @track firstName;
     @track lastName;
@@ -75,11 +75,9 @@ export default class ConsentForm extends LightningElement {
                 this.clearanceValue = 'Yes';
             }
 
-            if(this.application.Parent_s_Consent__c){
-                this.parentValue = this.application.Parent_s_Consent__c;
-            }else{
-                this.parentValue = 'Yes';
-            }
+          
+            this.parentValue = '--None--';
+            
 
             
         } catch (error) {
@@ -95,15 +93,19 @@ export default class ConsentForm extends LightningElement {
 
         switch (name) {
             case 'mediaBox':
+                this.mediaValue = value;
                 this.updatedApplication.Media_Picture_Release__c = value;
                 break;
             case 'infoBox':
+                this.informationValue = value;
                 this.updatedApplication.Release_of_Information__c = value;
                 break;
             case 'clearanceBox':
+                this.clearanceValue = value;
                 this.updatedApplication.Consent_to_Request_Clearance__c = value;
                 break;
             case 'parentBox':
+                this.parentValue = value;
                 this.updatedApplication.Parent_s_Consent__c = value;
                 break;
             default:
@@ -118,16 +120,21 @@ export default class ConsentForm extends LightningElement {
 
     async handleSave(){
         try{
-            if(this.alreadySigned == false){
-                if (this.sigCaptured) {
-                    saveSignature({ relatedId: this.recordId, data: [this.sigData] });
-                }
-                await updateJobApplications({appToUpdate : this.updatedApplication});
-                this.showSuccessToast();
-                this.alreadySigned = true;
+            if(this.parentValue == '--None--'){
+                this.showParentConsentToast()
             }else{
-                this.showAlreadySignedToast();
+                if(this.alreadySigned == false){
+                    if (this.sigCaptured) {
+                        saveSignature({ relatedId: this.recordId, data: [this.sigData] });
+                    }
+                    await updateJobApplications({appToUpdate : this.updatedApplication});
+                    this.showSuccessToast();
+                    this.alreadySigned = true;
+                }else{
+                    this.showAlreadySignedToast();
+                }
             }
+            
             
         }catch(error){
             this.error = error;
@@ -179,6 +186,16 @@ export default class ConsentForm extends LightningElement {
         const evt = new ShowToastEvent({
         title: 'Error',
         message: 'The Consent Form has already been submitted for this youth.',
+        variant: 'error',
+        mode: 'dismissable'
+    });
+    this.dispatchEvent(evt);
+    }
+
+    showParentConsentToast(){
+        const evt = new ShowToastEvent({
+        title: 'Error',
+        message: 'Please select Yes or No for Parent\'s Consent.',
         variant: 'error',
         mode: 'dismissable'
     });
