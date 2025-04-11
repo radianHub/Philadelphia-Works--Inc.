@@ -13,9 +13,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>None (Default)</fullName>
+                <fullName>None</fullName>
                 <default>false</default>
-                <label>None (Default)</label>
+                <label>None</label>
             </value>
             <value>
                 <fullName>Room, apartment, or house that you rent; not affiliated with a supportive housing program</fullName>
