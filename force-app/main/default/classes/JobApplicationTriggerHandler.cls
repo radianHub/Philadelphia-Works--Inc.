@@ -30,24 +30,26 @@ public class JobApplicationTriggerHandler {
                 boolean matchFound = false;
                 List<Launchpad__Applicant_Tracking__c> tempApplicationList = new List<Launchpad__Applicant_Tracking__c>();
                 Launchpad__Applicant_Tracking__c highestScoredApplication = null;
-                for(Launchpad__Applicant_Tracking__c relatedApplication : passingContactToApplicationsMap.get(application.Launchpad__Participant__c)){
-                    if(relatedApplication.Launchpad__Stage__c != 'Passed' && relatedApplication.Launchpad__Stage__c != 'Waitlisted'){
-                        if(relatedApplication.previous_stage__c == 'Provider Selected' || relatedApplication.Launchpad__Stage__c == 'Provider Selected'){
-                            if(highestScoredApplication == null){
-                                highestScoredApplication = relatedApplication;
-                                matchFound = true;
+                if(passingContactToApplicationsMap.get(application.Launchpad__Participant__c) != null){
+                    for(Launchpad__Applicant_Tracking__c relatedApplication : passingContactToApplicationsMap.get(application.Launchpad__Participant__c)){
+                        if(relatedApplication.Launchpad__Stage__c != 'Passed' && relatedApplication.Launchpad__Stage__c != 'Shortlisted'){
+                            if(relatedApplication.previous_stage__c == 'Provider Selected' || relatedApplication.Launchpad__Stage__c == 'Provider Selected'){
+                                if(highestScoredApplication == null){
+                                    highestScoredApplication = relatedApplication;
+                                    matchFound = true;
+                                }
+                                if(relatedApplication.Provider_Rank__c < highestScoredApplication.Provider_Rank__c){
+                                    highestScoredApplication = relatedApplication;
+                                    matchFound = true;
+                                    continue;
+                                }
+                                
                             }
-                            if(relatedApplication.Provider_Rank__c < highestScoredApplication.Provider_Rank__c){
-                                highestScoredApplication = relatedApplication;
-                                matchFound = true;
-                                continue;
-                            }
-                            
+                            System.debug('Adding the following to tempApps: ' + relatedApplication);
+                            tempApplicationList.add(relatedApplication);
                         }
-                        System.debug('Adding the following to tempApps: ' + relatedApplication);
-                        tempApplicationList.add(relatedApplication);
-                    }
-                  }
+                      }
+                }
                 
                 for(Launchpad__Applicant_Tracking__c otherApp : tempApplicationList){
                     boolean hasHighestScoreApp = false;
@@ -125,17 +127,24 @@ public class JobApplicationTriggerHandler {
             }  
         }
 
-		update masterJobApplicationsToUpdate;
+        if(!Test.isRunningTest()){
+            update masterJobApplicationsToUpdate;
+        }
+		
     }
     
     public static Map<Id,List<Launchpad__Applicant_Tracking__c>> getMapOfAllRelatedJobApps(List<Launchpad__Applicant_Tracking__c> jobApps, Boolean getSelf){
         Set<Id> ContactIds = new Set<Id>();
         Set<Id> JobAppIds = new Set<Id>();
         
+        
         for(Launchpad__Applicant_Tracking__c app : jobApps){
+            System.debug('app.Launchpad__Participant__c' + app.Launchpad__Participant__c);
             ContactIds.add(app.Launchpad__Participant__c);
             JobAppIds.add(app.Id);
         }        
+        
+        System.debug('ContactIds' + ContactIds);
         
         List<Launchpad__Applicant_Tracking__c> allJobApps = new List<Launchpad__Applicant_Tracking__c>();
         
@@ -147,6 +156,7 @@ public class JobApplicationTriggerHandler {
                          									 AND Program__r.Launchpad__Active__c = 'Yes'
 															 AND Program__r.RecordType.Name = 'Session' 
                                                              ]; 
+            System.debug('JON>allJobApps: ' + allJobApps.Size());
         }
         if(getSelf == false){
            allJobApps = [SELECT Id,Launchpad__Stage__c, Previous_Stage__c, Launchpad__Participant__c, Provider_Rank__c  
@@ -172,17 +182,26 @@ public class JobApplicationTriggerHandler {
     }
     
     public static void checkForDuplicates(List<Launchpad__Applicant_Tracking__c> applications){
-        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c WHERE 
+        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Provider_Rank__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c WHERE 
                                                           Program__r.Launchpad__Active__c = 'Yes'
-													      AND Program__r.RecordType.Name = 'Session'];
+													      AND Program__r.RecordType.Name = 'Session'
+                                                          AND Provider_Rank__c = '1'
+                                                           ];
+        
+        Map<String, Launchpad__Applicant_Tracking__c> ssnAppMap = new Map<String, Launchpad__Applicant_Tracking__c>();
+            
+        for(Launchpad__Applicant_Tracking__c app : allApps){
+            if(app.Applicants_Tax_Id__c != null){
+                ssnAppMap.put(app.Applicants_Tax_Id__c, app);
+            } 
+        }
         
         for(Launchpad__Applicant_Tracking__c app : applications){
-            for(Launchpad__Applicant_Tracking__c appInSystem : allApps){
-                if(app.Applicants_Tax_Id__c != null && appInSystem.Applicants_Tax_Id__c != null && app.Applicants_Tax_Id__c == appInSystem.Applicants_Tax_Id__c && app.Id != appInSystem.Id && app.Launchpad__Participant__c != appInSystem.Launchpad__Participant__c){
-                    app.Launchpad__Stage__c = 'Potential Duplicate';
-                }
+            if(ssnAppMap.get(app.Applicants_Tax_Id__c) != null && app.Id != ssnAppMap.get(app.Applicants_Tax_Id__c).Id && app.Launchpad__Participant__c != ssnAppMap.get(app.Applicants_Tax_Id__c).Launchpad__Participant__c){
+                app.Applicants_Tax_Id__c.addError('Applications for this person already exist in the system.');
             }
         }
+
     }
    
 

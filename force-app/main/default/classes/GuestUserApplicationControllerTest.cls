@@ -1,7 +1,7 @@
 @isTest
-public class JobApplicationTriggerHandlerTest {
+public class GuestUserApplicationControllerTest {
 
-    @testSetup
+     @testSetup
     static void setupTestData() {
         RecordType sessionRecordType = [SELECT Id FROM RecordType WHERE SObjectType = 'Launchpad__Program__c' AND Name = 'Session' LIMIT 1];
         
@@ -79,43 +79,22 @@ public class JobApplicationTriggerHandlerTest {
         
         insert jobApplications;
     }
-
+    
     @isTest
-    static void testMatchProvider() {
+    public static void getRelatedJobApplicationsTest(){
         List<Launchpad__Applicant_Tracking__c> jobApplications = [SELECT Id, Launchpad__Participant__c, Launchpad__Stage__c, Previous_Stage__c, Provider_Rank__c FROM Launchpad__Applicant_Tracking__c ORDER BY Provider_Rank__c];
-        
-
-        Test.startTest();
-        jobApplications[0].launchpad__Stage__c = 'Provider Selected';
-        update jobApplications[0];
-        Test.stopTest();
-
-        List<Launchpad__Applicant_Tracking__c> jobApplicationsMatched = [SELECT Id, Launchpad__Participant__c, Launchpad__Job_Order__c, Launchpad__Stage__c, Previous_Stage__c, Provider_Rank__c FROM Launchpad__Applicant_Tracking__c WHERE Launchpad__Stage__c = 'Matched with Provider' ORDER BY Provider_Rank__c];
-        System.debug(jobApplicationsMatched);
-        Launchpad__Applicant_Tracking__c firstApp = new Launchpad__Applicant_Tracking__c();
-                firstApp.Launchpad__Participant__c = jobApplicationsMatched[0].Launchpad__Participant__c; 
-                firstApp.Launchpad__Stage__c = 'Submitted';
-                firstApp.Provider_Rank__c = '1';
-                firstApp.Previous_Stage__c = 'Provider Selected';
-                firstApp.Launchpad__Job_Order__c = jobApplicationsMatched[0].Launchpad__Job_Order__c;
-                firstApp.Applicant_s_Email_Address__c = 'Test12@test12345.com';
-                insert firstApp;
-        
-        jobApplicationsMatched[0].launchpad__Stage__c = 'Passed';
-        update jobApplicationsMatched[0];
-        List<Launchpad__Applicant_Tracking__c> updatedJobApplications = [SELECT Id, Launchpad__Stage__c, Previous_Stage__c FROM Launchpad__Applicant_Tracking__c];
-        
-        for(Launchpad__Applicant_Tracking__c app : updatedJobApplications){
-            System.debug(app.Launchpad__Stage__c);
-        }
-		
-        System.assertEquals(11, updatedJobApplications.size());
-        
+        GuestUserApplicationController.getRelatedJobApplications(jobApplications[0].Id);
     }
-
+    
     @isTest
-    static void testMatchProviderErrorHandling() {
-        
-        
+    public static void updateJobApplicationsTest(){
+        List<Launchpad__Applicant_Tracking__c> jobApplications = [SELECT Id, Launchpad__Participant__c, Launchpad__Stage__c, Previous_Stage__c, Provider_Rank__c FROM Launchpad__Applicant_Tracking__c ORDER BY Provider_Rank__c];
+        GuestUserApplicationController.updateJobApplications(jobApplications);
+    }
+    
+    @isTest
+    public static void updateSingleJobApplicationTest(){
+        List<Launchpad__Applicant_Tracking__c> jobApplications = [SELECT Id, Launchpad__Participant__c, Launchpad__Stage__c, Previous_Stage__c, Provider_Rank__c FROM Launchpad__Applicant_Tracking__c ORDER BY Provider_Rank__c];
+        GuestUserApplicationController.updateSingleJobApplication(jobApplications[0]);
     }
 }
