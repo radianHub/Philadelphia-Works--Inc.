@@ -11,7 +11,7 @@ public class UniversalApp_Test {
         
         List<Contact> contacts = new List<Contact>();
         for (Integer i = 0; i < 5; i++) {
-            contacts.add(new Contact(FirstName = 'Test', LastName = 'Participant ' + i));
+            contacts.add(new Contact(FirstName = 'Test', LastName = 'Participant ' + i, Email='giuebhfiuehbfe@greoikjbfwen.com'));
         }
         insert contacts;
 
@@ -37,6 +37,7 @@ public class UniversalApp_Test {
                 firstApp.Previous_Stage__c = 'Provider Selected';
                 firstApp.Launchpad__Job_Order__c = job.Id;
                 firstApp.Applicant_s_Email_Address__c = 'Test12@test12345.com';
+                firstApp.Emergency_Contact_Email__c = 'gegeggegege@rhefgeheg.com';
                 jobApplications.add(firstApp);
             }else{
                 jobApplications.add(new Launchpad__Applicant_Tracking__c(
@@ -45,7 +46,8 @@ public class UniversalApp_Test {
                 Provider_Rank__c = String.ValueOf(i+1),
                 Previous_Stage__c = 'Provider Selected',
                 Launchpad__Job_Order__c = job.Id, 
-                Applicant_s_Email_Address__c = 'Test12@test12345.com'
+                Applicant_s_Email_Address__c = 'Test12@test12345.com',
+                Emergency_Contact_Email__c = 'gegeggegege@rhefgeheg.com'
             ));
             }
             
