@@ -1,0 +1,18 @@
+<template>
+	<p>
+		<strong>{typeAttributes.supervisorName}</strong>
+	</p>
+
+	<div>
+		<span
+			class="slds-badge slds-theme_success"
+			lwc:if={typeAttributes.supervisorClearance}
+			>Cleared</span
+		>
+		<span
+			class="slds-badge slds-theme_error"
+			lwc:else
+			>Not Cleared</span
+		>
+	</div>
+</template>

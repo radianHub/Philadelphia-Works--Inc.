@@ -1,0 +1,88 @@
+<template>
+	<template if:true={isLoading}>
+		<lightning-spinner
+			variant="brand"
+			size="large"></lightning-spinner>
+	</template>
+	<h2
+		class="title"
+		style={headerStyle}>
+		{title}
+	</h2>
+	<p class="description slds-var-m-bottom_large">{description}</p>
+
+	<div class="filter-container">
+		<div
+			class="slds-grid slds-wrap slds-gutters slds-var-m-bottom_small slds-var-p-around_medium slds-grid slds-grid_vertical-align-end">
+			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
+				<lightning-combobox
+					name="stage"
+					label="Program"
+					value={program}
+					placeholder="Select A Program"
+					options={programOptions}
+					onchange={handleProgramChange}></lightning-combobox>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
+				<lightning-combobox
+					name="stage"
+					label="Applicant Stage"
+					value={stage}
+					placeholder="Select A Stage"
+					options={stageFilterOptions}
+					onchange={handleStageChange}></lightning-combobox>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_3-of-12">
+				<lightning-combobox
+					name="stage"
+					label="Provider Choice"
+					value={choice}
+					placeholder="Select A Choice"
+					options={choiceFilterOptions}
+					onchange={handleChoiceChange}></lightning-combobox>
+			</div>
+			<div class="slds-col">
+				<lightning-radio-group
+					lwc:if={priorityOptions}
+					name="priority"
+					label="Filter Population"
+					options={priorityOptions}
+					value={priority}
+					onchange={handlePriorityChange}
+					type="button"></lightning-radio-group>
+			</div>
+			<div class="slds-col_bump-left slds-var-m-top_small">
+				<lightning-button
+					class="slds-var-m-right_small"
+					variant="brand"
+					label="Reset Filters"
+					onclick={handleClear}></lightning-button>
+			</div>
+		</div>
+	</div>
+
+	<div class="applicant-datatable-container slds-border_top slds-border_left slds-border_right">
+		<c-applicant-datatable
+			key-field="Id"
+			data={applicants}
+			columns={columns}
+			onrowaction={handleRowAction}
+			onrowselection={handleRowSelection}></c-applicant-datatable>
+	</div>
+	<div
+		class="applicant-datatable-actions slds-border_bottom slds-border_right slds-border_left slds-var-p-vertical_x-small">
+		<div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-center">
+			<div class="slds-col slds-grow-none">
+				<p class="slds-var-p-horizontal_small">{selectedRows.length} Selected</p>
+			</div>
+			<div class="slds-col">
+				<lightning-button
+					variant="brand"
+					label="Update Selected"
+					onclick={handleUpdateChoice}
+					disabled={hasNoSelections}
+					field-level-help="Why have you decided to pass on these applicants?"></lightning-button>
+			</div>
+		</div>
+	</div>
+</template>

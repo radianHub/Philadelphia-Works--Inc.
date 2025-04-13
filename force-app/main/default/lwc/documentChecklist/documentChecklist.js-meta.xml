@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Document Checklist</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property
+				name="title"
+				type="String"
+				label="Title"
+				default="Document Checklist"
+			/>
+            <property
+				name="description"
+				type="String"
+				label="Description"
+				default="Please submit all required documents to complete your application"
+			/>
+			<property
+				name="checklistName"
+				type="String"
+				default="Document_Checklist"
+				label="Document Checklist API Name"
+                description="API Name of Document Checklist Custom Metadata record"
+                required="true"
+			/>
+			<property
+				name="lookupField"
+				type="String"
+				default="Contact__c"
+				label="Document Record Lookup API Name"
+                description="API Name of Lookup field on the Document Object that relates to the record this component is placed on"
+                required="true"
+			/>
+			<property
+				name="reviewMode"
+				type="Boolean"
+				default="false"
+                description="Set to true to enable document review actions"
+				label="Review Mode"
+			/>
+			<property
+				name="instructionsLink"
+				type="String"
+				default=""
+                description="Link to the instructions page"
+				label="Instructions Link"
+			/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+				name="title"
+				type="String"
+				label="Title"
+				default="Document Checklist"
+			/>
+            <property
+				name="description"
+				type="String"
+				label="Description"
+				default="Please submit all required documents to complete your application"
+			/>
+			<property
+				name="checklistName"
+				type="String"
+				default="Document_Checklist"
+				label="Document Checklist API Name"
+                description="API Name of Document Checklist Custom Metadata record"
+                required="true"
+			/>
+			<property
+				name="lookupField"
+				type="String"
+				default="Contact__c"
+				label="Document Record Lookup API Name"
+                description="API Name of Lookup field on the Document Object that relates to the record this component is placed on"
+                required="true"
+			/>
+            <property
+				name="headerColor"
+				type="Color"
+				default="rgb(84, 105, 141)"
+				label="Header Color"
+			/>
+			<property
+				name="reviewMode"
+				type="Boolean"
+				default="false"
+                description="Set to true to enable document review actions"
+				label="Review Mode"
+			/>
+			<property
+				name="instructionsLink"
+				type="String"
+				default=""
+                description="Link to the instructions page"
+				label="Instructions Link"
+			/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>Relationship_To_This_Young_Person__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Enrollment__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

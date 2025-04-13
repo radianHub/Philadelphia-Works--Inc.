@@ -1,0 +1,79 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ce2a494a-a206-47c7-9a4a-7e069184145e",
+  "label" : "Home",
+  "regions" : [ {
+    "id" : "de85cbbe-27f8-4fe7-864d-1ffd4be11993",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "alreadyRegisteredEventButtonLabel" : "Already Registered",
+        "availableinCommunityEventPage" : "Launchpad__Available_in_Community__c",
+        "communityPriorityEvent" : "Launchpad__Community_Priority_Event__c",
+        "description" : "Please click a Tile below or Tab above to get started with your experience",
+        "downloadDocuments" : "Download Documents",
+        "eventTileFooterColor" : "rgb(180, 188, 201)",
+        "eventTileHeaderColor" : "rgb(235, 235, 235)",
+        "featuredEventsDescription" : "Watch On Demand Videos or save your seat and Register now!",
+        "featuredEventsHeader" : "Check out these Featured Events",
+        "header" : "Welcome to the C2L-PHL Provider Portal",
+        "headerColor" : "rgb(38, 105, 168)",
+        "homeTile" : true,
+        "registerEventButtonLabel" : "Register for Event",
+        "registerEventRedirectUrl" : "/s/my-registered-events",
+        "registerEventSuccessMessage" : "You have been Successfully Registered for the Event!ed",
+        "showFeaturedEvents" : false,
+        "watchVideoEventButtonLabel" : "Watch Video"
+      },
+      "componentName" : "LaunchpadCo:lexHome",
+      "id" : "a37f10c3-a274-4442-b20c-49838173800c",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "description" : "wefawef",
+        "eventTileFooterColor" : "rgb(180, 188, 201)",
+        "eventTileHeaderColor" : "rgb(235, 235, 235)",
+        "header" : "Test header",
+        "headerColor" : "rgb(84, 105, 141)",
+        "homeTile" : false,
+        "showFeaturedEvents" : false
+      },
+      "componentName" : "LaunchpadCo:lexHome",
+      "id" : "88d18e01-0679-4130-940d-e61fc2bf0838",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f3185454-66c1-4e04-a630-7954032c6234",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "4dec06b2-269a-477e-9c30-a74d6a7763b4",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "b0c05aee-513e-4d02-8051-cc351b304589",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6e98ba03-8d59-4217-8199-6fe567c6123c",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

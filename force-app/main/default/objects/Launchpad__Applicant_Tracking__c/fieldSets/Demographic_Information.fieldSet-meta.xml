@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demographic_Information</fullName>
+    <description>C2L Application Section 4</description>
+    <displayedFields>
+        <field>Applicant_s_Sex_Assigned_at_Birth__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Applicant_s_Current_Gender__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Applicant_s_Preferred_Pronoun__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Race_and_or_Ethnicity__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Applicants_Current_Most_Recent_School__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Applicant_s_Current_Employment_Status__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>true</isRequired>
+    </displayedFields>
+    <label>Demographic Information</label>
+</FieldSet>

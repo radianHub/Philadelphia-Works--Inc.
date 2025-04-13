@@ -18,24 +18,24 @@
                 <label>None</label>
             </value>
             <value>
-                <fullName>Have access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</fullName>
+                <fullName>Has access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</fullName>
                 <default>false</default>
-                <label>Have access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</label>
+                <label>Has access to the internet at home through a fixed connection e.g., DSL, fiber, cable, etc., satellite, fixed wireless</label>
             </value>
             <value>
-                <fullName>Have access to the internet primarily through a phone</fullName>
+                <fullName>Has access to the internet primarily through a phone</fullName>
                 <default>false</default>
-                <label>Have access to the internet primarily through a phone</label>
+                <label>Has access to the internet primarily through a phone</label>
             </value>
             <value>
-                <fullName>Have access to the internet in public spaces e.g., library, businesses, school</fullName>
+                <fullName>Has access to the internet in public spaces e.g., library, businesses, school.</fullName>
                 <default>false</default>
-                <label>Have access to the internet in public spaces e.g., library, businesses, school</label>
+                <label>Has access to the internet in public spaces e.g., library, businesses, school.</label>
             </value>
             <value>
-                <fullName>Do not have internet connectivity</fullName>
+                <fullName>Does not have internet connectivity</fullName>
                 <default>false</default>
-                <label>Do not have internet connectivity</label>
+                <label>Does not have internet connectivity</label>
             </value>
         </valueSetDefinition>
     </valueSet>

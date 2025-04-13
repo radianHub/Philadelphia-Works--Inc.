@@ -1,0 +1,86 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "f1744b91-7353-4c34-ba1f-7915e48b2c01",
+  "label" : "Program Locator",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "62bc331a-497d-4b83-8e45-079ad9ab9b10",
+          "columns" : [ {
+            "UUID" : "b87dd44e-29cb-4a74-ba92-e0782a3803be",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "62bc331a-497d-4b83-8e45-079ad9ab9b10",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "c:applicantEligibilityAlert",
+          "id" : "c2ef5ebb-60c7-48b7-9630-d8f9061e675f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "cardBodyBgColor" : "rgb(235, 235, 235)",
+            "cardHeaderColor" : "rgb(38, 105, 168)",
+            "cartDescription" : "You can change the order of your choices by using the arrow.",
+            "cartNotes" : "Important Notes:<br/><p>Please keep in mind that slots at Parks and Recreation Facilities and Free Libraries are very limited, so we suggest that you choose a variety of sites.</p><br/><p>Once you hit the “proceed to application” button, you will not longer be able to change your program selection or order</p>",
+            "description" : "Use the filters to find programs that are best for you. Then scroll to the bottom of the screen to select and apply to 3-5 programs that interest you.",
+            "detailsFieldSetApiName" : "Job_Details_Fields",
+            "headerColor" : "rgb(38, 105, 168)",
+            "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",
+            "showApply" : true,
+            "title" : "C2L-PHL Program Locator"
+          },
+          "componentName" : "c:providerSearch",
+          "id" : "f475c8c0-a5c5-4d7e-bbb6-4433322e9071",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "b87dd44e-29cb-4a74-ba92-e0782a3803be",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8b60795a-e0f0-42f6-928c-4b3abdf909ec",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "C2L-PHL Youth - Program Locator"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "602e343c-e710-479a-9e55-33e8468bcff1",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6c0b793e-4b72-4ef3-9a88-f0f7d85d723f",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-program-locator"
+}

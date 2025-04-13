@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "270034c9-6325-4717-a212-9c334dc8bb38",
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "configurationTags" : [ ],
+  "devName" : "Company_Profile",
+  "id" : "21dbafe0-cdcc-41c0-b1d6-3be14c524ff7",
+  "label" : "Company Profile",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-Company Profile",
+  "type" : "route",
+  "urlPrefix" : "company-profile"
+}

@@ -1,0 +1,73 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "fe4fa5bc-8003-4e11-b962-355585441b39",
+  "label" : "Supervisors",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "cc1499c9-4240-42ba-a682-dead8a9d7298",
+          "columns" : [ {
+            "UUID" : "302b6d3b-ac7f-4a9d-b28e-c294e1987cc3",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "cc1499c9-4240-42ba-a682-dead8a9d7298",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "description" : "Review your supervisors.",
+            "headerColor" : "rgb(84, 105, 141)",
+            "supervisorDetailsFieldSetName" : "Provider_Supervisors_List_View_Details",
+            "title" : "Supervisors"
+          },
+          "componentName" : "c:providerSupervisors",
+          "id" : "8566fb1a-4d1c-4daa-87c7-73527b455d65",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "302b6d3b-ac7f-4a9d-b28e-c294e1987cc3",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ad3553c4-467f-48dd-9de1-af210ff0c9d0",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Supervisors"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "00835054-59de-4fef-a62c-099356711adc",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "93e1f23b-fcef-420f-b080-804cb534560e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-supervisors"
+}

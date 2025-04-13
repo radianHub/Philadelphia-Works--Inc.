@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "bf911fc6-f2a2-4f87-9b54-409a4f58b4c6",
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "configurationTags" : [ ],
+  "devName" : "Candidate_Applications",
+  "id" : "2cf77149-f364-467b-bbfe-7d0650bf8dc4",
+  "label" : "Candidate Applications",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-Candidate Applications",
+  "type" : "route",
+  "urlPrefix" : "candidate-applications"
+}

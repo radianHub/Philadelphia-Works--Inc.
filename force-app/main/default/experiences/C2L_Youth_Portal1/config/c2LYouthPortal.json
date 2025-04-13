@@ -1,0 +1,18 @@
+{
+  "forgotPasswordRouteId" : "1439314c-b5ca-4e65-800a-c270fd93be2d",
+  "isAvailableToGuests" : false,
+  "isFilteredComponentsView" : false,
+  "isProgressiveRenderingEnabled" : false,
+  "loginAppPageId" : "281ed8ef-6b35-44cc-ad3a-d9897dfe469d",
+  "mainAppPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : "47e01945-8073-4d16-b1e4-8104f31dbd0e",
+  "trustedSitesForScript" : [ {
+    "id" : "7a476bba-bcba-43d9-9d00-246ad9889a32",
+    "isActive" : true,
+    "trustedSiteName" : "LP",
+    "trustedSiteUrl" : "https://launchpad-managedpackage-dev-ed.file.force.com",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

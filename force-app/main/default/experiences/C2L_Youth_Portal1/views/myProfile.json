@@ -1,0 +1,81 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "825d7e44-47c8-42c3-abfe-f02c4c6f08b0",
+  "label" : "My Profile",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "addMoreSkillsButtonLabel" : "Add Skills",
+        "buildResumeButtonLabel" : "Build Resume",
+        "cancelButtonLabel" : "Cancel",
+        "defaultDocumentStatus" : "Active",
+        "description" : "Click the \"Edit Profile\" button to update your profile. For help with fields click the (i) icon at the end of the field name for more information. To keep your information secure, call (XXX)-XXX-XXXX if you need to update your name, birthdate or email address.",
+        "documentPillColor" : "rgb(47, 143, 173)",
+        "documentTypesLabel" : "Please select the Document Type",
+        "editButtonLabel" : "Edit Profile",
+        "header" : "My Profile",
+        "headerColor" : "rgb(38, 105, 168)",
+        "launchCommonIntakeButtonLabel" : "Launch Common Intake",
+        "minimumMaximumAgeerrorMessage" : "Value must be between {0} and  {1}.",
+        "myDocumentsHeader" : "My Documents",
+        "mySkillsHeader" : "My Skills",
+        "noSkillMessage" : "You have not selected any Skills yet.  Please add your Skills.",
+        "redirectmyProfileURL" : "/youth/s/my-profile",
+        "removeSkillButtonLabel" : "Remove Skill",
+        "requiredFieldMessage" : "Please populate the required Fields",
+        "requiredSkillsMessage" : "Please select at least {0} Skills",
+        "saveButtonLabel" : "Save Changes",
+        "selectedSkillsLabel" : "My Skills",
+        "showBuildResumeButton" : false,
+        "showLaunchCommonIntakeButton" : false,
+        "showSkill" : false,
+        "showdoc" : false,
+        "skillPillColor" : "rgb(8, 92, 160)",
+        "skillPopupDescription" : "Please review all Categories to add your Skills",
+        "skillPopupHeader" : "Update Your Profile",
+        "skillPopupSaveButtonLabel" : "Save Skills",
+        "skillPopupSubHeader" : "Please Add Your Skills",
+        "skillavailableTitle" : "Please select all that apply",
+        "skillsSuccessMessage" : "Skills have been saved",
+        "subheaderColor" : "rgb(38, 105, 168)",
+        "successMessage" : "Your Profile has been updated successfully"
+      },
+      "componentName" : "Launchpad:pcMyProfileAura",
+      "id" : "b2753b40-7110-4f3b-9f20-8b2fb8144682",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ccb7bee9-dd14-45e2-a69d-1c9074c86cfa",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "9f812d13-6268-4815-90ea-69bd9326b684",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "9728bf71-47be-4d1e-8a07-7482c5a67146",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "C2L-PHL Youth - My Profile"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "3bc7d34c-1de6-4797-b72e-8bfa54121bb3",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "489e30c1-66ca-4bc0-a243-037ae16acd51",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Profile"
+}

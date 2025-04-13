@@ -1,0 +1,38 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "7e7c9e64-5a19-4458-b8d1-c76f494736b3",
+  "label" : "My Saved Jobs",
+  "regions" : [ {
+    "id" : "97e16127-7221-494b-a7b5-933362bc95cd",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "77429397-8e58-4196-991d-8409c217182b",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "4be4a30a-f515-41da-807e-98cfaeddf30b",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Saved Jobs"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "95c79daa-e0ca-46c7-b26e-307174d2a231",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "38c8b7e3-bd72-4cbb-90eb-de168423c55e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Saved Jobs"
+}
