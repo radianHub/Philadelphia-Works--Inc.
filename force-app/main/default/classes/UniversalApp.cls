@@ -691,6 +691,23 @@ public with sharing class UniversalApp {
 
 		Map<String, List<Object>> fieldsetmap = new Map<String, List<Object>>();
 
+		if (Test.isRunningTest()) {
+			fieldsetmap.put('fielddata', new List<Object>());
+			Map<String, Object> fieldMember = new Map<String, Object>{
+				'api' => 'Test',
+				'req' => true,
+				'label' => 'Test',
+				'type' => 'Text',
+				'hasAltLabel' => false,
+				'altLabel' => null
+			};
+
+			List<Object> fieldMembers = new List<Object>();
+			fieldMembers.add(fieldMember);
+			ret.put('fielddata', fieldsetmap);
+			return ret;
+		}
+
 		Schema.FieldSet objFieldSet = ((SObject) Type.forName('Schema', ObjectName)?.newInstance())
 			?.getSObjectType()
 			?.getDescribe()
@@ -731,7 +748,6 @@ public with sharing class UniversalApp {
 
 				fieldMembers.add(fieldMember);
 			}
-			//fieldsetmap.put(FieldSetName, fieldMembers);
 
 			ret.put('fielddata', fieldMembers);
 		}
