@@ -11,24 +11,26 @@
 	</h2>
 	<p class="description slds-var-m-bottom_large">{description}</p>
 	<lightning-layout
-			class="filter-container slds-var-p-horizontal_medium slds-var-p-top_x-small eligibility-criteria"
-			multiple-rows="true"
-			if:false={isGuest}
-			vertical-align="end">
-		<lightning-layout-item size="12">
+		class="filter-container slds-var-p-horizontal_medium slds-var-p-top_x-small eligibility-criteria"
+		multiple-rows="true"
+		if:false={isGuest}
+		vertical-align="end">
+		<lightning-layout-item
+			size="12"
+			padding="around-small">
 			<div class="slds-text-title_bold">Your Profile</div>
 		</lightning-layout-item>
 		<template
 			for:each={eligibilityCriteriaFieldData}
 			for:item="field">
 			<lightning-layout-item
-					key={field.apiName}
-					flexibility="auto">
+				key={field.apiName}
+				padding="around-small"
+				flexibility="auto">
 				<lightning-input
-						read-only="true"
-						label={field.label}
-						value={field.value}
-				></lightning-input>
+					read-only="true"
+					label={field.label}
+					value={field.value}></lightning-input>
 			</lightning-layout-item>
 		</template>
 	</lightning-layout>
@@ -36,7 +38,9 @@
 		class="filter-container slds-var-p-top_x-small slds-var-p-horizontal_medium slds-var-p-bottom_medium slds-var-m-bottom_medium"
 		multiple-rows="true"
 		vertical-align="end">
-		<lightning-layout-item size="12">
+		<lightning-layout-item
+			size="12"
+			padding="around-small">
 			<div class="slds-text-title_bold">Program Filters</div>
 		</lightning-layout-item>
 		<lightning-layout-item
@@ -88,7 +92,9 @@
 		</lightning-layout-item>
 	</lightning-layout>
 
-	<lightning-layout class="slds-var-m-bottom_xx-large  slds-var-p-bottom_xx-large" horizontal-align="spread">
+	<lightning-layout
+		class="slds-var-m-bottom_xx-large slds-var-p-bottom_xx-large"
+		horizontal-align="spread">
 		<lightning-layout-item
 			size="12"
 			medium-device-size="9"
@@ -149,7 +155,9 @@
 				onremoveprovider={handleRemoveProvider}
 				onmoveup={handleMoveUp}
 				onmovedown={handleMoveDown}
-				is-disabled={isDisabled}>
+				is-disabled={isDisabled}
+				cart-description={cartDescription}
+				cart-notes={cartNotes}>
 			</c-provider-selection-cart>
 		</lightning-layout-item>
 	</lightning-layout>
@@ -178,9 +186,8 @@
 						</c-provider-selection-cart>
 					</lightning-accordion-section>
 				</lightning-accordion>
-				<div
-					class="slds-var-p-around_small slds-card slds-p-around_small">
-						<strong>{selectedProvidersCount}</strong> of 3-5 programs selected
+				<div class="slds-var-p-around_small slds-card slds-p-around_small">
+					<strong>{selectedProvidersCount}</strong> of 3-5 programs selected
 				</div>
 			</div>
 

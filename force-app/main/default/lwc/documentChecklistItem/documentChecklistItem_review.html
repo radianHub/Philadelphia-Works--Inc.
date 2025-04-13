@@ -34,24 +34,6 @@
 					<div class="slds-col">
 						<div class="slds-grid slds-wrap slds-var-m-left_x-small slds-grid_align-end">
 							<template lwc:if={document.submitted}>
-								<!-- <template lwc:if={isInReview}>
-                                    <lightning-button
-                                        class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
-                                        title="Approve"
-                                        label="Approve"
-                                        alternative-text="Approve"
-                                        variant="success"
-                                        onclick={handleApprove}>
-                                    </lightning-button>
-                                    <lightning-button
-                                        class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
-                                        title="Reject"
-                                        label="Reject"
-                                        alternative-text="Reject"
-                                        variant="destructive"
-                                        onclick={handleReject}>
-                                    </lightning-button>
-                                </template> -->
 								<lightning-button
 									class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
 									title="View"
@@ -69,7 +51,6 @@
 							</template>
 							<template lwc:else>
 								<lightning-button
-									lwc:if={canUpload}
 									class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
 									title="Upload"
 									label="Upload"
@@ -110,7 +91,7 @@
 					<lightning-button
 						variant="brand"
 						label="Submit"
-						atlernative-text="Submit"
+						alternative-text="Submit"
 						onclick={handleSubmit}
 						disabled={isSubmitting}></lightning-button>
 				</div>

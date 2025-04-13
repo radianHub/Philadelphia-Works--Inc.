@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>Launchpad__Participant__r.MiddleName</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Applicant&apos;s Legal Middle Name</label>
+    <label>Applicant&apos;s Legal Middle Name(Deprecate)</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

@@ -27,6 +27,16 @@
                 <default>false</default>
                 <label>They/Them</label>
             </value>
+            <value>
+                <fullName>Ze/Hir</fullName>
+                <default>false</default>
+                <label>Ze/Hir</label>
+            </value>
+            <value>
+                <fullName>No Pronoun Identified</fullName>
+                <default>false</default>
+                <label>No Pronoun Identified</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

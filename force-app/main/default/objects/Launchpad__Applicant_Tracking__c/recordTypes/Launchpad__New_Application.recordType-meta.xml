@@ -1053,55 +1053,31 @@
     <picklistValues>
         <picklist>Applicant_s_Last_Completed_Grade__c</picklist>
         <values>
-            <fullName>10th</fullName>
+            <fullName>10</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>11th</fullName>
+            <fullName>11</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>12th or High School Diploma obtained</fullName>
+            <fullName>12</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>6th</fullName>
+            <fullName>6</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>7th</fullName>
+            <fullName>7</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>8th</fullName>
+            <fullName>8</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>9th</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Associate Degree</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Bachelor%E2%80%99s Degree</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GED %28or other HS equivalent%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Master%E2%80%99s Degree and above</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Prefer not to say</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Some college or technical school</fullName>
+            <fullName>9</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1171,11 +1147,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>No Pronoun Identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>She%2FHer</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>They%2FThem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ze%2FHir</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -2778,14 +2762,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>None</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Applicable</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Yes</fullName>
             <default>false</default>
         </values>
@@ -2817,7 +2793,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>None %28Default%29</fullName>
+            <fullName>None</fullName>
             <default>false</default>
         </values>
         <values>
@@ -3131,14 +3107,6 @@
         <picklist>Parent_s_Consent__c</picklist>
         <values>
             <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>None</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Not Applicable</fullName>
             <default>false</default>
         </values>
         <values>

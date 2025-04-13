@@ -15,6 +15,8 @@ export default class ProviderSearch extends LightningElement {
 	@api cardHeaderColor;
 	@api cardBodyBgColor;
 	@api showApply;
+	@api cartDescription;
+	@api cartNotes;
 	isGuest = isGuest;
 	hasLoaded;
 	timeout;
@@ -165,9 +167,12 @@ export default class ProviderSearch extends LightningElement {
 		if (error) {
 			console.error('SEARCH_JOBS_WIRE_ERROR: ', error);
 		} else if (data) {
-			this.providers = this.formatProviders(data);
-			this.mapProviders = this.formatProviders(data, true);
-			this.isLoading = false;
+			// Only set providers if user is guest or eligibility criteria (picklistFiltersSelected) has been aggregated
+			if (isGuest || Object.keys(this.picklistFiltersSelected)?.length > 0) {
+				this.providers = this.formatProviders(data);
+				this.mapProviders = this.formatProviders(data, true);
+				this.isLoading = false;
+			}
 		}
 
 		this.hasLoaded = true;

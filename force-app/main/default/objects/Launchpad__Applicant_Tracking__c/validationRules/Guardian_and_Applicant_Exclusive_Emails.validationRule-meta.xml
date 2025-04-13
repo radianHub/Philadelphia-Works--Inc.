@@ -2,7 +2,11 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Guardian_and_Applicant_Exclusive_Emails</fullName>
     <active>true</active>
-    <errorConditionFormula>Applicant_s_Email_Address__c =  Guardian_Email__c</errorConditionFormula>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Guardian_Email__c)),
+NOT(ISBLANK(Applicant_s_Email_Address__c)),
+Guardian_Email__c= Applicant_s_Email_Address__c
+)</errorConditionFormula>
     <errorDisplayField>Guardian_Email__c</errorDisplayField>
     <errorMessage>Guardian and Applicant cannot have the same email address.</errorMessage>
 </ValidationRule>

@@ -3,7 +3,7 @@
     <fullName>Parent_s_Consent__c</fullName>
     <externalId>false</externalId>
     <label>Parent&apos;s Consent</label>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
@@ -12,11 +12,6 @@
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value>
-                <fullName>None</fullName>
-                <default>true</default>
-                <label>None</label>
-            </value>
             <value>
                 <fullName>Yes</fullName>
                 <default>false</default>
@@ -28,8 +23,15 @@
                 <label>No</label>
             </value>
             <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>None</label>
+            </value>
+            <value>
                 <fullName>Not Applicable</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Not Applicable</label>
             </value>
         </valueSetDefinition>

@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>Launchpad__Field_Set__c</field>
-        <value xsi:type="xsd:string">Launchpad__ParticipantCommunity_MyProfile_Education</value>
+        <value xsi:type="xsd:string">Participant_Contact_3</value>
     </values>
     <values>
         <field>Launchpad__Language__c</field>
@@ -36,7 +36,7 @@
     </values>
     <values>
         <field>Launchpad__Section_Header__c</field>
-        <value xsi:type="xsd:string">EducationInformation</value>
+        <value xsi:type="xsd:string">Medical/Household Information</value>
     </values>
     <values>
         <field>Launchpad__Section_Order__c</field>

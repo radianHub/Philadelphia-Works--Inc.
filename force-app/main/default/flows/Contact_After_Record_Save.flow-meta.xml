@@ -33,7 +33,7 @@
             <targetReference>Loop_through_Session_Record_Type</targetReference>
         </connector>
     </assignments>
-    <description>When Job Seeker Contact is updated, update associated Job Applications in the current Session</description>
+    <description>Fix school fields</description>
     <environments>Default</environments>
     <interviewLabel>Contact - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contact - After Record Save</label>
@@ -176,6 +176,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Any_other_source_not_named_above__c</field>
+            <value>
+                <elementReference>$Record.Any_other_source_of_income__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Applicant_Blind_Difficulty_Seeing__c</field>
             <value>
                 <elementReference>$Record.Youth_Blind_Serious_Difficulty_Seeing__c</elementReference>
@@ -190,7 +196,7 @@
         <inputAssignments>
             <field>Applicant_City__c</field>
             <value>
-                <elementReference>$Record.Launchpad__Mailing_City__c</elementReference>
+                <elementReference>$Record.MailingCity</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -250,13 +256,7 @@
         <inputAssignments>
             <field>Applicant_s_Current_Gender__c</field>
             <value>
-                <elementReference>$Record.GenderIdentity</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Applicant_s_Current_Most_Recent_School__c</field>
-            <value>
-                <elementReference>$Record.Current_Most_Recent_School__c</elementReference>
+                <elementReference>$Record.Launchpad__Gender__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -280,7 +280,7 @@
         <inputAssignments>
             <field>Applicant_s_Last_Completed_Grade__c</field>
             <value>
-                <elementReference>$Record.Last_Completed_Grade__c</elementReference>
+                <elementReference>$Record.Grade__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -304,7 +304,7 @@
         <inputAssignments>
             <field>Applicant_s_Preferred_Pronoun__c</field>
             <value>
-                <elementReference>$Record.Pronouns</elementReference>
+                <elementReference>$Record.Launchpad__Gender_Pronoun__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -329,6 +329,12 @@
             <field>Applicant_s_Street_Address__c</field>
             <value>
                 <elementReference>$Record.MailingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Applicants_Current_Most_Recent_School__c</field>
+            <value>
+                <elementReference>$Record.School__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -374,6 +380,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Explanation_of_Attestations__c</field>
+            <value>
+                <elementReference>$Record.Explanation_of_Attestations__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Guardian_Email__c</field>
             <value>
                 <elementReference>$Record.Guardian_Email__c</elementReference>
@@ -392,15 +404,45 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Income_Attestation__c</field>
+            <value>
+                <elementReference>$Record.Income__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Income_from_operation_of_a_business__c</field>
+            <value>
+                <elementReference>$Record.Income_from_operation_of_a_business__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Interest_in_dividends_from_assets__c</field>
+            <value>
+                <elementReference>$Record.Interest_in_dividends_from_assets__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Is_this_Youth_TANF_Eligible__c</field>
             <value>
                 <elementReference>$Record.Is_This_Youth_TANF_Eligible__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Middle_Name__c</field>
+            <value>
+                <elementReference>$Record.MiddleName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Parent_Primary_Caregiver_of_Child_ren__c</field>
             <value>
                 <elementReference>$Record.Parent_Primary_Caregiver_of_Child_ren__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Public_assistance_payments__c</field>
+            <value>
+                <elementReference>$Record.Public_Assistance_Payments__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -413,6 +455,24 @@
             <field>Relationship_to_this_Young_Person__c</field>
             <value>
                 <elementReference>$Record.Relationship_To_This_Young_Person__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Social_Security_or_Other_Payments__c</field>
+            <value>
+                <elementReference>$Record.Social_Security_or_Other_Payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unemployment_or_disability_payments__c</field>
+            <value>
+                <elementReference>$Record.Unemployment_or_disability_payments__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Wages_from_Employment__c</field>
+            <value>
+                <elementReference>$Record.Wages_from_Employment__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

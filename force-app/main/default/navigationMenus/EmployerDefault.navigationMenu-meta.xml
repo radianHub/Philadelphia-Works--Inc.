@@ -18,8 +18,15 @@
         <type>InternalLink</type>
     </navigationMenuItem>
     <navigationMenuItem>
-        <label>Company Profile</label>
+        <label>Supervisors</label>
         <position>3</position>
+        <publiclyAvailable>false</publiclyAvailable>
+        <target>/supervisors</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Company Profile</label>
+        <position>4</position>
         <publiclyAvailable>false</publiclyAvailable>
         <target>/company-profile</target>
         <type>InternalLink</type>

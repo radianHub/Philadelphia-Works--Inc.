@@ -3,23 +3,36 @@
     <actionCalls>
         <name>Send_Consent_Form_Email_Action_1</name>
         <label>Send Consent Form to Guardian</label>
-        <locationX>264</locationX>
-        <locationY>576</locationY>
+        <locationX>176</locationX>
+        <locationY>852</locationY>
         <actionName>JobApplicationConsentFormController</actionName>
         <actionType>apex</actionType>
-        <connector>
-            <targetReference>Loop_over_Job_Applications</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>applications</name>
             <value>
-                <elementReference>Loop_over_Job_Applications</elementReference>
+                <elementReference>varApplicationIds</elementReference>
             </value>
         </inputParameters>
         <nameSegment>JobApplicationConsentFormController</nameSegment>
     </actionCalls>
     <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Assignment_1</name>
+        <label>Add Application Ids to List</label>
+        <locationX>264</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>varApplicationIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_over_Job_Applications.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_over_Job_Applications</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Meet_Criteria_for_Guardian_Consent_Form</name>
         <label>Meet Criteria for Guardian Consent Form?</label>
@@ -55,13 +68,13 @@
             </conditions>
             <conditions>
                 <leftValueReference>Loop_over_Job_Applications.Guardian_Email__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>null</stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Send_Consent_Form_Email_Action_1</targetReference>
+                <targetReference>Assignment_1</targetReference>
             </connector>
             <label>Meets Criteria</label>
         </rules>
@@ -79,6 +92,9 @@
         <nextValueConnector>
             <targetReference>Meet_Criteria_for_Guardian_Consent_Form</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_Consent_Form_Email_Action_1</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -108,6 +124,42 @@
         <connector>
             <targetReference>Loop_over_Job_Applications</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Guardian_Consent_Required__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Submitted_From_Universal_App__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Provider_Rank__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>1</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Applicant_s_Age_at_Start_of_Program__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <numberValue>18.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Guardian_Email__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Launchpad__Applicant_Tracking__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -120,10 +172,17 @@
         </connector>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2025-03-11</startDate>
-            <startTime>00:00:00.000Z</startTime>
+            <startDate>2025-04-04</startDate>
+            <startTime>13:15:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <variables>
+        <name>varApplicationIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

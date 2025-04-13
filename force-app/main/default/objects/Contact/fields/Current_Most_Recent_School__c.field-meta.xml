@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Current_Most_Recent_School__c</fullName>
     <externalId>false</externalId>
-    <label>Current/Most Recent School</label>
+    <label>Current/Most Recent School (DEPRECATED)</label>
     <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

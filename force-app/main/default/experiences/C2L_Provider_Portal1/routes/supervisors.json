@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "fe4fa5bc-8003-4e11-b962-355585441b39",
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "configurationTags" : [ ],
+  "devName" : "Supervisors__c",
+  "id" : "281ad23a-93bb-47a5-a5a6-f1d7d41e19e9",
+  "label" : "Supervisors",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-supervisors",
+  "type" : "route",
+  "urlPrefix" : "supervisors"
+}

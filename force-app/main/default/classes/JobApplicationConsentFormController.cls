@@ -1,8 +1,9 @@
 public class JobApplicationConsentFormController {
     @InvocableMethod(label='Send Consent Form Email' description='Sends an email to the guardian email')
-    public static void sendConsentFormEmail(List<Launchpad__Applicant_Tracking__c> applications){
-       
-        List<Messaging.SingleEmailMessage> emailList = new List<Messaging.SingleEmailMessage>();
+    public static void sendConsentFormEmail(List<List<Id>> applications){
+       ConsentFormBatchEmail batch = new ConsentFormBatchEmail(applications[0]);
+	   Database.executeBatch(batch, 50);
+        /*List<Messaging.SingleEmailMessage> emailList = new List<Messaging.SingleEmailMessage>();
         EmailTemplate et = [SELECT Id, HtmlValue FROM EmailTemplate WHERE DeveloperName ='Consent_Form_Email_Template'];
         for(Launchpad__Applicant_Tracking__c app : applications){
             
@@ -25,13 +26,14 @@ public class JobApplicationConsentFormController {
             
             mail.setSaveAsActivity(false);
             mail.setUseSignature(false);
-            
+            System.debug('About to add mail');
             emailList.add(mail); 
         }
         
         if(!Test.isRunningTest()){
+        System.Debug('About to send mail');
             Messaging.sendEmail(emailList);
-        }
+        }*/
     }
     
     

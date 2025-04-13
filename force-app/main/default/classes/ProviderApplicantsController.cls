@@ -40,10 +40,13 @@ public with sharing class ProviderApplicantsController {
 		String query =
 			'SELECT Id, Provider_Rank__c, Launchpad__Participant__r.Name, ' +
 			'Launchpad__Job_Order__c, Launchpad__Job_Order__r.Name, ' +
-			'Launchpad__Participant__r.Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, ' +
+			'Launchpad__Participant__r.Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, Launchpad__Participant__c, ' +
 			'CreatedDate, RecordTypeId ' +
 			'FROM Launchpad__Applicant_Tracking__c ' +
 			'WHERE Launchpad__Stage__c != \'In Progress\' ' +
+			'AND Launchpad__Stage__c != \'Unavailable\' ' +
+			'AND Launchpad__Stage__c != \'Placed\' ' +
+			'AND Launchpad__Stage__c != \'Hired\' ' +
 			'AND Launchpad__Job_Order__r.Program__c = :programId ' +
 			'AND (Launchpad__Job_Order__r.Launchpad__Account__c = :accountId ' +
 			'OR Launchpad__Job_Order__r.Placement_Site__c = :accountId) ';
@@ -67,10 +70,6 @@ public with sharing class ProviderApplicantsController {
 		if (priority != null && priority == 'Priority') {
 			query += 'AND Launchpad__Participant__r.Priority_Population__c = true ';
 		}
-        
-        String excludedStage = 'Placed';
-        
-        query += 'AND Launchpad__Stage__c != :excludedStage ';
 
 		query += 'ORDER BY Launchpad__Participant__r.Priority_Population__c DESC, Provider_Rank__c ASC, CreatedDate DESC';
 
@@ -105,6 +104,27 @@ public with sharing class ProviderApplicantsController {
 	}
 
 	@AuraEnabled
+	public static Boolean canViewApplication(String applicationId) {
+		try {
+			User user = [SELECT AccountId FROM User WHERE Id = :UserInfo.getUserId() LIMIT 1];
+			List<Launchpad__Applicant_Tracking__c> applications = [
+				SELECT Id
+				FROM Launchpad__Applicant_Tracking__c
+				WHERE Id = :applicationId AND Launchpad__Job_Order__r.Launchpad__Account__c = :user.AccountId
+				LIMIT 1
+			];
+
+			if (applications.isEmpty()) {
+				return false;
+			}
+
+			return true;
+		} catch (Exception e) {
+			throw new AuraHandledException(e.getMessage());
+		}
+	}
+
+	@AuraEnabled
 	public static Boolean bulkUpdateApplicantStage(List<String> applicantIds, String choice, String passReason) {
 		List<Launchpad__Applicant_Tracking__c> applicants = [
 			SELECT Id, Launchpad__Stage__c
@@ -117,10 +137,9 @@ public with sharing class ProviderApplicantsController {
 		for (Launchpad__Applicant_Tracking__c applicant : applicants) {
 			if (applicant.Launchpad__Stage__c != choice) {
 				applicant.Provider_Choice__c = choice;
-                if(applicant.Launchpad__Stage__c != 'Unavailable'){
-                    applicant.Launchpad__Stage__c = choice == 'None' ? 'Submitted' : choice;
-                }
-				
+				if (applicant.Launchpad__Stage__c != 'Unavailable') {
+					applicant.Launchpad__Stage__c = choice == 'None' ? 'Submitted' : choice;
+				}
 
 				if (passReason != null) {
 					applicant.Passed_Reason__c = passReason;
