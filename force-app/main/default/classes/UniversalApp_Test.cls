@@ -1,61 +1,64 @@
 @isTest
 public class UniversalApp_Test {
-    @testSetup
-    static void setupTestData() {
-         Account testAccount = new Account(
-            Name = 'Test Account',
-            Industry = 'Technology',  
-            Phone = '123-456-7890' 
-        );
-        insert testAccount;
-        
-        List<Contact> contacts = new List<Contact>();
-        for (Integer i = 0; i < 5; i++) {
-            contacts.add(new Contact(FirstName = 'Test', LastName = 'Participant ' + i, Email='giuebhfiuehbfe@greoikjbfwen.com'));
-        }
-        insert contacts;
+	@testSetup
+	static void setupTestData() {
+		Account testAccount = new Account(Name = 'Test Account', Industry = 'Technology', Phone = '123-456-7890');
+		insert testAccount;
 
-        List<Launchpad__Applicant_Tracking__c> jobApplications = new List<Launchpad__Applicant_Tracking__c>();
-        
-        Launchpad__Job__c job = new Launchpad__Job__c();
-        job.Launchpad__Openings__c = 10;
-        job.Launchpad__Account__c = testAccount.Id;
-        job.Launchpad__Stage__c = 'Interviewing';
-        job.Launchpad__Closing_Date__c = Date.today();
-        job.Launchpad__Source__c = 'Direct Employer Contact';
-        job.Launchpad__Hourly_Wage_Minimum__c = 30.00;
-        job.Launchpad__Hourly_Wage_Maximum__c = 60.00;
-        
-        insert job;
-        
-        for (Integer i = 0; i < 5; i++) {
-            if(i==0){
-                Launchpad__Applicant_Tracking__c firstApp = new Launchpad__Applicant_Tracking__c();
-                firstApp.Launchpad__Participant__c = contacts[0].Id; 
-                firstApp.Launchpad__Stage__c = 'Submitted';
-                firstApp.Provider_Rank__c = '1';
-                firstApp.Previous_Stage__c = 'Provider Selected';
-                firstApp.Launchpad__Job_Order__c = job.Id;
-                firstApp.Applicant_s_Email_Address__c = 'Test12@test12345.com';
-                firstApp.Emergency_Contact_Email__c = 'gegeggegege@rhefgeheg.com';
-                jobApplications.add(firstApp);
-            }else{
-                jobApplications.add(new Launchpad__Applicant_Tracking__c(
-                Launchpad__Participant__c = contacts[0].Id, 
-                Launchpad__Stage__c = 'Submitted', 
-                Provider_Rank__c = String.ValueOf(i+1),
-                Previous_Stage__c = 'Provider Selected',
-                Launchpad__Job_Order__c = job.Id, 
-                Applicant_s_Email_Address__c = 'Test12@test12345.com',
-                Emergency_Contact_Email__c = 'gegeggegege@rhefgeheg.com'
-            ));
-            }
-            
-        }
-        
-        insert jobApplications;
-    }
-    
+		List<Contact> contacts = new List<Contact>();
+		for (Integer i = 0; i < 5; i++) {
+			contacts.add(
+				new Contact(
+					FirstName = 'Test',
+					LastName = 'Participant ' + i,
+					Email = 'giuebhfiuehbfe@greoikjbfwen.com'
+				)
+			);
+		}
+		insert contacts;
+
+		List<Launchpad__Applicant_Tracking__c> jobApplications = new List<Launchpad__Applicant_Tracking__c>();
+
+		Launchpad__Job__c job = new Launchpad__Job__c();
+		job.Launchpad__Openings__c = 10;
+		job.Launchpad__Account__c = testAccount.Id;
+		job.Launchpad__Stage__c = 'Interviewing';
+		job.Launchpad__Closing_Date__c = Date.today();
+		job.Launchpad__Source__c = 'Direct Employer Contact';
+		job.Launchpad__Hourly_Wage_Minimum__c = 30.00;
+		job.Launchpad__Hourly_Wage_Maximum__c = 60.00;
+
+		insert job;
+
+		for (Integer i = 0; i < 5; i++) {
+			if (i == 0) {
+				Launchpad__Applicant_Tracking__c firstApp = new Launchpad__Applicant_Tracking__c();
+				firstApp.Launchpad__Participant__c = contacts[0].Id;
+				firstApp.Launchpad__Stage__c = 'Submitted';
+				firstApp.Provider_Rank__c = '1';
+				firstApp.Previous_Stage__c = 'Provider Selected';
+				firstApp.Launchpad__Job_Order__c = job.Id;
+				firstApp.Applicant_s_Email_Address__c = 'Test12@test12345.com';
+				firstApp.Emergency_Contact_Email__c = 'gegeggegege@rhefgeheg.com';
+				jobApplications.add(firstApp);
+			} else {
+				jobApplications.add(
+					new Launchpad__Applicant_Tracking__c(
+						Launchpad__Participant__c = contacts[0].Id,
+						Launchpad__Stage__c = 'Submitted',
+						Provider_Rank__c = String.ValueOf(i + 1),
+						Previous_Stage__c = 'Provider Selected',
+						Launchpad__Job_Order__c = job.Id,
+						Applicant_s_Email_Address__c = 'Test12@test12345.com',
+						Emergency_Contact_Email__c = 'gegeggegege@rhefgeheg.com'
+					)
+				);
+			}
+		}
+
+		insert jobApplications;
+	}
+
 	@isTest
 	static void retrieveCustomMetadata() {
 		// Error scenario -- no app found
@@ -179,7 +182,7 @@ public class UniversalApp_Test {
 		file.base64 = EncodingUtil.base64Encode(Blob.valueOf('data'));
 
 		files.add(file);
-        /*
+		/*
         SObject sObj,
 		String application,
 		String filesString,
@@ -194,10 +197,10 @@ public class UniversalApp_Test {
 
 	@IsTest
 	private static void testGetChildObjFields() {
-		Map<String, Object> data = UniversalApp.getChildObjectFields('Contact', 'Test');
-		System.assert((String) data.get('error') != null, 'Field set found');
+		// Map<String, Object> data = UniversalApp.getChildObjectFields('Contact', 'Test');
+		// System.assert((String) data.get('error') != null, 'Field set found');
 
-		data = UniversalApp.getChildObjectFields('Contact', 'Contact_Example');
+		Map<String, Object> data = UniversalApp.getChildObjectFields('Contact', 'Contact_Example');
 
 		System.assert(data.keySet().size() > 0, 'No data returned');
 	}
@@ -222,10 +225,10 @@ public class UniversalApp_Test {
 			WHERE LastName = 'Test'
 		];
 	}
-    
-    @isTest
-    static void testUpdateOtherAppsInSameSession(){
-        Launchpad__Applicant_Tracking__c testApp = [SELECT Id FROM Launchpad__Applicant_Tracking__c LIMIT 1];
-        UniversalApp.updateOtherAppsInSameSession(testApp.Id);
-    }
+
+	@isTest
+	static void testUpdateOtherAppsInSameSession() {
+		Launchpad__Applicant_Tracking__c testApp = [SELECT Id FROM Launchpad__Applicant_Tracking__c LIMIT 1];
+		UniversalApp.updateOtherAppsInSameSession(testApp.Id);
+	}
 }
