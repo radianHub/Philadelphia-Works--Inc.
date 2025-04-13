@@ -40,7 +40,7 @@ public with sharing class ProviderApplicantsController {
 		String query =
 			'SELECT Id, Provider_Rank__c, Launchpad__Participant__r.Name, ' +
 			'Launchpad__Job_Order__c, Launchpad__Job_Order__r.Name, ' +
-			'Launchpad__Participant__r.Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, ' +
+			'Launchpad__Participant__r.Priority_Population__c, Launchpad__Stage__c, Provider_Choice__c, Launchpad__Participant__c, ' +
 			'CreatedDate, RecordTypeId ' +
 			'FROM Launchpad__Applicant_Tracking__c ' +
 			'WHERE Launchpad__Stage__c != \'In Progress\' ' +
@@ -101,6 +101,27 @@ public with sharing class ProviderApplicantsController {
 		}
 
 		return fieldWrapperList;
+	}
+
+	@AuraEnabled
+	public static Boolean canViewApplication(String applicationId) {
+		try {
+			User user = [SELECT AccountId FROM User WHERE Id = :UserInfo.getUserId() LIMIT 1];
+			List<Launchpad__Applicant_Tracking__c> applications = [
+				SELECT Id
+				FROM Launchpad__Applicant_Tracking__c
+				WHERE Id = :applicationId AND Launchpad__Job_Order__r.Launchpad__Account__c = :user.AccountId
+				LIMIT 1
+			];
+
+			if (applications.isEmpty()) {
+				return false;
+			}
+
+			return true;
+		} catch (Exception e) {
+			throw new AuraHandledException(e.getMessage());
+		}
 	}
 
 	@AuraEnabled

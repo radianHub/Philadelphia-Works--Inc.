@@ -1,12 +1,12 @@
 import { LightningElement, api } from 'lwc';
 
-// TODO: Make mobile-friendly
-// TODO: style ready text message
 export default class ProviderSelectionCart extends LightningElement {
 	@api selectedProviders;
 	@api headerStyle;
 	@api isDisabled;
 	@api selectedProvidersCount;
+	@api cartDescription;
+	@api cartNotes;
 	@api embedded; // If true, the cart is embedded in an accordion containing title & CTA
 
 	get canProceed() {
@@ -27,23 +27,23 @@ export default class ProviderSelectionCart extends LightningElement {
 		this.dispatchEvent(event);
 	}
 
-    handleMoveUp(evt) {
-        const providerId = evt.target.dataset.id;
+	handleMoveUp(evt) {
+		const providerId = evt.target.dataset.id;
 		const event = new CustomEvent('moveup', {
 			detail: { providerId: providerId },
 			bubbles: true,
 			composed: true,
 		});
 		this.dispatchEvent(event);
-    }
+	}
 
-    handleMoveDown(evt) {
-        const providerId = evt.target.dataset.id;
-        const event = new CustomEvent('movedown', {
-            detail: { providerId: providerId },
+	handleMoveDown(evt) {
+		const providerId = evt.target.dataset.id;
+		const event = new CustomEvent('movedown', {
+			detail: { providerId: providerId },
 			bubbles: true,
 			composed: true,
-        });
-        this.dispatchEvent(event);
-    }
+		});
+		this.dispatchEvent(event);
+	}
 }

@@ -17,6 +17,17 @@
     "id" : "ecb39e8e-41af-4c70-85f4-ed786ed4a894",
     "label" : "Login",
     "regions" : [ {
+      "components" : [ {
+        "componentAttributes" : {
+          "loginButtonLabel" : "Login to my Account",
+          "loginUrl" : "/provider/s/login",
+          "staticResource" : "C2LLogo"
+        },
+        "componentName" : "Launchpad:pcSelfRegistrationHeader",
+        "id" : "24c3524c-d725-408b-af0c-b967c5723e12",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
       "id" : "bb41b8e6-a278-4f6f-a8bd-38042ef8ea39",
       "regionName" : "header",
       "type" : "region"

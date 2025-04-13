@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Middle Name</label>
+    <protected>false</protected>
+    <values>
+        <field>Launchpad__Active__c</field>
+        <value xsi:type="xsd:string">Yes</value>
+    </values>
+    <values>
+        <field>Launchpad__Custom_Help_Text__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Launchpad__Field_API_Name__c</field>
+        <value xsi:type="xsd:string">MiddleName</value>
+    </values>
+    <values>
+        <field>Launchpad__Field_Label__c</field>
+        <value xsi:type="xsd:string">Middle Name</value>
+    </values>
+    <values>
+        <field>Launchpad__Field_Screen_Size__c</field>
+        <value xsi:type="xsd:string">4</value>
+    </values>
+    <values>
+        <field>Launchpad__Language__c</field>
+        <value xsi:type="xsd:string">en_US</value>
+    </values>
+    <values>
+        <field>Launchpad__Override_Setup_Help_Text__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Launchpad__ParticipantCommunity_PageProperties__c</field>
+        <value xsi:type="xsd:string">Launchpad__My_Profile_Contact_Information</value>
+    </values>
+    <values>
+        <field>Launchpad__Read_Only__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

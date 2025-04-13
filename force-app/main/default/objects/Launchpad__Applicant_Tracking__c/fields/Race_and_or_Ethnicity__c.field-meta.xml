@@ -3,7 +3,7 @@
     <fullName>Race_and_or_Ethnicity__c</fullName>
     <externalId>false</externalId>
     <inlineHelpText>Select one or more values on the left then click the arrow to move your selections to the right</inlineHelpText>
-    <label>Race and/or Ethnicity</label>
+    <label>Applicant&apos;s Race and/or Ethnicity</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

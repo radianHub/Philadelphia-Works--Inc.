@@ -68,9 +68,9 @@
             </conditions>
             <conditions>
                 <leftValueReference>Loop_over_Job_Applications.Guardian_Email__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>null</stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -124,6 +124,42 @@
         <connector>
             <targetReference>Loop_over_Job_Applications</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Guardian_Consent_Required__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Submitted_From_Universal_App__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Provider_Rank__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>1</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Applicant_s_Age_at_Start_of_Program__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <numberValue>18.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Guardian_Email__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Launchpad__Applicant_Tracking__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -141,7 +177,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>varApplicationIds</name>
         <dataType>String</dataType>

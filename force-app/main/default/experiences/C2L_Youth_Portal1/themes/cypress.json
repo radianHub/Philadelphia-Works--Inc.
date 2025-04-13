@@ -17,6 +17,17 @@
     "id" : "737cf33f-183f-46dd-a4a8-4978b83b706a",
     "label" : "Login",
     "regions" : [ {
+      "components" : [ {
+        "componentAttributes" : {
+          "loginButtonLabel" : "Log in to my Account",
+          "loginUrl" : "/youth/s/login",
+          "staticResource" : "C2LLogo"
+        },
+        "componentName" : "Launchpad:pcSelfRegistrationHeader",
+        "id" : "6ae99093-1894-4e2a-b566-86f2f92772ed",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
       "id" : "093e3cd1-0776-4808-9840-fc9faf7400df",
       "regionName" : "header",
       "type" : "region"
@@ -34,7 +45,7 @@
     "componentAttributes" : {
       "fixedPageWidth" : 1440,
       "headerBgColor" : "rgba(255, 255, 255, 0.8)",
-      "isHeaderPinned" : false,
+      "isHeaderPinned" : true,
       "isHeroUnderHeader" : false,
       "isPageWidthFixed" : true,
       "showHeader" : true,
@@ -241,7 +252,7 @@
     "componentAttributes" : {
       "fixedPageWidth" : 1440,
       "headerBgColor" : "rgba(28, 22, 28, 0.9)",
-      "isHeaderPinned" : false,
+      "isHeaderPinned" : true,
       "isHeroUnderHeader" : false,
       "isPageWidthFixed" : true,
       "showHeader" : true,
@@ -291,7 +302,7 @@
               "buttonTextColor" : "",
               "buttonTextHoverColor" : "",
               "customizableUserProfileMenuEditor" : "Default_User_Profile_Menu1",
-              "menuStyleSettings" : "{\"selectedMenuStyleSetting\":\"nameOnly\",\"selectedIconSetting\":\"userAvatar\",\"includeCompanyName\":false,\"selectedTextOrientationSetting\":\"right\"}"
+              "menuStyleSettings" : "{\"selectedMenuStyleSetting\":\"iconOnly\",\"selectedIconSetting\":\"userAvatar\",\"includeCompanyName\":false,\"selectedTextOrientationSetting\":\"right\"}"
             },
             "componentName" : "forceCommunity:customizableUserProfileMenu",
             "id" : "78751a4d-638b-49c5-bd1b-77a7ae09de8e",
@@ -384,12 +395,12 @@
           "ctaShowBtnOne" : true,
           "ctaShowBtnTwo" : true,
           "fixedHeroWidth" : true,
-          "heroHeight" : 150,
+          "heroHeight" : 125,
           "heroWidth" : 1440,
           "showCaption" : true,
           "showSubtitle" : true,
           "showTitle" : true,
-          "subtitleText" : "Applications are open for Summer 2025",
+          "subtitleText" : "Connecting youth ages 12–24 with paid work-based learning experiences to set them up for career and economic success.",
           "subtitleTextColor" : "rgb(255, 255, 255)",
           "subtitleTextShadowColor" : "rgba(0, 0, 0, 0.5)",
           "titleText" : "Career Connected Learning PHL",

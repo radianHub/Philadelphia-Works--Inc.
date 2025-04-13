@@ -1,0 +1,78 @@
+<template>
+    <div>
+        <div class="slds-text-heading_x-large slds-text-align_center slds-text-title_bold">Applicant Info
+        </div>
+        <div class="slds-grid slds-gutters">
+            <lightning-combobox class="slds-col" label="Applicant First Name" name="mediaBox" onchange={handleChange}
+                options={options} placeholder={firstName} value={firstName} disabled>
+            </lightning-combobox>
+            <lightning-combobox class="slds-col" label="Applicant Last Name" name="mediaBox" onchange={handleChange}
+                options={options} placeholder={lastName} value={lastName} disabled>
+            </lightning-combobox><br />
+        </div><br />
+
+
+    </div>
+    <div>
+        <div class="slds-text-heading_x-large slds-text-align_center slds-text-title_bold">Media and Picture Release
+        </div>
+        <br />
+        I give permission to C2L-PHL and its contracted agencies, funders, and partners to use photographs and/or video
+        of me taken during my participation in the program in publications, new releases, online, and in other
+        communications related to the mission of program. Click to select.
+        <br />
+        <lightning-combobox label="Media and Picture Release" name="mediaBox" onchange={handleChange} options={options}
+            placeholder="--None--" value={mediaValue} required>
+        </lightning-combobox><br />
+        <div class="slds-text-heading_x-large slds-text-align_center slds-text-title_bold">Release of Information
+            Consent
+        </div>
+        <br />
+        I give permission to C2L-PHL and its contracted agencies, funders, and partners to release information
+        concerning my participation in the program. I understand that all information will be kept respectfully
+        confidential but the sharing of this information within and among these agencies may be necessary. Click to
+        select.
+        <br />
+        <lightning-combobox label="Release of Information" name="infoBox" onchange={handleChange} options={options}
+            placeholder="--None--" value={informationValue} required>
+        </lightning-combobox><br />
+        <div class="slds-text-heading_x-large slds-text-align_center slds-text-title_bold"> Consent to Request Clearance
+        </div>
+        <br />
+        I give my permission for C2L-PHL and its contracted agencies, partners, and funders top request child abuse and
+        criminal clearances for the purpose of participating in this program. Click to select.
+        <br />
+        <lightning-combobox label="Consent to Request Clearance" name="clearanceBox" onchange={handleChange}
+            options={options} placeholder="--None--" value={clearanceValue} required>
+        </lightning-combobox><br />
+        <div class="slds-text-heading_x-large slds-text-align_center slds-text-title_bold">Parental Consent
+        </div>
+        <br />
+        I, the parent/guardian of the above-mentioned youth, hereby agree to allow their full participation in the
+        C2L-PHL program for its duration. Click to select.
+        <br />
+        <lightning-combobox label="Parent's Consent" name="parentBox" onchange={handleChange} options={options}
+            placeholder={parentValue} value={parentValue} required>
+        </lightning-combobox><br />
+        <div class="slds-text-heading_x-large slds-text-align_center slds-text-title_bold">Signature
+        </div>
+        <br />
+        Please sign this form by selecting the 'Click to Sign' button below.
+        <br /><br />
+
+        <div class="slds-grid slds-gutters">
+            <lightning-button variant="brand" class="slds-col slds-size_3-of-12" label="Click to Sign" name="signature"
+                onclick={clickSignatureButton} disabled={disableSignature} stretch="true">
+            </lightning-button>
+            <div class="slds-col slds-size_6-of-12"></div>
+            <lightning-button variant="brand" class="slds-col slds-size_3-of-12" label="Finish" name="saveRecord"
+                onclick={handleSave} disabled={hideFinish} stretch="true">
+            </lightning-button>
+
+
+        </div>
+
+
+        <br />
+    </div>
+</template>
