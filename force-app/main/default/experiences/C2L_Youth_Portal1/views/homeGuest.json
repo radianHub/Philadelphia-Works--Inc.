@@ -1,0 +1,129 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ec6133bb-2ae3-42c4-8faa-ce9a9543c2b0",
+  "label" : "Home - Guest",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:applicantEligibilityAlert",
+      "id" : "433038d3-31c5-4b40-9af3-1dd40d3bfe76",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a35c1962-8bd1-4781-9dda-7c995a1eec35",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "PCCommunity_Home_New_Featured_Employers" : "",
+        "PCCommunity_Home_New_Featured_Employers_Description" : "",
+        "PCCommunity_Home_New_Featured_Workshops" : "",
+        "PCCommunity_Home_New_Featured_Workshops_Description" : "",
+        "alreadyRegisteredEventButtonLabel" : "",
+        "appliedJobButtonLabel" : "",
+        "applyJobButtonLabel" : "",
+        "availableinCommunityEventPage" : "",
+        "availableinCommunityJobSearchPage" : "",
+        "backToJobSearchButtonLabel" : "",
+        "communityPriorityEvent" : "",
+        "communityPriorityJob" : "",
+        "description" : "Find and apply to programs in the Program Locator or manage your application in My Application if you've already applied",
+        "doNotAttachResumeLabel" : "",
+        "documentRecordTypeForResume" : "",
+        "downloadDocuments" : "",
+        "eventTileFooterColor" : "rgb(180, 188, 201)",
+        "eventTileHeaderColor" : "rgb(235, 235, 235)",
+        "fileNameLabel" : "",
+        "header" : "Welcome {!CurrentUser.name}",
+        "headerColor" : "rgb(38, 105, 168)",
+        "homeTile" : true,
+        "jobTileFooterColor" : "rgb(180, 188, 201)",
+        "jobTileHeaderColor" : "rgb(235, 235, 235)",
+        "redirectHomeURL" : "",
+        "registerEventButtonLabel" : "",
+        "registerEventRedirectUrl" : "",
+        "registerEventSuccessMessage" : "",
+        "removeSkillButtonLabel" : "",
+        "requiredSkillsMessage" : "",
+        "saveJobButtonLabel" : "",
+        "savedJobButtonLabel" : "",
+        "savedJobReturnUrl" : "",
+        "selectFromComputerLabel" : "",
+        "selectFromResumeList" : "",
+        "selectResumeErrorMessage" : "",
+        "selectResumeLabel" : "",
+        "selectedSkillsLabel" : "",
+        "showPopup" : false,
+        "showfeatureEmp" : false,
+        "showfeatureWorkshop" : false,
+        "skillPillColor" : "",
+        "skillPopupDescription" : "",
+        "skillPopupHeader" : "",
+        "skillPopupSaveButtonLabel" : "",
+        "skillPopupSubHeader" : "",
+        "skillavailableTitle" : "",
+        "skillsSuccessMessage" : "",
+        "subheaderColor" : "",
+        "submitJobAppReturnUrl" : "",
+        "submitJobButtonLabel" : "",
+        "successMessage" : "",
+        "successMessageHeader" : "",
+        "uploadResumeDescription" : "",
+        "uploadResumeFieldLabel" : "",
+        "uploadResumeTitle" : "",
+        "viewDetailsButtonLabel" : "",
+        "viewDetailsEventButtonLabel" : "",
+        "watchVideoEventButtonLabel" : ""
+      },
+      "componentName" : "Launchpad:pcHome",
+      "id" : "33311ae0-c3f0-4d9a-8dac-1fc1f841f299",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "cardBodyBgColor" : "rgb(235, 235, 235)",
+        "cardHeaderColor" : "rgb(38, 105, 168)",
+        "description" : "Use the filters to find programs that are best for you",
+        "detailsFieldSetApiName" : "Default_Provider_Search_Field_Set",
+        "headerColor" : "rgb(38, 105, 168)",
+        "searchFiltersFieldSetApiName" : "Default_Provider_Search_Field_Set",
+        "title" : "Browse Programs"
+      },
+      "componentName" : "c:providerSearch",
+      "id" : "e329df16-e02c-4f36-a22a-c8b40f025583",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "93ab3939-8aa6-417f-9183-acc7d76dd955",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "5f49f181-533a-4546-ac70-c213076eae81",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "C2L-PHL Youth - Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "2ab4c8c0-b795-4845-8eff-6a7eae8d8a57",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b896eaac-6e04-4a59-a40e-e92f8297a7d8",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

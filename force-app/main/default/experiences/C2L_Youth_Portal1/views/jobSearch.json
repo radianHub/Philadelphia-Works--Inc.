@@ -1,0 +1,38 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "8f9c4252-39c2-416f-8626-c370135b8a59",
+  "label" : "Job Search",
+  "regions" : [ {
+    "id" : "0d5268da-36f8-40a3-99b7-a671377f1548",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "2b6504a9-4c56-4f74-98d5-14bc5c1bb7a7",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "a769a107-9825-4d43-b9fb-24a87fbbfe9b",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Job Search"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "56c37442-98e7-41e9-bc6c-5ac33e2bcd1f",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a43fb1de-9a70-470f-a2cd-51add65f5d62",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-Job Search"
+}

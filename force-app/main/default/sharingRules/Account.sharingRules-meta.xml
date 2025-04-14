@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>Guest_Job_Site_Visibility</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Guest Job Site Visibility</label>
+        <sharedTo>
+            <guestUser>C2L_Youth_Portal</guestUser>
+        </sharedTo>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Employer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Job Center/Site</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Launchpad__Available_in_Community__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+</SharingRules>

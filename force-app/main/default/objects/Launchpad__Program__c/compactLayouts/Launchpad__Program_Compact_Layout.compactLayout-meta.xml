@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Program_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Launchpad__Active__c</fields>
+    <fields>Launchpad__Program_Year_Start__c</fields>
+    <label>Program Compact Layout</label>
+</CompactLayout>

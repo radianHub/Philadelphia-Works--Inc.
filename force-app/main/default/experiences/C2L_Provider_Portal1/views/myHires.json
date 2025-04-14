@@ -1,0 +1,61 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "0c725c98-250b-41a6-9b03-90041c209701",
+  "label" : "My Hires",
+  "regions" : [ {
+    "id" : "3ca135b8-cd6f-4f2c-8fbe-107f25001014",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "applicationListHeader" : "Hires",
+        "description" : "Hire data for the specified time frame",
+        "header" : "My Hires",
+        "headerColor" : "rgb(84, 105, 141)",
+        "noJobApplicationMessage" : "No Hire Data",
+        "showContactUsButton" : false,
+        "showTile1" : true,
+        "showTile2" : true,
+        "showTile3" : true,
+        "showTile4" : true,
+        "tile1Name" : "This Month's Hires",
+        "tile2Name" : "This Quarter's Hires",
+        "tile3Name" : "This Year's Hires",
+        "tile4Name" : "Last Year's Hires"
+      },
+      "componentName" : "LaunchpadCo:lexMyHires",
+      "id" : "3dab24be-2ac0-489a-b8f5-21eb221f32a4",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "83c3e155-60a8-420a-a7b0-9a3b1679806a",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "3ee5d545-6a4d-4de4-94b1-5d188b99a80a",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Hires"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "c947628c-563b-45ec-821a-c4b45a6f50af",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a5d9075a-a49c-47fb-bca5-b6180735f215",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Hires"
+}

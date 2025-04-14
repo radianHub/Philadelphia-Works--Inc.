@@ -1,0 +1,2478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Interview</fullName>
+    <active>false</active>
+    <description>For Resume Presentations and Interviews</description>
+    <label>Interview</label>
+    <picklistValues>
+        <picklist>Any_other_source_not_named_above__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Blind_Difficulty_Seeing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_CPS_DHS__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Deaf_Difficulty_Hearing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Foster_Care__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not under 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Involved_in_Justice_System__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Medical_Conditions__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Mental_Disability_Diagnosis__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Mental_Health_Diagnosis__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Need_Support_Assistance__c</picklist>
+        <values>
+            <fullName>Access to Food</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employment or Job development services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical or Dental Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mental health services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service coordination and Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service coordination or Support services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Substance use services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Country_of_Nationality__c</picklist>
+        <values>
+            <fullName>Mexico</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Current_Employment_Status__c</picklist>
+        <values>
+            <fullName>Employed Full-Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employed Part-Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full-Time Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of the work force</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unemployed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unpaid volunteer or peer work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Current_Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Binary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Internet_Connectivity__c</picklist>
+        <values>
+            <fullName>Does not have internet connectivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Has access to the internet at home through a fixed connection e%2Eg%2E%2C DSL%2C fiber%2C cable%2C etc%2E%2C satellite%2C fixed wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Has access to the internet in public spaces e%2Eg%2E%2C library%2C businesses%2C school%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Has access to the internet primarily through a phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Monthly_Gross_Income__c</picklist>
+        <values>
+            <fullName>%241%2C000 to %241%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%241%2C500 to %241%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24100 to %24499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C000 to %242%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%242%2C500 to %242%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%243%2C000 to %243%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%243%2C500 to %243%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%244%2C000 to %244%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%244%2C500 to %244%2C999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245%2C000 to %245%2C499</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24500 to %24999</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Less than %24100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More than %245%2C500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Income</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Preferred_Pronoun__c</picklist>
+        <values>
+            <fullName>He%2FHim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>She%2FHer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>They%2FThem</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Primary_Language__c</picklist>
+        <values>
+            <fullName>Albanian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Sign Language %28ASL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amharic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arabic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bengali</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burmese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cambodian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chinese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Croatian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dari</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farsi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hebrew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hindi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Italian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Karen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kinyarwanda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korean</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lao</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malayalam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malayan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nepali</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pashtu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portuguese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swahili</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tagalog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tigrinya</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ukrainian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urdu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vietnamese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yiddish</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_s_Sex_Assigned_at_Birth__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicants_Current_Most_Recent_School__c</picklist>
+        <values>
+            <fullName>Academy at Palumbo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Academy for the Middle Years %28AMY%29 at Northwest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Achieve Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Achieve Academy East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ad Prima Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adaire%2C Alexander School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allen%2C Dr%2E Ethel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allen%2C Ethan School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allen%2C Richard Preparatory Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alliance For Progress Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alternative Middle Years %28AMY%29 at James Martin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anderson%2C Add B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anderson%2C Marian Neighborhood Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arts Academy at Benjamin Rush</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bache-Martin School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baldi Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barry%2C John Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barton%2C Clara School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bartram%2C John High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Belmont Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bethune%2C Mary M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blaine%2C James G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blankenburg%2C Rudolph School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bodine%2C William W%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boys Latin of Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bracetti%2C Mariana Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bregy%2C F%2E Amedee School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bridesburg School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brown%2C Henry A%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brown%2C Joseph H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bryant%2C William C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Building 21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Byers%2C Russell Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carnell%2C Laura H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cassidy%2C Lewis C%2E Academics Plus School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Castor Gardens Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catharine%2C Joseph W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cayuga School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Childs%2C George W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clemente%2C Roberto Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbus%2C Christopher Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comegys%2C Benjamin B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comly%2C Watson School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Academy of Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Constitution High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conwell%2C Russell H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cook-Wissahickon School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cooke%2C Jay School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coppin%2C Fanny Jackson School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cramp%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creative and Performing Arts %28CAPA%29 High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossan%2C Kennedy C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossroads Accelerated Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crossroads at Hunting Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Day%2C Anna B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De Burgos%2C Julia School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De Hostos%2C Eugenio Maria Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decatur%2C Stephen School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deep Roots Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delta School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dick%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disston%2C Hamilton School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dobbins%2C Murrell Career and Technical Education High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dobson%2C James School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duckrey%2C Tanner G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dunbar%2C Paul L%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Edison%2C Thomas A%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Edmonds%2C Franklin S%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>El Centro de Estudiantes - Big Picture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elkin%2C Lewis School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ellwood School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emlen%2C Eleanor C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Esperanza Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Academy Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Academy North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Academy South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excel Middle Years Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farrell%2C Louis H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fell%2C D%2E Newlin School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fels%2C Samuel High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feltonville Intermediate School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feltonville School of Arts and Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finletter%2C Thomas K%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Philadelphia Preparatory Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fitler Academics Plus School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fitzpatrick%2C A%2E L%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Folk Arts-Cultural Treasures Charter School %28FACTS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forrest%2C Edwin School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fox Chase School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frank%2C Anne School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankford High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin Learning Center %28FLC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin Towne Charter Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin Towne Charter High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin%2C Benjamin High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin%2C Benjamin High School - EOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franklin%2C Benjamin K8 School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freire Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Furness%2C Horace High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateway to College - Community College of Philadelphia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gideon%2C Edward School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Girard Academic Music Program %28GAMP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Girard%2C Stephen School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Leadership Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Leadership Academy at Huey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gloria Casarez Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gompers%2C Samuel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Woods Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenberg%2C Joseph School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greenfield%2C Albert M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guion S%2E Bluford Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hackett%2C Horatio B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamilton%2C Andrew School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harambee Institute of Science and Technology Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harding%2C Warren G%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harrington%2C Avery D%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hartranft%2C John F%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Henry%2C Charles W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heston%2C Edward School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High School of Engineering and Science - Carver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High School of the Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hill-Freedman World Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holme%2C Thomas School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hopkinson%2C Francis School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Houston%2C Henry H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Howe%2C Julia Ward School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hunter%2C William H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imhotep Institute Charter High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independence Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independence Charter School West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inquiry Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jenks Academy for Arts and Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jenks%2C Abram S%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Hancock Demonstration School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Juniata Park Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP DuBois Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP North Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP Philadelphia Octavius Catto Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIPP West Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kearny%2C General Philip School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelley%2C William D%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelly%2C John B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kenderton Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington Health Sciences Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kensington High School for Creative and Performing Arts %28CAPA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Key%2C Francis S%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Keystone Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>King%2C Martin Luther High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kirkbride%2C Eliza B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laboratory Charter School of Communication and Languages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lamberton%2C Robert E%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lankenau High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawton%2C Henry W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lea%2C Henry C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liguori Academy-Fortis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lincoln%2C Abraham High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lindley Academy Charter at Birney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lingelbach%2C Anna L%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locke%2C Alain School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loesche%2C William H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logan%2C James School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Longstreth%2C William C%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lowell%2C James R%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ludlow%2C James R%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAST III Charter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maritime Academy Charter School %28MACHS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshall%2C John School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshall%2C Thurgood School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastbaum%2C Jules E%2E Area Vocational Technical High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Masterman%2C Julia R%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Cleveland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Clymer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Frederick Douglass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Gratz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Hardy Williams</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Harrity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Lenfest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Mann</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Pastorius</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Pickett</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Shoemaker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Smedley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Thomas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Charter at Wister</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mastery Prep Elementary Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mathematics%2C Science%2C and Technology %28MaST%29 Community Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mathematics%2C Science%2C and Technology %28MaST%29 Community Charter School II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mayfair School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McCall%2C General George A%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McCloskey%2C John F%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McClure%2C Alexander K%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McDaniel%2C Delaplaine School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McKinley%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McMichael%2C Morton School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meade%2C General George G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memphis Street Academy Charter School at J%2EP%2E Jones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meredith%2C William M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Years Alternative %28MYA%29 School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mifflin%2C Thomas School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mitchell%2C S%2E Weir Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moffet%2C John School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moore%2C J%2E Hampton School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morris%2C Robert School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morrison%2C Andrew J%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morton%2C Thomas G%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motivation High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multicultural Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Munoz-Marin%2C Honorable Luis School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nebinger%2C George W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Foundations Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast Community Propel Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast High School - EOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northwood Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OIC Career and Academic Development Institute %28CADI%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Olney High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Olney School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray - Elmwood Campus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray - Fairhill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray - Simpson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray Mansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Bright Ray Mansion Evening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Overbrook Educational Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overbrook Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overbrook High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pan American Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pantoja%2C Antonia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Center City Middle College High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway Northwest High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parkway West High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patterson%2C John M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peirce%2C Thomas M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penn Alexander School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penn Treaty High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennell%2C Joseph School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennypack House School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennypacker%2C Samuel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penrose School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People for People Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Charter School for the Arts and Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Continuation Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Electrical and Technology Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Hebrew Charter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia High School for Girls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Juvenile Justice Services Center School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Learning Academy North %28PLAN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Learning Academy West %28PLAW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Military Academy %28PMA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Montessori Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Performing Arts%3A A String Theory Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philadelphia Virtual Academy %28PVA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pollock%2C Robert B%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potter-Thomas School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Powel%2C Samuel School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preparatory Charter School of Mathematics%2C Science%2C Technology and Careers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prince Hall School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Randolph%2C A%2E Philip Career and Technical High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhawnhurst School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhoads%2C James School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhodes%2C E%2E Washington Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richmond School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robeson%2C Paul High School for Human Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roosevelt Elementary School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rowen%2C William School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roxborough High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sankofa Freedom Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saul%2C Walter B%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sayre%2C William L%2E High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Leadership Academy %28SLA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Leadership Academy %28SLA%29 at Beeber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Science Leadership Academy Middle School %28SLAMS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sharswood%2C George W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shawmont School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sheppard%2C Isaac A%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solis-Cohen%2C Solomon School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Philadelphia High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Philadelphia High School - EOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southwark School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southwest Leadership Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring Garden School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spruance%2C Gilbert School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stanton%2C Edwin M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stearne%2C Allen M%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steel%2C Edward T%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stetson%2C John B%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strawberry Mansion High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sullivan%2C James J%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swenson Arts and Technology High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECH Freire Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tacony Academy Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taggart%2C John H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taylor%2C Bayard School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The LINC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The U School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Workshop School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tilden%2C William T%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Alcorn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Audenried</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Creighton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Institute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Charter Vare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vare-Washington School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vaux High School - Big Picture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wagner%2C General Louis Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waring%2C Laura W%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington%2C George High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington%2C Grover Jr%2E Middle School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington%2C Martha School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webster%2C John H%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Welsh%2C John School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Oak Lane Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Philadelphia Achievement Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Philadelphia High School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Widener Memorial School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Willard%2C Frances E%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wissahickon Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wright%2C Richard R%2E School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YESPhilly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Young Scholars Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YouthBuild Philadelphia Charter School</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ziegler%2C William H%2E School</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicants_Last_Completed_Grade__c</picklist>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearance_Requested_Through_Justifacts__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearance_Result__c</picklist>
+        <values>
+            <fullName>Cleared</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Not Cleared</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Clearance_Run_on_Justifacts__c</picklist>
+        <values>
+            <fullName>No%2C upload on the Placement Site Information Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Consent_to_Request_Clearance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Living_Situation__c</picklist>
+        <values>
+            <fullName>Apartment or house that you own</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency shelter%2C not a hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foster care home or foster care group home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Homeless%2FPlace not meant for human habitation%2C such as a vehicle%2C abandoned building%2C or outside</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital%2C institution%2C long-term care facility%2C or substance abuse treatment%2Fdetox center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jail%2C prison%2C or juvenile detention facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other hotel or motel - paid for without emergency shelter voucher or rental subsidy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permanent Supportive Housing Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room%2C apartment%2C or house that you rent%3B not affiliated with a supportive housing program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Room Occupancy in hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staying or living in someone else%E2%80%99s room%2C apartment%2C or house</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transitional Supportive Housing Program</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_Applicant_Need_Clearances__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_the_Youth_s_Partner_Live_With_Them__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Income_Attestation__c</picklist>
+        <values>
+            <fullName>No%2C the applicant receives zero income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C the applicant receives income</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Income_from_operation_of_a_business__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interest_in_dividends_from_assets__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_this_Youth_TANF_Eligible__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Benefits_Effective__c</picklist>
+        <values>
+            <fullName>After 30 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After 90 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immediately</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Employment_Type__c</picklist>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Time Permanent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Time Temporary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Part Time Permanent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Part Time Temporary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seasonal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temp to Hire</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Pay_Period__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biweekly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hourly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Reason_Given__c</picklist>
+        <values>
+            <fullName>Late to interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mistakes during interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No-show to interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Org culture mismatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overqualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skills mismatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Underqualified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Result__c</picklist>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proceed to Next Stage</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Launchpad__Stage__c</picklist>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Media_Picture_Release__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Parent_Primary_Caregiver_of_Child_ren__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Parent_s_Consent__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Previous_Stage__c</picklist>
+        <values>
+            <fullName>Hired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matched with Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Placed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider Selected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for JEVs Sign-Off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shortlisted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unavailable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Provider_Choice__c</picklist>
+        <values>
+            <fullName>Passed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider Selected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shortlisted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Provider_Rank__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Public_assistance_payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Race_and_or_Ethnicity__c</picklist>
+        <values>
+            <fullName>American Indian or Alaska Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hispanic or LatinX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern or North African</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiracial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native Hawaiian or Pacific Islander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Hispanic or Latino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Release_of_Information__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Social_Security_or_Other_Payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stipend_Type__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unemployment_or_disability_payments__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wages_from_Employment__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_Governmental_Benefits_Does__c</picklist>
+        <values>
+            <fullName>Food Stamps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicaid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None of the above</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSI or SSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TANF</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_is_the_Applicant_s_Current_Relation__c</picklist>
+        <values>
+            <fullName>Divorced or Separated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Married or Domestic partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Widowed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Willing_to_accept_an_unselected_program__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

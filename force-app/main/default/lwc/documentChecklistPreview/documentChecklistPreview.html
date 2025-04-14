@@ -1,0 +1,19 @@
+<template>
+	<lightning-modal-header label={title}></lightning-modal-header>
+	<lightning-modal-body>
+		<template lwc:if={canPreview}>
+			<img src={src} />
+		</template>
+		<template lwc:else>
+			View file in downloads
+			<iframe
+				src={src}
+				style="width: 100%; height: 0; visibility: hidden"></iframe>
+		</template>
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<lightning-button
+			label="Close"
+			onclick={handleClose}></lightning-button>
+	</lightning-modal-footer>
+</template>

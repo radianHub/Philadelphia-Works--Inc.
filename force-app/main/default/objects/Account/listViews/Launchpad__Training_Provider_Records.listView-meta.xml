@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Training_Provider_Records</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Launchpad__Owner_Full_Name__c</columns>
+    <columns>Launchpad__Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Launchpad__Training_Provider</value>
+    </filters>
+    <label>Training Provider Accounts</label>
+</ListView>

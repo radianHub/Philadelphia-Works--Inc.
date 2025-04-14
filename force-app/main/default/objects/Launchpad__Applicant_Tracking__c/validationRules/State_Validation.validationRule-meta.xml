@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_Validation</fullName>
+    <active>true</active>
+    <description>Require mailing state to be two letters</description>
+    <errorConditionFormula>NOT(
+CONTAINS(&quot;AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:&quot; &amp;
+&quot;IL:IN:IA:KS:KY:LA:ME:MD:MA:MI:MN:MS:MO:MT:NE:NV:NH:&quot; &amp;
+&quot;NJ:NM:NY:NC:ND:OH:OK:OR:PA:RI:SC:SD:TN:TX:UT:VT:VA:&quot; &amp;
+&quot;WA:WV:WI:WY&quot;, Applicant_s_State__c)
+)</errorConditionFormula>
+    <errorDisplayField>Applicant_s_State__c</errorDisplayField>
+    <errorMessage>A valid two-letter state code is required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,201 @@
+<template>
+	<template if:true={isLoading}>
+		<lightning-spinner
+			variant="brand"
+			size="large"></lightning-spinner>
+	</template>
+	<h2
+		class="title"
+		style={headerStyle}>
+		{title}
+	</h2>
+	<p class="description slds-var-m-bottom_large">{description}</p>
+	<lightning-layout
+		class="filter-container slds-var-p-horizontal_medium slds-var-p-top_x-small eligibility-criteria"
+		multiple-rows="true"
+		if:false={isGuest}
+		vertical-align="end">
+		<lightning-layout-item
+			size="12"
+			padding="around-small">
+			<div class="slds-text-title_bold">Your Profile</div>
+		</lightning-layout-item>
+		<template
+			for:each={eligibilityCriteriaFieldData}
+			for:item="field">
+			<lightning-layout-item
+				key={field.apiName}
+				padding="around-small"
+				flexibility="auto">
+				<lightning-input
+					read-only="true"
+					label={field.label}
+					value={field.value}></lightning-input>
+			</lightning-layout-item>
+		</template>
+	</lightning-layout>
+	<lightning-layout
+		class="filter-container slds-var-p-top_x-small slds-var-p-horizontal_medium slds-var-p-bottom_medium slds-var-m-bottom_medium"
+		multiple-rows="true"
+		vertical-align="end">
+		<lightning-layout-item
+			size="12"
+			padding="around-small">
+			<div class="slds-text-title_bold">Program Filters</div>
+		</lightning-layout-item>
+		<lightning-layout-item
+			padding="around-small"
+			flexibility="auto">
+			<lightning-input
+				class="filter"
+				name="zipcode"
+				label="Zip"
+				type="search"
+				onchange={handleInputChange}></lightning-input>
+		</lightning-layout-item>
+		<template
+			for:each={searchFiltersFieldData}
+			for:item="field">
+			<template lwc:if={field.isPicklist}>
+				<lightning-layout-item
+					key={field.apiName}
+					padding="around-small"
+					flexibility="auto">
+					<c-multi-select-combobox
+						class="filter"
+						label={field.label}
+						name={field.apiName}
+						options={field.options}
+						onchange={handleMultiselectChange}></c-multi-select-combobox>
+				</lightning-layout-item>
+			</template>
+			<template lwc:else>
+				<lightning-layout-item
+					key={field.apiName}
+					padding="around-small"
+					flexibility="auto">
+					<lightning-input
+						class="filter"
+						label={field.label}
+						name={field.apiName}
+						type="search"
+						onchange={handleInputChange}></lightning-input>
+				</lightning-layout-item>
+			</template>
+		</template>
+		<lightning-layout-item
+			padding="around-small"
+			alignment-bump="left">
+			<lightning-button
+				label="Clear Filters"
+				onclick={handleClear}></lightning-button>
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<lightning-layout
+		class="slds-var-m-bottom_xx-large slds-var-p-bottom_xx-large"
+		horizontal-align="spread">
+		<lightning-layout-item
+			size="12"
+			medium-device-size="9"
+			padding="horizontal-small">
+			<template if:true={hasLoaded}>
+				<div lwc:if={hasProviders}>
+					<c-provider-map providers={mapProviders}></c-provider-map>
+				</div>
+				<div
+					class="slds-p-around_xx-large slds-text-align_center"
+					lwc:else>
+					<h3 class="slds-text-heading_medium slds-m-bottom_small">No Results Found</h3>
+					<p class="slds-m-bottom_x-large">
+						No results match the filter criteria. Adjust your filters or clear all filters to show results.
+					</p>
+					<lightning-button
+						onclick={handleClear}
+						label="Clear Filters"></lightning-button>
+				</div>
+			</template>
+
+			<lightning-layout
+				class="slds-var-m-bottom_medium"
+				horizontal-align="spread"
+				pull-to-boundary="small"
+				multiple-rows="true">
+				<template
+					for:each={providers}
+					for:item="provider">
+					<lightning-layout-item
+						size="12"
+						padding="around-small"
+						small-device-size="12"
+						medium-device-size="6"
+						large-device-size="4"
+						key={provider.id}>
+						<c-provider-tile
+							provider={provider}
+							card-header-color={cardHeaderColor}
+							card-body-bg-color={cardBodyBgColor}
+							show-apply={showApply}
+							onselectprovider={handleSelectProvider}
+							onremoveprovider={handleRemoveProvider}></c-provider-tile>
+					</lightning-layout-item>
+				</template>
+			</lightning-layout>
+		</lightning-layout-item>
+		<lightning-layout-item
+			class="slds-show_medium"
+			lwc:if={showApply}
+			padding="horizontal-small"
+			size="12"
+			medium-device-size="3">
+			<c-provider-selection-cart
+				header-style={headerStyle}
+				selected-providers={selectedProviders}
+				selected-providers-count={selectedProvidersCount}
+				onremoveprovider={handleRemoveProvider}
+				onmoveup={handleMoveUp}
+				onmovedown={handleMoveDown}
+				is-disabled={isDisabled}
+				cart-description={cartDescription}
+				cart-notes={cartNotes}>
+			</c-provider-selection-cart>
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<div
+		lwc:if={showApply}
+		class="slds-hide_medium">
+		<div class="provider-mobile-cart">
+			<div class="slds-card slds-var-m-bottom_x-small">
+				<lightning-accordion
+					allow-multiple-sections-open
+					onsectiontoggle={handleSectionToggle}
+					active-section-name={activeSectionName}>
+					<lightning-accordion-section
+						name="selections"
+						label="Your Selection">
+						<c-provider-selection-cart
+							embedded="true"
+							header-style={headerStyle}
+							selected-providers={selectedProviders}
+							selected-providers-count={selectedProvidersCount}
+							onremoveprovider={handleRemoveProvider}
+							onmoveup={handleMoveUp}
+							onmovedown={handleMoveDown}
+							is-disabled={isDisabled}>
+						</c-provider-selection-cart>
+					</lightning-accordion-section>
+				</lightning-accordion>
+				<div class="slds-var-p-around_small slds-card slds-p-around_small">
+					<strong>{selectedProvidersCount}</strong> of 3-5 programs selected
+				</div>
+			</div>
+
+			<div class="slds-text-align_right">
+				<c-create-application
+					selected-providers={selectedProviders}
+					disabled={isDisabled}></c-create-application>
+			</div>
+		</div>
+	</div>
+</template>

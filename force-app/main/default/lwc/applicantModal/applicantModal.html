@@ -1,0 +1,182 @@
+<template>
+	<lightning-modal-header label={label}>
+		<div class="action-container">
+			<span class="slds-var-m-right_small">Choice: {choice}</span>
+			<lightning-button
+				label="Update Choice"
+				variant="brand"
+				onclick={handleUpdateChoice}></lightning-button>
+		</div>
+	</lightning-modal-header>
+	<lightning-modal-body>
+		<lightning-record-view-form
+			record-id={applicationId}
+			object-api-name="Launchpad__Applicant_Tracking__c"
+			density="comfy">
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Application Information
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+					<lightning-input
+						label="Program Name"
+						value={jobNameValue}
+						readonly></lightning-input>
+				</div>
+				<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+					<lightning-input
+						label="Placement Site"
+						value={placementSiteValue}
+						readonly></lightning-input>
+				</div>
+				<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+					<lightning-output-field field-name={providerRankField}></lightning-output-field>
+				</div>
+				<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+					<lightning-output-field field-name={stageField}></lightning-output-field>
+				</div>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Basic Personal Information
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={basicInfo}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Parent/Guardian Information
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={guardianInfo}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Emergency Contact Information
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={emergencyContactInfo}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Demographic Information
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={demographicInfo}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Household Information
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={householdInfo}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Health Information
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={healthInfo}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Attestations
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={attestations}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Consents
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={consents}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Release
+			</div>
+			<div class="slds-grid slds-wrap slds-gutters slds-var-p-horizontal_small">
+				<template
+					for:each={release}
+					for:item="field">
+					<div
+						key={field.fieldApiName}
+						class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-border_bottom">
+						<lightning-output-field field-name={field.fieldApiName}></lightning-output-field>
+					</div>
+				</template>
+			</div>
+			<div class="slds-text-heading_medium applicant-section-header slds-var-p-around_small slds-border_bottom">
+				Documents
+			</div>
+			<c-document-checklist
+				record-id={applicantId}
+				title=""
+				description=""
+				checklist-name="C2L_PHL_Youth_Document_Checklist"
+				lookup-field="Launchpad__Contact__c"
+				review-mode="true"></c-document-checklist>
+		</lightning-record-view-form>
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<lightning-button
+			label="Close"
+			onclick={handleClose}></lightning-button>
+	</lightning-modal-footer>
+</template>

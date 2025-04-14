@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launchpad__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>W-9</fullName>
+                <default>false</default>
+                <label>W-9</label>
+            </value>
+            <value>
+                <fullName>Proof of Social Security Number</fullName>
+                <default>false</default>
+                <label>Proof of Social Security Number</label>
+            </value>
+            <value>
+                <fullName>Proof of ID</fullName>
+                <default>false</default>
+                <label>Proof of ID</label>
+            </value>
+            <value>
+                <fullName>Proof of Citizenship</fullName>
+                <default>false</default>
+                <label>Proof of Citizenship</label>
+            </value>
+            <value>
+                <fullName>Proof of Residency</fullName>
+                <default>false</default>
+                <label>Proof of Residency</label>
+            </value>
+            <value>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+                <label>Proof of Income</label>
+            </value>
+            <value>
+                <fullName>Proof of Clearance</fullName>
+                <default>false</default>
+                <label>Proof of Clearance</label>
+            </value>
+            <value>
+                <fullName>W-4</fullName>
+                <default>false</default>
+                <label>W-4</label>
+            </value>
+            <value>
+                <fullName>I-9</fullName>
+                <default>false</default>
+                <label>I-9</label>
+            </value>
+            <value>
+                <fullName>Resume</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Resume</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

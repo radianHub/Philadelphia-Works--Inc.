@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Attestation Paragraph 1</label>
+    <protected>false</protected>
+    <values>
+        <field>Launchpad__Active__c</field>
+        <value xsi:type="xsd:string">Yes</value>
+    </values>
+    <values>
+        <field>Launchpad__Attestation_Text__c</field>
+        <value xsi:type="xsd:string">I hereby confirm the information provided throughout this application is accurate and true, to the best of my knowledge. I authorize the release of personal, financial, and/or academic information to organizations including, but not limited to, schools, employers, youth-serving organizations, and government agencies, for the purpose of determining income and programmatic eligibility. I am aware that I will be removed from the program immediately if I am found ineligible after enrollment and may be prosecuted for fraud and/or perjury. It is understood that the information obtained will be used only for purposes directly related to participation and eligibility for C2L-PHL youth programming.</value>
+    </values>
+    <values>
+        <field>Launchpad__Paragraph_Order__c</field>
+        <value xsi:type="xsd:string">1</value>
+    </values>
+</CustomMetadata>

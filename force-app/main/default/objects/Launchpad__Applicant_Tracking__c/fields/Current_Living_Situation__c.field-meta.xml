@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Living_Situation__c</fullName>
+    <externalId>false</externalId>
+    <label>Applicant&apos;s Current Living Situation?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Room, apartment, or house that you rent; not affiliated with a supportive housing program</fullName>
+                <default>false</default>
+                <label>Room, apartment, or house that you rent; not affiliated with a supportive housing program</label>
+            </value>
+            <value>
+                <fullName>Apartment or house that you own</fullName>
+                <default>false</default>
+                <label>Apartment or house that you own</label>
+            </value>
+            <value>
+                <fullName>Permanent Supportive Housing Program</fullName>
+                <default>false</default>
+                <label>Permanent Supportive Housing Program</label>
+            </value>
+            <value>
+                <fullName>Transitional Supportive Housing Program</fullName>
+                <default>false</default>
+                <label>Transitional Supportive Housing Program</label>
+            </value>
+            <value>
+                <fullName>Staying or living in someone else’s room, apartment, or house</fullName>
+                <default>false</default>
+                <label>Staying or living in someone else’s room, apartment, or house</label>
+            </value>
+            <value>
+                <fullName>Foster care home or foster care group home</fullName>
+                <default>false</default>
+                <label>Foster care home or foster care group home</label>
+            </value>
+            <value>
+                <fullName>Hospital, institution, long-term care facility, or substance abuse treatment/detox center</fullName>
+                <default>false</default>
+                <label>Hospital, institution, long-term care facility, or substance abuse treatment/detox center</label>
+            </value>
+            <value>
+                <fullName>Homeless/Place not meant for human habitation, such as a vehicle, abandoned building, or outside</fullName>
+                <default>false</default>
+                <label>Homeless/Place not meant for human habitation, such as a vehicle, abandoned building, or outside</label>
+            </value>
+            <value>
+                <fullName>Emergency shelter, not a hotel</fullName>
+                <default>false</default>
+                <label>Emergency shelter, not a hotel</label>
+            </value>
+            <value>
+                <fullName>Single Room Occupancy in hotel</fullName>
+                <default>false</default>
+                <label>Single Room Occupancy in hotel</label>
+            </value>
+            <value>
+                <fullName>Other hotel or motel - paid for without emergency shelter voucher or rental subsidy</fullName>
+                <default>false</default>
+                <label>Other hotel or motel - paid for without emergency shelter voucher or rental subsidy</label>
+            </value>
+            <value>
+                <fullName>Jail, prison, or juvenile detention facility</fullName>
+                <default>false</default>
+                <label>Jail, prison, or juvenile detention facility</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

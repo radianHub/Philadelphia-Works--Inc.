@@ -1,0 +1,38 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "c9156e1a-74b9-4021-82b3-11bce26b4457",
+  "label" : "My Registered Workshops",
+  "regions" : [ {
+    "id" : "fbd68cf6-bebd-4f5d-ad2e-964752a41c2f",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "4350555f-eaee-4d6f-812d-24860b053191",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "283dd449-9766-42ef-9c40-d0be64e25b0e",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Registered Workshops"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "5d467875-9746-4f5c-a228-3be80fc436e1",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "787af93c-0447-46df-997d-81deeedbadd4",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Registered Workshops"
+}

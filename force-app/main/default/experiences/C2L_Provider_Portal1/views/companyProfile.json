@@ -1,0 +1,69 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "270034c9-6325-4717-a212-9c334dc8bb38",
+  "label" : "Company Profile",
+  "regions" : [ {
+    "id" : "73435463-8f81-48e3-a8d1-39d97dfddd57",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "cancelButtonLabel" : "Cancel",
+        "contactListHeader" : "Company Contacts",
+        "contactListSubheader" : "Use this section to see, edit, or update your company contacts",
+        "contactSuccessMessage" : "Success!",
+        "deleteContactButtonLabel" : "Archive",
+        "description" : "Use this page to update your company profile.",
+        "editButtonLabel" : "Edit",
+        "editContactButtonLabel" : "Edit",
+        "header" : "Company Profile",
+        "headerColor" : "rgb(38, 105, 168)",
+        "newContactButtonLabel" : "Add New Contact",
+        "newContactPopupCancelButtonLabel" : "Cancel",
+        "newContactPopupHeader" : "Contact Information",
+        "newContactPopupSaveButtonLabel" : "Save",
+        "newContactPopupSubHeader" : "Use this page to edit the contact information",
+        "noContactMessage" : "No contacts available",
+        "redirectMyProfileURL" : "/provider/s/company-profile",
+        "requiredFieldMessage" : "Please fill out the required fields.",
+        "saveButtonLabel" : "Save",
+        "showContact" : true,
+        "subheaderColor" : "rgb(38, 105, 168)",
+        "successMessage" : "Success!"
+      },
+      "componentName" : "LaunchpadCo:lexCompanyProfileAura",
+      "id" : "80a38574-dce5-45ba-aace-500d1ee7d876",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e6164209-7019-4e74-8a4d-5348f78ed68c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "48c0bf0d-2b82-4656-ac79-089072004821",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Company Profile"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "998063dd-36ea-449b-a9f2-6c532bf2bc6a",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "12577e09-2637-4aba-a037-e890c86e3194",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-Company Profile"
+}

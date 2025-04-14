@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "3915eb5f-d60b-4091-ba4e-c94a26623c4a",
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "configurationTags" : [ ],
+  "devName" : "My_Registered_Events",
+  "id" : "ed93d58e-6204-4460-840c-553d09845c06",
+  "label" : "My Registered Events",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-My Registered Events",
+  "type" : "route",
+  "urlPrefix" : "my-registered-events"
+}

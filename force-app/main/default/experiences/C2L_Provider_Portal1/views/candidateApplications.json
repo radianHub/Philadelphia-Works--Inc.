@@ -1,0 +1,65 @@
+{
+  "appPageId" : "8a6eaad4-ed79-41d7-890c-5e1532ff1d55",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "bf911fc6-f2a2-4f87-9b54-409a4f58b4c6",
+  "label" : "Candidate Applications",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "applicationListHeader" : "Applications",
+        "contactUsButtonLabel" : "Contact Applicant",
+        "contactUsCancelButtonLabel" : "Cancel",
+        "contactUsDescription" : "You can send an email to the applicant from here.",
+        "contactUsHeader" : "Want to Contact the Applicant?",
+        "contactUsPlaceholderText" : "Type here...",
+        "contactUsSubmitButtonLabel" : "Submit",
+        "contactUsSuccessMessage" : "Success!",
+        "description" : "A list of applications",
+        "header" : "Submitted Job Applications",
+        "headerColor" : "rgb(84, 105, 141)",
+        "noJobApplicationMessage" : "No Applications to show",
+        "redirectButtonLabel" : "Redirect Button",
+        "showContactUsButton" : true,
+        "showRedirectButton" : true,
+        "tile1Name" : "New Applications",
+        "tile2Name" : "Pending Applications",
+        "tile3Name" : "Processed Applications"
+      },
+      "componentName" : "LaunchpadCo:lexCandidateApplication",
+      "id" : "7f63b56a-9107-4243-bf27-bced07f0d3dd",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "89c4ddf8-a53c-452f-8329-08f63535fb80",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "e4ec575c-aa3b-42c2-b446-2eb5f0b15604",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "8c6bd45d-3199-4e19-ac45-abba01bc3e43",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Candidate Applications"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "2c5cb294-d656-43ef-8fba-d4fe35c9bd29",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "64448258-e05b-4a53-b23e-c4bf1f7ab671",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-Candidate Applications"
+}

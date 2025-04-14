@@ -1,0 +1,49 @@
+{
+  "appPageId" : "48bed37c-781a-4e99-9318-005ecea20d81",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ab52801a-1e97-4d9c-b607-6813db0ad9e9",
+  "label" : "My Applications",
+  "regions" : [ {
+    "id" : "04bfa665-0764-470d-8f5b-b1629df0f04c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "appDevName" : "C2L_Program_Application",
+        "headerColor" : "rgb(38, 105, 168)"
+      },
+      "componentName" : "c:youthApplication",
+      "id" : "8014b074-23e5-4e05-9793-230a335c6038",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "34a0cd8a-a5a0-4a53-984f-a36754e3c2a3",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "1bc07280-ca14-41f8-b0b9-ff8ed980c3dc",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "C2L-PHL Youth - My Applications"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "e6a0062d-b604-4e44-b159-7a0d6c722271",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0c0f5407-bc6b-4ac7-8ec5-a7b724a348d7",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-My Applications"
+}

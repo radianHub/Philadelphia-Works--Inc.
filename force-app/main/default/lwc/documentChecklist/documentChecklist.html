@@ -1,0 +1,28 @@
+<template>
+	<h2
+		class="title"
+		style={headerStyle}>
+		{title}
+	</h2>
+	<p class="description slds-var-m-bottom_small">{description}</p>
+	<template
+		for:each={documents}
+		for:item="document">
+		<div
+			key={document.developerName}
+			class="slds-var-m-bottom_x-small">
+			<c-document-checklist-item
+				review-mode={reviewMode}
+				document={document}
+				record-id={recordId}
+				checklist-name={checklistName}
+				lookup-field={lookupField}
+				document-statuses={documentStatuses}
+				onupload={handleUpload}
+				ondelete={handleDelete}
+				onapprove={handleApprove}
+				onreject={handleReject}
+				onpreview={handlePreview}></c-document-checklist-item>
+		</div>
+	</template>
+</template>
