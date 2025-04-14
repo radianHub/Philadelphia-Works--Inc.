@@ -494,14 +494,7 @@
         <connector>
             <targetReference>Get_Session_Record_Type</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>RecordTypeId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>012Kj000001HEWhIAO</stringValue>
-            </value>
-        </filters>
+        <filterFormula>AND(NOT(ISCHANGED({!$Record.Ready_for_Reassignment__c})), ({!$Record.RecordTypeId} = &apos;012Kj000001HEWhIAO&apos;))</filterFormula>
         <object>Contact</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
