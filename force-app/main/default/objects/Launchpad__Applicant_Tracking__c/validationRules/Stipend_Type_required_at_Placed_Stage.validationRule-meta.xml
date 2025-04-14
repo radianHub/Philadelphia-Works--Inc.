@@ -4,7 +4,10 @@
     <active>true</active>
     <errorConditionFormula>AND(
   ISPICKVAL(Launchpad__Stage__c, &quot;Placed&quot;),
-  ISBLANK(TEXT(Stipend_Type__c))
+  OR(
+    ISBLANK(TEXT(Stipend_Type__c)),
+    TEXT(Stipend_Type__c) = &quot;None&quot;
+  )
 )</errorConditionFormula>
     <errorDisplayField>Stipend_Type__c</errorDisplayField>
     <errorMessage>You must select a Stipend Type before updating the Stage to &quot;Placed&quot;</errorMessage>
