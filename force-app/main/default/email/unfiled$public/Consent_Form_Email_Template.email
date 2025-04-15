@@ -1,1 +1,5 @@
-Please complete the Consent Form for the applicant for whom you have guardianship.
+<p>Hi {!Launchpad__Applicant_Tracking__c.Guardian_Name__c},</p>
+
+<p>You are receiving this email because {!Launchpad__Applicant_Tracking__c.Launchpad__Participant__c} submitted an application to the C2L-PHL program.</p> 
+
+<p>Your consent to required in order for {!Launchpad__Applicant_Tracking__c.Launchpad__Participant__c} to participate.</p>

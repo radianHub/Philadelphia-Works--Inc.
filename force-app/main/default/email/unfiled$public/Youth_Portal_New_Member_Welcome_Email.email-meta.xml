@@ -5,7 +5,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Youth Portal: New Member Welcome Email</name>
     <style>none</style>
-    <subject>Welcome to {!Community_Name}!</subject>
+    <subject>C2L-PHL: Welcome to {!Community_Name}!</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
