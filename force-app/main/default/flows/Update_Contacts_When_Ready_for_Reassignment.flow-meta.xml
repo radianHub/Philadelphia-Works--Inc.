@@ -113,6 +113,7 @@
             <label>Stage is Shortlisted or Passed &amp; Willing</label>
         </rules>
     </decisions>
+    <description>Updated entry criteria to run only when Stage field has changed, and Stage is not equal to &apos;In Progress&apos;</description>
     <environments>Default</environments>
     <interviewLabel>Update Contacts When Ready for Reassignment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Contacts When Ready for Reassignment</label>
@@ -218,6 +219,7 @@
         <connector>
             <targetReference>Get_Related_Job_Applications</targetReference>
         </connector>
+        <filterFormula>ISCHANGED({!$Record.Launchpad__Stage__c}) &amp;&amp; NOT(ISPICKVAL({!$Record.Launchpad__Stage__c}, &apos;In Progress&apos;))</filterFormula>
         <object>Launchpad__Applicant_Tracking__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

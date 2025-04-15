@@ -38,7 +38,7 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Launchpad__Unique_ID_SSN__c</field>
+        <field>Social_Security_Number__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
     </displayedFields>
