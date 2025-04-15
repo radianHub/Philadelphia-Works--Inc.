@@ -33,7 +33,7 @@
             <targetReference>Loop_through_Session_Record_Type</targetReference>
         </connector>
     </assignments>
-    <description>Updated record type</description>
+    <description>Mapping SSN from Contact to Applications, Not updating In Progress Applications</description>
     <environments>Default</environments>
     <interviewLabel>Contact - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contact - After Record Save</label>
@@ -48,7 +48,7 @@
             <targetReference>Assign_Job_Application_IDs</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_Application_Records</targetReference>
+            <targetReference>Get_Encrypted_Values</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
@@ -113,6 +113,29 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Encrypted_Values</name>
+        <label>Get Encrypted Values</label>
+        <locationX>176</locationX>
+        <locationY>1247</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Application_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputAssignments>
+            <assignToReference>SSNPlainText</assignToReference>
+            <field>Social_Security_Number__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <description>Get job applications related to current session (Program)</description>
         <name>Get_Job_Applications</name>
         <label>Get Job Applications</label>
@@ -135,6 +158,13 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Launchpad__Stage__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -166,7 +196,7 @@
         <name>Update_Application_Records</name>
         <label>Update Application Records</label>
         <locationX>176</locationX>
-        <locationY>1247</locationY>
+        <locationY>1355</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -335,6 +365,12 @@
             <field>Applicants_Current_Most_Recent_School__c</field>
             <value>
                 <elementReference>$Record.School__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Applicants_Tax_Id__c</field>
+            <value>
+                <elementReference>SSNPlainText</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -527,6 +563,13 @@
         <name>SessionRecordID</name>
         <dataType>String</dataType>
         <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SSNPlainText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
