@@ -33,7 +33,7 @@
             <targetReference>Loop_through_Session_Record_Type</targetReference>
         </connector>
     </assignments>
-    <description>Added tax id field mapping</description>
+    <description>Updated record type</description>
     <environments>Default</environments>
     <interviewLabel>Contact - After Record Save {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Contact - After Record Save</label>
@@ -338,12 +338,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Applicants_Tax_Id__c</field>
-            <value>
-                <elementReference>$Record.Social_Security_Number__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Current_Living_Situation__c</field>
             <value>
                 <elementReference>$Record.Youth_s_Current_Living_Situation__c</elementReference>
@@ -501,7 +495,7 @@
         <connector>
             <targetReference>Get_Session_Record_Type</targetReference>
         </connector>
-        <filterFormula>NOT(ISCHANGED({!$Record.Ready_for_Reassignment__c})) &amp;&amp; {!$Record.RecordType.Name} = &apos;Job_Seeker&apos;</filterFormula>
+        <filterFormula>NOT(ISCHANGED({!$Record.Ready_for_Reassignment__c})) &amp;&amp; {!$Record.RecordType.DeveloperName} = &apos;Job_Seeker&apos;</filterFormula>
         <object>Contact</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
