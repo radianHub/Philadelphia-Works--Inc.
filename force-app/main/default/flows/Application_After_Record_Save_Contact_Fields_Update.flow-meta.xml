@@ -29,11 +29,34 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Encrypted_Value</name>
+        <label>Get Encrypted Value</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Related_Youth_Contact</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>Launchpad__Applicant_Tracking__c</object>
+        <outputAssignments>
+            <assignToReference>SSNPlainText</assignToReference>
+            <field>Applicants_Tax_Id__c</field>
+        </outputAssignments>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Related_Youth_Contact</name>
         <label>Update Related Youth Contact</label>
         <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationY>431</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Launchpad__Record_Type_List_Views__c</field>
@@ -267,7 +290,7 @@
         <inputAssignments>
             <field>Social_Security_Number__c</field>
             <value>
-                <elementReference>$Record.Applicants_Tax_Id__c</elementReference>
+                <elementReference>SSNPlainText</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -372,7 +395,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Related_Youth_Contact</targetReference>
+            <targetReference>Get_Encrypted_Value</targetReference>
         </connector>
         <filterFormula>AND(ISPICKVAL({!$Record__Prior.Launchpad__Stage__c},&apos;In Progress&apos;), ISPICKVAL({!$Record.Launchpad__Stage__c},&apos;Submitted&apos;))</filterFormula>
         <object>Launchpad__Applicant_Tracking__c</object>
@@ -380,4 +403,11 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>SSNPlainText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
