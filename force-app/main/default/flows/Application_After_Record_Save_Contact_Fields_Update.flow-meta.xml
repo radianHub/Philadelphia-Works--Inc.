@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
-    <description>Removed SSN field population</description>
+    <description>Added tax id field mapping</description>
     <environments>Default</environments>
     <formulas>
         <name>PriorValueInProgress</name>
@@ -36,10 +36,10 @@
         <locationY>323</locationY>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>RecordTypeId</field>
+            <field>Launchpad__Record_Type_List_Views__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>012Kj000001HEWhIAO</stringValue>
+                <stringValue>Job_Seeker</stringValue>
             </value>
         </filters>
         <inputAssignments>
@@ -262,6 +262,12 @@
             <field>Sex_Assigned_At_Birth__c</field>
             <value>
                 <elementReference>$Record.Applicant_s_Sex_Assigned_at_Birth__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Social_Security_Number__c</field>
+            <value>
+                <elementReference>$Record.Applicants_Tax_Id__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
