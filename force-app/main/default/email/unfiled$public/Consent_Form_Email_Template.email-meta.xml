@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Consent Form Email Template</name>
     <style>none</style>
-    <subject>Consent Form</subject>
+    <subject>C2L-PHL: Parental Consent Required</subject>
     <type>custom</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
