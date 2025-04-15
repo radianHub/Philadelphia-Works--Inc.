@@ -10,5 +10,6 @@
   ),
   ISBLANK(Stipend__c)
 )</errorConditionFormula>
+    <errorDisplayField>Stipend_Type__c</errorDisplayField>
     <errorMessage>If you select Tier 1 or Tier 2 as the Stipend Type, you must also select a corresponding Stipend record.</errorMessage>
 </ValidationRule>
