@@ -10,7 +10,7 @@
     <displayedFields>
         <field>MiddleName</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>LastName</field>
