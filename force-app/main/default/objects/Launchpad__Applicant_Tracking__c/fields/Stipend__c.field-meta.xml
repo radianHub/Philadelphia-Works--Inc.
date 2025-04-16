@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Applicant_s_Email_Address__c</fullName>
+    <fullName>Stipend__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <inlineHelpText>Email address for the applicant</inlineHelpText>
-    <label>Applicant&apos;s Email Address</label>
+    <label>Stipend</label>
+    <referenceTo>Stipend__c</referenceTo>
+    <relationshipLabel>Job Applications</relationshipLabel>
+    <relationshipName>Job_Applications</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Email</type>
-    <unique>false</unique>
+    <type>Lookup</type>
 </CustomField>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
-    <description>Removed SSN field population</description>
+    <description>Save consents to Contact</description>
     <environments>Default</environments>
     <formulas>
         <name>PriorValueInProgress</name>
@@ -29,17 +29,40 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Encrypted_Value</name>
+        <label>Get Encrypted Value</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Related_Youth_Contact</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>Launchpad__Applicant_Tracking__c</object>
+        <outputAssignments>
+            <assignToReference>SSNPlainText</assignToReference>
+            <field>Applicants_Tax_Id__c</field>
+        </outputAssignments>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Related_Youth_Contact</name>
         <label>Update Related Youth Contact</label>
         <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationY>431</locationY>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>RecordTypeId</field>
+            <field>Launchpad__Record_Type_List_Views__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>012Kj000001HEWhIAO</stringValue>
+                <stringValue>Job_Seeker</stringValue>
             </value>
         </filters>
         <inputAssignments>
@@ -52,6 +75,12 @@
             <field>Birthdate</field>
             <value>
                 <elementReference>$Record.Applicant_s_Date_of_Birth_MM_DD_YYYY__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Consent_to_Request_Clearance__c</field>
+            <value>
+                <elementReference>$Record.Consent_to_Request_Clearance__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -217,6 +246,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Media_Picture_Release__c</field>
+            <value>
+                <elementReference>$Record.Media_Picture_Release__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>MiddleName</field>
             <value>
                 <elementReference>$Record.Middle_Name__c</elementReference>
@@ -226,6 +261,12 @@
             <field>Parent_Primary_Caregiver_of_Child_ren__c</field>
             <value>
                 <elementReference>$Record.Parent_Primary_Caregiver_of_Child_ren__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Parents_Consent__c</field>
+            <value>
+                <elementReference>$Record.Parent_s_Consent__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -253,6 +294,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Release_of_Information__c</field>
+            <value>
+                <elementReference>$Record.Release_of_Information__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>School__c</field>
             <value>
                 <elementReference>$Record.Applicants_Current_Most_Recent_School__c</elementReference>
@@ -262,6 +309,12 @@
             <field>Sex_Assigned_At_Birth__c</field>
             <value>
                 <elementReference>$Record.Applicant_s_Sex_Assigned_at_Birth__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Social_Security_Number__c</field>
+            <value>
+                <elementReference>SSNPlainText</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -366,7 +419,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Related_Youth_Contact</targetReference>
+            <targetReference>Get_Encrypted_Value</targetReference>
         </connector>
         <filterFormula>AND(ISPICKVAL({!$Record__Prior.Launchpad__Stage__c},&apos;In Progress&apos;), ISPICKVAL({!$Record.Launchpad__Stage__c},&apos;Submitted&apos;))</filterFormula>
         <object>Launchpad__Applicant_Tracking__c</object>
@@ -374,4 +427,11 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>SSNPlainText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
