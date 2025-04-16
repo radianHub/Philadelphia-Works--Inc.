@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Email address for the applicant</inlineHelpText>
     <label>Applicant&apos;s Email Address</label>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
