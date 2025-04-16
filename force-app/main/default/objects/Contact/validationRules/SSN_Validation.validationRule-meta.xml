@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSN_Validation</fullName>
+    <active>true</active>
+    <description>· The first three digits cannot be 9XX, 666, or 000.
+· The middle two digits cannot be 00.
+· The last four digits cannot be 0000.
+· The SSN must be formatted as XXX-XX-XXXX
+· SSN cannot be 123-45-6789</description>
+    <errorConditionFormula>AND(
+NOT( ISBLANK( Social_Security_Number__c ) ),
+NOT(
+REGEX( Social_Security_Number__c, &quot;^(?!123-45-6789)(?!\\b(\\d)\\1{2}-\\1{2}-\\1{4}\\b)(?!9\\d{2}|666|000)\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$&quot; )
+)
+)</errorConditionFormula>
+    <errorDisplayField>Social_Security_Number__c</errorDisplayField>
+    <errorMessage>You must enter a valid SSN in format XXX-XX-XXXX</errorMessage>
+</ValidationRule>

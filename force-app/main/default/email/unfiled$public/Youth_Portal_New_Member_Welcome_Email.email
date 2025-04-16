@@ -1,0 +1,10 @@
+Hi {!Receiving_User.FirstName},
+
+Welcome to {!Community_Name}! To get started, go to {!Community_Url}
+
+Please select your providers and submit your application by 05/18/2025
+
+Username: {!Receiving_User.Username}
+
+Thanks,
+{!Organization.Name}
