@@ -3160,10 +3160,6 @@
     <picklistValues>
         <picklist>Provider_Choice__c</picklist>
         <values>
-            <fullName>None</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Passed</fullName>
             <default>false</default>
         </values>
