@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Consent_to_Request_Clearance__c</fullName>
+    <fullName>Release_of_Information__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>I give permission to the C2L-PHL and its contracted agencies, partners and funders to run criminal, Child abuse and FBI clearances, if and only if, needed for the position I am assigned.</inlineHelpText>
-    <label>Consent to Request Clearance</label>
+    <inlineHelpText>I give my permission for C2L-PHL and its contracted agencies, partners and funders to release information concerning my participation in the program. I understand that all information will be kept respectfully confidential but the sharing of this information within and among these agencies may be necessary.</inlineHelpText>
+    <label>Release of Information</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
