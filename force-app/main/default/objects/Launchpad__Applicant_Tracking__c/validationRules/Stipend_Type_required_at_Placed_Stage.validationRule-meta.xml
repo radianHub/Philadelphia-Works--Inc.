@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stipend_Type_required_at_Placed_Stage</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Launchpad__Stage__c, &quot;Placed&quot;),
+  OR(
+    ISBLANK(TEXT(Stipend_Type__c)),
+    TEXT(Stipend_Type__c) = &quot;None&quot;
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Stipend_Type__c</errorDisplayField>
+    <errorMessage>You must select a Stipend Type before updating the Stage to &quot;Placed&quot;</errorMessage>
+</ValidationRule>

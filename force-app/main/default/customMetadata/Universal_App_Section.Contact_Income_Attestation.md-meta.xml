@@ -77,37 +77,37 @@
     {
       &quot;api&quot;: &quot;Wages_from_Employment__c&quot;,
       &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
-      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+      &quot;controllingValues&quot;: [&quot;Yes&quot;]
     },
     {
       &quot;api&quot;: &quot;Income_from_operation_of_a_business__c&quot;,
       &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
-      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+      &quot;controllingValues&quot;: [&quot;Yes&quot;]
     },
     {
       &quot;api&quot;: &quot;Interest_in_dividends_from_assets__c&quot;,
       &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
-      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+      &quot;controllingValues&quot;: [&quot;Yes&quot;]
     },
     {
       &quot;api&quot;: &quot;Social_Security_or_Other_Payments__c&quot;,
       &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
-      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+      &quot;controllingValues&quot;: [&quot;Yes&quot;]
     },
     {
       &quot;api&quot;: &quot;Unemployment_or_disability_payments__c&quot;,
       &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
-      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+      &quot;controllingValues&quot;: [&quot;Yes&quot;]
     },
     {
       &quot;api&quot;: &quot;Public_assistance_payments__c&quot;,
       &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
-      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+      &quot;controllingValues&quot;: [&quot;Yes&quot;]
     },
     {
       &quot;api&quot;: &quot;Any_other_source_not_named_above__c&quot;,
       &quot;controllingField&quot;: &quot;Income_Attestation__c&quot;,
-      &quot;controllingValues&quot;: [&quot;Yes, the applicant receives income&quot;]
+      &quot;controllingValues&quot;: [&quot;Yes&quot;]
     }
   ]
 }</value>

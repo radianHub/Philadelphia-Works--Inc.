@@ -3,7 +3,7 @@
     <fullName>Income_Attestation_Validation</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-    ISPICKVAL(Income_Attestation__c, &quot;Yes, the applicant receives income&quot;),
+    ISPICKVAL(Income_Attestation__c, &quot;Yes&quot;),
     OR(
         ISPICKVAL(Wages_from_Employment__c, &quot;&quot;),
         ISPICKVAL(Income_from_operation_of_a_business__c, &quot;&quot;),
