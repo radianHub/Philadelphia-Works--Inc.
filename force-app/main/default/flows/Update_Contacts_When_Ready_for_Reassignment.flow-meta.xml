@@ -2,10 +2,26 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
     <assignments>
+        <name>Assign_Value_to_Ready_for_Reassignment</name>
+        <label>Assign Value to Ready for Reassignment</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>varOriginalValueForReadyForReassignment</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Related_Contact.Ready_for_Reassignment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Set_Boolean_False</name>
         <label>Set Boolean False</label>
         <locationX>446</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>varAllStagePassedOrShortlisted</assignToReference>
             <operator>Assign</operator>
@@ -21,7 +37,7 @@
         <name>Set_Field_For_Reassignment</name>
         <label>Assign Contact Ready</label>
         <locationX>50</locationX>
-        <locationY>1139</locationY>
+        <locationY>1247</locationY>
         <assignmentItems>
             <assignToReference>Get_Related_Contact.Ready_for_Reassignment__c</assignToReference>
             <operator>Assign</operator>
@@ -30,14 +46,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Records_1</targetReference>
+            <targetReference>Record_Requires_Update</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Update_Contact_Not_Ready</name>
         <label>Assign Contact Not Ready</label>
         <locationX>314</locationX>
-        <locationY>1139</locationY>
+        <locationY>1247</locationY>
         <assignmentItems>
             <assignToReference>Get_Related_Contact.Ready_for_Reassignment__c</assignToReference>
             <operator>Assign</operator>
@@ -46,14 +62,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Update_Records_2</targetReference>
+            <targetReference>Record_Requires_Update</targetReference>
         </connector>
     </assignments>
     <decisions>
         <name>Decision_2</name>
         <label>Contact Ready for Reassignment?</label>
         <locationX>182</locationX>
-        <locationY>1031</locationY>
+        <locationY>1139</locationY>
         <defaultConnector>
             <targetReference>Update_Contact_Not_Ready</targetReference>
         </defaultConnector>
@@ -75,10 +91,32 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Record_Requires_Update</name>
+        <label>Record Requires Update?</label>
+        <locationX>182</locationX>
+        <locationY>1439</locationY>
+        <defaultConnectorLabel>Does Not Require Update</defaultConnectorLabel>
+        <rules>
+            <name>Recor</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Related_Contact.Ready_for_Reassignment__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>varOriginalValueForReadyForReassignment</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_1</targetReference>
+            </connector>
+            <label>Requires Update</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Stage_is_Shortlisted_or_Passed1</name>
         <label>Stage is Shortlisted or Passed &amp; Willing</label>
         <locationX>358</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Set_Boolean_False</targetReference>
         </defaultConnector>
@@ -113,7 +151,6 @@
             <label>Stage is Shortlisted or Passed &amp; Willing</label>
         </rules>
     </decisions>
-    <description>Updating entry criteria</description>
     <environments>Default</environments>
     <interviewLabel>Update Contacts When Ready for Reassignment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Contacts When Ready for Reassignment</label>
@@ -121,7 +158,7 @@
         <name>Loop_1</name>
         <label>Loop Related Job Applications</label>
         <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <collectionReference>Get_Related_Job_Applications</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -157,7 +194,7 @@
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Loop_1</targetReference>
+            <targetReference>Assign_Value_to_Ready_for_Reassignment</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -201,16 +238,9 @@
     </recordLookups>
     <recordUpdates>
         <name>Update_Records_1</name>
-        <label>Update Contact Ready</label>
+        <label>Update Contact</label>
         <locationX>50</locationX>
-        <locationY>1247</locationY>
-        <inputReference>Get_Related_Contact</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Records_2</name>
-        <label>Update Contact Not Ready</label>
-        <locationX>314</locationX>
-        <locationY>1247</locationY>
+        <locationY>1547</locationY>
         <inputReference>Get_Related_Contact</inputReference>
     </recordUpdates>
     <start>
@@ -219,9 +249,8 @@
         <connector>
             <targetReference>Get_Related_Job_Applications</targetReference>
         </connector>
-        <filterFormula>(ISNEW() || (ISCHANGED({!$Record.Launchpad__Stage__c}) || ISCHANGED({!$Record.Provider_Choice__c}))) &amp;&amp; NOT(ISPICKVAL({!$Record.Launchpad__Stage__c}, &apos;In Progress&apos;))</filterFormula>
         <object>Launchpad__Applicant_Tracking__c</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
@@ -234,5 +263,12 @@
         <value>
             <booleanValue>true</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>varOriginalValueForReadyForReassignment</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>
