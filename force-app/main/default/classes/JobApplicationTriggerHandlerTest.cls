@@ -244,7 +244,7 @@ public class JobApplicationTriggerHandlerTest {
         System.assertEquals('Passed', jobApplicationsUpdated[0].Launchpad__Stage__c);
         System.assertEquals('Passed', jobApplicationsUpdated[1].Launchpad__Stage__c);
         System.assertEquals('Passed', jobApplicationsUpdated[2].Launchpad__Stage__c);
-        //System.assertEquals(true, con.Ready_for_Reassignment__c);
+        System.assertEquals(true, con.Ready_for_Reassignment__c);
         
         
     }
@@ -296,7 +296,7 @@ public class JobApplicationTriggerHandlerTest {
         System.assertEquals('Shortlisted', jobApplicationsUpdated[0].Launchpad__Stage__c);
         System.assertEquals('Shortlisted', jobApplicationsUpdated[1].Launchpad__Stage__c);
         System.assertEquals('Shortlisted', jobApplicationsUpdated[2].Launchpad__Stage__c);
-        //System.assertEquals(true, con.Ready_for_Reassignment__c);
+        System.assertEquals(true, con.Ready_for_Reassignment__c);
     }
     
     /*
@@ -490,7 +490,7 @@ public class JobApplicationTriggerHandlerTest {
         System.assertEquals('Shortlisted', jobApplicationsUpdated[0].Launchpad__Stage__c);
         System.assertEquals('Passed', jobApplicationsUpdated[1].Launchpad__Stage__c);
         System.assertEquals('Passed', jobApplicationsUpdated[2].Launchpad__Stage__c);
-        //System.assertEquals(true, con.Ready_for_Reassignment__c);
+        System.assertEquals(true, con.Ready_for_Reassignment__c);
     }
     
     /*
