@@ -1,9 +1,7 @@
 public class JobApplicationTriggerHandler {
     public static Set<Id> setExecutedRecords = new Set<Id>();
     
-    public static void main(List<Launchpad__Applicant_Tracking__c> applications, Map<Id, Launchpad__Applicant_Tracking__c> oldMap){
-        System.debug('%%%%%%%%%ExecutedRecords: ' + setExecutedRecords);
-        
+    public static void main(List<Launchpad__Applicant_Tracking__c> applications, Map<Id, Launchpad__Applicant_Tracking__c> oldMap){        
         Set<Id> triggerContextRecords = new Set<Id>();
         
        //--------------------------------------BEGIN RECURSION CHECK-----------------------------------------------//
@@ -26,8 +24,7 @@ public class JobApplicationTriggerHandler {
         beginMatchingProcess(tempApplicationList, triggerContextRecords, oldMap);
         //-------------------------------------END RECURSION CHECK---------------------------------------------------//
     }
-        public static void beginMatchingProcess(List<Launchpad__Applicant_Tracking__c> applications, Set<Id> triggerContextRecords, Map<Id, Launchpad__Applicant_Tracking__c> oldMap){
-            
+    public static void beginMatchingProcess(List<Launchpad__Applicant_Tracking__c> applications, Set<Id> triggerContextRecords, Map<Id, Launchpad__Applicant_Tracking__c> oldMap){
             Map<Id, List<Launchpad__Applicant_Tracking__c>> contactToAppsMap = new Map<Id, List<Launchpad__Applicant_Tracking__c>>();
             
             for(Launchpad__Applicant_Tracking__c app : applications){
@@ -96,22 +93,16 @@ public class JobApplicationTriggerHandler {
             }
         }
         
-        
-    
-        
         //--------------------------------Final Update of Triggering Records and Related Records-----------------------//
         List<Launchpad__Applicant_Tracking__c> masterAppUpdateListNoTriggerContextRecords = new List<Launchpad__Applicant_Tracking__c>();
         for(Integer i = 0; i < masterAppUpdateList.size(); i++){
             setExecutedRecords.add(masterAppUpdateList[i].Id);
             
-            System.debug('!triggerContextRecords.contains(masterAppUpdateList[i].Id): ' + !triggerContextRecords.contains(masterAppUpdateList[i].Id) + ' : ' + masterAppUpdateList[i].Id);
             if(!triggerContextRecords.contains(masterAppUpdateList[i].Id)){
                 masterAppUpdateListNoTriggerContextRecords.add(masterAppUpdateList[i]);
             }
         }
-        for(Launchpad__Applicant_Tracking__c app : masterAppUpdateListNoTriggerContextRecords){
-            System.debug('masterAppUpdateListNoTriggerContextRecords member: '  + app);
-        }
+
         update masterAppUpdateListNoTriggerContextRecords;
         //--------------------------------Final Update of Triggering Records and Related Records-----------------------//
    
@@ -134,14 +125,12 @@ public class JobApplicationTriggerHandler {
         
         Launchpad__Applicant_Tracking__c highestRankedApp = null;
         for(Launchpad__Applicant_Tracking__c app : applications){
-            System.debug('IN getHighestRankedApp looping through: ' + app.Id + ' : ' + app.Launchpad__Stage__c);
             if(app.Launchpad__Stage__c == 'Provider Selected'){
                 returnNull = false;
                 highestRankedApp = app;
             }
         }
         if(returnNull == true){
-            System.debug('Returning null');
             return null;
             
         }
@@ -162,10 +151,30 @@ public class JobApplicationTriggerHandler {
             }
         }
         
-        for(Launchpad__Applicant_Tracking__c app : applications){
-            System.debug('Returning app: ' + app.Id + ' : ' + app.Launchpad__Stage__c);
-        }
 	 	return applications;
     }
     
+    public static void checkForDuplicates(List<Launchpad__Applicant_Tracking__c> applications){
+        List<Launchpad__Applicant_Tracking__c> allApps = [SELECT Id, Applicants_Tax_Id__c, Provider_Rank__c, Launchpad__Participant__c FROM Launchpad__Applicant_Tracking__c WHERE 
+                                                          Program__r.Launchpad__Active__c = 'Yes'
+													      AND Program__r.RecordType.Name = 'Session'
+                                                          AND Provider_Rank__c = '1'
+                                                           ];
+        
+        Map<String, Launchpad__Applicant_Tracking__c> ssnAppMap = new Map<String, Launchpad__Applicant_Tracking__c>();
+            
+        for(Launchpad__Applicant_Tracking__c app : allApps){
+            if(app.Applicants_Tax_Id__c != null){
+                ssnAppMap.put(app.Applicants_Tax_Id__c, app);
+            } 
+        }
+        
+        for(Launchpad__Applicant_Tracking__c app : applications){
+            if(ssnAppMap.get(app.Applicants_Tax_Id__c) != null && app.Id != ssnAppMap.get(app.Applicants_Tax_Id__c).Id && app.Launchpad__Participant__c != ssnAppMap.get(app.Applicants_Tax_Id__c).Launchpad__Participant__c){
+                app.Applicants_Tax_Id__c.addError('Applications for this person already exist in the system.');
+            }
+        }
+
+    }
+
 }
