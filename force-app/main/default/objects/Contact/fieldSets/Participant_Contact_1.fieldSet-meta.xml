@@ -10,7 +10,7 @@
     <displayedFields>
         <field>MiddleName</field>
         <isFieldManaged>false</isFieldManaged>
-        <isRequired>true</isRequired>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>LastName</field>
@@ -86,6 +86,11 @@
         <field>Race_Ethnicity__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>true</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Grade__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
         <field>School__c</field>
