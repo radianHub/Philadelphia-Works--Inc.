@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Require_Stipend_Field</fullName>
-    <active>true</active>
+    <active>false</active>
     <description>Require Provider to select a Stipend record related to that tier for the current program (Launchpad__Applicant_Tracking__c.Stipend__c)</description>
     <errorConditionFormula>AND(
   OR(
