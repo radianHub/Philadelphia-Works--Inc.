@@ -41,6 +41,7 @@
             <value>
                 <fullName>Submitted</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Submitted</label>
             </value>
         </valueSetDefinition>

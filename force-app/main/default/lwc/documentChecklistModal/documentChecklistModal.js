@@ -6,59 +6,66 @@ import initializeDocument from '@salesforce/apex/DocumentChecklistController.ini
 import updateDocumentStatus from '@salesforce/apex/DocumentChecklistController.updateDocumentStatus';
 
 export default class DocumentChecklistModal extends LightningModal {
-    _documentId;
+	_documentId;
 
-    @api recordId;
-    @api title;
-    @api documentType;
-    @api description;
-    @api lookupField;
-    @api checklistName;
-    @api get documentId() {
-        return this._documentId;
-    }
-    set documentId(val) {
-        this._documentId = val;
-    }
+	@api recordId;
+	@api title;
+	@api documentType;
+	@api description;
+	@api lookupField;
+	@api checklistName;
+	@api documentOnFile;
 
-    connectedCallback() {
-        if (!this.documentId) {
-            this.initializeDocument();
-        }
-    }
+	@api get documentId() {
+		return this._documentId;
+	}
+	set documentId(val) {
+		this._documentId = val;
+	}
 
-    handleUploadFinished() {
-        this.updateDocumentStatus('Submitted');
+	connectedCallback() {
+		if (!this.documentId) {
+			this.initializeDocument();
+		}
+	}
 
-        const event = new ShowToastEvent({
-            title: 'Success',
-            message: 'Document uploaded successfully',
-            variant: 'success',
-        });
-        this.dispatchEvent(event);
-    }
+	handleUploadFinished() {
+		this.updateDocumentStatus('Submitted');
 
-    handleClose() {
-        this.close(this.documentId);
-    }
+		const event = new ShowToastEvent({
+			title: 'Success',
+			message: 'Document uploaded successfully',
+			variant: 'success',
+		});
+		this.dispatchEvent(event);
+	}
 
-    updateDocumentStatus(status) {
-        updateDocumentStatus({ checklistName: this.checklistName, documentId: this.documentId, status })
-        .then(() => {
-            this.close();
-        })
-        .catch(error => {
-            console.error('DocumentChecklistModal updateDocumentStatus error', error);
-        });
-    }
+	handleClose() {
+		this.close(this.documentId);
+	}
 
-    initializeDocument() {
-        initializeDocument({ checklistName: this.checklistName, recordId: this.recordId, documentType: this.documentType, lookupField: this.lookupField })
-            .then(result => {
-                this._documentId = result;
-            })
-            .catch(error => {
-                console.error('DocumentChecklistModal initializeDocument error', error);
-            });
-    }
+	updateDocumentStatus(status) {
+		updateDocumentStatus({ checklistName: this.checklistName, documentId: this.documentId, status })
+			.then(() => {
+				this.close();
+			})
+			.catch((error) => {
+				console.error('DocumentChecklistModal updateDocumentStatus error', error);
+			});
+	}
+
+	initializeDocument() {
+		initializeDocument({
+			checklistName: this.checklistName,
+			recordId: this.recordId,
+			documentType: this.documentType,
+			lookupField: this.lookupField,
+		})
+			.then((result) => {
+				this._documentId = result;
+			})
+			.catch((error) => {
+				console.error('DocumentChecklistModal initializeDocument error', error);
+			});
+	}
 }
