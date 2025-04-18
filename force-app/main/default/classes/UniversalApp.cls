@@ -637,7 +637,7 @@ public with sharing class UniversalApp {
 			// Post upsert logic
 			if (application == 'C2L_Program_Application' && isSaveForLater != true && result.isSuccess()) {
 				Launchpad__Applicant_Tracking__c currentApp = [
-					SELECT Id, Guardian_Consent_Required__c, Submitted_From_Universal_App__c
+					SELECT Id, Guardian_Consent_Required__c, Submitted_From_Universal_App__c, Launchpad__Participant__c
 					FROM Launchpad__Applicant_Tracking__c
 					WHERE Id = :appId
 					LIMIT 1
@@ -648,6 +648,9 @@ public with sharing class UniversalApp {
 
 				System.Debug('About to call updateOtherAppsInSameSession');
 				updateOtherAppsInSameSession(sObjectId);
+
+				// Find and match historical contact documents
+				mergeHistoricalDocuments(currentApp.Launchpad__Participant__c);
 			}
 
 			if (filesString != null) {
@@ -796,6 +799,137 @@ public with sharing class UniversalApp {
 		cdl.LinkedEntityId = recordId;
 		cdl.ShareType = 'V';
 		return cdl;
+	}
+
+	public static void mergeHistoricalDocuments(String contactId) {
+		List<Contact> appContact = [
+			SELECT Id, Birthdate, LastName, Social_Security_Number__c
+			FROM Contact
+			WHERE Id = :contactId AND Birthdate != NULL AND LastName != NULL
+		];
+
+		if (appContact.size() == 0) {
+			return;
+		}
+
+		List<Contact> matchingContacts = [
+			SELECT
+				Id,
+				Birthdate,
+				LastName,
+				Social_Security_Number__c,
+				ID_Doc__c,
+				Attestation__c,
+				Birth_Certificate__c,
+				Citizenship__c,
+				Clearance__c,
+				Report_Card__c,
+				Residency__c,
+				SSN_Doc__c,
+				W9__c,
+				Work_Permit__c,
+				Youth_Clearances__c,
+				Income_Document__c
+			FROM Contact
+			WHERE Birthdate = :appContact[0].Birthdate AND LastName = :appContact[0].LastName AND Id != :contactId
+		];
+
+		Contact historicalContact = null;
+		for (Contact matchingContact : matchingContacts) {
+			if (matchingContact.Social_Security_Number__c == appContact[0].Social_Security_Number__c) {
+				historicalContact = matchingContact;
+				break;
+			}
+		}
+
+		if (historicalContact != null) {
+			// Update the existing contact with the historical contact's record
+			Contact newContact = new Contact();
+			newContact.Id = contactId;
+			newContact.Historical_Contact__c = historicalContact.Id;
+			update newContact;
+
+			List<Launchpad__Document__c> docsToCreate = new List<Launchpad__Document__c>();
+			if (historicalContact.W9__c == 'Yes') {
+				Launchpad__Document__c doc = new Launchpad__Document__c();
+				doc.Launchpad__Contact__c = contactId;
+				doc.Launchpad__Type__c = 'W-9';
+				doc.Launchpad__Status__c = 'Approved';
+				doc.Document_On_File__c = true;
+				doc.Launchpad__Available_in_Community__c = 'Yes';
+				docsToCreate.add(doc);
+			}
+
+			if (historicalContact.Birth_Certificate__c == 'Yes' || historicalContact.Citizenship__c == 'Yes') {
+				Launchpad__Document__c doc = new Launchpad__Document__c();
+				doc.Launchpad__Contact__c = contactId;
+				doc.Launchpad__Type__c = 'Proof of Citizenship';
+				doc.Launchpad__Status__c = 'Approved';
+				doc.Document_On_File__c = true;
+				doc.Launchpad__Available_in_Community__c = 'Yes';
+				docsToCreate.add(doc);
+			}
+
+			if (historicalContact.Clearance__c == 'Yes' || historicalContact.Youth_Clearances__c == 'Yes') {
+				Launchpad__Document__c doc = new Launchpad__Document__c();
+				doc.Launchpad__Contact__c = contactId;
+				doc.Launchpad__Type__c = 'Proof of Clearance';
+				doc.Launchpad__Status__c = 'Approved';
+				doc.Document_On_File__c = true;
+				doc.Launchpad__Available_in_Community__c = 'Yes';
+				docsToCreate.add(doc);
+			}
+
+			if (
+				historicalContact.Birth_Certificate__c == 'Yes' ||
+				historicalContact.ID_Doc__c == 'Yes' ||
+				historicalContact.Work_Permit__c == 'Yes'
+			) {
+				Launchpad__Document__c doc = new Launchpad__Document__c();
+				doc.Launchpad__Contact__c = contactId;
+				doc.Launchpad__Type__c = 'Proof of ID';
+				doc.Launchpad__Status__c = 'Approved';
+				doc.Document_On_File__c = true;
+				doc.Launchpad__Available_in_Community__c = 'Yes';
+				docsToCreate.add(doc);
+			}
+
+			if (historicalContact.Income_Document__c == 'Yes') {
+				Launchpad__Document__c doc = new Launchpad__Document__c();
+				doc.Launchpad__Contact__c = contactId;
+				doc.Launchpad__Type__c = 'Proof of Income';
+				doc.Launchpad__Status__c = 'Approved';
+				doc.Document_On_File__c = true;
+				doc.Launchpad__Available_in_Community__c = 'Yes';
+				docsToCreate.add(doc);
+			}
+
+			if (
+				historicalContact.ID_Doc__c == 'Yes' ||
+				historicalContact.Residency__c == 'Yes' ||
+				historicalContact.Work_Permit__c == 'Yes'
+			) {
+				Launchpad__Document__c doc = new Launchpad__Document__c();
+				doc.Launchpad__Contact__c = contactId;
+				doc.Launchpad__Type__c = 'Proof of Residency';
+				doc.Launchpad__Status__c = 'Approved';
+				doc.Document_On_File__c = true;
+				doc.Launchpad__Available_in_Community__c = 'Yes';
+				docsToCreate.add(doc);
+			}
+
+			if (historicalContact.SSN_Doc__c == 'Yes') {
+				Launchpad__Document__c doc = new Launchpad__Document__c();
+				doc.Launchpad__Contact__c = contactId;
+				doc.Launchpad__Type__c = 'Proof of Social Security Number';
+				doc.Launchpad__Status__c = 'Approved';
+				doc.Document_On_File__c = true;
+				doc.Launchpad__Available_in_Community__c = 'Yes';
+				docsToCreate.add(doc);
+			}
+
+			insert docsToCreate;
+		}
 	}
 
 	public class File {

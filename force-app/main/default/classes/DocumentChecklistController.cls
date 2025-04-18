@@ -34,6 +34,7 @@ public with sharing class DocumentChecklistController {
 				doc.type = item.Document_Type__c;
 				doc.status = defaultStatus;
 				doc.required = item.Required__c;
+				doc.onFile = false; // implementation specific
 				doc.submitted = false;
 				checklist.add(doc);
 
@@ -128,6 +129,8 @@ public with sharing class DocumentChecklistController {
 				doc.put(rejectionReasonField, rejectionReason);
 			}
 
+			doc.put('Document_On_File__c', false); // implementation specific
+
 			update doc;
 		} catch (Exception e) {
 			System.debug('Error updateDocumentStatus: ' + e.getMessage());
@@ -195,6 +198,7 @@ public with sharing class DocumentChecklistController {
 				', ' +
 				documentStatusField +
 				rejectionReasonField +
+				', Document_On_File__c ' + // implementation specific
 				' FROM ' +
 				documentObject +
 				' WHERE ' +
@@ -210,6 +214,7 @@ public with sharing class DocumentChecklistController {
 				document.name = (String) doc.get('Name');
 				document.type = (String) doc.get(documentTypeField);
 				document.status = (String) doc.get(documentStatusField);
+				document.onFile = (Boolean) doc.get('Document_On_File__c'); // implementation specific
 
 				if (!String.isBlank(rejectionReasonField)) {
 					document.rejectionReason = (String) doc.get(checklistSettings.Rejection_Reason_Field__c);
@@ -238,6 +243,7 @@ public with sharing class DocumentChecklistController {
 					item.documentId = doc.id;
 					item.status = doc.status;
 					item.submitted = doc.status != defaultStatus;
+					item.onFile = doc.onFile; // implementation-specific
 
 					if (doc.rejectionReason != null) {
 						item.rejectionReason = doc.rejectionReason;
@@ -304,6 +310,8 @@ public with sharing class DocumentChecklistController {
 		public String status;
 		@AuraEnabled
 		public String rejectionReason;
+		@AuraEnabled
+		public Boolean onFile; // implementation specific
 	}
 
 	public class ChecklistItem {
@@ -325,6 +333,8 @@ public with sharing class DocumentChecklistController {
 		public Boolean submitted;
 		@AuraEnabled
 		public String rejectionReason;
+		@AuraEnabled
+		public Boolean onFile; // implementation specific
 	}
 
 	public class DocumentStatuses {
