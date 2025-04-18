@@ -808,8 +808,6 @@ public with sharing class UniversalApp {
 			WHERE Id = :contactId AND Birthdate != NULL AND LastName != NULL
 		];
 
-		System.debug('existing appContact: ' + appContact);
-
 		if (appContact.size() == 0) {
 			return;
 		}
