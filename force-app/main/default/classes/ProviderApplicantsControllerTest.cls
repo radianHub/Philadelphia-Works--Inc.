@@ -19,6 +19,11 @@ public class ProviderApplicantsControllerTest {
 			RecordTypeId = sessionRT.Id
 		);
 		insert program;
+        
+        Stipend__c stipend = new Stipend__c();
+        stipend.Program__c = program.Id;
+        stipend.Stipend_Type__c = 'Tier 1';
+        insert stipend;
 
 		// Create Job records
 		List<Launchpad__Job__c> jobs = new List<Launchpad__Job__c>();
@@ -68,7 +73,9 @@ public class ProviderApplicantsControllerTest {
 				Launchpad__Stage__c = statuses[i],
 				Provider_Choice__c = choices[i],
 				Provider_Rank__c = String.valueOf(i + 1),
-				Applicant_s_Email_Address__c = 'test' + i + '@example.com'
+				Applicant_s_Email_Address__c = 'test' + i + '@example.com',
+                Stipend_Type__c = 'Tier 1',
+                Stipend__c = stipend.Id
 			);
 			applicants.add(app);
 		}

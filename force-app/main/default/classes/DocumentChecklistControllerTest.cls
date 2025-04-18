@@ -5,7 +5,7 @@ public class DocumentChecklistControllerTest {
 		Account testAccount = new Account(Name = 'Test Account');
 		insert testAccount;
 
-		Contact testContact = new Contact(LastName = 'Test', AccountId = testAccount.Id);
+		Contact testContact = new Contact(LastName = 'Test', AccountId = testAccount.Id, Email = 'test@test.com');
 		insert testContact;
 
 		Launchpad__Document__c document = new Launchpad__Document__c(
@@ -120,4 +120,29 @@ public class DocumentChecklistControllerTest {
 			Assert.areEqual('Test Document', cv.Title);
 		}
 	}
+    
+    @isTest
+    static void testApproveDocument() {
+        Launchpad__Document__c document = [SELECT Id FROM Launchpad__Document__c LIMIT 1];
+
+        Test.startTest();
+        DocumentChecklistController.approveDocument('TestChecklist', document.Id);
+        Test.stopTest();
+        
+        Launchpad__Document__c updatedDocument = [SELECT Id, Launchpad__Status__c FROM Launchpad__Document__c WHERE Id = :document.Id];
+        Assert.areEqual('Approved', updatedDocument.Launchpad__Status__c);
+    }
+    
+    @isTest
+    static void testRejectDocument() {
+        Launchpad__Document__c document = [SELECT Id FROM Launchpad__Document__c LIMIT 1];
+
+        Test.startTest();
+        DocumentChecklistController.rejectDocument('TestChecklist', document.Id, 'Document is blurry.');
+        Test.stopTest();
+        
+        Launchpad__Document__c updatedDocument = [SELECT Id, Launchpad__Status__c, Rejection_Reason__c FROM Launchpad__Document__c WHERE Id = :document.Id];
+        Assert.areEqual('Rejected', updatedDocument.Launchpad__Status__c);
+        Assert.areEqual('Document is blurry.', updatedDocument.Rejection_Reason__c);
+    }
 }
