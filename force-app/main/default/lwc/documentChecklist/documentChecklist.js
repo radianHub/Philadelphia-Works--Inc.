@@ -69,6 +69,7 @@ export default class DocumentChecklist extends LightningElement {
 			lookupField: this.lookupField,
 			description: document.description,
 			checklistName: this.checklistName,
+			documentOnFile: document.onFile,
 		}).then((result) => {
 			if (result) {
 				notifyRecordUpdateAvailable([{ recordId: result }]);

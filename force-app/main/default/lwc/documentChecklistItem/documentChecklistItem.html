@@ -20,8 +20,13 @@
 						</div>
 						<div class="slds-col">
 							<span
+								class="slds-badge slds-var-m-left_x-small"
+								lwc:if={document.onFile}>
+								On File - Upload Not Required
+							</span>
+							<span
 								class="slds-badge slds-theme_error slds-var-m-left_x-small"
-								lwc:if={document.required}
+								lwc:elseif={document.required}
 								>Required</span
 							>
 						</div>
@@ -32,7 +37,7 @@
 				</div>
 				<div class="slds-col">
 					<div class="slds-grid slds-wrap slds-var-m-left_x-small slds-grid_align-end">
-						<template lwc:if={document.submitted}>
+						<template lwc:if={showUploadedDocumentActions}>
 							<lightning-button
 								variant="destructive"
 								class="slds-var-m-right_xx-small slds-var-m-bottom_xx-small"
@@ -57,7 +62,7 @@
 				</div>
 			</div>
 			<div
-				lwc:if={document.rejectionReason}
+				lwc:if={showRejectionReasonField}
 				class="slds-box slds-theme_error slds-var-m-vertical_small">
 				<p class="slds-text-body_small document-description">{document.rejectionReason}</p>
 			</div>

@@ -75,7 +75,11 @@ export default class DocumentChecklistItem extends LightningElement {
 	}
 
 	get showRejectionReasonField() {
-		return this.selectedStatus === 'Rejected';
+		return this.document.status === this.documentStatuses.rejectedStatus;
+	}
+
+	get showUploadedDocumentActions() {
+		return this.document.submitted && !this.document.onFile;
 	}
 
 	render() {

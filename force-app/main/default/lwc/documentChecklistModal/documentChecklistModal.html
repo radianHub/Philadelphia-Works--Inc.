@@ -1,17 +1,26 @@
 <template>
-    <lightning-modal-header label={title}></lightning-modal-header>
-    <lightning-modal-body>
-        <div lwc:if={description} class="slds-box slds-theme_shade slds-var-m-bottom_small">
-            <p class="document-checklist-item-description">{description}</p>
-        </div>
-        <lightning-file-upload
-            label="Upload"
-            name="upload"
-            record-id={documentId}
-            onuploadfinished={handleUploadFinished}
-        ></lightning-file-upload>
-    </lightning-modal-body>
-    <lightning-modal-footer>
-        <lightning-button label="Close" onclick={handleClose}></lightning-button>
-    </lightning-modal-footer>
+	<lightning-modal-header label={title}></lightning-modal-header>
+	<lightning-modal-body>
+		<div
+			lwc:if={description}
+			class="slds-box slds-theme_shade slds-var-m-bottom_small">
+			<p class="document-checklist-item-description">{description}</p>
+		</div>
+		<lightning-file-upload
+			label="Upload"
+			name="upload"
+			record-id={documentId}
+			onuploadfinished={handleUploadFinished}></lightning-file-upload>
+
+		<div
+			class="slds-var-p-vertical_small"
+			lwc:if={documentOnFile}>
+			*Note: We already have this document on file, upload not required.
+		</div>
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<lightning-button
+			label="Close"
+			onclick={handleClose}></lightning-button>
+	</lightning-modal-footer>
 </template>
